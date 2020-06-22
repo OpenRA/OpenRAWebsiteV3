@@ -120,6 +120,30 @@ button > icon {
   display: flex;
 }
 
+.color--discord {
+  color: rgb(114, 137, 218) !important;
+}
+
+.color--itch {
+  color: rgb(250, 92, 92) !important;
+}
+
+.color--facebook {
+  color: rgb(24, 119, 242) !important;
+}
+
+.color--twitter {
+  color: rgb(29, 161, 242) !important;
+}
+
+.color--reddit {
+  color: rgb(255, 69, 0) !important;
+}
+
+.color--youtube {
+  color: rgb(255, 0, 0) !important;
+}
+
 
 .icon {
   color: currentColor;
@@ -207,6 +231,10 @@ button > icon {
 .site-header a {
   color: white;
   text-decoration: none;
+}
+
+.site-header a:hover {
+  text-decoration: underline;
 }
 
 
@@ -429,6 +457,10 @@ button > icon {
 .site-footer a {
   color: white;
   text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
 }
 
 .site-footer__main {
