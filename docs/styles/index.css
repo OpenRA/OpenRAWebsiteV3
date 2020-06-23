@@ -11,9 +11,13 @@ html, body {
 }
 
 body {
-  overflow-x: hidden;
   background-position-y: -80px;
   background-image: url('../images/bg-logos.png');
+}
+
+.site {
+  position: relative;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
@@ -62,10 +66,23 @@ button {
   border-radius: 2px;
   border: none;
   vertical-align: middle;
+  box-shadow: black 0 1px 0 0;
+  transition:
+    transform 250ms,
+    box-shadow 250ms;
 }
 
-button > icon {
-  vertical-align: middle;
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: black 0 3px 0 0;
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: black 0 1px 0 0;
+  transition:
+    transform 0ms,
+    box-shadow 0ms;
 }
 
 .button--large {
