@@ -4,7 +4,8 @@
   "description": "The OpenRA project's Website",
   "main": "",
   "scripts": {
-    "build": "metalsmith"
+    "build": "metalsmith",
+    "watch": "chokidar \"src/**/*\" -c \"npm run build\""
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/Fauntleroy/openra-web#readme",
   "devDependencies": {
+    "chokidar-cli": "^2.1.0",
     "jstransformer-handlebars": "^1.1.0",
     "metalsmith": "^2.3.0",
     "metalsmith-layouts": "^2.3.1"
