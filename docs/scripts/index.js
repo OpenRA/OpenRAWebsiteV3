@@ -106,6 +106,8 @@ function Carousel (carouselReference, options) {
   goToIndex(0);
 }
 
+
+// Set up carousels
 function handleGameCarouselChange (index) {
   heroCarousel.goToIndex(index);
 }
@@ -120,4 +122,13 @@ const gameCarousel = new Carousel('#game-carousel', {
 const heroCarousel = new Carousel('#hero-carousel', {
   autoAdvance: 5 * 1000,
   onChange: handleHeroCarouselChange
+});
+
+// Set up mobile menu button
+$('.site-header__menu-toggle').on('click', function toggleMenu () {
+  $('.site').toggleClass('site--menu-active');
+});
+
+$('.site-header__menu-close').on('click', function closeMenu () {
+  $('.site').removeClass('site--menu-active');
 });
