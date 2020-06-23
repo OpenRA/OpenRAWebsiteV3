@@ -45,8 +45,8 @@ function Carousel (carouselReference, options) {
     $carouselItem.eq(index).addClass('carousel__item--current');
 
     // disable / enable prev/next buttons
-    $carouselPrevious.attr('disabled', currentIndex === 0);
-    $carouselNext.attr('disabled', currentIndex >= carouselItemsCount - 1);
+    $carouselPrevious.prop('disabled', currentIndex === 0);
+    $carouselNext.prop('disabled', currentIndex >= carouselItemsCount - 1);
 
     // set current page
     $carouselPage.removeClass('carousel__page--current');
