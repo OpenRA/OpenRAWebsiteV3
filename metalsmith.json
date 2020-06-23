@@ -1,0 +1,17 @@
+
+{
+  "source": "./src",
+  "destination": "./docs",
+  "metadata": {
+    "title": "OpenRA",
+    "description": "OpenRA Metalsmith test"
+  },
+  "plugins": {
+    "metalsmith-layouts": {
+      "engine": "swig",
+      "directory": "./src/_layouts",
+      "default": "default.hbs",
+      "pattern": "**/*.html"
+    }
+  }
+}

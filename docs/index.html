@@ -11,6 +11,7 @@
   </head>
   <body>
     <div class="site">
+
       <header class="site-header">
         <div class="site-header__main u-centered-content">
           <button class="site-header__menu-toggle" aria-label="Open Site Menu">
@@ -18,10 +19,12 @@
               <use xlink:href="./images/icons/icons.svg#icon-menu"></use>
             </svg>
           </button>
-          <img 
-            class="site-header__logo"
-            src="./images/openra-logo-with-text.svg"
-            alt="OpenRA" />
+          <a href="/">
+            <img 
+              class="site-header__logo"
+              src="./images/openra-logo-with-text.svg"
+              alt="OpenRA" />
+          </a>
           <div class="releases">
             <a class="release release--current text--small text--caps" href="./releases#current">
               <span class="release__text">Release</span>
@@ -122,170 +125,174 @@
         </div>
       </header>
 
+      <div class="site-content">
       <section class="hero site-section u-centered-content">
-        <h1 class="hero__intro-text">
-          <span id="game-carousel" class="hero__intro-text__games carousel">
-            <span class="carousel__items">
-              <span class="hero__intro-text__ra hero__intro-text__game carousel__item carousel__item--current">Red Alert,&nbsp;</span>
-              <span class="hero__intro-text__cnc hero__intro-text__game carousel__item">Command & Conquer,&nbsp;</span>
-              <span class="hero__intro-text__ts hero__intro-text__game carousel__item">Tiberian Sun,&nbsp;</span>
-              <span class="hero__intro-text__d2k hero__intro-text__game carousel__item">Dune 2000,&nbsp;</span>
-            </span>
-          </span>
-          <span class="hero__intro-text__tagline">Rebuilt for the Modern Era.</span>
-        </h1>
-        <button class="install button--large button--primary">
-          Install Now
-          &nbsp;
+  <h1 class="hero__intro-text">
+    <span id="game-carousel" class="hero__intro-text__games carousel">
+      <span class="carousel__items">
+        <span class="hero__intro-text__ra hero__intro-text__game carousel__item carousel__item--current">Red Alert,&nbsp;</span>
+        <span class="hero__intro-text__cnc hero__intro-text__game carousel__item">Command & Conquer,&nbsp;</span>
+        <span class="hero__intro-text__ts hero__intro-text__game carousel__item">Tiberian Sun,&nbsp;</span>
+        <span class="hero__intro-text__d2k hero__intro-text__game carousel__item">Dune 2000,&nbsp;</span>
+      </span>
+    </span>
+    <span class="hero__intro-text__tagline">Rebuilt for the Modern Era.</span>
+  </h1>
+  <button class="install button--large button--primary">
+    Install Now
+    &nbsp;
+    <svg class="icon">
+      <use xlink:href="./images/icons/icons.svg#icon-download"></use>
+    </svg>
+  </button>
+  <div id="hero-carousel" class="hero-carousel carousel">
+    <ul class="carousel__items" style="width: 400%;">
+      <li id="hero-ra" class="carousel__item carousel__item--current">
+        <div class="carousel__item__content aspect-16-9">
+          <img
+            class="hero-carousel__image"
+            src="./images/heroes/red-alert.png"
+            alt="Screenshot of Red Alert OpenRA mod" />
+        </div>
+      </li>
+      <li id="hero-td" class="carousel__item">
+        <div class="carousel__item__content aspect-16-9">
+          <img
+            class="hero-carousel__image"
+            src="./images/heroes/command-and-conquer.png"
+            alt="Screenshot of Command & Conquer OpenRA mod" />
+        </div>
+      </li>
+      <li id="hero-ts" class="carousel__item">
+        <div class="carousel__item__content aspect-16-9">
+          <img
+            class="hero-carousel__image"
+            src="./images/heroes/tiberian-sun.jpg"
+            alt="Screenshot of Tiberian Sun OpenRA mod" />
+        </div>
+      </li>
+      <li id="hero-d2k" class="carousel__item">
+        <div class="carousel__item__content aspect-16-9">
+          <img
+            class="hero-carousel__image"
+            src="./images/heroes/dune-2000.png"
+            alt="Screenshot of Dune 2000 OpenRA mod" />
+        </div>
+      </li>
+    </ul>
+    <button class="carousel__previous button--dark" aria-label="Previous Item">
+      <svg class="icon">
+        <use xlink:href="./images/icons/icons.svg#icon-chevron-left"></use>
+      </svg>
+    </button>
+    <button class="carousel__next button--dark" aria-label="Next Item">
+      <svg class="icon">
+        <use xlink:href="./images/icons/icons.svg#icon-chevron-right"></use>
+      </svg>
+    </button>
+    <nav class="carousel__pages">
+      <a href="#page-1" class="carousel__page carousel__page--current">Jump to Red Alert</a>
+      <a href="#page-2" class="carousel__page">Jump to Command & Conquer</a>
+      <a href="#page-1" class="carousel__page">Jump to Tiberian Sun</a>
+      <a href="#page-1" class="carousel__page">Jump to Dune 2000</a>
+      </li>
+    </nav>
+  </div>
+</section>
+
+<section class="additional-info site-section u-centered-content">
+  <div class="open-source">
+    <h2>Open Source & Free.</h2>
+    <p>OpenRA runs on a brand new engine (The OpenRA Engine) <strong>built from the ground up by members of the community</strong>. Anyone can contribute to the project, and community members help improve the game every day.</p>
+    <ul class="list--no-style">
+      <li>
+        <a href="https://github.com/OpenRA/OpenRA">
           <svg class="icon">
-            <use xlink:href="./images/icons/icons.svg#icon-download"></use>
+            <use xlink:href="./images/icons/icons.svg#icon-github"></use>
           </svg>
-        </button>
-        <div id="hero-carousel" class="hero-carousel carousel">
-          <ul class="carousel__items" style="width: 400%;">
-            <li id="hero-ra" class="carousel__item carousel__item--current">
-              <div class="carousel__item__content aspect-16-9">
-                <img
-                  class="hero-carousel__image"
-                  src="./images/heroes/red-alert.png"
-                  alt="Screenshot of Red Alert OpenRA mod" />
-              </div>
-            </li>
-            <li id="hero-td" class="carousel__item">
-              <div class="carousel__item__content aspect-16-9">
-                <img
-                  class="hero-carousel__image"
-                  src="./images/heroes/command-and-conquer.png"
-                  alt="Screenshot of Command & Conquer OpenRA mod" />
-              </div>
-            </li>
-            <li id="hero-ts" class="carousel__item">
-              <div class="carousel__item__content aspect-16-9">
-                <img
-                  class="hero-carousel__image"
-                  src="./images/heroes/tiberian-sun.jpg"
-                  alt="Screenshot of Tiberian Sun OpenRA mod" />
-              </div>
-            </li>
-            <li id="hero-d2k" class="carousel__item">
-              <div class="carousel__item__content aspect-16-9">
-                <img
-                  class="hero-carousel__image"
-                  src="./images/heroes/dune-2000.png"
-                  alt="Screenshot of Dune 2000 OpenRA mod" />
-              </div>
-            </li>
-          </ul>
-          <button class="carousel__previous button--dark" aria-label="Previous Item">
-            <svg class="icon">
-              <use xlink:href="./images/icons/icons.svg#icon-chevron-left"></use>
-            </svg>
-          </button>
-          <button class="carousel__next button--dark" aria-label="Next Item">
-            <svg class="icon">
-              <use xlink:href="./images/icons/icons.svg#icon-chevron-right"></use>
-            </svg>
-          </button>
-          <nav class="carousel__pages">
-            <a href="#page-1" class="carousel__page carousel__page--current">Jump to Red Alert</a>
-            <a href="#page-2" class="carousel__page">Jump to Command & Conquer</a>
-            <a href="#page-1" class="carousel__page">Jump to Tiberian Sun</a>
-            <a href="#page-1" class="carousel__page">Jump to Dune 2000</a>
-            </li>
-          </nav>
-        </div>
-      </section>
+          Contribute Code on GitHub
+        </a>
+      </li>
+      <li>
+        <a href="https://discord.openra.net/">
+          <svg class="icon">
+            <use xlink:href="./images/icons/icons.svg#icon-discord"></use>
+          </svg>
+          Talk to the Developers on Discord
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="operating-systems">
+    <h2>For All Modern Operating Systems.</h2>
+    <p>The OpenRA Engine and its numerous mods run on <strong>any modern operating system without any special hacks</strong>. If you can find something that we don't support, the source code is available too!</p>
+    <ul class="list--no-style list--horizontal">
+      <li class="operating-system">
+        <a href="./download#windows">
+          <span class="text--hidden">Windows</span>
+          <svg class="icon">
+            <use xlink:href="./images/icons/icons.svg#icon-windows"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="operating-system">
+        <a href="./download#osx">
+          <span class="text--hidden">OSX</span>
+          <svg class="icon">
+            <use xlink:href="./images/icons/icons.svg#icon-apple"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="operating-system">
+        <a href="./download#linux">
+          <span class="text--hidden">Linux</span>
+          <svg class="icon">
+            <use xlink:href="./images/icons/icons.svg#icon-linux"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="operating-system">
+        <a href="./download#free-bsd">
+          <span class="text--hidden">FreeBSD</span>
+          <svg class="icon">
+            <use xlink:href="./images/icons/icons.svg#icon-freebsd"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
 
-      <section class="additional-info site-section u-centered-content">
-        <div class="open-source">
-          <h2>Open Source & Free.</h2>
-          <p>OpenRA runs on a brand new engine (The OpenRA Engine) built from the ground up by members of the community. Anyone can contribute to the project, and community members help improve the game every day.</p>
-          <ul class="list--no-style">
-            <li>
-              <a href="https://github.com/OpenRA/OpenRA">
-                <svg class="icon">
-                  <use xlink:href="./images/icons/icons.svg#icon-github"></use>
-                </svg>
-                Contribute Code on GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://discord.openra.net/">
-                <svg class="icon">
-                  <use xlink:href="./images/icons/icons.svg#icon-discord"></use>
-                </svg>
-                Talk to the Developers on Discord
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="operating-systems">
-          <h2>For All Modern Operating Systems.</h2>
-          <p>The OpenRA Engine and its numerous mods run on any modern operating system without any special hacks. If you can find something that we don't support, the source code is available too!</p>
-          <ul class="list--no-style list--horizontal">
-            <li class="operating-system">
-              <a href="./download#windows">
-                <span class="text--hidden">Windows</span>
-                <svg class="icon">
-                  <use xlink:href="./images/icons/icons.svg#icon-windows"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="operating-system">
-              <a href="./download#osx">
-                <span class="text--hidden">OSX</span>
-                <svg class="icon">
-                  <use xlink:href="./images/icons/icons.svg#icon-apple"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="operating-system">
-              <a href="./download#linux">
-                <span class="text--hidden">Linux</span>
-                <svg class="icon">
-                  <use xlink:href="./images/icons/icons.svg#icon-linux"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="operating-system">
-              <a href="./download#free-bsd">
-                <span class="text--hidden">FreeBSD</span>
-                <svg class="icon">
-                  <use xlink:href="./images/icons/icons.svg#icon-freebsd"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="developer-updates site-section u-centered-content">
-        <header class="developer-updates__header">
-          <h4 class="developer-updates__heading text--caps text--medium">Updates from the Developers</h4>
-          <a class="developer-updates__view-all" href="./updates">View All Updates</a>
-        </header>
-        <article class="developer-update text--large">
-          <header>
-            <h4 class="developer-update__heading">Release 20200503</h4>
-            <div class="developer-update__subheading text--medium">
-              Posted by <strong class="developer-update__author">Paul Chote</strong> at <time>16:00</time> on <time>2020 / 05 / 03</time>
-            </div>
-          </header>
-          <p>We are pleased to finally announce <a href="#">Release 20200503</a>, which brings the public release up to date with development changes from September 2019 through to March 2020. Two months of public playtesting have allowed us to polish these changes into the release today.</p>
-          <p>The new release adds some long-awaited UI improvements, core engine upgrades, and a few balance changes for the multiplayer community.</p>
-          <p>Once again, FiveAces has put together a patch spotlight video that explains many of these changes:</p>
-          <iframe title="OpenRA Release 20200503" width="560" height="315" src="https://www.youtube.com/embed/L2sQP3YYBMA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <p>If you don’t like videos, the main changes have been outlined in previous news posts [one, two, three four], and, as always, in the full changelog. A new Mod SDK release is also available, and the Resource Center now accepts maps designed for the new release.</p>
-          <p>Grab the installer now for your operating system from our download page and let us know what you think in the comments below, on our forum, Discord, or GitHub. We hope you’ll enjoy this newest installment of OpenRA! Have fun!</p>
-          <footer class="developer-update__footer">
-            <a class="developer-update__comments-link">100 Comments</a>
-          </footer>
-        </article>
-      </section>
+<section class="developer-updates site-section u-centered-content">
+  <header class="developer-updates__header">
+    <h4 class="developer-updates__heading text--caps text--medium">Updates from the Developers</h4>
+    <a class="developer-updates__view-all" href="./updates">View All Updates</a>
+  </header>
+  <article class="developer-update text--large">
+    <header>
+      <h4 class="developer-update__heading">Release 20200503</h4>
+      <div class="developer-update__subheading text--medium">
+        Posted by <strong class="developer-update__author">Paul Chote</strong> at <time>16:00</time> on <time>2020 / 05 / 03</time>
+      </div>
+    </header>
+    <p>We are pleased to finally announce <a href="#">Release 20200503</a>, which brings the public release up to date with development changes from September 2019 through to March 2020. Two months of public playtesting have allowed us to polish these changes into the release today.</p>
+    <p>The new release adds some long-awaited UI improvements, core engine upgrades, and a few balance changes for the multiplayer community.</p>
+    <p>Once again, FiveAces has put together a patch spotlight video that explains many of these changes:</p>
+    <iframe title="OpenRA Release 20200503" width="560" height="315" src="https://www.youtube.com/embed/L2sQP3YYBMA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p>If you don’t like videos, the main changes have been outlined in previous news posts [one, two, three four], and, as always, in the full changelog. A new Mod SDK release is also available, and the Resource Center now accepts maps designed for the new release.</p>
+    <p>Grab the installer now for your operating system from our download page and let us know what you think in the comments below, on our forum, Discord, or GitHub. We hope you’ll enjoy this newest installment of OpenRA! Have fun!</p>
+    <footer class="developer-update__footer">
+      <a class="developer-update__comments-link">100 Comments</a>
+    </footer>
+  </article>
+</section>
+      </div>
 
       <footer class="site-footer">
         <div class="site-footer__main u-centered-content">
-          <img class="site-footer__logo" src="./images/openra-logo-with-text.svg" alt="OpenRA" />
+          <a href="/">
+            <img class="site-footer__logo" src="./images/openra-logo-with-text.svg" alt="OpenRA" />
+          </a>
           <span class="site-footer__legal">Copyright ©2007-2020 The OpenRA Developers (<a href="./legal">Legal notices</a>)</span>
         </div>
         <hr class="site-footer__hr" />
@@ -370,13 +377,14 @@
           </a>
         </nav>
       </footer>
-
     </div>
+
     <script
 			src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 			integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
 			crossorigin="anonymous"></script>
     <script src="./scripts/index.js" async></script>
     <script src="./scripts/svgxuse.js" async></script>
+
   </body>
 </html>

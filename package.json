@@ -1,0 +1,24 @@
+{
+  "name": "openra-web",
+  "version": "1.0.0",
+  "description": "The OpenRA project's Website",
+  "main": "",
+  "scripts": {
+    "build": "metalsmith"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fauntleroy/openra-web.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Fauntleroy/openra-web/issues"
+  },
+  "homepage": "https://github.com/Fauntleroy/openra-web#readme",
+  "devDependencies": {
+    "jstransformer-handlebars": "^1.1.0",
+    "metalsmith": "^2.3.0",
+    "metalsmith-layouts": "^2.3.1"
+  }
+}
