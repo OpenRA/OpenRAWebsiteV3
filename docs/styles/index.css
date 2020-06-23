@@ -379,20 +379,20 @@ button:active {
   justify-content: center;
   margin-top: -37px;
   height: 75px;
-  width: 25px;
+  width: 40px;
   padding: 0;
 }
 
 .carousel__previous {
   position: absolute;
   top: 50%;
-  left: -13px;
+  left: -20px;
 }
 
 .carousel__next {
   position: absolute;
   top: 50%;
-  right: -13px;
+  right: -20px;
 }
 
 .carousel__pages {
@@ -589,7 +589,7 @@ button:active {
 
   .site-header__logo {
     width: 125px;
-    margin-left: 1rem;
+    margin-left: 0.25rem;
   }
 
   .releases {
