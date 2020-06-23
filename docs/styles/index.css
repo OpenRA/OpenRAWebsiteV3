@@ -124,8 +124,30 @@ button:active {
   text-transform: uppercase;
 }
 
+.text--hidden {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  clip: rect(1px,1px,1px,1px);
+  clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  overflow: hidden !important;
+}
+
+.aspect-16-19 {
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+.aspect-16-19 > * {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .u-centered-content {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 35px;
 }
@@ -266,6 +288,11 @@ button:active {
   display: flex;
   align-items: center;
   padding: 5px;
+}
+
+.site-header__social-nav .social-link__text {
+  text-indent: -3000px;
+  color: transparent;
 }
 
 .site-header a {
