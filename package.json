@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "build": "metalsmith",
-    "watch": "chokidar \"src/**/*\" -c \"npm run build\""
+    "watch": "chokidar \"src/**/*\" -c \"npm run build\" --initial"
   },
   "repository": {
     "type": "git",
