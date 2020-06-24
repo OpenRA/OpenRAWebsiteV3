@@ -716,6 +716,11 @@ button:active {
     padding: 0;
   }
 
+  .developer-update {
+    border-right: none;
+    border-left: none;
+  }
+
   .site-footer__main {
     flex-direction: column;
     align-items: flex-start;
