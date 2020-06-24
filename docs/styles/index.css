@@ -1,3 +1,6 @@
+/* General Styles
+   Styles of base elements */
+
 * {
   box-sizing: border-box;
 }
@@ -17,12 +20,6 @@ html, body {
 body {
   background-position-y: -80px;
   background-image: url('../images/bg-logos.png');
-}
-
-.site {
-  position: relative;
-  overflow-x: hidden;
-  height: 100%;
 }
 
 h1, h2, h3, h4 {
@@ -128,6 +125,9 @@ button:active {
 }
 
 
+/* Utility Styles
+   Simple modifiers that can be applied to multiple elements */
+
 .text--small {
   font-size: 0.8rem;
   line-height: 150%;
@@ -211,6 +211,8 @@ button:active {
 }
 
 
+/* Icons */
+
 .icon {
   color: currentColor;
   width: 1.25rem;
@@ -219,6 +221,15 @@ button:active {
   vertical-align: -0.25rem;
 }
 
+
+/* Site Styles
+   General site styles */
+
+.site {
+  position: relative;
+  overflow-x: hidden;
+  height: 100%;
+}
 
 .site-content {
   min-height: calc(100vh - 200px);
@@ -281,12 +292,14 @@ button:active {
 .site-header__hr {
   margin: 0;
   border-top: black 1px solid;
+  border-right: none;
   border-bottom: rgb(39, 39, 44) 1px solid;
+  border-left: none;
 }
 
 .site-header__sub {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -297,24 +310,19 @@ button:active {
 }
 
 .site-header__nav {
-  display: flex;
 }
 
 .site-header__nav > a {
-  display: flex;
-  align-items: center;
+  display: inline-block;
   padding: 1rem 0.75rem;
 }
 
 .site-header__social-nav {
-  display: flex;
-  align-items: center;
 }
 
 .site-header__social-nav > a {
-  display: flex;
-  align-items: center;
-  padding: 5px;
+  display: inline-block;
+  padding: 0.5rem;
 }
 
 .site-header__social-nav .social-link__text {
@@ -543,7 +551,7 @@ button:active {
 
 
 .site-footer {
-  padding-bottom: 5rem;
+  padding: 0 0 3rem 0;
   background: rgb(0, 0, 0);
   background-image: linear-gradient(114deg, rgba(13,13,16,1) 0%, rgba(27,27,32,1) 22%, rgba(13,13,16,1) 64%, rgba(17,17,21,1) 100%);
 }
@@ -560,7 +568,8 @@ button:active {
 .site-footer__main {
   display: flex;
   align-items: center;
-  height: 65px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .site-footer__logo {
@@ -572,35 +581,31 @@ button:active {
 }
 
 .site-footer__nav {
-  display: flex;
-  align-items: stretch;
-  justify-content: flex-start;
-  height: 45px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .site-footer__nav > a {
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
 }
 
 .site-footer__social-nav {
-  display: flex;
-  align-items: stretch;
-  justify-content: flex-start;
-  height: 45px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .site-footer__social-nav > a {
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
 }
 
 .site-footer__hr {
   margin: 0;
   border-top: black 1px solid;
+  border-right: none;
   border-bottom: rgb(39, 39, 44) 1px solid;
+  border-left: none;
 }
 
 
@@ -709,5 +714,14 @@ button:active {
 
   .developer-updates {
     padding: 0;
+  }
+
+  .site-footer__main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-footer__legal {
+    margin-left: 0;
   }
 }
