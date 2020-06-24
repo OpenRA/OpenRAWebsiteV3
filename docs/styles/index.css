@@ -59,6 +59,11 @@ a {
   color: rgb(255, 17, 17);
 }
 
+lite-youtube {
+  margin: 1.5rem auto;
+  max-width: 720px;
+}
+
 button {
   cursor: pointer;
   padding: 0.5rem 1rem;
