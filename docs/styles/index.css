@@ -281,7 +281,9 @@ button:active {
 .site-header__hr {
   margin: 0;
   border-top: black 1px solid;
+  border-right: none;
   border-bottom: rgb(39, 39, 44) 1px solid;
+  border-left: none;
 }
 
 .site-header__sub {
