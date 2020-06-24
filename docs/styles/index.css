@@ -637,6 +637,18 @@ button:active {
     padding-right: 15px;
   }
 
+  .site {
+    margin-top: 60px;
+  }
+
+  .site-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
   .site-header__main {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -691,8 +703,8 @@ button:active {
   }
 
   .site-header__social-nav .icon {
-    width: 2rem;
-    height: 2rem;
+    width: 1.75rem;
+    height: 1.75rem;
   }
 
   .site-section {
