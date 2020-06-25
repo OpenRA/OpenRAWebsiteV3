@@ -1,19 +1,14 @@
-<article class="developer-update text--large">
+<article class="developer-update u-dark-zone text--large">
   <header class="developer-update__header">
-    <h3 class="developer-update__heading">Release 20200503</h3>
+    <h3 class="developer-update__heading">{{ include.title }}</h3>
     <div class="developer-update__subheading text--medium">
-      Posted by <strong class="developer-update__author">Paul Chote</strong> at <time>16:00</time> on <time>2020 / 05 / 03</time>
+      Posted by <strong class="developer-update__author">{{ include.author }}</strong> at <time>{{ include.created_at | date_to_long_string }}</time>
     </div>
   </header>
   <div class="developer-update__body">
-    <p>We are pleased to finally announce <a href="#">Release 20200503</a>, which brings the public release up to date with development changes from September 2019 through to March 2020. Two months of public playtesting have allowed us to polish these changes into the release today.</p>
-    <p>The new release adds some long-awaited UI improvements, core engine upgrades, and a few balance changes for the multiplayer community.</p>
-    <p>Once again, FiveAces has put together a patch spotlight video that explains many of these changes:</p>
-    <lite-youtube videoid="L2sQP3YYBMA"></lite-youtube>
-    <p>If you don’t like videos, the main changes have been outlined in previous news posts [one, two, three four], and, as always, in the full changelog. A new Mod SDK release is also available, and the Resource Center now accepts maps designed for the new release.</p>
-    <p>Grab the installer now for your operating system from our download page and let us know what you think in the comments below, on our forum, Discord, or GitHub. We hope you’ll enjoy this newest installment of OpenRA! Have fun!</p>
+    {{ include.body }}
   </div>
   <footer class="developer-update__footer">
-    <a class="developer-update__comments-link">100 Comments</a>
+    {% include disqus-comments.html pageId=include.disqus_id %}
   </footer>
 </article>

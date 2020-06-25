@@ -181,7 +181,35 @@ button:active {
 .u-centered-content {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 35px;
+  padding: 0 2.5rem;
+}
+
+.u-dark-zone {
+  padding: 1.5rem;
+  border: white 1px solid;
+  background-color: rgba(0, 0, 0, 0.33);
+  background-size: 150px 150px;
+  background-image:
+    linear-gradient(to right, rgba(5, 0, 3, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(5, 0, 3, 0.25) 1px, transparent 1px);
+}
+
+.u-light-zone {
+  padding: 0.75rem 1.5rem;
+  background: white;
+}
+
+.u-light-zone,
+.u-light-zone a,
+.u-light-zone h1,
+.u-light-zone h2,
+.u-light-zone h3,
+.u-light-zone h4 {
+  color: rgb(43, 43, 48);
+}
+
+.u-light-zone a:hover {
+  color: black;
 }
 
 .list--no-style {
@@ -519,18 +547,6 @@ button:active {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 1.5rem;
-  background: white;
-}
-
-.developer-updates__header,
-.developer-updates__header a,
-.developer-updates__header h4 {
-  color: rgb(43, 43, 48);
-}
-
-.developer-updates__header a:hover {
-  color: black;
 }
 
 .developer-updates__header h4 {
@@ -539,13 +555,6 @@ button:active {
 
 .developer-update {
   margin-top: 1px;
-  border: white 1px solid;
-  padding: 1.5rem;
-  background-color: rgba(0, 0, 0, 0.33);
-  background-size: 150px 150px;
-  background-image:
-    linear-gradient(to right, rgba(5, 0, 3, 0.25) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(5, 0, 3, 0.25) 1px, transparent 1px);
 }
 
 .developer-update__header {
@@ -646,18 +655,13 @@ button:active {
 /* Developer Updates List Styles */
 
 .developer-updates__list {
-  border: white 1px solid;
-  background-color: rgba(0, 0, 0, 0.33);
-  background-size: 150px 150px;
-  background-image:
-    linear-gradient(to right, rgba(5, 0, 3, 0.25) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(5, 0, 3, 0.25) 1px, transparent 1px);
+  margin: -1rem;
 }
 
 .developer-updates__listing {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 1.5rem;
+  padding: 1rem;
 }
 
 .developer-updates__listing:nth-child(even) {
@@ -665,11 +669,11 @@ button:active {
 }
 
 .developer-updates__listing__header {
-  display: flex;
 }
 
 .developer-updates__listing__title {
   margin-right: 1.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .developer-updates__listing__comments {
@@ -681,8 +685,8 @@ button:active {
 
 @media screen and (max-width: 1000px) {
   .u-centered-content {
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
@@ -701,8 +705,8 @@ button:active {
 
 @media screen and (max-width: 680px) {
   .u-centered-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .site {
@@ -792,17 +796,16 @@ button:active {
     grid-gap: 1.5rem;
   }
 
-  .home__developer-updates {
-    padding: 0;
-  }
-
-  .developer-update {
+  .u-dark-zone {
+    margin-left: -1rem;
+    margin-right: -1rem;
     border-right: none;
     border-left: none;
   }
 
-  .developer-updates__listing__header {
-    flex-direction: column;
+  .u-light-zone {
+    margin-left: -1rem;
+    margin-right: -1rem;
   }
 
   .site-footer__main {

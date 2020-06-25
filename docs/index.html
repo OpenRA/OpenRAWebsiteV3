@@ -139,9 +139,12 @@
 </section>
 
 <section class="home__developer-updates site-section u-centered-content">
-  <header class="developer-updates__header">
+  <header class="developer-updates__header u-light-zone">
     <strong class="developer-updates__heading text--caps text--medium">Updates from the Developers</strong>
     <a class="developer-updates__view-all" href="/news">View All Updates</a>
   </header>
-  {% include developer-update.html %}
+  {% for post in site.posts limit:1 %}
+    {% include developer-update.html title=post.title author=post.author created_at=post.created_at body=post.content disqus_id=post.disqus_id %}
+  {% endfor %}
+  
 </section>

@@ -16,29 +16,18 @@
       {% include header.html %}
 
       <div class="site-content">
-        <section class="developer-updates site-section u-centered-content">
-          <header class="developer-updates__header">
-            <a class="developer-updates__view-all" href="/news">
+        <section class="developer-update-detail site-section u-centered-content">
+          <header class="developer-update-detail__header u-light-zone">
+            <a class="developer-update-detail__view-all" href="/news">
               <svg class="icon">
                 <use xlink:href="/images/icons/icons.svg#icon-chevron-left"></use>
               </svg>
               View All Updates
             </a>
           </header>
-          <article class="developer-update text--large">
-            <header class="developer-update__header">
-              <h3 class="developer-update__heading">{{ page.title }}</h3>
-              <div class="developer-update__subheading text--medium">
-                Posted by <strong class="developer-update__author">{{ page.author }}</strong> at <time>{{ page.created_at | date_to_long_string }}</time>
-              </div>
-            </header>
-            <div class="developer-update__body">
-              {{ content }}
-            </div>
-            <footer class="developer-update__footer">
-              {% include disqus-comments.html pageId=page.disqus_id %}
-            </footer>
-          </article>
+
+          {% include developer-update.html title=page.title author=page.author created_at=page.created_at body=content disqus_id=page.disqus_id %}
+
         </section>
       </div>
 

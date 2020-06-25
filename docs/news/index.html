@@ -3,25 +3,29 @@ layout: "default"
 ---
 
 <section class="developer-updates site-section u-centered-content">
-  <h1>News Archive</h1>
-  <ul class="developer-updates__list list--no-style">
-    {% for post in site.posts %}
-      <li class="developer-updates__listing">
-        <div class="developer-updates__listing__header">
-          <a class="developer-updates__listing__title" href="{{ post.url }}">{{ post.title }}</a>
-          <div class="developer-updates__listing__subheading">
-            Posted by <strong class="developer-update__author">{{ post.author }}</strong> at <time>{{ post.created_at | date_to_long_string }}</time>
+  <h1 class="developer-updates__heading">News Archive</h1>
+  <div class="u-dark-zone">
+    <ul class="developer-updates__list list--no-style">
+      {% for post in site.posts %}
+        <li class="developer-updates__listing">
+          <div class="developer-updates__listing__header">
+            <a href="{{ post.url }}">
+              <h4 class="developer-updates__listing__title">{{ post.title }}</h4>
+            </a>
+            <div class="developer-updates__listing__subheading">
+              Posted by <strong class="developer-update__author">{{ post.author }}</strong> at <time>{{ post.created_at | date_to_long_string }}</time>
+            </div>
           </div>
-        </div>
-        <a
-          class="developer-updates__listing__comments"
-          href="{{ post.url }}#disqus_thread"
-          data-disqus-identifier="{{post.disqus_id}}">
-          Comments
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
+          <a
+            class="developer-updates__listing__comments"
+            href="{{ post.url }}#disqus_thread"
+            data-disqus-identifier="{{post.disqus_id}}">
+            Comments
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 </section>
 
 <script id="dsq-count-scr" src="//openra.disqus.com/count.js" async></script>
