@@ -202,7 +202,8 @@ button:active {
 
 .u-dark-zone {
   padding: 1.5rem;
-  border: white 1px solid;
+  border: rgba(255, 255, 255, 0.3) 1px solid;
+  border-radius: 2px;
   background-color: rgba(0, 0, 0, 0.33);
   background-size: 150px 150px;
   background-image:
@@ -212,7 +213,8 @@ button:active {
 
 .u-light-zone {
   padding: 0.75rem 1.5rem;
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 2px;
 }
 
 .u-light-zone,
