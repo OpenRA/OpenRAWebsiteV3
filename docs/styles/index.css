@@ -54,6 +54,22 @@ h4 {
   font-size: 1.25rem;
 }
 
+a > h1,
+a > h2,
+a > h3,
+a > h4 {
+  text-decoration: underline;
+  text-decoration-color: rgb(255, 17, 17);
+  text-underline-offset: 0.25rem;
+}
+
+a:hover > h1,
+a:hover > h2,
+a:hover > h3,
+a:hover > h4 {
+  text-decoration-color: rgb(255, 115, 115);
+}
+
 a {
   font-weight: bold;
   color: rgb(255, 17, 17);
@@ -660,6 +676,7 @@ button:active {
 
 .developer-updates__listing {
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
   padding: 1rem;
 }
@@ -672,7 +689,7 @@ button:active {
 }
 
 .developer-updates__listing__title {
-  margin-right: 1.5rem;
+  display: inline-block;
   margin-bottom: 0.25rem;
 }
 
