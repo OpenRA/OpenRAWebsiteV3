@@ -59,6 +59,10 @@ a {
   color: rgb(255, 17, 17);
 }
 
+a:hover {
+  color: rgb(255, 115, 115);
+}
+
 lite-youtube {
   margin: 1.5rem auto;
   max-width: 720px;
@@ -319,7 +323,7 @@ button:active {
 
 .site-header__nav > a {
   display: inline-block;
-  padding: 1rem 0.75rem;
+  padding: 1rem 0.5rem;
 }
 
 .site-header__social-nav {
@@ -525,6 +529,10 @@ button:active {
   color: rgb(43, 43, 48);
 }
 
+.developer-updates__header a:hover {
+  color: black;
+}
+
 .developer-updates__header h4 {
   margin: 0;
 }
@@ -540,12 +548,33 @@ button:active {
     linear-gradient(to bottom, rgba(5, 0, 3, 0.25) 1px, transparent 1px);
 }
 
+.developer-update__header {
+  margin-bottom: 1.5rem;
+}
+
 .developer-update__heading {
   margin: 0;
 }
 
 .developer-update__subheading {
   opacity: 0.55;
+}
+
+.developer-update__body img {
+  max-width: 100%;
+}
+
+.developer-update__body ul {
+  padding-left: 2rem;
+}
+
+.developer-update__body hr {
+  border: none;
+  border-top: rgb(125, 50, 50) 1px solid;
+}
+
+.developer-update__footer {
+  margin-top: 3rem;
 }
 
 
@@ -592,7 +621,7 @@ button:active {
 
 .site-footer__nav > a {
   display: inline-block;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.5rem;
 }
 
 .site-footer__social-nav {
@@ -602,7 +631,7 @@ button:active {
 
 .site-footer__social-nav > a {
   display: inline-block;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.5rem;
 }
 
 .site-footer__hr {
@@ -611,6 +640,40 @@ button:active {
   border-right: none;
   border-bottom: rgb(39, 39, 44) 1px solid;
   border-left: none;
+}
+
+
+/* Developer Updates List Styles */
+
+.developer-updates__list {
+  border: white 1px solid;
+  background-color: rgba(0, 0, 0, 0.33);
+  background-size: 150px 150px;
+  background-image:
+    linear-gradient(to right, rgba(5, 0, 3, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(5, 0, 3, 0.25) 1px, transparent 1px);
+}
+
+.developer-updates__listing {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+
+.developer-updates__listing:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.developer-updates__listing__header {
+  display: flex;
+}
+
+.developer-updates__listing__title {
+  margin-right: 1.5rem;
+}
+
+.developer-updates__listing__comments {
+  flex-shrink: 0;
 }
 
 
@@ -729,13 +792,17 @@ button:active {
     grid-gap: 1.5rem;
   }
 
-  .developer-updates {
+  .home__developer-updates {
     padding: 0;
   }
 
   .developer-update {
     border-right: none;
     border-left: none;
+  }
+
+  .developer-updates__listing__header {
+    flex-direction: column;
   }
 
   .site-footer__main {

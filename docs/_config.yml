@@ -15,6 +15,11 @@ defaults:
       path: ""
     values:
       layout: "default"
+  -
+    scope:
+      path: "news/*"
+    values:
+      layout: "news" # set default layout for news posts
 
 # Build settings
 plugins:
