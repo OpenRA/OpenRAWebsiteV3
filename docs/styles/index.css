@@ -22,11 +22,11 @@
 
 *:focus:before {
   content: '';
-  border-left: white 1px solid;
-  border-top: white 1px solid;
+  border-left: white 2px solid;
+  border-top: white 2px solid;
   position: absolute;
   top: -3px;
-  left: -3px;
+  left: -5px;
   width: 10px;
   height: 10px;
   border-top-left-radius: 2px;
@@ -35,11 +35,11 @@
 
 *:focus:after {
   content: '';
-  border-right: white 1px solid;
-  border-bottom: white 1px solid;
+  border-right: white 2px solid;
+  border-bottom: white 2px solid;
   position: absolute;
   bottom: -3px;
-  right: -3px;
+  right: -5px;
   width: 10px;
   height: 10px;
   border-top-right-radius: 2px;
@@ -56,7 +56,7 @@ html, body {
 
 body {
   background-position-y: -80px;
-  background-image: url('../images/bg-logos.png');
+  background-image: url('../images/bg-logos_filled.png');
 }
 
 h1, h2, h3, h4 {
@@ -108,6 +108,7 @@ a:hover > h4 {
 }
 
 a {
+  position: relative;
   font-weight: bold;
   color: white;
   text-decoration: underline;
@@ -405,11 +406,12 @@ button:active {
 }
 
 .site-header__nav {
+  padding: 0.5rem 0;
 }
 
 .site-header__nav > a {
   display: inline-block;
-  padding: 1rem 0.5rem;
+  padding: 0.5rem;
 }
 
 .site-header__social-nav {
@@ -570,7 +572,7 @@ button:active {
   line-height: 1px;
 }
 
-.carousel__page:after {
+.carousel__page__indicator {
   content: '';
   display: block;
   width: 35px;
@@ -578,7 +580,7 @@ button:active {
   background: rgb(27, 27, 27);
 }
 
-.carousel__page--current:after {
+.carousel__page--current .carousel__page__indicator {
   background: white;
 }
 
