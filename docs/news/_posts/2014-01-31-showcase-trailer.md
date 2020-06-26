@@ -4,7 +4,7 @@ title: "Media Madness!"
 author: "Paul Chote"
 created_at: 2014-02-01 11:30 +1300
 disqus_id: "showcase-trailer"
-permalink: "/news/showcase-trailer"
+permalink: "/news/showcase-trailer/"
 ---
 
 <p>OpenRA has received a lot of attention over the last few days, thanks to two great promotional videos.</p>

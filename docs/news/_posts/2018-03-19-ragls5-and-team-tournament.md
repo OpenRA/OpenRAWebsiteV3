@@ -4,7 +4,7 @@ title: "Red Alert 1v1 and 2v2 Tournaments"
 author: "netnazgul"
 created_at: 2018-03-19 16:00:00 +0200
 disqus_id: "ragls5-and-team-tournament"
-permalink: "/news/ragls5-and-team-tournament"
+permalink: "/news/ragls5-and-team-tournament/"
 ---
 
 <div style="text-align:center" markdown="1">

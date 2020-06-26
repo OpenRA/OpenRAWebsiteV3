@@ -4,7 +4,7 @@ title: "Red Alert Global League Season 6 Registrations"
 author: "netnazgul"
 created_at: 2018-10-03 21:00:00 +0300
 disqus_id: "ragls6-registrations"
-permalink: "/news/ragls6-registrations"
+permalink: "/news/ragls6-registrations/"
 ---
 
 <div style="text-align:center" markdown="1">

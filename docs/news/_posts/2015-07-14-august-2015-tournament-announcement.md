@@ -4,7 +4,7 @@ title: "August 2015 Tournament Announcement"
 author: "Christopher Grant"
 created_at: 2015-07-14 12:00 -0500
 disqus_id: "august-2015-tournament-announcement"
-permalink: "/news/august-2015-tournament-announcement"
+permalink: "/news/august-2015-tournament-announcement/"
 ---
 
 Attention all OpenRA players! There is another tournament coming up, once again organized by Ripley!

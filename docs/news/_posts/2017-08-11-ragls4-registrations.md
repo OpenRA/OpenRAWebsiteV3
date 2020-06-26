@@ -4,7 +4,7 @@ title: "Red Alert Global League Season 4 Registrations Are Online"
 author: "netnazgul"
 created_at: 2017-08-12 00:00:00 +0200
 disqus_id: "ragls4-registrations"
-permalink: "/news/ragls4-registrations"
+permalink: "/news/ragls4-registrations/"
 ---
 
 <div style="text-align:center" markdown="1">

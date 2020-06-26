@@ -4,7 +4,7 @@ title: "Announcing the Red Alert: Global League"
 author: "Oliver Brakmann"
 created_at: 2016-03-29 18:00:00 +0200
 disqus_id: "ragl-announcement"
-permalink: "/news/ragl-announcement"
+permalink: "/news/ragl-announcement/"
 ---
 
 <div style="text-align:center" markdown="1">

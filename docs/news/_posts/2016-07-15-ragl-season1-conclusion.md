@@ -4,7 +4,7 @@ title: "Season 1 of Red Alert: Global League concluded"
 author: "Oliver Brakmann"
 created_at: 2016-07-15 18:00:00 +0200
 disqus_id: "ragl-season1-conclusion"
-permalink: "/news/ragl-season1-conclusion"
+permalink: "/news/ragl-season1-conclusion/"
 ---
 
 <div style="text-align:center" markdown="1">

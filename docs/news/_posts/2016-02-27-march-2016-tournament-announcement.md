@@ -4,7 +4,7 @@ title: "March 2016 Tournament Announcement"
 author: "Oliver Brakmann"
 created_at: 2016-02-27 12:00 +0100
 disqus_id: "march-2016-tournament-announcement"
-permalink: "/news/march-2016-tournament-announcement"
+permalink: "/news/march-2016-tournament-announcement/"
 ---
 
 <lite-youtube videoid="Y5IDhShbDNI"></lite-youtube>

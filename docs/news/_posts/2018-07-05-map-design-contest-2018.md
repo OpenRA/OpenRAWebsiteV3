@@ -4,7 +4,7 @@ title: "Map Design Contest 2018 Announcement"
 author: "netnazgul"
 created_at: 2018-07-05 23:00 +0300
 disqus_id: "map-design-contest-2018"
-permalink: "/news/map-design-contest-2018"
+permalink: "/news/map-design-contest-2018/"
 ---
 
 <div style="text-align:center" markdown="1">

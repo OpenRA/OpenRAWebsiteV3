@@ -4,7 +4,7 @@ title: "DNS Issues"
 author: "Paul Chote"
 created_at: 2014-02-12 10:00 +1300
 disqus_id: "dns-issues"
-permalink: "/news/dns-issues"
+permalink: "/news/dns-issues/"
 ---
 
 <p>Our website DNS provider is experiencing sporadic problems, which is affecting new content downloads, our online server listings, and automatic map downloads.</p>

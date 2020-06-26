@@ -4,7 +4,7 @@ title: "A Special Announcement from EA"
 author: "Paul Chote"
 created_at: 2018-10-11 18:00 +0100
 disqus_id: "special-announcement"
-permalink: "/news/special-announcement"
+permalink: "/news/special-announcement/"
 ---
 
 <p><i>Update 2018-11-14:</i></p>

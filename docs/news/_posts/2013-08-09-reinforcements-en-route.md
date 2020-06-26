@@ -4,7 +4,7 @@ title: "Reinforcements en route"
 author: "Paul Chote"
 created_at: 2013-08-09 14:31:00 +0000
 disqus_id: "reinforcements-en-route"
-permalink: "/news/reinforcements-en-route"
+permalink: "/news/reinforcements-en-route/"
 ---
 
 Our current release-20130514 installer will no longer work reliably on Windows.

@@ -4,7 +4,7 @@ title: "Server Issues"
 author: "Oliver Brakmann"
 created_at: 2015-05-05 23:00 +0200
 disqus_id: "server-issues-05.2015"
-permalink: "/news/server-issues"
+permalink: "/news/server-issues/"
 ---
 
 Many of you will already have noticed that we are having some server issues at the moment. The problem is being worked on and we hope to restore all services within the next few days.

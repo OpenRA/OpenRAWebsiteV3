@@ -4,7 +4,7 @@ title: "10 years of OpenRA!"
 author: "Lukas Franke"
 created_at: 2017-06-19 20:00 +0100
 disqus_id: "10th-anniversary"
-permalink: "/news/10th-anniversary"
+permalink: "/news/10th-anniversary/"
 ---
 
 We are proud to celebrate the 10th anniversary of OpenRA today!

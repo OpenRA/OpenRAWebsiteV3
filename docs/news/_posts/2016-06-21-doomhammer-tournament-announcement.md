@@ -4,7 +4,7 @@ title: "Announcing Hecthor Doomhammer&#39;s Red Alert Tournament"
 author: "Oliver Brakmann"
 created_at: 2016-06-21 22:00 +0200
 disqus_id: "hdTourney"
-permalink: "/news/doomhammer-tournament-announcement"
+permalink: "/news/doomhammer-tournament-announcement/"
 ---
 
 <lite-youtube videoid="o9XJ-vqoh98"></lite-youtube>

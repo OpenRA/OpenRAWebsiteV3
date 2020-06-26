@@ -4,7 +4,7 @@ title: "C&C Community Projects Featured on Vice.com (Germany)"
 author: "Chris Forbes"
 created_at: 2018-07-26 20:00 -0700
 disqus_id: "vice-interview"
-permalink: "/news/vice-interview"
+permalink: "/news/vice-interview/"
 ---
 
 As part of the coverage surrounding the upcoming C&C Rivals game, [Vice Motherboard recently surveyed the various C&C community projects](https://motherboard.vice.com/de/article/gy353m/deshalb-sind-gamer-auch-nach-23-jahren-noch-von-command-and-conquer-besessen), including OpenRA, Twisted Insurrection, and Project Perfect Mod. Due to space constraints only a small portion of our remarks could be included; our full responses in English are shown below:

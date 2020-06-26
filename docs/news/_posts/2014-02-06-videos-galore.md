@@ -4,7 +4,7 @@ title: "Videos Galore!"
 author: "Paul Chote"
 created_at: 2014-02-07 17:00 +1300
 disqus_id: "videos-galore"
-permalink: "/news/videos-galore"
+permalink: "/news/videos-galore/"
 ---
 
 <p>OpenRA has received a lot of attention over the last few days, triggered by an awesome promotional trailer by community member SoScared, and a glowing first-impression video by <a href="https://twitter.com/totalbiscuit">TotalBiscuit</a>.</p>

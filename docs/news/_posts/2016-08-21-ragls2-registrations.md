@@ -4,7 +4,7 @@ title: "Public registrations for Red Alert Global League Season 2 now open!"
 author: "Oliver Brakmann"
 created_at: 2016-08-21 18:00:00 +0200
 disqus_id: "ragls2-registrations"
-permalink: "/news/ragls2-registrations"
+permalink: "/news/ragls2-registrations/"
 ---
 
 <div style="text-align:center" markdown="1">

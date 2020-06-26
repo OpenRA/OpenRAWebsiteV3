@@ -4,7 +4,7 @@ title: "New OpenRA Logo"
 author: "Paul Chote"
 created_at: 2016-12-23 20:00 +0000
 disqus_id: "new-project-logo"
-permalink: "/news/new-project-logo"
+permalink: "/news/new-project-logo/"
 ---
 
 Today we're pleased to show off the results of a long-overdue project: a new logo for OpenRA!
