@@ -1,12 +1,49 @@
 /* General Styles
    Styles of base elements */
 
+@keyframes focusTopLeft {
+  0% { transform: translate3d(-3px, -3px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes focusBottomRight {
+  0% { transform: translate3d(3px, 3px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
 * {
   box-sizing: border-box;
 }
 
 *:focus {
-  outline: white 1px solid;
+  outline: none;
+  position: relative;
+}
+
+*:focus:before {
+  content: '';
+  border-left: white 1px solid;
+  border-top: white 1px solid;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 10px;
+  height: 10px;
+  border-top-left-radius: 2px;
+  animation: focusTopLeft 1s infinite;
+}
+
+*:focus:after {
+  content: '';
+  border-right: white 1px solid;
+  border-bottom: white 1px solid;
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  width: 10px;
+  height: 10px;
+  border-top-right-radius: 2px;
+  animation: focusBottomRight 1s infinite;
 }
 
 html, body {
@@ -72,11 +109,13 @@ a:hover > h4 {
 
 a {
   font-weight: bold;
-  color: rgb(255, 17, 17);
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: rgb(255, 17, 17);
 }
 
 a:hover {
-  color: rgb(255, 115, 115);
+  text-decoration-color: rgb(255, 115, 115);
 }
 
 lite-youtube {
@@ -181,12 +220,12 @@ button:active {
   overflow: hidden !important;
 }
 
-.aspect-16-19 {
+.aspect-16-9 {
   padding-bottom: 56.25%;
   position: relative;
 }
 
-.aspect-16-19 > * {
+.aspect-16-9 > * {
   position: absolute;
   top: 0;
   right: 0;
@@ -224,6 +263,7 @@ button:active {
 .u-light-zone h3,
 .u-light-zone h4 {
   color: rgb(43, 43, 48);
+  text-decoration-color: currentColor;
 }
 
 .u-light-zone a:hover {
