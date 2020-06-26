@@ -1,4 +1,165 @@
 ---
 ---
 
-Games
+<template id="server-row-template">
+  <tr class="servers__listing">
+    <td class="servers__listing__mod"></td>
+    <td class="servers__listing__name"></td>
+    <td class="servers__listing__status"></td>
+    <td class="servers__listing__map"></td>
+    <td class="servers__listing__players"></td>
+    <td class="servers__listing__location"></td>
+  </tr>
+</template>
+
+<section class="site-section u-centered-content">
+  <h1>Server Browser</h1>
+  <button type="button">
+    <label>
+      Playing <input id="servers-filter-playing" type="checkbox" checked />
+    </label>
+  </button>
+  <button type="button">
+    <label>
+      Waiting <input id="servers-filter-waiting" type="checkbox" checked />
+    </label>
+  </button>
+  <button type="button">
+    <label>
+      Empty <input id="servers-filter-empty" type="checkbox" />
+    </label>
+  </button>
+  <table class="servers__list">
+    <thead class="servers__list__header u-light-zone">
+      <tr>
+        <th class="servers__list__header__mod">Mod</th>
+        <th class="servers__list__header__name">Name</th>
+        <th class="servers__list__header__status">Status</th>
+        <th class="servers__list__header__map">Map</th>
+        <th class="servers__list__header__players">Players</th>
+        <th class="servers__list__header__location">Location</th>
+      </tr>
+    </thead>
+    <tbody id="servers" class="servers__list__body u-dark-zone">
+
+    </tbody>
+  </table>
+</section>
+
+<script>
+  window.addEventListener('DOMContentLoaded', function (event) {
+    const filterState = {
+      playing: true,
+      waiting: true,
+      empty: false
+    };
+    let servers = [];
+    const $serverRowTemplate = $('#server-row-template');
+
+    function getServerStatus (server) {
+      switch (server.state) {
+        case 2:
+          return 'playing';
+        case 1:
+          if (server.players > 0) {
+            return 'waiting';
+          }
+        default:
+          return 'empty';
+      }
+    }
+
+    function processGameResults (gameResults) {
+      const processedGameResults = gameResults.map(function (server) {
+        server.__status = getServerStatus(server);
+        return server;
+      });
+
+      return processedGameResults;
+    }
+
+    function filterServers (serversToFilter) {
+      return serversToFilter.filter(function (server) {
+        if (!filterState.playing && server.__status === 'playing') {
+          return false;
+        }
+
+        if (!filterState.waiting && server.__status === 'waiting') {
+          return false;
+        }
+
+        if (!filterState.empty && server.__status === 'empty') {
+          return false;
+        }
+
+        return true;
+      });
+    }
+
+    function sortServers (serversToSort) {
+      return serversToSort;
+    }
+
+    function filterAndSortServers () {
+      const filteredServers = filterServers(servers);
+      const filteredAndSortedServers = sortServers(filteredServers);
+
+      return filteredAndSortedServers;
+    }
+
+    function renderServerList () {
+      const filteredAndSortedServers = filterAndSortServers();
+
+      $('#servers').html('');
+      filteredAndSortedServers.forEach(function (serverResult) {
+        const $serverRow = $serverRowTemplate.contents().clone();
+        const $modIconImg = serverResult.modicon32
+          ? $('<img class="servers__listing__mod-icon" src="' + serverResult.modicon32 + '" />')
+          : null;
+
+        $('.servers__listing__name', $serverRow).text(serverResult.name);
+        $('.servers__listing__status', $serverRow).text(serverResult.__status);
+        $('.servers__listing__mod', $serverRow).append($modIconImg);
+        $('.servers__listing__players', $serverRow).text(serverResult.players + '/' + serverResult.maxplayers);
+        $('.servers__listing__location', $serverRow).text(serverResult.location);
+
+        // TODO get rid of this
+        $.getJSON('https://resource.openra.net/map/hash/' + serverResult.map, function (mapResults) {
+          const mapResult = mapResults[0];
+          const $mapLink = $('<a href="https://resource.openra.net/maps/' + mapResult.id +'">' + mapResult.title + '</a>');
+
+          $('.servers__listing__map', $serverRow).append($mapLink);
+        });
+
+        $('#servers').append($serverRow);
+      });
+    }
+
+    $.getJSON('https://master.openra.net/games?protocol=2&type=json', function (gameResults) {
+      console.log('gameResults',gameResults);
+      servers = processGameResults(gameResults);
+      renderServerList();
+    });
+
+    $('#servers-filter-playing').on('change', function handleFilterPlayingClick (event) {
+      event.preventDefault();
+      filterState.playing = !filterState.playing;
+      $(this).prop('checked', filterState.playing);
+      renderServerList();
+    });
+
+    $('#servers-filter-waiting').on('change', function handleFilterWaitingClick (event) {
+      event.preventDefault();
+      filterState.waiting = !filterState.waiting;
+      $(this).prop('checked', filterState.waiting);
+      renderServerList();
+    });
+
+    $('#servers-filter-empty').on('change', function handleFilterEmptyClick (event) {
+      event.preventDefault();
+      filterState.empty = !filterState.empty;
+      $(this).prop('checked', filterState.empty);
+      renderServerList();
+    });
+  });
+</script>

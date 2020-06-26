@@ -124,8 +124,18 @@ lite-youtube {
   max-width: 720px;
 }
 
+label {
+  cursor: pointer;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  cursor: pointer;
+}
+
 button {
   cursor: pointer;
+  margin-bottom: 1px;
   padding: 0.5rem 1rem;
   font-weight: bold;
   color: black;
@@ -187,6 +197,32 @@ button:active {
 .button--dark:disabled {
   color: rgba(255, 255, 255, 0.5);
   background: rgb(66, 66, 66);
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+tbody {
+  padding: 0.5rem;
+}
+
+th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+td {
+  padding: 0.25rem 1rem;
+}
+
+tr {
+  padding: 0.25rem;
+}
+
+tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.25);
 }
 
 
@@ -269,6 +305,10 @@ button:active {
 
 .u-light-zone a:hover {
   color: black;
+}
+
+.u--no-padding {
+  padding: 0;
 }
 
 .list--no-style {
@@ -741,6 +781,16 @@ button:active {
 
 .developer-updates__listing__comments {
   flex-shrink: 0;
+}
+
+
+.servers__list {
+  width: 100%;
+}
+
+.servers__listing__mod-icon {
+  width: 24px;
+  height: 24px;
 }
 
 
