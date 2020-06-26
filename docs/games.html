@@ -14,21 +14,15 @@
 
 <section class="site-section u-centered-content">
   <h1>Server Browser</h1>
-  <button type="button">
-    <label>
-      Playing <input id="servers-filter-playing" type="checkbox" checked />
-    </label>
-  </button>
-  <button type="button">
-    <label>
-      Waiting <input id="servers-filter-waiting" type="checkbox" checked />
-    </label>
-  </button>
-  <button type="button">
-    <label>
-      Empty <input id="servers-filter-empty" type="checkbox" />
-    </label>
-  </button>
+  <label class="button">
+    Waiting <input id="servers-filter-waiting" type="checkbox" checked />
+  </label>
+  <label class="button">
+    Playing <input id="servers-filter-playing" type="checkbox" checked />
+  </label>
+  <label class="button">
+    Empty <input id="servers-filter-empty" type="checkbox" />
+  </label>
   <table class="servers__list">
     <thead class="servers__list__header u-light-zone">
       <tr>
@@ -54,6 +48,11 @@
       empty: false
     };
     let servers = [];
+    const stateSortOrder = {
+      waiting: 1,
+      playing: 2,
+      empty: 3
+    };
     const $serverRowTemplate = $('#server-row-template');
 
     function getServerStatus (server) {
@@ -97,7 +96,9 @@
     }
 
     function sortServers (serversToSort) {
-      return serversToSort;
+      return serversToSort.sort(function (serverA, serverB) {
+        return stateSortOrder[serverA.__status] - stateSortOrder[serverB.__status];
+      });
     }
 
     function filterAndSortServers () {
@@ -116,9 +117,11 @@
         const $modIconImg = serverResult.modicon32
           ? $('<img class="servers__listing__mod-icon" src="' + serverResult.modicon32 + '" />')
           : null;
+        const statusClassString = 'badge servers__listing__status__badge servers__listing__status__badge--' + serverResult.__status;
+        const $statusBadge = $('<span class="' + statusClassString + '">' + serverResult.__status + '</span>');
 
         $('.servers__listing__name', $serverRow).text(serverResult.name);
-        $('.servers__listing__status', $serverRow).text(serverResult.__status);
+        $('.servers__listing__status', $serverRow).append($statusBadge);
         $('.servers__listing__mod', $serverRow).append($modIconImg);
         $('.servers__listing__players', $serverRow).text(serverResult.players + '/' + serverResult.maxplayers);
         $('.servers__listing__location', $serverRow).text(serverResult.location);
