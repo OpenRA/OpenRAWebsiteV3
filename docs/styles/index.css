@@ -803,7 +803,17 @@ button:active {
   }
 
   .site-header__nav {
+    display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-height: 100vh;
+    max-width: 100vw;
+    overflow: auto;
+  }
+
+  .site-header__nav > a {
+    padding: 1rem;
   }
 
   .site-header__menu-close {
