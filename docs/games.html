@@ -7,31 +7,66 @@
     <td class="servers__listing__name"></td>
     <td class="servers__listing__status"></td>
     <td class="servers__listing__players"></td>
-    <td class="servers__listing__map"></td>
     <td class="servers__listing__location"></td>
   </tr>
 </template>
 
 <section class="site-section u-centered-content">
   <h1>Server Browser</h1>
-  <label class="button">
-    Waiting <input id="servers-filter-waiting" type="checkbox" checked />
-  </label>
-  <label class="button">
-    Playing <input id="servers-filter-playing" type="checkbox" checked />
-  </label>
-  <label class="button">
-    Empty <input id="servers-filter-empty" type="checkbox" />
-  </label>
+  <div class="servers__filters">
+    <label class="button">
+      Waiting <input id="servers-filter-waiting" type="checkbox" checked />
+    </label>
+    <label class="button">
+      Playing <input id="servers-filter-playing" type="checkbox" checked />
+    </label>
+    <label class="button">
+      Empty <input id="servers-filter-empty" type="checkbox" />
+    </label>
+  </div>
   <table class="servers__list">
     <thead class="servers__list__header u-light-zone">
       <tr>
-        <th class="servers__list__header__mod">Mod</th>
-        <th class="servers__list__header__name">Name</th>
-        <th class="servers__list__header__status">Status</th>
-        <th class="servers__list__header__players">Players</th>
-        <th class="servers__list__header__map">Map</th>
-        <th class="servers__list__header__location">Location</th>
+        <th class="servers__list__header__mod">
+          <a id="sort-by-mod" href="#sort-by-mod">
+            Mod
+            <svg class="icon">
+              <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
+            </svg>
+          </a>
+        </th>
+        <th class="servers__list__header__name">
+          <a id="sort-by-name" href="#sort-by-name">
+            Name
+            <svg class="icon">
+              <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
+            </svg>
+          </a>
+        </th>
+        <th class="servers__list__header__status">
+          <a id="sort-by-status" href="#sort-by-status">
+            Status
+            <svg class="icon">
+              <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
+            </svg>
+          </a>
+        </th>
+        <th class="servers__list__header__players">
+          <a id="sort-by-players" href="#sort-by-players">
+            Players
+            <svg class="icon">
+              <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
+            </svg>
+          </a>
+        </th>
+        <th class="servers__list__header__location">
+          <a id="sort-by-location" href="#sort-by-location">
+            Location
+            <svg class="icon">
+              <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
+            </svg>
+          </a>
+        </th>
       </tr>
     </thead>
     <tbody id="servers" class="servers__list__body u-dark-zone">
@@ -41,11 +76,27 @@
 </section>
 
 <script>
+  function compareText (textA, textB) {
+    textA = textA.toUpperCase();
+    textB = textB.toUpperCase();
+    let sortValue = 0;
+    if (textA > textB) {
+      sortValue = -1;
+    } else if (textA < textB) {
+      sortValue = 1;
+    }
+    return sortValue;
+  }
+
   window.addEventListener('DOMContentLoaded', function (event) {
     const filterState = {
       playing: true,
       waiting: true,
       empty: false
+    };
+    const sortState = {
+      by: 'status',
+      direction: 'descending'
     };
     let servers = [];
     const stateSortOrder = {
@@ -97,7 +148,26 @@
 
     function sortServers (serversToSort) {
       return serversToSort.sort(function (serverA, serverB) {
-        return stateSortOrder[serverA.__status] - stateSortOrder[serverB.__status];
+        let sortValue = 0;
+        if (sortState.by === 'mod') {
+          sortValue = compareText(serverA.mod, serverB.mod);
+        }
+        if (sortState.by === 'name') {
+          sortValue = compareText(serverA.name, serverB.name);
+        }
+        if (sortState.by === 'status') {
+          sortValue = stateSortOrder[serverA.__status] - stateSortOrder[serverB.__status];
+        }
+        if (sortState.by === 'players') {
+          sortValue = serverA.players - serverB.players;
+        }
+        if (sortState.by === 'location') {
+          sortValue = compareText(serverA.location, serverB.location);
+        }
+        if (sortState.direction === 'ascending') {
+          sortValue = sortValue * -1;
+        }
+        return sortValue;
       });
     }
 
@@ -117,22 +187,17 @@
         const $modIconImg = serverResult.modicon32
           ? $('<img class="servers__listing__mod-icon" src="' + serverResult.modicon32 + '" />')
           : null;
+        const $name = serverResult.protected
+          ? $('<svg class="icon"><use xlink:href="/images/icons/icons.svg#icon-lock"></use></svg><span>' + serverResult.name + '</span>')
+          : serverResult.name;
         const statusClassString = 'badge servers__listing__status__badge servers__listing__status__badge--' + serverResult.__status;
         const $statusBadge = $('<span class="' + statusClassString + '">' + serverResult.__status + '</span>');
 
-        $('.servers__listing__name', $serverRow).text(serverResult.name);
+        $('.servers__listing__name', $serverRow).append($name);
         $('.servers__listing__status', $serverRow).append($statusBadge);
         $('.servers__listing__mod', $serverRow).append($modIconImg);
         $('.servers__listing__players', $serverRow).text(serverResult.players + '/' + serverResult.maxplayers);
         $('.servers__listing__location', $serverRow).text(serverResult.location);
-
-        // TODO get rid of this
-        $.getJSON('https://resource.openra.net/map/hash/' + serverResult.map, function (mapResults) {
-          const mapResult = mapResults[0];
-          const $mapLink = $('<a href="https://resource.openra.net/maps/' + mapResult.id +'">' + mapResult.title + '</a>');
-
-          $('.servers__listing__map', $serverRow).append($mapLink);
-        });
 
         $('#servers').append($serverRow);
       });
@@ -162,6 +227,51 @@
       event.preventDefault();
       filterState.empty = !filterState.empty;
       $(this).prop('checked', filterState.empty);
+      renderServerList();
+    });
+
+    $('#sort-by-mod').on('click', function (event) {
+      event.preventDefault();
+      sortState.direction = (sortState.by === 'mod' && sortState.direction === 'ascending')
+        ? 'descending'
+        : 'ascending';
+      sortState.by = 'mod';
+      renderServerList();
+    });
+
+    $('#sort-by-name').on('click', function (event) {
+      event.preventDefault();
+      sortState.direction = (sortState.by === 'name' && sortState.direction === 'ascending')
+        ? 'descending'
+        : 'ascending';
+      sortState.by = 'name';
+      renderServerList();
+    });
+
+    $('#sort-by-status').on('click', function (event) {
+      event.preventDefault();
+      sortState.direction = (sortState.by === 'status' && sortState.direction === 'ascending')
+        ? 'descending'
+        : 'ascending';
+      sortState.by = 'status';
+      renderServerList();
+    });
+
+    $('#sort-by-players').on('click', function (event) {
+      event.preventDefault();
+      sortState.direction = (sortState.by === 'players' && sortState.direction === 'ascending')
+        ? 'descending'
+        : 'ascending';
+      sortState.by = 'players';
+      renderServerList();
+    });
+
+    $('#sort-by-location').on('click', function (event) {
+      event.preventDefault();
+      sortState.direction = (sortState.by === 'location' && sortState.direction === 'ascending')
+        ? 'descending'
+        : 'ascending';
+      sortState.by = 'location';
       renderServerList();
     });
   });

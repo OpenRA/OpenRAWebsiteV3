@@ -42,7 +42,7 @@
   right: -5px;
   width: 10px;
   height: 10px;
-  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
   animation: focusBottomRight 1s infinite;
 }
 
@@ -51,7 +51,7 @@ html, body {
   font-size: 14px;
   line-height: 150%;
   background: rgb(37, 37, 42);
-  color: rgb(243, 235, 254);
+  color: rgb(240, 240, 247);
 }
 
 body {
@@ -143,7 +143,7 @@ button,
   font-weight: bold;
   line-height: 125%;
   color: black;
-  background: white;
+  background: rgb(240, 240, 247);
   border-radius: 2px;
   border: none;
   vertical-align: middle;
@@ -155,6 +155,7 @@ button,
 
 button:hover,
 .button:hover {
+  background: white;
   transform: translateY(-2px);
   box-shadow: black 0 3px 0 0;
 }
@@ -297,7 +298,7 @@ tr:nth-child(even) {
 
 .u-light-zone {
   padding: 0.75rem 1.5rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgb(240, 240, 247);
   border-radius: 2px;
 }
 
@@ -393,7 +394,7 @@ tr:nth-child(even) {
 
 .site-header {
   background: rgb(0, 0, 0);
-  background-image: linear-gradient(114deg, rgba(13,13,16,1) 0%, rgba(27,27,32,1) 22%, rgba(13,13,16,1) 64%, rgba(17,17,21,1) 100%);
+  background-image: linear-gradient(114deg, rgba(13,13,16,1) 0%, rgba(27,27,33,1) 22%, rgba(13,13,16,1) 64%, rgba(17,17,21,1) 100%);
   border-bottom: black 5px solid;
   box-shadow: rgba(0, 0, 0, 0.15) 25px 0 25px;
 }
@@ -804,6 +805,10 @@ tr:nth-child(even) {
 }
 
 
+.servers__filters {
+  margin-bottom: 1rem;
+}
+
 .servers__list {
   width: 100%;
 }
@@ -811,6 +816,14 @@ tr:nth-child(even) {
 .servers__listing__mod-icon {
   width: 24px;
   height: 24px;
+}
+
+.servers__listing__name .icon {
+  width: 1rem;
+  height: 1rem;
+  vertical-align: -0.1rem;
+  margin-right: 0.5rem;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .servers__listing__status__badge--waiting {
