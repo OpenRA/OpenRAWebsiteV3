@@ -24,55 +24,57 @@
       Empty <input id="servers-filter-empty" type="checkbox" />
     </label>
   </div>
-  <table class="servers__list">
-    <thead class="servers__list__header u-light-zone">
-      <tr>
-        <th class="servers__list__header__mod">
-          <a id="sort-by-mod" href="#sort-by-mod">
-            Mod
-            <svg class="icon">
-              <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
-            </svg>
-          </a>
-        </th>
-        <th class="servers__list__header__name">
-          <a id="sort-by-name" href="#sort-by-name">
-            Name
-            <svg class="icon">
-              <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
-            </svg>
-          </a>
-        </th>
-        <th class="servers__list__header__status">
-          <a id="sort-by-status" href="#sort-by-status">
-            Status
-            <svg class="icon">
-              <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
-            </svg>
-          </a>
-        </th>
-        <th class="servers__list__header__players">
-          <a id="sort-by-players" href="#sort-by-players">
-            Players
-            <svg class="icon">
-              <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
-            </svg>
-          </a>
-        </th>
-        <th class="servers__list__header__location">
-          <a id="sort-by-location" href="#sort-by-location">
-            Location
-            <svg class="icon">
-              <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
-            </svg>
-          </a>
-        </th>
-      </tr>
-    </thead>
-    <tbody id="servers" class="servers__list__body u-dark-zone">
+  <div class="u-horizontal-overflow u-mobile-full-width">
+    <table class="servers__list">
+      <thead class="servers__list__header u-light-zone">
+        <tr>
+          <th class="servers__list__header__mod">
+            <a id="sort-by-mod" class="servers__list__header__sort-toggle" href="#sort-by-mod">
+              Mod
+              <svg class="icon">
+                <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
+              </svg>
+            </a>
+          </th>
+          <th class="servers__list__header__name">
+            <a id="sort-by-name" class="servers__list__header__sort-toggle" href="#sort-by-name">
+              Name
+              <svg class="icon">
+                <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
+              </svg>
+            </a>
+          </th>
+          <th class="servers__list__header__status">
+            <a id="sort-by-status" class="servers__list__header__sort-toggle" href="#sort-by-status">
+              Status
+              <svg class="icon">
+                <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
+              </svg>
+            </a>
+          </th>
+          <th class="servers__list__header__players">
+            <a id="sort-by-players" class="servers__list__header__sort-toggle" href="#sort-by-players">
+              Players
+              <svg class="icon">
+                <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
+              </svg>
+            </a>
+          </th>
+          <th class="servers__list__header__location">
+            <a id="sort-by-location" class="servers__list__header__sort-toggle" href="#sort-by-location">
+              Location
+              <svg class="icon">
+                <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
+              </svg>
+            </a>
+          </th>
+        </tr>
+      </thead>
+      <tbody id="servers" class="servers__list__body u-dark-zone">
 
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
 </section>
 
 <script>

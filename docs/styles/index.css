@@ -285,6 +285,11 @@ tr:nth-child(even) {
   padding: 0 2.5rem;
 }
 
+.u-horizontal-overflow {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 .u-dark-zone {
   padding: 1.5rem;
   border: rgba(255, 255, 255, 0.3) 1px solid;
@@ -813,6 +818,10 @@ tr:nth-child(even) {
   width: 100%;
 }
 
+.servers__list__header__sort-toggle {
+  white-space: nowrap;
+}
+
 .servers__listing__mod-icon {
   width: 24px;
   height: 24px;
@@ -972,6 +981,13 @@ tr:nth-child(even) {
   }
 
   .u-light-zone {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
+  .u-mobile-full-width {
+    width: 100vw;
+    max-width: 100vw;
     margin-left: -1rem;
     margin-right: -1rem;
   }
