@@ -1,16 +1,6 @@
 ---
 ---
 
-<template id="server-row-template">
-  <tr class="servers__listing">
-    <td class="servers__listing__mod"></td>
-    <td class="servers__listing__name"></td>
-    <td class="servers__listing__status"></td>
-    <td class="servers__listing__players"></td>
-    <td class="servers__listing__location"></td>
-  </tr>
-</template>
-
 <section class="site-section u-centered-content">
   <h1>Server Browser</h1>
   <div class="servers__filters">
@@ -44,17 +34,17 @@
               </svg>
             </a>
           </th>
-          <th class="servers__list__header__status">
-            <a id="sort-by-status" class="servers__list__header__sort-toggle" href="#sort-by-status">
-              Status
+          <th class="servers__list__header__players">
+            <a id="sort-by-players" class="servers__list__header__sort-toggle" href="#sort-by-players">
+              Players
               <svg class="icon">
                 <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
               </svg>
             </a>
           </th>
-          <th class="servers__list__header__players">
-            <a id="sort-by-players" class="servers__list__header__sort-toggle" href="#sort-by-players">
-              Players
+          <th class="servers__list__header__status">
+            <a id="sort-by-status" class="servers__list__header__sort-toggle" href="#sort-by-status">
+              Status
               <svg class="icon">
                 <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
               </svg>
@@ -71,11 +61,25 @@
         </tr>
       </thead>
       <tbody id="servers" class="servers__list__body u-dark-zone">
-
+        <tr>
+          <td>
+            <noscript>JavaScript must be enabled to use the Server Browser</noscript>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
 </section>
+
+<template id="server-row-template">
+  <tr class="servers__listing">
+    <td class="servers__listing__mod"></td>
+    <td class="servers__listing__name"></td>
+    <td class="servers__listing__players"></td>
+    <td class="servers__listing__status"></td>
+    <td class="servers__listing__location"></td>
+  </tr>
+</template>
 
 <script>
   function compareText (textA, textB) {
@@ -195,13 +199,20 @@
         const $name = serverResult.protected
           ? $('<svg class="icon"><use xlink:href="/images/icons/icons.svg#icon-lock"></use></svg><span>' + serverResult.name + '</span>')
           : serverResult.name;
+        const $join = (
+          (serverResult.__status === 'waiting' && serverResult.players < serverResult.maxplayers)
+          || serverResult.__status === 'empty'
+        )
+          ? $('<a class="servers__listing__join" href="openra-' + serverResult.mod + '-' + serverResult.version + '://' + serverResult.address + '">Join</a>')
+          : null;
         const statusClassString = 'badge servers__listing__status__badge servers__listing__status__badge--' + serverResult.__status;
         const $statusBadge = $('<span class="' + statusClassString + '">' + serverResult.__status + '</span>');
 
         $('.servers__listing__name', $serverRow).append($name);
         $('.servers__listing__status', $serverRow).append($statusBadge);
         $('.servers__listing__mod', $serverRow).append($modIconImg);
-        $('.servers__listing__players', $serverRow).text(serverResult.players + '/' + serverResult.maxplayers);
+        $('.servers__listing__players', $serverRow).text(serverResult.players + ' / ' + serverResult.maxplayers);
+        $('.servers__listing__players', $serverRow).append($join);
         $('.servers__listing__location', $serverRow).text(serverResult.location);
 
         $('#servers').append($serverRow);

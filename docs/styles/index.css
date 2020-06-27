@@ -844,6 +844,10 @@ tr:nth-child(even) {
   color: rgba(255, 255, 255, 0.5);
 }
 
+.servers__listing__join {
+  margin-left: 1rem;
+}
+
 .servers__listing__status__badge--waiting {
   color: orange;
 }
