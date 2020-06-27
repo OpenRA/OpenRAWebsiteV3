@@ -24,7 +24,7 @@
       Empty <input id="servers-filter-empty" type="checkbox" />
     </label>
   </div>
-  <div class="u-horizontal-overflow u-mobile-full-width">
+  <div class="u-mobile-full-width">
     <table class="servers__list">
       <thead class="servers__list__header u-light-zone">
         <tr>
@@ -98,7 +98,7 @@
     };
     const sortState = {
       by: 'status',
-      direction: 'descending'
+      direction: 'ascending'
     };
     let servers = [];
     const stateSortOrder = {
@@ -158,7 +158,7 @@
           sortValue = compareText(serverA.name, serverB.name);
         }
         if (sortState.by === 'status') {
-          sortValue = stateSortOrder[serverA.__status] - stateSortOrder[serverB.__status];
+          sortValue = (stateSortOrder[serverA.__status] - stateSortOrder[serverB.__status]) * -1;
         }
         if (sortState.by === 'players') {
           sortValue = serverA.players - serverB.players;
@@ -183,7 +183,10 @@
     function renderServerList () {
       const filteredAndSortedServers = filterAndSortServers();
 
+      // clear server list
       $('#servers').html('');
+
+      // render whole server list again
       filteredAndSortedServers.forEach(function (serverResult) {
         const $serverRow = $serverRowTemplate.contents().clone();
         const $modIconImg = serverResult.modicon32
@@ -203,6 +206,18 @@
 
         $('#servers').append($serverRow);
       });
+
+      // reset sort columns
+      $('.servers__list__header__sort-toggle').removeClass('servers__list__header__sort-toggle--ascending');
+      $('.servers__list__header__sort-toggle').removeClass('servers__list__header__sort-toggle--descending');
+      $('#sort-by-' + sortState.by).addClass('servers__list__header__sort-toggle--' + sortState.direction);
+    }
+
+    function setSortState (by) {
+      sortState.direction = (sortState.by === by && sortState.direction === 'ascending')
+        ? 'descending'
+        : 'ascending';
+      sortState.by = by;
     }
 
     $.getJSON('https://master.openra.net/games?protocol=2&type=json', function (gameResults) {
@@ -234,46 +249,31 @@
 
     $('#sort-by-mod').on('click', function (event) {
       event.preventDefault();
-      sortState.direction = (sortState.by === 'mod' && sortState.direction === 'ascending')
-        ? 'descending'
-        : 'ascending';
-      sortState.by = 'mod';
+      setSortState('mod');
       renderServerList();
     });
 
     $('#sort-by-name').on('click', function (event) {
       event.preventDefault();
-      sortState.direction = (sortState.by === 'name' && sortState.direction === 'ascending')
-        ? 'descending'
-        : 'ascending';
-      sortState.by = 'name';
+      setSortState('name');
       renderServerList();
     });
 
     $('#sort-by-status').on('click', function (event) {
       event.preventDefault();
-      sortState.direction = (sortState.by === 'status' && sortState.direction === 'ascending')
-        ? 'descending'
-        : 'ascending';
-      sortState.by = 'status';
+      setSortState('status');
       renderServerList();
     });
 
     $('#sort-by-players').on('click', function (event) {
       event.preventDefault();
-      sortState.direction = (sortState.by === 'players' && sortState.direction === 'ascending')
-        ? 'descending'
-        : 'ascending';
-      sortState.by = 'players';
+      setSortState('players');
       renderServerList();
     });
 
     $('#sort-by-location').on('click', function (event) {
       event.preventDefault();
-      sortState.direction = (sortState.by === 'location' && sortState.direction === 'ascending')
-        ? 'descending'
-        : 'ascending';
-      sortState.by = 'location';
+      setSortState('location');
       renderServerList();
     });
   });
