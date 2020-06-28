@@ -423,8 +423,7 @@ tr:nth-child(even) {
 
 .site-header__menu-toggle {
   display: none;
-  background: transparent;
-  color: white;
+  margin-right: 0.5rem;
 }
 
 .site-header__logo {
@@ -477,8 +476,6 @@ tr:nth-child(even) {
 
 .site-header__menu-close {
   display: none;
-  background: transparent;
-  color: white;
 }
 
 .site-header__nav {
