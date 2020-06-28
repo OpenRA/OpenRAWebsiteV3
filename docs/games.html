@@ -3,16 +3,26 @@
 
 <section class="site-section u-centered-content">
   <h1>Server Browser</h1>
-  <div class="servers__filters">
-    <label class="button">
-      Waiting <input id="servers-filter-waiting" type="checkbox" checked />
-    </label>
-    <label class="button">
-      Playing <input id="servers-filter-playing" type="checkbox" checked />
-    </label>
-    <label class="button">
-      Empty <input id="servers-filter-empty" type="checkbox" />
-    </label>
+  <p>People from around the world play OpenRA! Use the server browser below to join in on the multiplayer fun!</p>
+</section>
+
+<section class="site-section u-centered-content">
+  <div class="servers__controls">
+    <div class="servers__filters">
+      <label class="button">
+        Waiting <input id="servers-filter-waiting" type="checkbox" checked />
+      </label>
+      <label class="button">
+        Playing <input id="servers-filter-playing" type="checkbox" checked />
+      </label>
+      <label class="button">
+        Empty <input id="servers-filter-empty" type="checkbox" />
+      </label>
+    </div>
+    <div class="servers__info">
+      <span class="servers__counts">Showing <var id="server-count">0</var> servers hosting <var id="player-count">0</var> players.</span>
+      <button id="servers-refresh">Refresh</button>
+    </div>
   </div>
   <div class="u-mobile-full-width">
     <table class="servers__list">
@@ -34,6 +44,7 @@
               </svg>
             </a>
           </th>
+          <th class="servers__list__header__join"></th>
           <th class="servers__list__header__players">
             <a id="sort-by-players" class="servers__list__header__sort-toggle" href="#sort-by-players">
               Players
@@ -75,6 +86,7 @@
   <tr class="servers__listing">
     <td class="servers__listing__mod"></td>
     <td class="servers__listing__name"></td>
+    <td class="servers__listing__join"></td>
     <td class="servers__listing__players"></td>
     <td class="servers__listing__status"></td>
     <td class="servers__listing__location"></td>
@@ -110,7 +122,11 @@
       playing: 2,
       empty: 3
     };
-    const $serverRowTemplate = $('#server-row-template');
+    const $serverListingTemplate = $('#server-row-template');
+    let requestServerListTimeoutId;
+    let requestingServerList;
+    let serverCount = 0;
+    let playerCount = 0;
 
     function getServerStatus (server) {
       switch (server.state) {
@@ -132,6 +148,16 @@
       });
 
       return processedGameResults;
+    }
+
+    function countServersAndPlayers (servers) {
+      serverCount = 0;
+      playerCount = 0;
+
+      for (server of servers) {
+        serverCount++;
+        playerCount += server.players;
+      }
     }
 
     function filterServers (serversToFilter) {
@@ -177,51 +203,87 @@
       });
     }
 
-    function filterAndSortServers () {
-      const filteredServers = filterServers(servers);
+    function filterAndSortServers (serversToFilterAndSort) {
+      const filteredServers = filterServers(serversToFilterAndSort);
       const filteredAndSortedServers = sortServers(filteredServers);
 
       return filteredAndSortedServers;
     }
 
+    function renderServerListing (serverResult) {
+      const $serverListing = $serverListingTemplate.contents().clone();
+      const $modIconImg = serverResult.modicon32
+        ? $('<img class="servers__listing__mod-icon" src="' + serverResult.modicon32 + '" />')
+        : null;
+      const $name = serverResult.protected
+        ? $('<svg class="icon"><use xlink:href="/images/icons/icons.svg#icon-lock"></use></svg><span>' + serverResult.name + '</span>')
+        : serverResult.name;
+      const $join = (
+        (serverResult.__status === 'waiting' && serverResult.players < serverResult.maxplayers)
+        || serverResult.__status === 'empty'
+      )
+        ? $('<a class="servers__listing__join" href="openra-' + serverResult.mod + '-' + serverResult.version + '://' + serverResult.address + '">Join</a>')
+        : null;
+      const statusClassString = 'badge servers__listing__status__badge servers__listing__status__badge--' + serverResult.__status;
+      const $statusBadge = $('<span class="' + statusClassString + '">' + serverResult.__status + '</span>');
+
+      $('.servers__listing__name', $serverListing).append($name);
+      $('.servers__listing__status', $serverListing).append($statusBadge);
+      $('.servers__listing__mod', $serverListing).append($modIconImg);
+      $('.servers__listing__players', $serverListing).text(serverResult.players + ' / ' + serverResult.maxplayers);
+      $('.servers__listing__join', $serverListing).append($join);
+      $('.servers__listing__location', $serverListing).text(serverResult.location);
+
+      return $serverListing;
+    }
+
     function renderServerList () {
-      const filteredAndSortedServers = filterAndSortServers();
+      const filteredAndSortedServers = filterAndSortServers(servers);
+
+      // get player counts out of the way
+      countServersAndPlayers(filteredAndSortedServers);
+      $('#server-count').text(serverCount);
+      $('#player-count').text(playerCount);
 
       // clear server list
-      $('#servers').html('');
+      $('#servers').empty();
 
       // render whole server list again
-      filteredAndSortedServers.forEach(function (serverResult) {
-        const $serverRow = $serverRowTemplate.contents().clone();
-        const $modIconImg = serverResult.modicon32
-          ? $('<img class="servers__listing__mod-icon" src="' + serverResult.modicon32 + '" />')
-          : null;
-        const $name = serverResult.protected
-          ? $('<svg class="icon"><use xlink:href="/images/icons/icons.svg#icon-lock"></use></svg><span>' + serverResult.name + '</span>')
-          : serverResult.name;
-        const $join = (
-          (serverResult.__status === 'waiting' && serverResult.players < serverResult.maxplayers)
-          || serverResult.__status === 'empty'
-        )
-          ? $('<a class="servers__listing__join" href="openra-' + serverResult.mod + '-' + serverResult.version + '://' + serverResult.address + '">Join</a>')
-          : null;
-        const statusClassString = 'badge servers__listing__status__badge servers__listing__status__badge--' + serverResult.__status;
-        const $statusBadge = $('<span class="' + statusClassString + '">' + serverResult.__status + '</span>');
+      const $serverListings = filteredAndSortedServers.map(renderServerListing);
 
-        $('.servers__listing__name', $serverRow).append($name);
-        $('.servers__listing__status', $serverRow).append($statusBadge);
-        $('.servers__listing__mod', $serverRow).append($modIconImg);
-        $('.servers__listing__players', $serverRow).text(serverResult.players + ' / ' + serverResult.maxplayers);
-        $('.servers__listing__players', $serverRow).append($join);
-        $('.servers__listing__location', $serverRow).text(serverResult.location);
-
-        $('#servers').append($serverRow);
-      });
+      $('#servers').html($serverListings);
 
       // reset sort columns
       $('.servers__list__header__sort-toggle').removeClass('servers__list__header__sort-toggle--ascending');
       $('.servers__list__header__sort-toggle').removeClass('servers__list__header__sort-toggle--descending');
       $('#sort-by-' + sortState.by).addClass('servers__list__header__sort-toggle--' + sortState.direction);
+    }
+
+    function renderLoadingPlaceholder () {
+      for (let i = 0; i <= 15; i++) {
+        const $serverListing = $serverListingTemplate.contents().clone();
+        $('.servers__listing__name', $serverListing).html('<span class="u-placeholder" />');
+        $('.servers__listing__status', $serverListing).html('<span class="u-placeholder" />');
+        $('.servers__listing__mod', $serverListing).html('<span class="u-placeholder" />');
+        $('.servers__listing__players', $serverListing).html('<span class="u-placeholder" />');
+        $('.servers__listing__location', $serverListing).html('<span class="u-placeholder" />');
+
+        $('#servers').append($serverListing);
+      }
+    }
+
+    function requestServerList () {
+      requestingServerList = true;
+      $('#servers-refresh').prop('disabled', true);
+      $.getJSON('https://master.openra.net/games?protocol=2&type=json', function (gameResults) {
+        requestingServerList = false;
+        $('#servers-refresh').prop('disabled', false);
+        servers = processGameResults(gameResults);
+        renderServerList();
+      });
+
+      clearTimeout(requestServerListTimeoutId);
+      requestServerListTimeoutId = setTimeout(requestServerList, 30 * 1000);
     }
 
     function setSortState (by) {
@@ -231,11 +293,6 @@
       sortState.by = by;
     }
 
-    $.getJSON('https://master.openra.net/games?protocol=2&type=json', function (gameResults) {
-      console.log('gameResults',gameResults);
-      servers = processGameResults(gameResults);
-      renderServerList();
-    });
 
     $('#servers-filter-playing').on('change', function handleFilterPlayingClick (event) {
       event.preventDefault();
@@ -257,6 +314,8 @@
       $(this).prop('checked', filterState.empty);
       renderServerList();
     });
+
+    $('#servers-refresh').on('click', requestServerList);
 
     $('#sort-by-mod').on('click', function (event) {
       event.preventDefault();
@@ -287,5 +346,10 @@
       setSortState('location');
       renderServerList();
     });
+
+
+    renderLoadingPlaceholder();
+    requestServerList();
+
   });
 </script>
