@@ -833,14 +833,24 @@ tr:nth-child(even) {
   transform: rotateZ(-180deg);
 }
 
-.servers__listing__mod .u-placeholder {
-  width: 24px;
-  height: 24px;
+.servers__list__group > td {
+  background: black;
 }
 
-.servers__listing__mod-icon {
-  width: 24px;
-  height: 24px;
+.servers__list__group__info {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+}
+
+.servers__list__group__mod-icon {
+  margin-right: 0.5rem;
+  width: 32px;
+  height: 32px;
+}
+
+.servers__list__group__mod-link {
+  margin-right: 1rem;
 }
 
 .servers__listing__name .icon {
