@@ -849,8 +849,12 @@ tr:nth-child(even) {
   height: 32px;
 }
 
-.servers__list__group__mod-link {
+.servers__list__group__version {
   margin-right: 1rem;
+}
+
+.servers__list__group__mod-link {
+  margin-right: 0.5rem;
 }
 
 .servers__listing__name .icon {
