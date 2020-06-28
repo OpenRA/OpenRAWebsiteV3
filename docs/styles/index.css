@@ -1,14 +1,9 @@
 /* General Styles
    Styles of base elements */
 
-@keyframes focusTopLeft {
-  0% { transform: translate3d(-3px, -3px, 0); }
-  100% { transform: translate3d(0, 0, 0); }
-}
-
-@keyframes focusBottomRight {
-  0% { transform: translate3d(3px, 3px, 0); }
-  100% { transform: translate3d(0, 0, 0); }
+@keyframes focusSelectionBox {
+  0% { top: -5px; right: -5px; bottom: -5px; left: -5px; }
+  100% { top: -2px; right: -2px; bottom: -2px; left: -2px; }
 }
 
 * {
@@ -22,28 +17,14 @@
 
 *:focus:before {
   content: '';
-  border-left: white 2px solid;
-  border-top: white 2px solid;
   position: absolute;
-  top: -3px;
-  left: -5px;
-  width: 10px;
-  height: 10px;
-  border-top-left-radius: 2px;
-  animation: focusTopLeft 1s infinite;
-}
-
-*:focus:after {
-  content: '';
-  border-right: white 2px solid;
-  border-bottom: white 2px solid;
-  position: absolute;
-  bottom: -3px;
-  right: -5px;
-  width: 10px;
-  height: 10px;
-  border-bottom-right-radius: 2px;
-  animation: focusBottomRight 1s infinite;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  border-image: url('/images/selection-box.svg') 7 7 7 7;
+  border-image-width: 7px;
+  animation: focusSelectionBox 0.75s infinite;
 }
 
 html, body {
