@@ -10,12 +10,16 @@
   box-sizing: border-box;
 }
 
-*:focus {
+*:focus,
+a:hover,
+button:hover {
   outline: none;
-  position: relative;
 }
 
-*:focus:before {
+*:focus:before,
+a:hover:before,
+button:hover:before,
+.button:hover:before {
   content: '';
   position: absolute;
   top: -2px;
@@ -24,6 +28,7 @@
   left: -2px;
   border-image: url('/images/selection-box.svg') 7 7 7 7;
   border-image-width: 7px;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
   animation: focusSelectionBox 0.75s infinite;
 }
 
