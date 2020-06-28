@@ -26,10 +26,9 @@ button:hover:before,
   right: -2px;
   bottom: -2px;
   left: -2px;
-  border: rgba(255, 255, 255, 0.1) 7px solid;
-  border-image: url('/images/selection-box.svg') 7 7 7 7;
-  border-image-width: 7px;
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+  border: rgba(255, 255, 255, 0.01) 8px solid;
+  border-image: url('/images/selection-box.svg') 8 8 8 8;
+  border-image-width: 8px;
   animation: focusSelectionBox 0.75s infinite;
 }
 
@@ -37,7 +36,7 @@ html, body {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   line-height: 150%;
-  background: rgb(37, 37, 42);
+  background: rgb(42, 42, 49);
   color: rgb(240, 240, 247);
 }
 
