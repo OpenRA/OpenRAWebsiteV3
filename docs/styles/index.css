@@ -298,8 +298,8 @@ tr:nth-child(even) {
   background-color: rgba(0, 0, 0, 0.33);
   background-size: 150px 150px;
   background-image:
-    linear-gradient(to right, rgba(5, 0, 3, 0.25) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(5, 0, 3, 0.25) 1px, transparent 1px);
+    linear-gradient(to right, rgba(25, 0, 3, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(25, 0, 3, 0.25) 1px, transparent 1px);
 }
 
 .u-light-zone {
@@ -823,7 +823,7 @@ tr:nth-child(even) {
 .servers__controls {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .servers__filters,
