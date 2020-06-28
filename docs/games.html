@@ -262,11 +262,13 @@
     function renderLoadingPlaceholder () {
       for (let i = 0; i <= 15; i++) {
         const $serverListing = $serverListingTemplate.contents().clone();
-        $('.servers__listing__name', $serverListing).html('<span class="u-placeholder" />');
-        $('.servers__listing__status', $serverListing).html('<span class="u-placeholder" />');
+        const nameWidth = (1.2 - Math.random()) * 225;
+        const locationWidth = (1.5 - Math.random()) * 100;
+        $('.servers__listing__name', $serverListing).html('<span class="u-placeholder" style="width: ' + nameWidth + 'px;" />');
+        $('.servers__listing__status', $serverListing).html('<span class="u-placeholder" style="width: 70px;" />');
         $('.servers__listing__mod', $serverListing).html('<span class="u-placeholder" />');
-        $('.servers__listing__players', $serverListing).html('<span class="u-placeholder" />');
-        $('.servers__listing__location', $serverListing).html('<span class="u-placeholder" />');
+        $('.servers__listing__players', $serverListing).html('<span class="u-placeholder" style="width: 40px;" />');
+        $('.servers__listing__location', $serverListing).html('<span class="u-placeholder" style="width: ' + locationWidth + 'px;" />');
 
         $('#servers').append($serverListing);
       }

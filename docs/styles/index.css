@@ -185,7 +185,7 @@ button:active,
 }
 
 .button--primary {
-  color: white;
+  color: rgb(240, 240, 247);
   background: rgb(235, 0, 0);
 }
 
@@ -194,7 +194,7 @@ button:active,
 }
 
 .button--dark {
-  color: white;
+  color: rgb(240, 240, 247);
   background: rgb(13, 13, 16);
 }
 
