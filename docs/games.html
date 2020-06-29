@@ -1,6 +1,16 @@
 ---
 js:
 - /scripts/server-browser.js
+- /scripts/vendor/flot.js
+- /scripts/vendor/flot-selection.js
+- /scripts/vendor/flot-stack.js
+- /scripts/vendor/flot-time.js
+- /scripts/vendor/flot-tooltip.js
+- /scripts/vendor/flot-resize.js
+- /scripts/vendor/javascript-rrd.js
+- /scripts/vendor/rrd-flot.js
+- /scripts/vendor/rrd-flot-async.js
+- /scripts/player-charts.js
 ---
 
 <section class="site-section u-centered-content">
@@ -74,6 +84,18 @@ js:
       </tbody>
     </table>
   </div>
+</section>
+
+<section class="site-section u-centered-content">
+  <h3>Player Activity</h3>
+  <p>View the numbers of people <span class="color--playing">playing</span> and <span class="color--waiting">waiting</span> over the last two weeks:</p>
+  <div
+    id="players"
+    class="flot-chart"
+    style="width: 100%; height: 300px;">
+    Loading...
+  </div>
+  <p>More detailed graphs are available at the <a href="/players/">player statistics</a> page.</p>
 </section>
 
 <template id="server-row-template">

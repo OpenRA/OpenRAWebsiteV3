@@ -349,6 +349,14 @@ tr:nth-child(even) {
   color: rgb(255, 0, 0) !important;
 }
 
+.color--playing {
+  color: green;
+}
+
+.color--waiting {
+  color: orange;
+}
+
 
 .badge {
   background: black;
@@ -370,6 +378,31 @@ tr:nth-child(even) {
   height: 1.25rem;
   fill: currentColor;
   vertical-align: -0.25rem;
+}
+
+
+.flot-tick-label {
+  color: white;
+}
+
+.flot-chart,
+.flot-chart > table {
+  width: 100%;
+}
+
+.flot-chart table td {
+  padding: 0;
+}
+
+.flot-chart table td:first-child {
+  width: 100%;
+}
+
+#flotTip {
+  background: white;
+  color: black;
+  border-radius: 2px;
+  padding: 0.5rem 1rem;
 }
 
 
