@@ -1,27 +1,29 @@
 ---
+js:
+- /scripts/server-browser.js
 ---
 
 <section class="site-section u-centered-content">
   <h1>Server Browser</h1>
-  <p>People from around the world play OpenRA! Use the server browser below to join in on the multiplayer fun!</p>
+  <p>People from around the world use OpenRA to play <strong>Red Alert</strong>, <strong>Command & Conquer</strong>, <strong>Dune 2000</strong>, and a variety of <strong>community mods</strong>. Use the server browser below to join in on the multiplayer fun!</p>
 </section>
 
-<section class="site-section u-centered-content">
+<section id="server-browser" class="servers site-section u-centered-content">
   <div class="servers__controls">
     <div class="servers__filters">
       <label class="button button--dark">
-        Waiting <input id="servers-filter-waiting" type="checkbox" checked />
+        Waiting <input class="servers__filters__waiting" type="checkbox" checked />
       </label>
       <label class="button button--dark">
-        Playing <input id="servers-filter-playing" type="checkbox" checked />
+        Playing <input class="servers__filters__playing" type="checkbox" checked />
       </label>
       <label class="button button--dark">
-        Empty <input id="servers-filter-empty" type="checkbox" />
+        Empty <input class="servers__filters__empty" type="checkbox" />
       </label>
     </div>
     <div class="servers__info">
-      <span class="servers__counts">Showing <var id="server-count">0</var> servers hosting <var id="player-count">0</var> players.</span>
-      <button id="servers-refresh" class="button--dark">Refresh</button>
+      <span class="servers__counts">Showing <var class="servers__server-count">0</var> servers hosting <var class="servers__player-count">0</var> players.</span>
+      <button class="servers__refresh button--dark">Refresh</button>
     </div>
   </div>
   <div class="u-mobile-full-width">
@@ -29,7 +31,7 @@
       <thead class="servers__list__header u-light-zone">
         <tr>
           <th class="servers__list__header__name">
-            <a id="sort-by-name" class="servers__list__header__sort-toggle" href="#sort-by-name">
+            <a class="servers__list__header__sort-toggle servers__sort__name" href="#sort-by-name">
               Name
               <svg class="icon">
                 <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
@@ -38,7 +40,7 @@
           </th>
           <th class="servers__list__header__join"></th>
           <th class="servers__list__header__players">
-            <a id="sort-by-players" class="servers__list__header__sort-toggle" href="#sort-by-players">
+            <a class="servers__list__header__sort-toggle servers__sort__players" href="#sort-by-players">
               Players
               <svg class="icon">
                 <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
@@ -46,7 +48,7 @@
             </a>
           </th>
           <th class="servers__list__header__status">
-            <a id="sort-by-status" class="servers__list__header__sort-toggle" href="#sort-by-status">
+            <a class="servers__list__header__sort-toggle servers__sort__status" href="#sort-by-status">
               Status
               <svg class="icon">
                 <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
@@ -54,7 +56,7 @@
             </a>
           </th>
           <th class="servers__list__header__location">
-            <a id="sort-by-location" class="servers__list__header__sort-toggle" href="#sort-by-location">
+            <a class="servers__list__header__sort-toggle servers__sort__location" href="#sort-by-location">
               Location
               <svg class="icon">
                 <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
@@ -63,7 +65,7 @@
           </th>
         </tr>
       </thead>
-      <tbody id="servers" class="servers__list__body u-dark-zone">
+      <tbody class="servers__list__body u-dark-zone">
         <tr>
           <td>
             <noscript>JavaScript must be enabled to use the Server Browser</noscript>
@@ -84,353 +86,14 @@
   </tr>
 </template>
 
-<script>
-  function compareText (textA, textB) {
-    textA = textA.toUpperCase();
-    textB = textB.toUpperCase();
-    let sortValue = 0;
-    if (textA > textB) {
-      sortValue = -1;
-    } else if (textA < textB) {
-      sortValue = 1;
-    }
-    return sortValue;
-  }
-
-  window.addEventListener('DOMContentLoaded', function (event) {
-    const filterState = {
-      playing: true,
-      waiting: true,
-      empty: false
-    };
-    const sortState = {
-      by: 'status',
-      direction: 'ascending'
-    };
-    let servers = [];
-    const stateSortOrder = {
-      waiting: 1,
-      playing: 2,
-      empty: 3
-    };
-    const $serverListingTemplate = $('#server-row-template');
-    let requestServerListTimeoutId;
-    let requestingServerList;
-    let serverCount = 0;
-    let playerCount = 0;
-
-    function getModMetadata (server) {
-      // New format mods include the correct metadata already
-      if (server.modtitle) {
-        return {
-          // Limit title length to avoid breakage
-          title: server.modtitle.substring(0, 50),
-          icon: server.modicon32,
-          website: server.modwebsite
-        };
-      }
-
-      // Generate data for older official mods
-      switch (server.mod) {
-        case 'ra':
-          return {
-            title: 'Red Alert',
-            icon: 'https://www.openra.net/images/icons/ra_32x32.png',
-            website: 'https://www.openra.net'
-          };
-        
-        case 'cnc':
-          return {
-            title: 'Tiberian Dawn',
-            icon: 'https://www.openra.net/images/icons/cnc_32x32.png',
-            website: 'https://www.openra.net'
-          };
-        
-        case 'd2k':
-          return {
-            title: 'Dune 2000',
-            icon: 'https://www.openra.net/images/icons/d2k_32x32.png',
-            website: 'https://www.openra.net'
-          };
-        
-        default:
-          return {
-            title: 'Unknown Mod "' + server.mod + '"',
-            icon: '',
-            website: ''
-          };
-      }
-    }
-
-    function getServerStatus (server) {
-      switch (server.state) {
-        case 2:
-          return 'playing';
-        case 1:
-          if (server.players > 0) {
-            return 'waiting';
-          }
-        default:
-          return 'empty';
-      }
-    }
-
-    function processGameResults (gameResults) {
-      const processedGameResults = gameResults.map(function (server) {
-        server.__status = getServerStatus(server);
-        server.__modMetadata = getModMetadata(server);
-        return server;
-      });
-
-      return processedGameResults;
-    }
-
-    function countServersAndPlayers (servers) {
-      serverCount = 0;
-      playerCount = 0;
-
-      for (server of servers) {
-        serverCount++;
-        playerCount += server.players;
-      }
-    }
-
-    function filterServers (serversToFilter) {
-      return serversToFilter.filter(function (server) {
-        if (!filterState.playing && server.__status === 'playing') {
-          return false;
-        }
-
-        if (!filterState.waiting && server.__status === 'waiting') {
-          return false;
-        }
-
-        if (!filterState.empty && server.__status === 'empty') {
-          return false;
-        }
-
-        return true;
-      });
-    }
-
-    function sortServers (serversToSort) {
-      return serversToSort.sort(function (serverA, serverB) {
-        let sortValue = 0;
-        if (sortState.by === 'name') {
-          sortValue = compareText(serverA.name, serverB.name);
-        }
-        if (sortState.by === 'status') {
-          sortValue = (stateSortOrder[serverA.__status] - stateSortOrder[serverB.__status]) * -1;
-        }
-        if (sortState.by === 'players') {
-          sortValue = serverA.players - serverB.players;
-        }
-        if (sortState.by === 'location') {
-          sortValue = compareText(serverA.location, serverB.location);
-        }
-        if (sortState.direction === 'ascending') {
-          sortValue = sortValue * -1;
-        }
-        return sortValue;
-      });
-    }
-
-    function filterAndSortServers (serversToFilterAndSort) {
-      const filteredServers = filterServers(serversToFilterAndSort);
-      const filteredAndSortedServers = sortServers(filteredServers);
-
-      return filteredAndSortedServers;
-    }
-
-    function groupServersByModAndRelease (servers) {
-      const serverGroups = {};
-
-      for (server of servers) {
-        const key = server.__modMetadata.title + '-' + server.version;
-        if (!serverGroups[key]) {
-          serverGroups[key] = {
-            players: 0,
-            servers: [],
-            version: server.version,
-            modMetadata: server.__modMetadata
-          };
-        }
-
-        serverGroups[key].players += server.players;
-        serverGroups[key].servers.push(server);
-      }
-
-      return serverGroups;
-    }
-
-    function getSortedServerGroupsArray (serverGroups) {
-      const serverGroupsArray = Object.keys(serverGroups).map(function (serverGroupKey) {
-        return serverGroups[serverGroupKey];
-      });
-      const sortedServerGroups = serverGroupsArray.sort(function (serverGroupA, serverGroupB) {
-        return serverGroupB.players - serverGroupA.players;
-      });
-
-      return sortedServerGroups;
-    }
-
-    function renderServerListing (serverResult) {
-      const $serverListing = $serverListingTemplate.contents().clone();
-      const $modIconImg = serverResult.__modMetadata.icon
-        ? $('<img class="servers__listing__mod-icon" src="' + serverResult.__modMetadata.icon + '" />')
-        : null;
-      const $name = serverResult.protected
-        ? $('<svg class="icon"><use xlink:href="/images/icons/icons.svg#icon-lock"></use></svg><span>' + serverResult.name + '</span>')
-        : serverResult.name;
-      const $join = (
-        (serverResult.__status === 'waiting' && serverResult.players < serverResult.maxplayers)
-        || serverResult.__status === 'empty'
-      )
-        ? $('<a class="servers__listing__join" href="openra-' + serverResult.mod + '-' + serverResult.version + '://' + serverResult.address + '">Join</a>')
-        : null;
-      const statusClassString = 'badge servers__listing__status__badge servers__listing__status__badge--' + serverResult.__status;
-      const $statusBadge = $('<span class="' + statusClassString + '">' + serverResult.__status + '</span>');
-
-      $('.servers__listing__name', $serverListing).append($name);
-      $('.servers__listing__status', $serverListing).append($statusBadge);
-      $('.servers__listing__players', $serverListing).text(serverResult.players + ' / ' + serverResult.maxplayers);
-      $('.servers__listing__join', $serverListing).append($join);
-      $('.servers__listing__location', $serverListing).text(serverResult.location);
-
-      return $serverListing;
-    }
-
-    function renderServerGroups (serverGroupsArray) {
-      let $serverListings = []
-
-      for (serverGroup of serverGroupsArray) {
-        const modIconHtml = serverGroup.modMetadata.icon
-          ? '<img class="servers__list__group__mod-icon" src="' + serverGroup.modMetadata.icon + '">'
-          : '';
-        const $serverGroupHeader = $('<tr class="servers__list__group"><td colspan="5">' +
-          '<div class="servers__list__group__info">' +
-            modIconHtml +
-            '<a class="servers__list__group__mod-link" href="' + serverGroup.modMetadata.website + '">' + serverGroup.modMetadata.title + '</a>' +
-            '<strong class="servers__list__group__version text--small text--caps">[' + serverGroup.version + ']</strong>' +
-            '<span class="servers__list__group__players"><var>' + serverGroup.players + '</var> players</span>' +
-          '</div>'+
-        '</td></tr>');
-
-        $serverListings.push($serverGroupHeader);
-        $serverListings = $serverListings.concat(serverGroup.servers.map(renderServerListing));
-      }
-
-      return $serverListings;
-    }
-
-    function renderServerList () {
-      const filteredAndSortedServers = filterAndSortServers(servers);
-
-      // get player counts out of the way
-      countServersAndPlayers(filteredAndSortedServers);
-      $('#server-count').text(serverCount);
-      $('#player-count').text(playerCount);
-
-      const serverGroups = groupServersByModAndRelease(filteredAndSortedServers);
-      const sortedServerGroupsArray = getSortedServerGroupsArray(serverGroups);
-      const $serverGroups = renderServerGroups(sortedServerGroupsArray);
-
-      $('#servers').html($serverGroups);
-
-      // reset sort columns
-      $('.servers__list__header__sort-toggle').removeClass('servers__list__header__sort-toggle--ascending');
-      $('.servers__list__header__sort-toggle').removeClass('servers__list__header__sort-toggle--descending');
-      $('#sort-by-' + sortState.by).addClass('servers__list__header__sort-toggle--' + sortState.direction);
-    }
-
-    function renderLoadingPlaceholder () {
-      for (let i = 0; i <= 15; i++) {
-        const $serverListing = $serverListingTemplate.contents().clone();
-        const nameWidth = (1.2 - Math.random()) * 225;
-        const locationWidth = (1.5 - Math.random()) * 100;
-        $('.servers__listing__name', $serverListing).html('<span class="u-placeholder" style="width: ' + nameWidth + 'px;" />');
-        $('.servers__listing__status', $serverListing).html('<span class="u-placeholder" style="width: 70px;" />');
-        $('.servers__listing__mod', $serverListing).html('<span class="u-placeholder" />');
-        $('.servers__listing__players', $serverListing).html('<span class="u-placeholder" style="width: 40px;" />');
-        $('.servers__listing__location', $serverListing).html('<span class="u-placeholder" style="width: ' + locationWidth + 'px;" />');
-
-        $('#servers').append($serverListing);
-      }
-    }
-
-    function requestServerList () {
-      requestingServerList = true;
-      $('#servers-refresh').prop('disabled', true);
-      $.getJSON('https://master.openra.net/games?protocol=2&type=json', function (gameResults) {
-        requestingServerList = false;
-        $('#servers-refresh').prop('disabled', false);
-        servers = processGameResults(gameResults);
-        renderServerList();
-      });
-
-      clearTimeout(requestServerListTimeoutId);
-      requestServerListTimeoutId = setTimeout(requestServerList, 30 * 1000);
-    }
-
-    function setSortState (by) {
-      sortState.direction = (sortState.by === by && sortState.direction === 'ascending')
-        ? 'descending'
-        : 'ascending';
-      sortState.by = by;
-    }
-
-
-    // Interface bindings
-    $('#servers-filter-playing').on('change', function handleFilterPlayingClick (event) {
-      event.preventDefault();
-      filterState.playing = !filterState.playing;
-      $(this).prop('checked', filterState.playing);
-      renderServerList();
-    });
-
-    $('#servers-filter-waiting').on('change', function handleFilterWaitingClick (event) {
-      event.preventDefault();
-      filterState.waiting = !filterState.waiting;
-      $(this).prop('checked', filterState.waiting);
-      renderServerList();
-    });
-
-    $('#servers-filter-empty').on('change', function handleFilterEmptyClick (event) {
-      event.preventDefault();
-      filterState.empty = !filterState.empty;
-      $(this).prop('checked', filterState.empty);
-      renderServerList();
-    });
-
-    $('#servers-refresh').on('click', requestServerList);
-
-    $('#sort-by-name').on('click', function (event) {
-      event.preventDefault();
-      setSortState('name');
-      renderServerList();
-    });
-
-    $('#sort-by-status').on('click', function (event) {
-      event.preventDefault();
-      setSortState('status');
-      renderServerList();
-    });
-
-    $('#sort-by-players').on('click', function (event) {
-      event.preventDefault();
-      setSortState('players');
-      renderServerList();
-    });
-
-    $('#sort-by-location').on('click', function (event) {
-      event.preventDefault();
-      setSortState('location');
-      renderServerList();
-    });
-
-
-    renderLoadingPlaceholder();
-    requestServerList();
-
-  });
-</script>
+<template id="server-group-header-template">
+  <tr class="servers__list__group">
+    <td colspan="5">
+      <div class="servers__list__group__info">
+        <a class="servers__list__group__mod-link"></a>
+        <strong class="servers__list__group__version text--small text--caps"></strong>
+        <span class="servers__list__group__players"><var></var> players</span>
+      </div>
+    </td>
+  </tr>
+</template>
