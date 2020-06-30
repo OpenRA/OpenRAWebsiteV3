@@ -1,0 +1,229 @@
+/* General Styles
+   Styles of base elements */
+
+   @keyframes focusSelectionBox {
+    0% { top: -5px; right: -5px; bottom: -5px; left: -5px; }
+    100% { top: -2px; right: -2px; bottom: -2px; left: -2px; }
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  *:focus,
+  a:hover,
+  button:hover {
+    outline: none;
+  }
+  
+  *:focus:before,
+  a:hover:before,
+  button:hover:before,
+  .button:hover:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    border: rgba(255, 255, 255, 0.01) 8px solid;
+    border-image: url('/images/selection-box.svg') 8 8 8 8;
+    border-image-width: 8px;
+    animation: focusSelectionBox 0.75s infinite;
+  }
+  
+  html, body {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+    background: rgb(42, 42, 49);
+    color: rgb(240, 240, 247);
+  }
+  
+  body {
+    background-position-y: -60px;
+    background-image: url('../images/bg-logos_filled.png');
+  }
+  
+  h1, h2, h3, h4 {
+    line-height: 125%;
+    font-family: 'Jost', Futura, sans-serif;
+    color: white;
+    margin: 1rem 0;
+  }
+  
+  h1:first-child,
+  h2:first-child,
+  h3:first-child,
+  h4:first-child,
+  h5:first-child,
+  h6:first-child {
+    margin-top: 0;
+  }
+  
+  h1 {
+    font-size: 2.25rem;
+  }
+  
+  h2 {
+    font-size: 1.85rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  h4 {
+    font-size: 1.25rem;
+  }
+  
+  a > h1,
+  a > h2,
+  a > h3,
+  a > h4 {
+    text-decoration: underline;
+    text-decoration-color: rgb(255, 17, 17);
+    text-underline-offset: 0.25rem;
+  }
+  
+  a:hover > h1,
+  a:hover > h2,
+  a:hover > h3,
+  a:hover > h4 {
+    text-decoration-color: rgb(255, 115, 115);
+  }
+  
+  a {
+    position: relative;
+    font-weight: bold;
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: rgb(255, 17, 17);
+  }
+  
+  a:hover {
+    text-decoration-color: rgb(255, 115, 115);
+  }
+  
+  lite-youtube {
+    margin: 1.5rem auto;
+    max-width: 720px;
+  }
+  
+  label {
+    cursor: pointer;
+  }
+  
+  input[type="checkbox"],
+  input[type="radio"] {
+    cursor: pointer;
+  }
+  
+  button,
+  .button {
+    -webkit-appearance: none;
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 1px;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    line-height: 125%;
+    color: black;
+    background: rgb(240, 240, 247);
+    border-radius: 2px;
+    border: none;
+    vertical-align: middle;
+    box-shadow: black 0 1px 0 0;
+    transition: all 250ms;
+  }
+  
+  button:hover,
+  .button:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: black 0 3px 0 0;
+  }
+  
+  button:hover:disabled,
+  .button:hover:disabled {
+    transform: translateY(0);
+    box-shadow: black 0 0 0 0;
+  }
+  
+  button:disabled,
+  .button:disabled {
+    filter: contrast(0.5);
+    box-shadow: black 0 0 0 0;
+  }
+  
+  button:active,
+  .button:active {
+    transform: translateY(0);
+    box-shadow: black 0 1px 0 0;
+    transition:
+      transform 0ms,
+      box-shadow 0ms;
+  }
+  
+  .button--large {
+    font-size: 1.1rem;
+    padding: 0.65rem 1.15rem;
+  }
+  
+  .button--primary {
+    color: rgb(240, 240, 247);
+    background: rgb(235, 0, 0);
+  }
+  
+  .button--primary:hover {
+    background: rgb(255, 25, 25);
+  }
+  
+  .button--dark {
+    color: rgb(240, 240, 247);
+    background: rgb(13, 13, 16);
+  }
+  
+  .button--dark:hover {
+    background: rgb(27, 27, 32);
+  }
+  
+  var {
+    font-style: normal;
+    font-weight: bold;
+  }
+  
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+  
+  tbody {
+    padding: 0.5rem;
+  }
+  
+  th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+  }
+  
+  td {
+    padding: 0.25rem 1rem;
+  }
+  
+  tr {
+    padding: 0.25rem;
+  }
+  
+  tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.25);
+  }
+  
+  figure {
+    margin: 1.5rem 0;
+  }
+  
+  figcaption {
+    font-size: 0.9rem;
+    line-height: 150%;
+  }

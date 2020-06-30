@@ -1,0 +1,314 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+@import 'fonts'; // Special fonts
+@import 'html'; // Styles for generic html elements
+@import 'utility'; // Special styles used to modify elements
+@import 'custom-elements'; // Styles for general elements specific to OpenRA
+@import 'vendor'; // Styles for third party js & elements
+@import 'site'; // Styles for 'site' elements. Creates general structure of the site
+@import 'carousel'; // Styles for the 'carousel' component
+
+
+.releases {
+  margin-left: 3rem;
+
+  @media screen and (max-width: 680px) {
+    display: none;
+  }
+}
+
+.release {
+  margin-left: 1rem;
+  margin-right: 2rem;
+  border-bottom: white 1px solid;
+  padding-bottom: 1px;
+}
+
+.release--current {
+  border-bottom-color: green;
+}
+
+.release--playtest {
+  border-bottom-color: orange;
+}
+
+.release__date {
+  color: rgb(170, 170, 170);
+}
+
+.release__date__year,
+.release__date__month,
+.release__date__day {
+  font-style: normal;
+}
+
+
+.hero {
+  position: relative;
+}
+
+.hero__intro-text__games {
+  white-space: nowrap;
+  color: rgb(27, 27, 27);
+}
+
+.hero__intro-text__game {
+  transition: all 500ms cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.hero__intro-text__game.carousel__item--current {
+  text-shadow: black 0 2px;
+}
+
+.hero__intro-text__ra.carousel__item--current {
+  color: rgb(255, 17, 17);
+}
+
+.hero__intro-text__cnc.carousel__item--current {
+  color: gold;
+}
+
+.hero__intro-text__ts.carousel__item--current {
+  color: orange;
+}
+
+.hero__intro-text__d2k.carousel__item--current {
+  color: sandybrown;
+}
+
+.hero__intro-text__tagline {
+  display: block;
+  text-shadow: black 0 2px;
+}
+
+.install {
+  position: absolute;
+  top: 1.25rem;
+  right: 35px;
+
+  @media screen and (max-width: 680px) {
+    position: static;
+    top: auto;
+    left: auto;
+    margin-bottom: 1rem;
+  }
+}
+
+
+.hero-carousel .carousel__item__content {
+  background: rgb(24, 24, 30);
+  border-bottom: black 4px solid;
+}
+
+.hero-carousel__image {
+  display: block;
+  width: 100%;
+  border-radius: 2px;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+  opacity: 0.1;
+  transition: opacity 500ms cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.carousel__item--current .hero-carousel__image {
+  opacity: 1;
+}
+
+.hero-carousel .carousel__item {
+  width: 100%;
+}
+
+.additional-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+
+  @media screen and (max-width: 680px) {
+    grid-template-columns: 1fr;
+    grid-gap: 1.5rem;
+  }
+}
+
+.open-source .icon {
+  color: currentColor;
+}
+
+.operating-system {
+  margin-right: 1.5rem;
+}
+
+.operating-system .icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+
+.developer-updates__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.developer-updates__header h4 {
+  margin: 0;
+}
+
+.developer-update {
+  margin-top: 1px;
+}
+
+.developer-update__header {
+  margin-bottom: 1.5rem;
+}
+
+.developer-update__heading {
+  margin: 0;
+}
+
+.developer-update__subheading {
+  opacity: 0.55;
+}
+
+.developer-update__body img,
+.developer-update__body video {
+  max-width: 100%;
+}
+
+.developer-update__body figure {
+  text-align: center;
+}
+
+.developer-update__body ul {
+  padding-left: 2rem;
+}
+
+.developer-update__body hr {
+  border: none;
+  border-top: rgb(125, 50, 50) 1px solid;
+}
+
+.developer-update__footer {
+  margin-top: 3rem;
+}
+
+
+/* Developer Updates List Styles */
+
+.developer-updates__list {
+  margin: -1rem;
+}
+
+.developer-updates__listing {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.developer-updates__listing:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.developer-updates__listing__header {
+}
+
+.developer-updates__listing__title {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
+
+.developer-updates__listing__comments {
+  flex-shrink: 0;
+}
+
+
+.servers__controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+
+  @media screen and (max-width: 680px) {
+    flex-direction: column;
+  }
+}
+
+.servers__filters,
+.servers__info {
+  margin-bottom: 0.5rem;
+}
+
+.servers__counts {
+  margin-right: 1rem;
+}
+
+.servers__list {
+  width: 100%;
+}
+
+.servers__list__header__sort-toggle {
+  white-space: nowrap;
+}
+
+.servers__list__header__sort-toggle .icon {
+  opacity: 0.25;
+  transition: all 300ms cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.servers__list__header__sort-toggle--descending .icon,
+.servers__list__header__sort-toggle--ascending .icon {
+  opacity: 1;
+}
+
+.servers__list__header__sort-toggle--descending .icon {
+  transform: rotateZ(-180deg);
+}
+
+.servers__list__group > td {
+  background: black;
+}
+
+.servers__list__group__info {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+}
+
+.servers__list__group__mod-icon {
+  margin-right: 0.5rem;
+  width: 32px;
+  height: 32px;
+}
+
+.servers__list__group__version {
+  margin-right: 1rem;
+}
+
+.servers__list__group__mod-link {
+  margin-right: 0.5rem;
+}
+
+.servers__listing__name .icon {
+  width: 1rem;
+  height: 1rem;
+  vertical-align: -0.1rem;
+  margin-right: 0.5rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.servers__listing__join {
+  margin-left: 1rem;
+}
+
+.servers__listing__status__badge--waiting {
+  color: orange;
+}
+
+.servers__listing__status__badge--playing {
+  color: green;
+}
+
+.servers__listing__status__badge--empty {
+  color: gray;
+}
