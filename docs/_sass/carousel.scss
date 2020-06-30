@@ -9,6 +9,10 @@
   padding: 0;
   transition: transform 500ms cubic-bezier(0.83, 0, 0.17, 1);
   will-change: transform;
+
+  @media (prefers-reduced-motion) {
+    transition: none;
+  }
 }
 
 .carousel__item {
@@ -18,6 +22,10 @@
 .carousel__item__content {
   transform: scale(0.95);
   transition: transform 500ms cubic-bezier(0.83, 0, 0.17, 1);
+
+  @media (prefers-reduced-motion) {
+    transition: none;
+  }
 }
 
 .carousel__item--current .carousel__item__content {

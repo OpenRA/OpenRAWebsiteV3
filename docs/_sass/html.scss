@@ -30,6 +30,10 @@ button:hover:before,
   border-image: url('/images/selection-box.svg') 8 8 8 8;
   border-image-width: 8px;
   animation: focusSelectionBox 0.75s infinite;
+
+  @media (prefers-reduced-motion) {
+    animation: none;
+  }
 }
 
 html, body {
