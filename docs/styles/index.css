@@ -266,6 +266,15 @@ tr:nth-child(even) {
   background: rgba(0, 0, 0, 0.25);
 }
 
+figure {
+  margin: 1.5rem 0;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  line-height: 150%;
+}
+
 
 /* Utility Styles
    Simple modifiers that can be applied to multiple elements */
@@ -763,8 +772,13 @@ tr:nth-child(even) {
   opacity: 0.55;
 }
 
-.developer-update__body img {
+.developer-update__body img,
+.developer-update__body video {
   max-width: 100%;
+}
+
+.developer-update__body figure {
+  text-align: center;
 }
 
 .developer-update__body ul {
