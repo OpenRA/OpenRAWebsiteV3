@@ -1,3 +1,50 @@
+/* Fonts */
+
+@font-face {
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inter/inter-400.woff2?v=3.13') format('woff2'),
+       url('/fonts/inter/inter-400.woff?v=3.13') format('woff');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style:  italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inter/inter-400-italic.woff2?v=3.13') format('woff2'),
+       url('/fonts/inter/inter-400-italic.woff?v=3.13') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/inter/inter-600.woff2?v=3.13') format('woff2'),
+       url('/fonts/inter/inter-600.woff?v=3.13') format('woff');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style:  italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/inter/inter-600-italic.woff2?v=3.13') format('woff2'),
+       url('/fonts/inter/inter-600-italic.woff?v=3.13') format('woff');
+}
+
+@font-face {
+  font-family: 'Jost';
+  src: url('/fonts/jost/jost-600.woff2') format('woff2'),
+      url('/fonts/jost/jost-600.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
 /* General Styles
    Styles of base elements */
 
