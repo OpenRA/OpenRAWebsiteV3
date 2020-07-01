@@ -17,3 +17,23 @@
   fill: currentColor;
   vertical-align: -0.25rem;
 }
+
+.grid-6 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 2rem;
+}
+
+.grid-col-3 {
+  grid-column: span 3;
+}
+
+.terminal {
+  display: block;
+  white-space: pre-wrap;
+  background: black;
+  color: white;
+  font-family: monospace;
+  border-radius: 3px;
+  padding: 1rem;
+}

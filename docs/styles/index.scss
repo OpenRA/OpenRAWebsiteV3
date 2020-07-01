@@ -2,6 +2,9 @@
 # Front matter comment to ensure Jekyll properly reads file.
 ---
 
+/* This website uses Sass to compile a stylesheet based on this file
+   Other styles are imported from the _sass directory */
+
 @import 'fonts'; // Special fonts
 @import 'html'; // Styles for generic html elements
 @import 'utility'; // Special styles used to modify elements
