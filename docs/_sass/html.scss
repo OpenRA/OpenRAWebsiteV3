@@ -10,15 +10,18 @@
   box-sizing: border-box;
 }
 
-*:focus,
+a:focus,
+button:focus,
 a:hover,
 button:hover {
   outline: none;
 }
 
-*:focus:before,
+a:focus:before,
 a:hover:before,
+button:focus:before,
 button:hover:before,
+.button:focus:before,
 .button:hover:before {
   content: '';
   position: absolute;
