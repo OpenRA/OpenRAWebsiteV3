@@ -35,13 +35,7 @@
 
 .carousel__next,
 .carousel__previous {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-top: -37px;
-  height: 75px;
-  width: 40px;
-  padding: 0;
 }
 
 .carousel__previous {
@@ -54,6 +48,16 @@
   position: absolute;
   top: 50%;
   right: -20px;
+}
+
+.carousel__previous__button,
+.carousel__next__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75px;
+  width: 40px;
+  padding: 0;
 }
 
 .carousel__pages {
