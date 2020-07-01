@@ -15,6 +15,7 @@ button:focus,
 a:hover,
 button:hover {
   outline: none;
+  position: relative;
 }
 
 a:focus:before,
