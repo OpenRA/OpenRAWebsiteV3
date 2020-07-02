@@ -24,16 +24,41 @@
   grid-gap: 2rem;
 }
 
+.grid-col-1,
+.grid-col-2,
+.grid-col-3,
+.grid-col-4 {
+  min-width: 0;
+}
+
+.grid-col-1 {
+  grid-column: span 1;
+}
+
+.grid-col-2 {
+  grid-column: span 2;
+}
+
 .grid-col-3 {
   grid-column: span 3;
+}
+
+.grid-col-4 {
+  grid-column: span 4;
 }
 
 .terminal {
   display: block;
   white-space: pre-wrap;
   background: black;
-  color: white;
+  color: rgb(210, 210, 222);
   font-family: monospace;
+  border-left: rgb(255, 17, 17) 2px solid;
   border-radius: 3px;
   padding: 1rem;
+}
+
+.terminal__prompt {
+  font-weight: bold;
+  color: gold;
 }

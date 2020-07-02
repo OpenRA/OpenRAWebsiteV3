@@ -179,8 +179,9 @@ button:active,
 }
 
 .button--primary {
-  color: rgb(240, 240, 247);
+  color: white;
   background: rgb(235, 0, 0);
+  text-shadow: rgba(0, 0, 0, 0.75) 0 1px 0;
 }
 
 .button--primary:hover {
@@ -234,4 +235,19 @@ figure {
 figcaption {
   font-size: 0.9rem;
   line-height: 150%;
+}
+
+pre, code {
+  font-family: Menlo, Consolas, monospace;
+}
+
+dt {
+  margin-top: 1.5rem;
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 0;
+  border-left: rgba(255, 255, 255, 0.5) 2px dotted;
+  padding-left: 1rem;
 }
