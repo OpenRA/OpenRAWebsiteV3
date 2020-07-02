@@ -15,10 +15,6 @@
   }
 }
 
-.carousel__item {
-  flex-shrink: 0;
-}
-
 .carousel__item__content {
   transform: scale(0.95);
   transition: transform 500ms cubic-bezier(0.83, 0, 0.17, 1);

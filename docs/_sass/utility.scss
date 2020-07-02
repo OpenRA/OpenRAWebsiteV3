@@ -132,7 +132,9 @@
 }
 
 .list--horizontal {
-  display: flex;
+  > li {
+    display: inline-block;
+  }
 }
 
 .color--discord {

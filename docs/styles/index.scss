@@ -187,15 +187,6 @@
   text-align: center;
 }
 
-.developer-update__body ul {
-  padding-left: 2rem;
-}
-
-.developer-update__body hr {
-  border: none;
-  border-top: rgb(125, 50, 50) 1px solid;
-}
-
 .developer-update__footer {
   margin-top: 3rem;
   min-height: 350px; // set a min height so the comments links are a little more reasonable
@@ -324,9 +315,4 @@
 
 
 .instructions {
-  overflow: hidden;
-}
-
-.instruction {
-  width: 100%;
 }
