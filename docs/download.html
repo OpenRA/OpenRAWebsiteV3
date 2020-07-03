@@ -3,10 +3,10 @@ js:
 - /scripts/download.js
 ---
 
-<section class="site-section u-centered-content">
+<section class="download site-section u-centered-content">
   <h1>Download</h1>
-  <div class="grid-6">
-    <div class="grid-col-3">
+  <div class="download__content">
+    <div class="download__info">
       <h2>Which Operating System?</h2>
       <p>The OpenRA engine supports <strong>Windows</strong>, <strong>OSX</strong>, <strong>Linux</strong>, and <strong>FreeBSD</strong>. If your platform of choice isn't available, the source code is also available for compilation.</p>
       <fieldset class="radio-group download__os-selector">
@@ -52,9 +52,10 @@ js:
           FreeBSD
           <svg class="icon">
             <use xlink:href="/images/icons/icons.svg#icon-freebsd"></use>
-          </svg>
+         </svg>
         </label>
         <label class="radio-button button button--dark button--large">
+
           <input
             class="radio-input download__os download__os-source"
             name="operating-system"
@@ -91,7 +92,7 @@ js:
       <p>The OpenRA game engine is free software released under the <a href="/">GPL3 license</a>. The OpenRA mods require files from the original games, which you will be prompted to download or copy the first time you run a mod.
         These files are not covered by the OpenRA license, and remain the property of their original owners.</p>
     </div>
-    <div class="grid-col-3">
+    <div class="download__instructions">
       <div id="instructions" class="instructions">
         <div id="windows" class="instruction">
           <div class="u-light-zone">
