@@ -71,6 +71,7 @@
   background-image:
     linear-gradient(to right, rgba(25, 0, 3, 0.25) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(25, 0, 3, 0.25) 1px, transparent 1px);
+  box-shadow: black 0 2px 0 0;
   
   @media screen and (max-width: 680px) {
     margin-left: -1rem;

@@ -55,6 +55,7 @@
 .hero__intro-text__games {
   white-space: nowrap;
   color: rgb(27, 27, 27);
+  text-shadow: none;
 }
 
 .hero__intro-text__game {
@@ -139,11 +140,7 @@
 }
 
 .operating-system {
-  margin-right: 1.5rem;
-
-  a {
-    display: inline-block;
-  }
+  margin-right: 0.75rem;
 }
 
 .operating-system .icon {
@@ -326,5 +323,16 @@
   .badge {
     margin-top: 0.75rem;
     background: rgba(0, 0, 0, 0.25);
+  }
+}
+
+
+.community__sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
   }
 }

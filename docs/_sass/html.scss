@@ -58,6 +58,7 @@ h1, h2, h3, h4 {
   font-family: 'Jost', Futura, sans-serif;
   color: white;
   margin: 1.5rem 0 1rem 0;
+  text-shadow: rgba(0, 0, 0, 0.75) 0 2px 0;
 }
 
 h1:first-child,
@@ -142,6 +143,7 @@ button,
   padding: 0.5rem 1rem;
   font-weight: bold;
   line-height: 125%;
+  text-decoration: none;
   color: black;
   background: rgb(240, 240, 247);
   border-radius: 2px;
@@ -152,10 +154,6 @@ button,
 
   > hr {
     margin: 0.5rem 0;
-  }
-
-  > .icon {
-    margin-left: 0.75rem;
   }
 }
 
@@ -209,6 +207,10 @@ button:active,
 
 .button--dark:hover {
   background: rgb(27, 27, 32);
+}
+
+.button__icon {
+  margin-left: 0.75rem;
 }
 
 .radio-group {
@@ -270,12 +272,14 @@ pre, code {
 
 dt {
   margin-top: 1.5rem;
+  margin-bottom: 1rem;
   font-weight: bold;
 }
 
 dd {
   margin-left: 0;
   border-left: rgba(255, 255, 255, 0.5) 2px dotted;
+  margin-bottom: 0.5rem;
   padding-left: 1rem;
 }
 
