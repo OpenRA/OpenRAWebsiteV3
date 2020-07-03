@@ -163,7 +163,6 @@
 }
 
 .developer-update {
-  margin-top: 1px;
 }
 
 .developer-update__header {
@@ -313,6 +312,12 @@
 }
 
 
-
 .instructions {
+}
+
+.instruction__download-button {
+  .badge {
+    margin-top: 0.75rem;
+    background: rgba(0, 0, 0, 0.25);
+  }
 }

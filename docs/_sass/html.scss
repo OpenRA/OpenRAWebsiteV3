@@ -118,6 +118,12 @@ lite-youtube {
   max-width: 720px;
 }
 
+fieldset {
+  border: none;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
 label {
   cursor: pointer;
 }
@@ -143,6 +149,14 @@ button,
   vertical-align: middle;
   box-shadow: black 0 1px 0 0;
   transition: all 250ms;
+
+  > hr {
+    margin: 0.5rem 0;
+  }
+
+  > .icon {
+    margin-left: 0.75rem;
+  }
 }
 
 button:hover,
@@ -174,18 +188,18 @@ button:active,
 }
 
 .button--large {
-  font-size: 1.1rem;
-  padding: 0.65rem 1.15rem;
+  font-size: 1.25rem;
+  padding: 0.75rem 1.25rem;
 }
 
 .button--primary {
   color: white;
-  background: rgb(235, 0, 0);
+  background: rgb(185, 0, 0);
   text-shadow: rgba(0, 0, 0, 0.75) 0 1px 0;
 }
 
 .button--primary:hover {
-  background: rgb(255, 25, 25);
+  background: rgb(225, 5, 5);
 }
 
 .button--dark {
@@ -195,6 +209,19 @@ button:active,
 
 .button--dark:hover {
   background: rgb(27, 27, 32);
+}
+
+.radio-group {
+  clear: both;
+}
+
+.radio-button {
+  float: left;
+  margin: 0 0.5rem 0.5rem 0;
+}
+
+.radio-input {
+  margin-right: 0.5rem;
 }
 
 var {

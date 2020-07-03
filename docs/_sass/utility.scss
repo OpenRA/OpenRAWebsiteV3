@@ -29,6 +29,10 @@
   overflow: hidden !important;
 }
 
+.text--centered {
+  text-align: center;
+}
+
 .aspect-16-9 {
   padding-bottom: 56.25%;
   position: relative;
@@ -85,6 +89,10 @@
     margin-left: -1rem;
     margin-right: -1rem;
   }
+}
+
+.u-light-zone + .u-dark-zone {
+  margin-top: 1px;
 }
 
 .u-light-zone,

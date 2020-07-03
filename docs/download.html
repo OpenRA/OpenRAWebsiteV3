@@ -9,73 +9,63 @@ js:
     <div class="grid-col-3">
       <h2>Which Operating System?</h2>
       <p>The OpenRA engine supports <strong>Windows</strong>, <strong>OSX</strong>, <strong>Linux</strong>, and <strong>FreeBSD</strong>. If your platform of choice isn't available, the source code is also available for compilation.</p>
-      <ul class="list--no-style list--horizontal">
-        <li>
-          <label class="button button--large">
-            <input
-              class="download__os download__os-windows"
-              name="operating-system"
-              value="windows"
-              type="radio" />
-            Windows
-            <svg class="icon">
-              <use xlink:href="/images/icons/icons.svg#icon-windows"></use>
-            </svg>
-          </label>
-        </li>
-        <li>
-          <label class="button button--large">
-            <input
-              class="download__os download__os-osx"
-              name="operating-system"
-              value="osx"
-              type="radio" />
-            OSX
-            <svg class="icon">
-              <use xlink:href="/images/icons/icons.svg#icon-apple"></use>
-            </svg>
-          </label>
-        </li>
-        <li>
-          <label class="button button--large">
-            <input
-              class="download__os download__os-linux"
-              name="operating-system"
-              value="linux"
-              type="radio" />
-            Linux
-            <svg class="icon">
-              <use xlink:href="/images/icons/icons.svg#icon-linux"></use>
-            </svg>
-          </label>
-        </li>
-        <li>
-          <label class="button button--large">
-            <input
-              class="download__os download__os-free-bsd"
-              name="operating-system"
-              value="free-bsd"
-              type="radio" />
-            FreeBSD
-            <svg class="icon">
-              <use xlink:href="/images/icons/icons.svg#icon-freebsd"></use>
-            </svg>
-          </label>
-        </li>
-        <li>
-          <label class="button button--large">
-            <input
-              class="download__os download__os-source"
-              name="operating-system"
-              value="source"
-              type="radio" />
-            Source
-            <svg class="icon">
-              <use xlink:href="/images/icons/icons.svg#icon-github"></use>
-            </svg>
-          </label>
-        </li>
-      </ul>
+      <fieldset class="radio-group download__os-selector">
+        <label class="radio-button button button--dark button--large">
+          <input
+            class="radio-input download__os download__os-windows"
+            name="operating-system"
+            value="windows"
+            type="radio" />
+          Windows
+          <svg class="icon">
+            <use xlink:href="/images/icons/icons.svg#icon-windows"></use>
+          </svg>
+        </label>
+        <label class="radio-button button button--dark button--large">
+          <input
+            class="radio-input download__os download__os-osx"
+            name="operating-system"
+            value="osx"
+            type="radio" />
+          OSX
+          <svg class="icon">
+            <use xlink:href="/images/icons/icons.svg#icon-apple"></use>
+          </svg>
+        </label>
+        <label class="radio-button button button--dark button--large">
+          <input
+            class="radio-input download__os download__os-linux"
+            name="operating-system"
+            value="linux"
+            type="radio" />
+          Linux
+          <svg class="icon">
+            <use xlink:href="/images/icons/icons.svg#icon-linux"></use>
+          </svg>
+        </label>
+        <label class="radio-button button button--dark button--large">
+          <input
+            class="radio-input download__os download__os-free-bsd"
+            name="operating-system"
+            value="free-bsd"
+            type="radio" />
+          FreeBSD
+          <svg class="icon">
+            <use xlink:href="/images/icons/icons.svg#icon-freebsd"></use>
+          </svg>
+        </label>
+        <label class="radio-button button button--dark button--large">
+          <input
+            class="radio-input download__os download__os-source"
+            name="operating-system"
+            value="source"
+            type="radio" />
+          Source
+          <svg class="icon">
+            <use xlink:href="/images/icons/icons.svg#icon-github"></use>
+          </svg>
+        </label>
+      </fieldset>
       
       <h2>Which Build?</h2>
       <p>Two types of build are available, depending on how you want to play:</p>
@@ -83,160 +73,246 @@ js:
         <li><strong>Release</strong> is recommended for players who want to play multiplayer games online.</li>
         <li><strong>Playtest</strong> provides a preview of the latest improvements for players who want to help test and shape the future releases of OpenRA.</li>
       </ul>
-      <ul class="list--no-style list--horizontal">
-        <li>
-          <label class="button button--large">
-            <input name="release" type="radio" checked />
-            Release
-          </label>
-        </li>
-        <li>
-          <label class="button button--large">
-            <input name="release" type="radio" />
-            Playtest
-          </label>
-        </li>
-      </ul>
+      <fieldset class="radio-group">
+        <label class="radio-button button button--dark button--large">
+          <input class="radio-input" name="release" type="radio" checked />
+          Release
+        </label>
+        <label class="radio-button button button--dark button--large">
+          <input class="radio-input" name="release" type="radio" />
+          Playtest
+        </label>
+      </fieldset>
       <p>Older builds can be found in the <a href="https://github.com/OpenRA/OpenRA/releases">GitHub Releases archive</a>.</p>
+
+      <hr />
 
       <h3>License and Game Assets</h3>
       <p>The OpenRA game engine is free software released under the <a href="/">GPL3 license</a>. The OpenRA mods require files from the original games, which you will be prompted to download or copy the first time you run a mod.
         These files are not covered by the OpenRA license, and remain the property of their original owners.</p>
     </div>
     <div class="grid-col-3">
-      <div id="instructions" class="u-dark-zone instructions">
+      <div id="instructions" class="instructions">
         <div id="windows" class="instruction">
-          <h3>Windows</h3>
-          <p>OpenRA works on most computers running Windows 7 or later that support OpenGL rendering.</p>
-          <p>You may need to install additional drivers supplied by your GPU vendor to enable OpenGL support.</p>
-          <button class="button--large button--primary">Download for Windows</button>
+          <div class="u-light-zone">
+            <strong class="text--caps">Windows Install Instructions</strong>
+          </div>
+          <div class="u-dark-zone">
+            <h3>Windows</h3>
+            <p>OpenRA works on most computers running Windows 7 or later that support OpenGL rendering.</p>
+            <p>You may need to install additional drivers supplied by your GPU vendor to enable OpenGL support.</p>
+            <p class="text--centered">
+              <button class="instruction__download-button button--large button--primary">
+                Download OpenRA
+                <svg class="icon">
+                  <use xlink:href="/images/icons/icons.svg#icon-download"></use>
+                </svg>
+                <div class="instruction__download-button__release badge">Release 20200505 (22.7MB)</div>
+              </button>
+            </p>
+          </div>
         </div>
     
         <div id="osx" class="instruction">
-          <h3>OSX</h3>
-          <p>OpenRA works on all macs running macOS 10.9 or later.</p>
-          <p>OpenRA has not been notarized by Apple and may be blocked by the macOS Gatekeeper. Permission to launch the games can be granted through the Security & Privacy system preference panel.</p>
-          <button class="button--large button--primary">Download for OSX</button>
-          <hr />
-          <h4>Stable releases are also available from <a href="https://caskroom.github.io/">Homebrew Cask</a>:</h4>
-          <p>
-            <code class="terminal"><span class="terminal__prompt">$</span> brew cask install openra</code>
-          </p>
-          <p>We do not maintain this external package source, so there may be delays when a new version is released. Please contact the downstream repository maintainers about any packaging issues.</p>
+          <div class="u-light-zone">
+            <strong class="text--caps">OSX Install Instructions</strong>
+          </div>
+          <div class="u-dark-zone">
+            OpenRA works on all macs running macOS 10.9 or later.
+            <p>OpenRA has not been notarized by Apple and may be blocked by the macOS Gatekeeper. Permission to launch the games can be granted through the Security & Privacy system preference panel.</p>
+            <p class="text--centered">
+              <button class="instruction__download-button button--large button--primary">
+                Download OpenRA
+                <svg class="icon">
+                  <use xlink:href="/images/icons/icons.svg#icon-download"></use>
+                </svg>
+                <div class="instruction__download-button__release badge">Release 20200505 (22.7MB)</div>
+              </button>
+            </p>
+            <hr />
+            <h4>Stable releases are also available from <a href="https://caskroom.github.io/">Homebrew Cask</a>:</h4>
+            <p>
+              <code class="terminal"><span class="terminal__prompt">$</span> brew cask install openra</code>
+            </p>
+            <p>We do not maintain this external package source, so there may be delays when a new version is released. Please contact the downstream repository maintainers about any packaging issues.</p>
+          </div>
         </div>
     
         <div id="linux" class="instruction">
-          <h3>Linux</h3>
-          <h4>Official AppImages</h4>
-          <p>OpenRA is distributed as portable AppImages that run on most modern 64-bit Linux distributions.</p>
-          <p>Download the mods you want to play, make the AppImage files executable, then double click to play! Install the optional appimaged utility to integrate OpenRA with your system launcher and web browser.</p>
-          <button class="button--large button--primary">Download Red Alert</button>
-          <button class="button--large button--primary">Download Tiberian Dawn (C&C)</button>
-          <button class="button--large button--primary">Download Dune 2000</button>
-          <hr />
-          <h4>Community Maintained Packages</h4>
-          <p>OpenRA may also be installed using packages provided by your Linux distribution or other third parties. These packages will provide better integration with your system, but may not always offer the latest release. Please contact the downstream repository maintainers about any packaging issues.</p>
-          <dl>
-            <dt>Flatpak</dt>
-            <dd>
-              <p>Stable releases and Playtests are available from Flathub:</p>
-              <p>
+          <div class="u-light-zone">
+            <strong class="text--caps">Linux Install Instructions</strong>
+          </div>
+          <div class="u-dark-zone">
+            <h4>Official AppImages</h4>
+            <p>OpenRA is distributed as portable AppImages that run on most modern 64-bit Linux distributions.</p>
+            <p>Download the mods you want to play, make the AppImage files executable, then double click to play! Install the optional appimaged utility to integrate OpenRA with your system launcher and web browser.</p>
+            <p class="text--centered">
+              <button class="instruction__download-button button--large button--primary">
+                Download Red Alert
+                <img class="icon" src="/images/icons/ra_64x64.png" />
+                <div class="instruction__download-button__release badge">Release 20200505 (22.7MB)</div>
+              </button>
+            </p>
+            <p class="text--centered">
+              <button class="instruction__download-button button--large button--primary">
+                Download Tiberian Dawn
+                <img class="icon" src="/images/icons/cnc_64x64.png" />
+                <div class="instruction__download-button__release badge">Release 20200505 (22.7MB)</div>
+              </button>
+            </p>
+            <p class="text--centered">
+              <button class="instruction__download-button button--large button--primary">
+                Download Dune 2000
+                <img class="icon" src="/images/icons/d2k_64x64.png" />
+                <div class="instruction__download-button__release badge">Release 20200505 (22.7MB)</div>
+              </button>
+            </p>
+            <hr />
+            <h4>Community Maintained Packages</h4>
+            <p>OpenRA may also be installed using packages provided by your Linux distribution or other third parties. These packages will provide better integration with your system, but may not always offer the latest release. Please contact the downstream repository maintainers about any packaging issues.</p>
+            <dl>
+              <dt>
+                <img class="icon" src="/images/icons/linux-mirrors/flatpak.png" alt="" />
+                Flatpak
+              </dt>
+              <dd>
+                <p>Stable releases and Playtests are available from Flathub:</p>
+                <p>
 <code class="terminal"><span class="terminal__prompt">$</span> flatpak install --from https://flathub.org/repo/appstream/net.openra.OpenRA.flatpakref
 <span class="terminal__prompt">$</span> flatpak install --from https://flathub.org/beta-repo/appstream/net.openra.OpenRA.flatpakref</code>
-              </p>
-              <p>The Flatpak sandbox is known to interfere with the mod switching feature between official and community mods. We recommend that players who would like to use this feature run the AppImage releases.</p>
-            </dd>
-            
-            <dt>Snap</dt>
-            <dd>
-              <p>Stable releases are available from the Snap Store:</p>
-              <p>
-                <code class="terminal"><span class="terminal__prompt">$</span> snap install openra</code>
-              </p>
-            </dd>
-    
-            <dt>Arch Linux</dt>
-            <dd>
-              <p>Stable releases are available in the official Arch repository:</p>
-              <p>
-                <code class="terminal"><span class="terminal__prompt">$</span> pacman -S openra</code>
-              </p>
-            </dd>
-    
-            <dt>Exherbo</dt>
-            <dd>
-              <p>Stable releases and Playtests are available from the hasufell overlay:</p>
-    
-              <p>
+                </p>
+                <p>The Flatpak sandbox is known to interfere with the mod switching feature between official and community mods. We recommend that players who would like to use this feature run the AppImage releases.</p>
+              </dd>
+              
+              <dt>
+                <img class="icon" src="/images/icons/linux-mirrors/snapcraft.svg" alt="" />
+                Snap
+              </dt>
+              <dd>
+                <p>Stable releases are available from the <a href="https://snapcraft.io/store">Snap Store</a>:</p>
+                <p>
+                  <code class="terminal"><span class="terminal__prompt">$</span> snap install openra</code>
+                </p>
+              </dd>
+      
+              <dt>
+                <img class="icon" src="/images/icons/linux-mirrors/arch.svg" alt="" />
+                Arch Linux
+              </dt>
+              <dd>
+                <p>Stable releases are available in the official Arch repository:</p>
+                <p>
+                  <code class="terminal"><span class="terminal__prompt">$</span> pacman -S openra</code>
+                </p>
+              </dd>
+      
+              <dt>
+                <img class="icon" src="/images/icons/linux-mirrors/exherbo.svg" />
+                Exherbo
+              </dt>
+              <dd>
+                <p>Stable releases and Playtests are available from the hasufell overlay:</p>
+      
+                <p>
 <code class="terminal"><span class="terminal__prompt">$</span> cave resolve repository/hasufell
 <span class="terminal__prompt">$</span> cave resolve games-strategy/openra:release
 <span class="terminal__prompt">$</span> cave resolve games-strategy/openra:playtest</code>
-              </p>
-            </dd>
-    
-            <dt>Gentoo</dt>
-            <dd>
-              <p>Stable releases are available from the Official Gentoo repository:</p>
-              <p>
-                <code class="terminal"><span class="terminal__prompt">$</span> emerge -a games-strategy/openra</code>
-              </p>
-            </dd>
-    
-            <dt>NixOS</dt>
-            <dd>
-              <p>Stable releases and Playtests are available from the official NixOS repository:</p>
-              <p>
+                </p>
+              </dd>
+      
+              <dt>
+                <img class="icon" src="/images/icons/linux-mirrors/gentoo.svg" />
+                Gentoo
+              </dt>
+              <dd>
+                <p>Stable releases are available from the Official Gentoo repository:</p>
+                <p>
+                  <code class="terminal"><span class="terminal__prompt">$</span> emerge -a games-strategy/openra</code>
+                </p>
+              </dd>
+      
+              <dt>
+                <img class="icon" src="/images/icons/linux-mirrors/nix.svg" />
+                NixOS</dt>
+              <dd>
+                <p>Stable releases and Playtests are available from the official NixOS repository:</p>
+                <p>
 <code class="terminal"><span class="terminal__prompt">$</span> nix-env -iA openraPackages.engines.release
 <span class="terminal__prompt">$</span> nix-env -iA openraPackages.engines.playtest</code>
-              </p>
-            </dd>
-    
-            <dt>Slackware</dt>
-            <dd>
-              <p>Stable releases are available from <a href="https://slackbuilds.org">SlackBuilds.org</a>:</p>
-              <p>
+                </p>
+              </dd>
+      
+              <dt>
+                <img class="icon" src="/images/icons/linux-mirrors/slackware.svg" /> 
+                Slackware</dt>
+              <dd>
+                <p>Stable releases are available from <a href="https://slackbuilds.org">SlackBuilds.org</a>:</p>
+                <p>
 <code class="terminal"><span class="terminal__prompt">$</span> sqg -p OpenRA
 <span class="terminal__prompt">$</span> sbopkg -i OpenRA</code>
-              </p>
-              <p>Requires the <code>sbopkg</code> utility from <a href="https://sbopkg.org">sbopkg.org</a>.</p>
-            </dd>
-    
-            <dt>Solus</dt>
-            <dd>
-              <p>Stable releases are available from the official Solus repository:</p>
-              <p>
-                <code class="terminal"><span class="terminal__prompt">$</span> eopkg it openra</code>
-              </p>
-            </dd>
-            
-            <dt>Void Linux</dt>
-            <dd>
-              <p>Stable releases are available from the official Void Linux repository:</p>
-              <p>
-                <code class="terminal"><span class="terminal__prompt">$</span> xbps-install openra</code>
-              </p>
-            </dd>
-          </dl>
+                </p>
+                <p>Requires the <code>sbopkg</code> utility from <a href="https://sbopkg.org">sbopkg.org</a>.</p>
+              </dd>
+      
+              <dt>
+                <img class="icon" src="/images/icons/linux-mirrors/solus.svg" />
+                Solus
+              </dt>
+              <dd>
+                <p>Stable releases are available from the official Solus repository:</p>
+                <p>
+                  <code class="terminal"><span class="terminal__prompt">$</span> eopkg it openra</code>
+                </p>
+              </dd>
+              
+              <dt>
+                <img class="icon" src="/images/icons/linux-mirrors/void.svg" />
+                Void Linux
+              </dt>
+              <dd>
+                <p>Stable releases are available from the official Void Linux repository:</p>
+                <p>
+                  <code class="terminal"><span class="terminal__prompt">$</span> xbps-install openra</code>
+                </p>
+              </dd>
+            </dl>
+          </div>
         </div>
     
         <div id="free-bsd" class="instruction">
-          <h3>FreeBSD</h3>
-          <p>Stable releases are available in the FreeBSD Ports Collection:</p>
-          <p>
+          <div class="u-light-zone">
+            <strong class="text--caps">FreeBSD Install Instructions</strong>
+          </div>
+          <div class="u-dark-zone">
+            Stable releases are available in the FreeBSD Ports Collection:
+            <p>
 <code class="terminal"><span class="terminal__prompt">#</span> cd /usr/ports/games/openra
 <span class="terminal__prompt">#</span> make install</code>
-          </p>
-          <p>
-            We do not maintain this external package source, so there may be delays when a new version is released.
-    Please contact the downstream repository maintainers about any packaging issues.
-          </p>
+            </p>
+            <p>
+              We do not maintain this external package source, so there may be delays when a new version is released.
+      Please contact the downstream repository maintainers about any packaging issues.
+            </p>
+          </div>
         </div>
     
         <div id="source" class="instruction">
-          <h3>Source Code</h3>
-          <p>OpenRA can be compiled from source on all platforms.</p>
-          <p>Refer to the <a href="https://github.com/OpenRA/OpenRA/wiki/Compiling">OpenRA Wiki</a> for detailed compilation instructions.</p>
-          <button class="button--large button--primary">Download Source Code</button>
+          <div class="u-light-zone">
+            <strong class="text--caps">Source Code</strong>
+          </div>
+          <div class="u-dark-zone">
+            OpenRA can be compiled from source on all platforms.
+            <p>Refer to the <a href="https://github.com/OpenRA/OpenRA/wiki/Compiling">OpenRA Wiki</a> for detailed compilation instructions.</p>
+            <p class="text--centered">
+              <button class="instruction__download-button button--large button--primary">
+                Download Source Code
+                <svg class="icon">
+                  <use xlink:href="/images/icons/icons.svg#icon-download"></use>
+                </svg>
+                <div class="instruction__download-button__release badge">Release 20200505 (22.7MB)</div>
+              </button>
+            </p>
+          </div>
         </div>
         
       </div>
