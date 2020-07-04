@@ -6,8 +6,8 @@ function Carousel (carouselReference, options) {
   const $carousel = $(carouselReference);
   const $carouselItems = $('.carousel__items', $carousel);
   const $carouselItem = $('.carousel__item', $carousel);
-  const $carouselPrevious = $('.carousel__previous', $carousel);
-  const $carouselNext = $('.carousel__next', $carousel);
+  const $carouselPreviousButton = $('.carousel__previous__button', $carousel);
+  const $carouselNextButton = $('.carousel__next__button', $carousel);
   const $carouselPage = $('.carousel__page', $carousel);
 
   options = options || {};
@@ -30,12 +30,6 @@ function Carousel (carouselReference, options) {
     // reset the timer
     resetTimer();
 
-    // early exit to prevent loops when linked
-    if (currentIndex === index) { return; }
-
-    // set the index store
-    currentIndex = index;
-
     // move elements accordingly
     const newOffset = getOffsetByIndex(index);
     $carouselItems.css('transform', `translate3d(${newOffset}px, 0, 0)`);
@@ -45,12 +39,18 @@ function Carousel (carouselReference, options) {
     $carouselItem.eq(index).addClass('carousel__item--current');
 
     // disable / enable prev/next buttons
-    $carouselPrevious.prop('disabled', currentIndex === 0);
-    $carouselNext.prop('disabled', currentIndex >= carouselItemsCount - 1);
+    $carouselPreviousButton.prop('disabled', currentIndex === 0);
+    $carouselNextButton.prop('disabled', currentIndex >= carouselItemsCount - 1);
 
     // set current page
     $carouselPage.removeClass('carousel__page--current');
     $carouselPage.eq(index).addClass('carousel__page--current');
+
+    // early exit to prevent loops when linked
+    if (currentIndex === index) { return; }
+
+    // set the index store
+    currentIndex = index;
 
     // call the change handler
     options.onChange(index);
@@ -85,11 +85,11 @@ function Carousel (carouselReference, options) {
 
   this.goToIndex = goToIndex;
 
-  $carouselPrevious.on('click', function clickPrevious () {
+  $carouselPreviousButton.on('click', function clickPrevious () {
     goToIndex(currentIndex - 1);
   });
 
-  $carouselNext.on('click', function clickNext () {
+  $carouselNextButton.on('click', function clickNext () {
     goToIndex(currentIndex + 1);
   });
 
@@ -102,7 +102,8 @@ function Carousel (carouselReference, options) {
     const pageIndex = $(this).index();
     goToIndex(pageIndex);
   });
-
+console.log('go to index')
+console.log($carouselPreviousButton)
   goToIndex(0);
 }
 

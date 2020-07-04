@@ -155,34 +155,27 @@ button,
   > hr {
     margin: 0.5rem 0;
   }
-}
 
-button:hover,
-.button:hover {
-  background: white;
-  transform: translateY(-2px);
-  box-shadow: black 0 3px 0 0;
-}
+  &:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: black 0 3px 0 0;
+  }
 
-button:hover:disabled,
-.button:hover:disabled {
-  transform: translateY(0);
-  box-shadow: black 0 0 0 0;
-}
+  &:disabled,
+  &:hover:disabled {
+    filter: contrast(0.5);
+    transform: translateY(0);
+    box-shadow: black 0 0 0 0;
+  }
 
-button:disabled,
-.button:disabled {
-  filter: contrast(0.5);
-  box-shadow: black 0 0 0 0;
-}
-
-button:active,
-.button:active {
-  transform: translateY(0);
-  box-shadow: black 0 1px 0 0;
-  transition:
-    transform 0ms,
-    box-shadow 0ms;
+  &:active {
+    transform: translateY(0);
+    box-shadow: black 0 1px 0 0;
+    transition:
+      transform 0ms,
+      box-shadow 0ms;
+  }
 }
 
 .button--large {
