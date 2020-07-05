@@ -1,9 +1,6 @@
-title: Your awesome title
-email: your-email@example.com
+title: Open Source Red Alert, Command & Conquer, and more
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Open Source reimplementation of Westwood Studios' 2D Command and Conquer games. Play modern versions of Red Alert, Command & Conquer, Dune 2000, and more for free!
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://openra.kempf.dev" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: openRA
