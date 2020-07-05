@@ -7,31 +7,100 @@
 </div>
 
 <div class="community__sections site-section u-centered-content">
-  <div class="community__social-media">
-    <div class="u-light-zone"><strong class="text--caps">Connect With Us on Social Media</strong></div>
-    <div class="u-dark-zone" style="display: flex; align-items: center;">
+  <div class="community__discussion community__section">
+    <div class="u-light-zone"><strong class="text--caps">Join the Discussion</strong></div>
+    <div class="community__section__content u-dark-zone">
+      <img class="community__section__illustration" src="/images/community/discussion-sites.png" />
       <div>
-        We're active on Reddit, Twitter, and Facebook. Follow us there to get the latest news on features and releases!
-        <p>
-          <a class="button" href="https://reddit.com/r/openra">
+        If you've got questions or you just feel like chatting, come on down to our <a href="https://discord.openra.net/">discord</a> or <a href="irc://chat.freenode.net/openra">#openra on Freenode</a>.
+        <p>We've even got an old fashioned <a href="https://forum.openra.net">forum</a> full of conversations about maps, releases, balance, and off topic chatter!</p>
+        <p class="button-group">
+          <a class="button button--discord" href="https://discord.openra.net/">
+            Discord
+            <svg class="button__icon icon">
+              <use xlink:href="/images/icons/icons.svg#icon-discord"></use>
+            </svg>
+          </a>
+          <a class="button button--freenode" href="irc://chat.freenode.net/openra">
+            #openra
+            <svg class="button__icon icon">
+              <use xlink:href="/images/icons/icons.svg#icon-conversation"></use>
+            </svg>
+          </a>
+          <a class="button button--primary" href="https://forum.openra.net">
+            Forum
+            <svg class="button__icon icon">
+              <use xlink:href="/images/icons/icons.svg#icon-conversation"></use>
+            </svg>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="community__help community__section">
+    <div class="u-light-zone"><strong class="text--caps">Help Build OpenRA</strong></div>
+    <div class="community__section__content u-dark-zone">
+      <img class="community__section__illustration" src="/images/community/help-the-devs-sites.png" />
+      <div>
+        OpenRA is built by a team of volunteers and we're <strong>always</strong> looking for help. If you run into trouble, check out the <a href="https://github.com/OpenRA/OpenRA/wiki/FAQ">FAQ</a>—if you find a bug, make sure to report it with the <a href="https://github.com/OpenRA/OpenRA/issues/">OpenRA bug tracker</a>. If you're looking to contribute code, feel free to take a look at the <a href="https://github.com/OpenRA/OpenRA/wiki#development-topics">Development Topics article in our wiki</a>, or reach out to the team on Discord, IRC, or the forums. 
+        <p class="button-group">
+          <a class="button button--github" href="https://github.com/OpenRA">
+            GitHub
+            <svg class="button__icon icon">
+              <use xlink:href="/images/icons/icons.svg#icon-github"></use>
+            </svg>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="community__resources community__section">
+    <div class="u-light-zone"><strong class="text--caps">Create or Download Maps for OpenRA</strong></div>
+    <div class="community__section__content u-dark-zone">
+      <img class="community__section__illustration" src="/images/community/resource-sites.png" />
+      <div>
+        No real time strategy game would be complete without its maps. OpenRA has its own resource website where you can find <em>over 9,000</em> maps to add all sorts of variety to the game. You can even <strong>create and upload your own maps</strong> for other people to play!
+        <p class="button-group">
+          <a class="button button--openra-resource" href="https://resource.openra.net">
+            OpenRA Resource
+            <svg class="button__icon icon">
+              <use xlink:href="/images/icons/icons.svg#icon-wrench"></use>
+            </svg>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="community__social-media community__section">
+    <div class="u-light-zone"><strong class="text--caps">Connect With Us on Social Media</strong></div>
+    <div class="community__section__content u-dark-zone">
+      <img class="community__section__illustration" src="/images/community/social-media-sites.png" />
+      <div>
+        We're active on <a href="https://reddit.com/r/openra">Reddit</a>, <a href="https://twitter.com/openra">Twitter</a>, and <a href="https://facebook.com/openra">Facebook</a>. Follow us there to get the latest news on features and releases!
+        <p>Subscribe to our <a href="https://www.youtube.com/channel/UCRoiPL1J4K1-EhQeNazrYig">YouTube channel</a> for all sorts of video content, including previews of upcoming features.</p>
+        <p class="button-group">
+          <a class="button button--reddit" href="https://reddit.com/r/openra">
             Reddit
             <svg class="button__icon icon">
               <use xlink:href="/images/icons/icons.svg#icon-reddit"></use>
             </svg>
           </a>
-          <a class="button" href="https://twitter.com/openra">
+          <a class="button button--twitter" href="https://twitter.com/openra">
             Twitter
             <svg class="button__icon icon">
               <use xlink:href="/images/icons/icons.svg#icon-twitter"></use>
             </svg>
           </a>
-          <a class="button" href="https://facebook.com/openra">
+          <a class="button button--facebook" href="https://facebook.com/openra">
             Facebook
             <svg class="button__icon icon">
               <use xlink:href="/images/icons/icons.svg#icon-facebook"></use>
             </svg>
           </a>
-          <a class="button" href="https://youtube.com/openra">
+          <a class="button button--youtube" href="https://www.youtube.com/channel/UCRoiPL1J4K1-EhQeNazrYig">
             YouTube
             <svg class="button__icon icon">
               <use xlink:href="/images/icons/icons.svg#icon-youtube"></use>
@@ -39,60 +108,42 @@
           </a>
         </p>
       </div>
-      <img src="/images/community/social-media-sites.png" style="float: right; margin-left: 3rem; width: 300px; flex-shrink: 0;" />
     </div>
   </div>
 
-  <div class="community__help">
-    <div class="u-light-zone"><strong class="text--caps">Help Develop The Game</strong></div>
-    <div class="u-dark-zone">
-      If you run into problems, your first stop should be the OpenRA FAQ. If you don't find what you need in the FAQ, file a bug on the OpenRA Bug Tracker.
-      <ul>
-        <li>
-          <a href="">OpenRA FAQ</a>
-        </li>
-        <li>
-          <a href="">OpenRA Bug Tracker</a>
-        </li>
-      </p>
-    </div>
-  </div>
-  
-  <div class="community__contact">
-    <div class="u-light-zone"><strong class="text--caps">📬 Getting In Touch</strong></div>
-    <div class="u-dark-zone">
-      The best means of contacting us is via our irc channel, #openra on freenode. If you don't have an IRC client, try using the Freenode IRC web client.
-      <p>You can also try our forum, ModDB page, Twitter, Facebook, Discord server or Reddit.</p>
-      <ul>
-        <li>#openra on Freenode</li>
-        <li>#openra on Freenode (web client)</li>
-        <li>Forum</li>
-        <li>ModDB</li>
-        <li>Twitter</li>
-        <li>Facebook</li>
-        <li>Reddit</li>
-        <li>Discord</li>
-      </ul>
-    </div>
-  </div>
-  
-  <div class="community__involvement">
-    <div class="u-light-zone"><strong class="text--caps">👷‍♂️ Getting Involved</strong></div>
-    <div class="u-dark-zone">
-      OpenRA is built by a small team of volunteers, so any help is greatly appreciated. Feel free to take a look at the Development Topics article in our wiki, or reach out to the team with one of the methods listed above.
-    </div>
-  </div>
-  
-  <div class="community__content">
-    <div class="u-light-zone"><strong class="text--caps">🗺 Community Content</strong></div>
-    <div class="u-dark-zone">
-      <p>OpenRA also has loads of content created by members of the community.</p>
-      <dl>
-        <dt>Custom Maps</dt>
-        <dd>The OpenRA Resource site is home to hundreds of custom maps for each of the mods supported by the OpenRA engine. Feel free to peruse the resource site for new maps, or submit your own!</dd>
-        <dt>Replays, Strategies, and Videos</dt>
-        <dd>You can find all sorts of community content in the OpenRA section of GameReplays.org.</dd>
-      </dl>
+  <div class="community__gaming-community community__section">
+    <div class="u-light-zone"><strong class="text--caps">Join us in the Gaming Community</strong></div>
+    <div class="community__section__content u-dark-zone">
+      <img class="community__section__illustration" src="/images/community/gaming-community-sites.png" />
+      <div>
+        OpenRA has is involved in other gaming communities as well! Find others playing OpenRA in real time by joining our <a href="https://steamcommunity.com/groups/openra">Steam community</a>, support the mod by following OpenRA on <a href="https://openra.itch.io/openra">itch.io</a> and <a href="https://www.moddb.com/games/openra">ModDb</a>, and learn strategies and watch replays of the best of the best on <a href="https://www.gamereplays.org/openra/">GameReplays</a>.
+        <p class="button-group">
+          <a class="button button--steam" href="https://steamcommunity.com/groups/openra">
+            Steam
+            <svg class="button__icon icon">
+              <use xlink:href="/images/icons/icons.svg#icon-steam"></use>
+            </svg>
+          </a>
+          <a class="button button--itch" href="https://openra.itch.io/openra">
+            Itch.io
+            <svg class="button__icon icon">
+              <use xlink:href="/images/icons/icons.svg#icon-itch"></use>
+            </svg>
+          </a>
+          <a class="button button--moddb" href="https://www.moddb.com/games/openra">
+            ModDB
+            <svg class="button__icon icon">
+              <use xlink:href="/images/icons/icons.svg#icon-moddb"></use>
+            </svg>
+          </a>
+          <a class="button button--gamereplays" href="https://www.gamereplays.org/openra/">
+            GameReplays
+            <svg class="button__icon icon">
+              <use xlink:href="/images/icons/icons.svg#icon-gamereplays"></use>
+            </svg>
+          </a>
+        </p>
+      </div>
     </div>
   </div>
 </div>
