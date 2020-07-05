@@ -8,6 +8,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:description" content="{{ site.description }}" />
   <meta property="og:url" content="{{ site.url }}" />
+  <!-- query param at the end is for cache busting if/when more dynamic social images are added -->
   <meta property="og:image" content="{{ site.url }}/images/social.jpg?t={{ site.time | date: "%Y-%m-%d-%H-%M" }}" />
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -15,6 +16,7 @@
   <meta name="twitter:creator" content="@openRA">
   <meta name="twitter:title" content="OpenRA">
   <meta name="twitter:description" content="{{ site.description }}">
+  <!-- query param at the end is for cache busting if/when more dynamic social images are added -->
   <meta name="twitter:image" content="{{ site.url }}/images/social.jpg?t={{ site.time | date: "%Y-%m-%d-%H-%M" }}">
 
   <title>OpenRA - {{ site.title }}</title>
