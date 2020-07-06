@@ -2,7 +2,7 @@
 release:
   tag: release-20200503
   assets:
-    linux_dune:
+    linux_d2k:
       filename: OpenRA-Dune-2000-x86_64.AppImage
       download_url: https://github.com/OpenRA/OpenRA/releases/download/release-20200503/OpenRA-Dune-2000-x86_64.AppImage
       size: 25776168

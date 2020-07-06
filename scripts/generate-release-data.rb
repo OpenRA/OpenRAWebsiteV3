@@ -9,7 +9,7 @@ GITHUB_RELEASE_ID = '26118058'
 def get_release_key(name, tag)
   case name
     when 'OpenRA-Dune-2000-x86_64.AppImage', 'OpenRA-Dune-2000-playtest-x86_64.AppImage'
-      'linux_dune'
+      'linux_d2k'
     when 'OpenRA-Red-Alert-x86_64.AppImage', 'OpenRA-Red-Alert-playtest-x86_64.AppImage'
       'linux_ra'
     when 'OpenRA-Tiberian-Dawn-x86_64.AppImage', 'OpenRA-Tiberian-Dawn-playtest-x86_64.AppImage'
