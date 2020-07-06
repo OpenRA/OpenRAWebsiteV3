@@ -2,6 +2,7 @@ require 'octokit'
 require 'yaml'
 
 # Github release IDs: obtain from https://api.github.com/repos/OpenRA/OpenRA/releases
+# If playtest is older than the current release, leave it as an empty string ''
 GITHUB_PLAYTEST_ID = ''
 GITHUB_RELEASE_ID = '26118058'
 
