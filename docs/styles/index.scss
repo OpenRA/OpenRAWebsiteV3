@@ -316,6 +316,10 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 2rem;
 
+  > * {
+    min-width: 0px; // Safari Hack
+  }
+
   @media screen and (max-width: 900px) {
     grid-template-columns: 1fr;
   }
@@ -339,6 +343,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2rem;
+
+  > * {
+    min-width: 0px; // Safari Hack
+  }
 
   @media screen and (max-width: 900px) {
     grid-template-columns: 1fr;
