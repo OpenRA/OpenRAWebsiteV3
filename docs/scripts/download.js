@@ -10,16 +10,33 @@
   }  
 
   const defaultInstruction = operatingSytem() || 'source';
+  const defaultRelease = 'release';
 
   function setActiveInstruction (os) {
     $('.instruction').hide();
     $('#' + os).show();
   }
 
+  function setActiveRelease (release) {
+    if (release === 'release') {
+      $('.instruction__download-button--playtest').hide();
+      $('.instruction__download-button--release').show();
+    } else {
+      $('.instruction__download-button--playtest').show();
+      $('.instruction__download-button--release').hide();
+    }
+  }
+
   $('input[name="operating-system"]').on('change', function (event) {
     setActiveInstruction(event.target.value);
   });
 
+  $('input[name="release"]').on('change', function (event) {
+    console.log(event.target.value)
+    setActiveRelease(event.target.value);
+  });
+
   setActiveInstruction(defaultInstruction);
+  setActiveRelease(defaultRelease)
   document.querySelector('.download__os-' + defaultInstruction).checked = true;
 })();

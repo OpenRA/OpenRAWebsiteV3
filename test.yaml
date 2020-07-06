@@ -1,0 +1,32 @@
+--- |
+  ---
+  - :name: OpenRA-Dune-2000-x86_64.AppImage
+    :browser_download_url: https://github.com/OpenRA/OpenRA/releases/download/release-20200503/OpenRA-Dune-2000-x86_64.AppImage
+    :size: 25776168
+  - :name: OpenRA-Dune-2000-x86_64.AppImage.zsync
+    :browser_download_url: https://github.com/OpenRA/OpenRA/releases/download/release-20200503/OpenRA-Dune-2000-x86_64.AppImage.zsync
+    :size: 88412
+  - :name: OpenRA-Red-Alert-x86_64.AppImage
+    :browser_download_url: https://github.com/OpenRA/OpenRA/releases/download/release-20200503/OpenRA-Red-Alert-x86_64.AppImage
+    :size: 19894312
+  - :name: OpenRA-Red-Alert-x86_64.AppImage.zsync
+    :browser_download_url: https://github.com/OpenRA/OpenRA/releases/download/release-20200503/OpenRA-Red-Alert-x86_64.AppImage.zsync
+    :size: 68308
+  - :name: OpenRA-release-20200503-source.tar.bz2
+    :browser_download_url: https://github.com/OpenRA/OpenRA/releases/download/release-20200503/OpenRA-release-20200503-source.tar.bz2
+    :size: 26410240
+  - :name: OpenRA-release-20200503-x64.exe
+    :browser_download_url: https://github.com/OpenRA/OpenRA/releases/download/release-20200503/OpenRA-release-20200503-x64.exe
+    :size: 24440134
+  - :name: OpenRA-release-20200503-x86.exe
+    :browser_download_url: https://github.com/OpenRA/OpenRA/releases/download/release-20200503/OpenRA-release-20200503-x86.exe
+    :size: 24297751
+  - :name: OpenRA-release-20200503.dmg
+    :browser_download_url: https://github.com/OpenRA/OpenRA/releases/download/release-20200503/OpenRA-release-20200503.dmg
+    :size: 63154339
+  - :name: OpenRA-Tiberian-Dawn-x86_64.AppImage
+    :browser_download_url: https://github.com/OpenRA/OpenRA/releases/download/release-20200503/OpenRA-Tiberian-Dawn-x86_64.AppImage
+    :size: 21102632
+  - :name: OpenRA-Tiberian-Dawn-x86_64.AppImage.zsync
+    :browser_download_url: https://github.com/OpenRA/OpenRA/releases/download/release-20200503/OpenRA-Tiberian-Dawn-x86_64.AppImage.zsync
+    :size: 72446

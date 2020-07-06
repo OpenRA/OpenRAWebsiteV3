@@ -1,0 +1,28 @@
+---
+release:
+  tag: release-20200503
+  assets:
+    linux_dune:
+      filename: OpenRA-Dune-2000-x86_64.AppImage
+      download_url: https://github.com/OpenRA/OpenRA/releases/download/release-20200503/OpenRA-Dune-2000-x86_64.AppImage
+      size: 25776168
+    linux_ra:
+      filename: OpenRA-Red-Alert-x86_64.AppImage
+      download_url: https://github.com/OpenRA/OpenRA/releases/download/release-20200503/OpenRA-Red-Alert-x86_64.AppImage
+      size: 19894312
+    source:
+      filename: OpenRA-release-20200503-source.tar.bz2
+      download_url: https://github.com/OpenRA/OpenRA/releases/download/release-20200503/OpenRA-release-20200503-source.tar.bz2
+      size: 26410240
+    windows:
+      filename: OpenRA-release-20200503-x64.exe
+      download_url: https://github.com/OpenRA/OpenRA/releases/download/release-20200503/OpenRA-release-20200503-x64.exe
+      size: 24440134
+    osx:
+      filename: OpenRA-release-20200503.dmg
+      download_url: https://github.com/OpenRA/OpenRA/releases/download/release-20200503/OpenRA-release-20200503.dmg
+      size: 63154339
+    linux_td:
+      filename: OpenRA-Tiberian-Dawn-x86_64.AppImage
+      download_url: https://github.com/OpenRA/OpenRA/releases/download/release-20200503/OpenRA-Tiberian-Dawn-x86_64.AppImage
+      size: 21102632

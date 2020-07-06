@@ -1,0 +1,26 @@
+<a
+  href="{{ include.asset.download_url }}"
+  class="
+    instruction__download-button
+    {% if include.playtest %}
+    instruction__download-button--playtest
+    {% else %}
+    instruction__download-button--release
+    {% endif %}
+    button button--large button--primary">
+  {% if include.text %}
+    {{ include.text }}
+  {% else %}
+    Download OpenRA
+  {% endif %}
+  {% if include.icon %}
+    {{ include.icon }}
+  {% else %}
+    <svg class="button__icon icon">
+      <use xlink:href="/images/icons/icons.svg#icon-download"></use>
+    </svg>
+  {% endif %}
+  <span class="instruction__download-button__release badge">
+    {{include.tag}} ({{ include.asset.size | divided_by: 1048576.0 | round: 2 }}MB)
+    </span>
+</a>

@@ -3,6 +3,9 @@ js:
 - /scripts/download.js
 ---
 
+{% assign release = site.data.releases.release %}
+{% assign playtest = site.data.releases.playtest %}
+
 <section class="download site-section u-centered-content">
   <h1>Download</h1>
   <div class="download__content">
@@ -76,11 +79,21 @@ js:
       </ul>
       <fieldset class="radio-group">
         <label class="radio-button button button--large">
-          <input class="radio-input" name="release" type="radio" checked />
+          <input
+            class="radio-input"
+            name="release"
+            type="radio"
+            value="release"
+            checked />
           Release
         </label>
-        <label class="radio-button button button--large">
-          <input class="radio-input" name="release" type="radio" disabled="true" />
+        <label class="radio-button button button--large {% if playtest %}{% else %}button--disabled{% endif %}">
+          <input
+            class="radio-input"
+            name="release"
+            type="radio"
+            value="playtest"
+            {% if playtest %}{% else %}disabled="true"{% endif %} />
           Playtest
         </label>
       </fieldset>
@@ -103,13 +116,15 @@ js:
             <p>OpenRA works on most computers running Windows 7 or later that support OpenGL rendering.</p>
             <p>You may need to install additional drivers supplied by your GPU vendor to enable OpenGL support.</p>
             <p class="text--centered">
-              <button class="instruction__download-button button--large button--primary">
-                Download OpenRA
-                <svg class="button__icon icon">
-                  <use xlink:href="/images/icons/icons.svg#icon-download"></use>
-                </svg>
-                <div class="instruction__download-button__release badge">Release 20200505 (22.7MB)</div>
-              </button>
+              {% include release-download-button.html
+                asset=release.assets.windows
+                tag=release.tag %}
+              {% if playtest %}
+                {% include release-download-button.html
+                  asset=playtest.assets.windows
+                  tag=playtest.tag
+                  playtest=true %}
+              {% endif %}
             </p>
           </div>
         </div>
@@ -122,13 +137,15 @@ js:
             OpenRA works on all macs running macOS 10.9 or later.
             <p>OpenRA has not been notarized by Apple and may be blocked by the macOS Gatekeeper. Permission to launch the games can be granted through the Security & Privacy system preference panel.</p>
             <p class="text--centered">
-              <button class="instruction__download-button button--large button--primary">
-                Download OpenRA
-                <svg class="button__icon icon">
-                  <use xlink:href="/images/icons/icons.svg#icon-download"></use>
-                </svg>
-                <div class="instruction__download-button__release badge">Release 20200505 (22.7MB)</div>
-              </button>
+              {% include release-download-button.html
+                asset=release.assets.osx
+                tag=release.tag %}
+              {% if playtest %}
+                {% include release-download-button.html
+                  asset=playtest.assets.osx
+                  tag=playtest.tag
+                  playtest=true %}
+              {% endif %}
             </p>
             <hr />
             <h4>Stable releases are also available from <a href="https://brew.sh/">Homebrew Cask</a>:</h4>
@@ -148,25 +165,49 @@ js:
             <p>OpenRA is distributed as portable AppImages that run on most modern 64-bit Linux distributions.</p>
             <p>Download the mods you want to play, make the AppImage files executable, then double click to play! Install the optional appimaged utility to integrate OpenRA with your system launcher and web browser.</p>
             <p class="text--centered">
-              <button class="instruction__download-button button--large button--primary">
-                Download Red Alert
-                <img class="button__icon icon" src="/images/icons/ra_64x64.png" />
-                <div class="instruction__download-button__release badge">Release 20200505 (22.7MB)</div>
-              </button>
+              {% include release-download-button.html
+                asset=release.assets.linux_ra
+                tag=release.tag
+                text="Download Red Alert"
+                icon='<img class="button__icon icon" src="/images/icons/ra_64x64.png" />' %}
+              {% if playtest %}
+                {% include release-download-button.html
+                  asset=playtest.assets.linux_ra
+                  tag=playtest.tag
+                  text="Download Red Alert"
+                  icon='<img class="button__icon icon" src="/images/icons/ra_64x64.png" />'
+                  playtest=true %}
+              {% endif %}
             </p>
             <p class="text--centered">
-              <button class="instruction__download-button button--large button--primary">
-                Download Tiberian Dawn
-                <img class="button__icon icon" src="/images/icons/cnc_64x64.png" />
-                <div class="instruction__download-button__release badge">Release 20200505 (22.7MB)</div>
-              </button>
+              {% include release-download-button.html
+                asset=release.assets.linux_td
+                tag=release.tag
+                text="Download Tiberian Dawn"
+                icon='<img class="button__icon icon" src="/images/icons/cnc_64x64.png" />' %}
+              {% if playtest %}
+                {% include release-download-button.html
+                  asset=playtest.assets.linux_td
+                  tag=playtest.tag
+                  text="Download Tiberian Dawn"
+                  icon='<img class="button__icon icon" src="/images/icons/cnc_64x64.png" />'
+                  playtest=true %}
+              {% endif %}
             </p>
             <p class="text--centered">
-              <button class="instruction__download-button button--large button--primary">
-                Download Dune 2000
-                <img class="button__icon icon" src="/images/icons/d2k_64x64.png" />
-                <div class="instruction__download-button__release badge">Release 20200505 (22.7MB)</div>
-              </button>
+              {% include release-download-button.html
+                asset=release.assets.linux_d2k
+                tag=release.tag
+                text="Download Dune 2000"
+                icon='<img class="button__icon icon" src="/images/icons/d2k_64x64.png" />' %}
+              {% if playtest %}
+                {% include release-download-button.html
+                  asset=playtest.assets.linux_d2k
+                  tag=playtest.tag
+                  text="Download Dune 2000"
+                  icon='<img class="button__icon icon" src="/images/icons/d2k_64x64.png" />'
+                  playtest=true %}
+              {% endif %}
             </p>
             <hr />
             <h4>Community Maintained Packages</h4>
@@ -305,13 +346,15 @@ js:
             OpenRA can be compiled from source on all platforms.
             <p>Refer to the <a href="https://github.com/OpenRA/OpenRA/wiki/Compiling">OpenRA Wiki</a> for detailed compilation instructions.</p>
             <p class="text--centered">
-              <button class="instruction__download-button button--large button--primary">
-                Download Source Code
-                <svg class="button__icon icon">
-                  <use xlink:href="/images/icons/icons.svg#icon-download"></use>
-                </svg>
-                <div class="instruction__download-button__release badge">Release 20200505 (22.7MB)</div>
-              </button>
+              {% include release-download-button.html
+                asset=release.assets.source
+                tag=release.tag %}
+              {% if playtest %}
+                {% include release-download-button.html
+                  asset=playtest.assets.source
+                  tag=playtest.tag
+                  playtest=true %}
+              {% endif %}
             </p>
           </div>
         </div>
