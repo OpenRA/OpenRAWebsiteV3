@@ -44,13 +44,17 @@ html, body {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   line-height: 150%;
-  background: rgb(42, 42, 49);
   color: rgb(240, 240, 247);
+}
+
+html {
+  background-color: rgb(28, 27, 32);
+  background-image: url('../images/bg-texture.jpg');
 }
 
 body {
   background-position-y: -60px;
-  background-image: url('../images/bg-logos_filled.png');
+  background-image: url('../images/bg-logos.png');
 }
 
 h1, h2, h3, h4 {
