@@ -16,6 +16,7 @@
 }
 
 .site-header {
+  padding: 0 2rem;
   background: rgb(0, 0, 0);
   background-image: linear-gradient(114deg, rgba(13,13,16,1) 0%, rgba(27,27,33,1) 22%, rgba(13,13,16,1) 64%, rgba(17,17,21,1) 100%);
   border-bottom: black 3px solid;
@@ -33,6 +34,7 @@
 .site-header__main {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding-top: 1rem;
   padding-bottom: 1rem;
 
@@ -74,75 +76,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  @media screen and (max-width: 900px) {
-    align-items: stretch;
-    flex-direction: column;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-
-  @media screen and (max-width: 680px) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: auto;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    background: black;
-    z-index: 1000;
-    transform: translateX(-100%);
-    transition: transform 500ms $ease-in-out-quint;
-  }
-}
-
-@media screen and (max-width: 680px) {
-  .site--menu-active .site-header__sub {
-    transform: translateX(0);
-  }
 }
 
 .site-header__menu-close {
   display: none;
-
-  @media screen and (max-width: 680px) {
-    display: block;
-    align-self: flex-start;
-  }
 }
 
 .site-header__nav {
-  padding: 0.5rem 0;
-
-  @media screen and (max-width: 680px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    max-height: 100vh;
-    max-width: 100vw;
-    overflow: auto;
-  }
+  padding: 0.5rem 1rem;
 }
 
 .site-header__nav > a {
   display: inline-block;
-  padding: 0.5rem;
-
-  @media screen and (max-width: 680px) {
-    padding: 1rem;
-  }
+  padding: 0.25rem 0.5rem;
 }
 
 .site-header__social-nav {
-  @media screen and (max-width: 900px) {
-    margin-left: 10px;
-  }
-
-  @media screen and (max-width: 680px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
+  flex-shrink: 0;
 
   .icon {
     @media screen and (max-width: 680px) {
@@ -152,9 +102,13 @@
   }
 }
 
-.site-header__social-nav > a {
+.site-header__social-nav__row:nth-child(odd) {
+  margin-left: 1rem;
+}
+
+.site-header__social-nav__link {
   display: inline-block;
-  padding: 0.5rem;
+  padding: 0.25rem;
 
   @media screen and (max-width: 680px) {
     padding: 1rem;
