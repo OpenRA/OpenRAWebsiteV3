@@ -2,7 +2,7 @@
    Simple modifiers that can be applied to multiple elements */
 
 .text--small {
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   line-height: 150%;
 }
 
@@ -64,14 +64,19 @@
 
 .u-dark-zone {
   padding: 1.5rem;
-  border: rgba(255, 255, 255, 0.3) 1px solid;
-  border-radius: 2px;
+  border-width: 2px;
+  border-style: solid;
+  border-top-color: rgb(115, 115, 129);
+  border-right-color: rgb(52, 52, 66);
+  border-bottom-color: rgb(41, 41, 54);
+  border-left-color: rgb(110, 110, 123);
+  border-radius: 7px;
   background-color: rgba(0, 0, 0, 0.33);
   background-size: 150px 150px;
   background-image:
-    linear-gradient(to right, rgba(25, 0, 3, 0.25) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(25, 0, 3, 0.25) 1px, transparent 1px);
-  box-shadow: black 0 2px 0 0;
+    linear-gradient(to right, rgba(7, 3, 3, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(7, 3, 3, 0.35) 1px, transparent 1px);
+  box-shadow: rgba(0, 0, 0, 0.75) 0 4px 2px 0, inset 0 1px 2px black;
   
   @media screen and (max-width: 680px) {
     margin-left: -1rem;
@@ -176,4 +181,14 @@
 
 .color--waiting {
   color: orange;
+}
+
+.color--gold {
+  background: repeating-linear-gradient(135deg, rgb(255, 221, 155) 0, rgb(254, 215, 146) 20px, rgb(255, 225, 172) 40px, rgb(255, 255, 255) 70px, rgb(250, 198, 107) 125px, rgb(246, 194, 107) 160px, rgb(231, 177, 85) 175px, rgb(244, 193, 107) 185px, rgb(241, 191, 107) 220px, rgb(243, 190, 102) 235px, rgb(233, 177, 83) 250px, rgb(245, 190, 97) 280px, rgb(249, 188, 86) 305px, rgb(255, 251, 245) 385px, rgb(252, 195, 98) 415px, rgb(252, 195, 121) 450px, rgb(255, 221, 155) 500px);
+  background-clip: text;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  background-attachment: fixed;
+  color: rgb(255, 221, 155);
+  -webkit-text-fill-color: transparent;
 }

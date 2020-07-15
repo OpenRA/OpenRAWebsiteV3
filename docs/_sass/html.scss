@@ -42,14 +42,16 @@ button:hover:before,
 
 html, body {
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  line-height: 150%;
+  font-size: 16px;
+  line-height: 165%;
   color: rgb(240, 240, 247);
+  text-shadow: black 0 2px 0;
 }
 
 html {
-  background-color: rgb(28, 27, 32);
+  background-color: rgb(41, 40, 45);
   background-image: url('../images/bg-texture.jpg');
+  background-size: 600px 600px;
 }
 
 body {
@@ -62,7 +64,8 @@ h1, h2, h3, h4 {
   font-family: 'Jost', Futura, sans-serif;
   color: white;
   margin: 1.5rem 0 1rem 0;
-  text-shadow: rgba(0, 0, 0, 0.75) 0 2px 0;
+  filter: drop-shadow(0 4px 1px black);
+  text-shadow: none;
 }
 
 h1:first-child,
@@ -75,19 +78,23 @@ h6:first-child {
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
 }
 
 h2 {
-  font-size: 1.85rem;
+  font-size: 2rem;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 h4 {
   font-size: 1.25rem;
+}
+
+strong, em, code {
+  display: inline-block;
 }
 
 a > h1,

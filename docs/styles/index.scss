@@ -54,10 +54,13 @@
   position: relative;
 }
 
+.hero__intro-text {
+  filter: none;
+}
+
 .hero__intro-text__games {
   white-space: nowrap;
   color: $color-off-black;
-  text-shadow: none;
 }
 
 .hero__intro-text__game {
@@ -65,7 +68,7 @@
 }
 
 .hero__intro-text__game.carousel__item--current {
-  text-shadow: black 0 2px;
+  filter: drop-shadow(0 4px 1px black);
 }
 
 .hero__intro-text__ra.carousel__item--current {
@@ -86,7 +89,7 @@
 
 .hero__intro-text__tagline {
   display: block;
-  text-shadow: black 0 2px;
+  filter: drop-shadow(0 4px 1px black);
 }
 
 .install {
