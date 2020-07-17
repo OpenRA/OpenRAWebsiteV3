@@ -369,3 +369,14 @@
   max-width: 100%;
   flex-shrink: 0;
 }
+
+
+.about__video-embed {
+  float: right;
+  margin: 0 -75px 1rem 1.5rem;
+  width: 275px;
+
+  lite-youtube {
+    margin: 0;
+  }
+}
