@@ -10,6 +10,12 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background: red;
+  color: white;
+  text-shadow: rgba(0,0,0,0.75) 0 1px 0;;
+}
+
 a:focus,
 button:focus,
 a:hover,
