@@ -10,5 +10,18 @@ $color-openra-resource: rgb(44, 74, 169);
 
 $color-red-alert-red: rgb(255, 17, 17);
 $color-off-black: rgb(27, 27, 27);
+$color-off-white: rgb(230, 230, 230);
+
+$gradient-scanlines: repeating-linear-gradient(0deg, rgba(255,255,255,0.9) 0, rgba(255,255,255,0.85) 1px, rgba(255,255,255,0.15) 2px);
 
 $ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
+
+$font-size-tiny: 0.75rem;
+$font-size-small: 0.875rem;
+$font-size-medium: 1rem;
+$font-size-large: 1.125rem;
+$font-size-xlarge: 1.25rem;
+
+$font-line-height: 165%;
+
+$font-jost: 'Jost', 'Futura', sans-serif;

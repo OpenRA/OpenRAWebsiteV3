@@ -66,8 +66,7 @@
   border-left: none;
   height: 1px;
   background-color: rgb(60,60,74);
-  background-size: 1000px 1000px;
-  background-image: repeating-linear-gradient(135deg, rgba(60,60,74,1) 0%, rgba(113,113,139,1) 11%, rgba(74,74,92,1) 22%, rgba(70,70,88,1) 33%, rgba(105,105,130,1) 35%, rgba(72,72,89,1) 38%, rgba(41,41,54,1) 42%, rgba(70,70,88,1) 51%, rgba(68,68,84,1) 64%, rgba(97,97,124,1) 68%, rgba(62,62,77,1) 78%, rgba(63,63,79,1) 85%, rgba(52,52,66,1) 88%, rgba(59,59,73,1) 93%, rgba(60,60,74,1) 100%);
+  background-image: repeating-linear-gradient(135deg, rgba(60,60,74,1) 00px, rgba(113,113,139,1) 110px, rgba(74,74,92,1) 220px, rgba(70,70,88,1) 330px, rgba(105,105,130,1) 350px, rgba(72,72,89,1) 380px, rgba(41,41,54,1) 420px, rgba(70,70,88,1) 510px, rgba(68,68,84,1) 640px, rgba(97,97,124,1) 680px, rgba(62,62,77,1) 780px, rgba(63,63,79,1) 850px, rgba(52,52,66,1) 880px, rgba(59,59,73,1) 930px, rgba(60,60,74,1) 1000px);
   background-attachment: fixed;
 }
 
@@ -138,7 +137,18 @@
   }
 }
 
+.site-section__divider {
+  background: black;
+  height: 2px;
+  border-top: rgb(58, 56, 64) 1px solid;
+  border-bottom: rgb(71, 67, 87) 1px solid;
+  background-image: repeating-linear-gradient(135deg, transparent, transparent 1px, rgba(125,125,125,1) 1px, rgba(45,45,45,1) 3px, rgba(40,40,40,1) 4px);
+  background-attachment: fixed;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 0 4px 0, inset 0 1px 2px black;
+}
+
 .site-footer {
+  font-size: $font-size-small;
   padding: 0 0 3rem 0;
   background-color: rgb(0, 0, 0);
   background-attachment: fixed;

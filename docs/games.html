@@ -18,7 +18,9 @@ js:
   <p>People from around the world use OpenRA to play <strong>Red Alert</strong>, <strong>Command & Conquer</strong>, <strong>Dune 2000</strong>, and a variety of <strong>community mods</strong>. Use the server browser below to join in on the multiplayer fun!</p>
 </section>
 
-<section id="server-browser" class="servers site-section u-centered-content">
+<hr class="site-section__divider" />
+
+<section id="server-browser" class="servers site-section u-centered-content u-centered-content--large">
   <div class="servers__controls">
     <div class="servers__filters">
       <label class="button">
@@ -31,7 +33,7 @@ js:
         <input class="servers__filters__empty" type="checkbox" /> Empty
       </label>
     </div>
-    <div class="servers__info">
+    <div class="servers__info text--small">
       <span class="servers__counts">Showing <var class="servers__server-count">0</var> servers hosting <var class="servers__player-count">0</var> players.</span>
       <button class="servers__refresh">Refresh</button>
     </div>
@@ -39,9 +41,9 @@ js:
   <div class="u-mobile-full-width">
     <div class="u-dark-zone">
       <table class="servers__list text--small">
-        <thead class="servers__list__header u-light-zone">
+        <thead class="servers__list__header">
           <tr>
-            <th class="servers__list__header__name">
+            <th class="servers__list__header__name" colspan="2">
               <a class="servers__list__header__sort-toggle servers__sort__name" href="#sort-by-name">
                 Name
                 <svg class="icon">
@@ -49,7 +51,6 @@ js:
                 </svg>
               </a>
             </th>
-            <th class="servers__list__header__join"></th>
             <th class="servers__list__header__players">
               <a class="servers__list__header__sort-toggle servers__sort__players" href="#sort-by-players">
                 Players
@@ -88,6 +89,8 @@ js:
   </div>
 </section>
 
+<hr class="site-section__divider" />
+
 <section class="site-section u-centered-content">
   <h2 class="color--gold">Player Activity</h2>
   <p>View the numbers of people <span class="color--playing">playing</span> and <span class="color--waiting">waiting</span> over the last two weeks:</p>
@@ -112,12 +115,14 @@ js:
 
 <template id="server-group-header-template">
   <tr class="servers__list__group">
-    <td colspan="5">
+    <td colspan="2">
       <div class="servers__list__group__info">
         <a class="servers__list__group__mod-link"></a>
         <strong class="servers__list__group__version text--small text--caps"></strong>
-        <span class="servers__list__group__players"><var></var> players</span>
       </div>
+    </td>
+    <td colspan="3">
+      <span class="servers__list__group__players"><var></var></span>
     </td>
   </tr>
 </template>

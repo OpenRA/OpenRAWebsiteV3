@@ -9,12 +9,16 @@ button,
   line-height: 125%;
   text-decoration: none;
   color: rgb(240, 240, 247);
-  background: rgb(13, 13, 16);
-  border: none;
-  border-radius: 2px;
-  background: #222;
+  background-color: rgb(13, 13, 16);
+  border-width: 1px;
+  border-style: solid;
+  border-top-color: rgb(115, 115, 129);
+  border-right-color: rgb(60, 60, 74);
+  border-bottom-color: rgb(50, 50, 58);
+  border-left-color: rgb(110, 110, 123);
+  border-radius: 3px;
   vertical-align: middle;
-  box-shadow: black 0 1px 0 0;
+  box-shadow: black 0 2px 1px 0, inset 0 1px 2px rgba(0, 0, 0, 0.5);
   transition: all 250ms;
   text-shadow: rgba(0, 0, 0, 0.75) 0 1px 0;
 
@@ -23,9 +27,9 @@ button,
   }
 
   &:hover {
-    background: rgb(27, 27, 32);
+    background-color: rgb(27, 27, 32);
     transform: translateY(-2px);
-    box-shadow: black 0 3px 0 0;
+    box-shadow: black 0 4px 0 0;
   }
 
   &:disabled,
@@ -71,97 +75,97 @@ button,
 
 .button--primary {
   color: white;
-  background: rgb(185, 0, 0);
+  background-color: rgb(185, 0, 0);
 
   &:hover {
-    background: rgb(225, 5, 5);
+    background-color: rgb(225, 5, 5);
   }
 }
 
 .button--light {
   color: black;
-  background: rgb(240, 240, 247);
+  background-color: rgb(240, 240, 247);
   text-shadow: none;
 
   &:hover {
-    background: white;
+    background-color: white;
   }
 }
 
 .button--reddit {
   color: white;
-  background: darken($color-reddit, 7.5%);
+  background-color: darken($color-reddit, 7.5%);
 
   &:hover {
-    background: $color-reddit;
+    background-color: $color-reddit;
   }
 }
 
 .button--twitter {
   color: white;
-  background: darken($color-twitter, 7.5%);
+  background-color: darken($color-twitter, 7.5%);
 
   &:hover {
-    background: $color-twitter;
+    background-color: $color-twitter;
   }
 }
 
 .button--facebook {
   color: white;
-  background: darken($color-facebook, 7.5%);
+  background-color: darken($color-facebook, 7.5%);
 
   &:hover {
-    background: $color-facebook;
+    background-color: $color-facebook;
   }
 }
 
 .button--youtube {
   color: white;
-  background: darken($color-youtube, 7.5%);
+  background-color: darken($color-youtube, 7.5%);
 
   &:hover {
-    background: $color-youtube;
+    background-color: $color-youtube;
   }
 }
 
 .button--discord {
   color: white;
-  background: darken($color-discord, 7.5%);
+  background-color: darken($color-discord, 7.5%);
 
   &:hover {
-    background: $color-discord;
+    background-color: $color-discord;
   }
 }
 
 .button--itch {
-  background: darken($color-itch, 12.5%);
+  background-color: darken($color-itch, 12.5%);
 
   &:hover {
-    background: $color-itch;
+    background-color: $color-itch;
   }
 }
 
 .button--moddb {
-  background: darken($color-moddb, 7.5%);
+  background-color: darken($color-moddb, 7.5%);
 
   &:hover {
-    background: $color-moddb;
+    background-color: $color-moddb;
   }
 }
 
 .button--gamereplays {
-  background: darken($color-gamereplays, 7.5%);
+  background-color: darken($color-gamereplays, 7.5%);
 
   &:hover {
-    background: $color-gamereplays;
+    background-color: $color-gamereplays;
   }
 }
 
 .button--openra-resource {
-  background: darken($color-openra-resource, 7.5%);
+  background-color: darken($color-openra-resource, 7.5%);
 
   &:hover {
-    background: $color-openra-resource;
+    background-color: $color-openra-resource;
   }
 }
 

@@ -1,22 +1,28 @@
 /* Utility Styles
    Simple modifiers that can be applied to multiple elements */
 
+.text--tiny {
+  font-size: $font-size-tiny;
+  line-height: $font-line-height;
+}
+
 .text--small {
-  font-size: 0.875rem;
-  line-height: 150%;
+  font-size: $font-size-small;
+  line-height: $font-line-height;
 }
 
 .text--medium {
-  font-size: 1rem;
-  line-height: 150%;
+  font-size: $font-size-medium;
+  line-height: $font-line-height;
 }
 
 .text--large {
-  font-size: 1.1rem;
-  line-height: 150%;
+  font-size: $font-size-large;
+  line-height: $font-line-height;
 }
 
 .text--caps {
+  font-family: 'Jost', Futura, sans-serif;
   text-transform: uppercase;
 }
 
@@ -47,9 +53,9 @@
 }
 
 .u-centered-content {
-  max-width: 1100px;
+  max-width: 775px;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 25px;
 
   @media screen and (max-width: 1000px) {
     padding-left: 2rem;
@@ -62,8 +68,20 @@
   }
 }
 
+.u-centered-content--small {
+  max-width: 525px;
+}
+
+.u-centered-content--large {
+  max-width: 925px;
+}
+
+.u-centered-content--xlarge {
+  max-width: 1075px;
+}
+
 .u-dark-zone {
-  padding: 1.5rem;
+  padding: 1px;
   border-width: 2px;
   border-style: solid;
   border-top-color: rgb(115, 115, 129);
@@ -88,12 +106,27 @@
 
 .u-light-zone {
   padding: 0.75rem 1.5rem;
-  background: rgb(240, 240, 247);
-  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.45);
+  background-image: $gradient-scanlines;
+  background-size: 1px 2px;
+  color: $color-off-black;
+  text-shadow: none;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  border-top-color: white;
+  border-right-color: white;
+  border-left-color: white;
+  border-bottom-color: #ccc;
+  box-shadow: rgba(0, 0, 0, 0.75) 0 4px 2px 0, inset 0 1px 1px rgba(0, 0, 0, 0.25);
 
   @media screen and (max-width: 680px) {
     margin-left: -1rem;
     margin-right: -1rem;
+  }
+
+  strong {
+    color: black;
   }
 }
 

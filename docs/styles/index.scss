@@ -64,7 +64,7 @@
 }
 
 .hero__intro-text__game {
-  transition: all 500ms $ease-in-out-quint;
+  transition: color 500ms $ease-in-out-quint;
 }
 
 .hero__intro-text__game.carousel__item--current {
@@ -108,7 +108,6 @@
 
 .hero-carousel .carousel__item__content {
   background: $color-off-black;
-  border-bottom: black 4px solid;
 }
 
 .hero-carousel__image {
@@ -165,6 +164,7 @@
 }
 
 .developer-update {
+  padding: 1.5rem;
 }
 
 .developer-update__header {

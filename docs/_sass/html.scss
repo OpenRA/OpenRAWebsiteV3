@@ -43,8 +43,8 @@ button:hover:before,
 html, body {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
-  line-height: 165%;
-  color: rgb(240, 240, 247);
+  line-height: $font-line-height;
+  color: $color-off-white;
   text-shadow: black 0 2px 0;
 }
 
@@ -121,6 +121,10 @@ a:hover {
   text-decoration-color: rgb(255, 115, 115);
 }
 
+strong, em {
+  color: white;
+}
+
 lite-youtube {
   margin: 1.5rem auto;
   max-width: 720px;
@@ -153,6 +157,48 @@ var {
 table {
   border-spacing: 0;
   border-collapse: collapse;
+}
+
+thead {
+  th {
+    background-color: rgba(255, 255, 255, 0.5);
+    background-image: $gradient-scanlines;
+    background-size: 1px 2px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
+    color: $color-off-black;
+    text-shadow: none;
+    padding: 0.25rem 1rem;
+    border-right: rgba(0, 0, 0, 0.25) 1px dotted;
+    border-radius: 2px;
+
+    &:first-child {
+      border-top-left-radius: 5px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 5px;
+      border-right: none;
+    }
+  }
+
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: $font-size-tiny;
+    font-family: $font-jost;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
+    padding: 0.15rem 0.25rem;
+    color: lighten($color-off-black, 0.25);
+    text-decoration-color: $color-off-black;
+
+    &:hover {
+      color: black;
+    }
+  }
 }
 
 tbody {
