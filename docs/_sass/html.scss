@@ -42,6 +42,7 @@ button:hover:before,
 
 html, body {
   font-family: 'Inter', sans-serif;
+  font-variant-numeric: slashed-zero;
   font-size: 16px;
   line-height: $font-line-height;
   color: $color-off-white;
@@ -115,6 +116,10 @@ a {
   color: white;
   text-decoration: underline;
   text-decoration-color: rgb(255, 17, 17);
+  text-underline-offset: 3px;
+  -webkit-text-underline-position: under;
+  -ms-text-underline-position: below;
+  text-underline-position: under; 
 }
 
 a:hover {
@@ -157,6 +162,7 @@ var {
 table {
   border-spacing: 0;
   border-collapse: collapse;
+  font-variant-numeric: slashed-zero tabular-nums;
 }
 
 thead {
