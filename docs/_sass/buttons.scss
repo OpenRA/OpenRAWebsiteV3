@@ -3,7 +3,6 @@ button,
   -webkit-appearance: none;
   display: inline-block;
   cursor: pointer;
-  margin-bottom: 1px;
   padding: 0.5rem 1rem;
   font-weight: bold;
   line-height: 125%;
@@ -33,12 +32,17 @@ button,
   }
 
   &:disabled,
-  &:hover:disabled,
-  &.button--disabled,
-  &.button--disabled:hover {
-    filter: contrast(0.65);
-    transform: translateY(0);
-    box-shadow: black 0 0 0 0;
+  &.button--disabled {
+    color: rgba(240, 240, 247, 0.75);
+    background-image: linear-gradient(
+      rgba(200, 200, 200, 0.25), 
+      rgba(200, 200, 200, 0.25)
+    );
+    pointer-events: none;
+
+    &:hover {
+      transform: translateY(0);
+    }
   }
 
   &:active {

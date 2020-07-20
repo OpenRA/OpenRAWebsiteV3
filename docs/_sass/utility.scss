@@ -221,7 +221,9 @@
   background-clip: text;
   background-repeat: repeat;
   -webkit-background-clip: text;
-  background-attachment: fixed;
+  // This effect is great, but broken in many browsers at this time
+  // Re-enable for a fun shiny sheen on scroll!
+  // background-attachment: fixed;
   color: rgb(255, 221, 155);
   -webkit-text-fill-color: transparent;
 }

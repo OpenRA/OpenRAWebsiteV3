@@ -15,6 +15,10 @@
   }
 }
 
+.carousel__item {
+  display: block;
+}
+
 .carousel__item__content {
   transform: scale(0.95);
   transition: transform 500ms cubic-bezier(0.83, 0, 0.17, 1);
@@ -31,18 +35,17 @@
 
 .carousel__next,
 .carousel__previous {
-  margin-top: -37px;
+  position: absolute;
+  top: calc(50% - 37px);
+  z-index: 20;
+  backface-visibility: hidden; // hack to create a new layer. Essential performance fix.
 }
 
 .carousel__previous {
-  position: absolute;
-  top: 50%;
   left: -20px;
 }
 
 .carousel__next {
-  position: absolute;
-  top: 50%;
   right: -20px;
 }
 

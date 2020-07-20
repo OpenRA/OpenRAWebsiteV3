@@ -51,7 +51,6 @@
 
 
 .hero {
-  position: relative;
 }
 
 .hero__intro-text {
@@ -68,7 +67,6 @@
 }
 
 .hero__intro-text__game.carousel__item--current {
-  filter: drop-shadow(0 4px 1px black);
 }
 
 .hero__intro-text__ra.carousel__item--current {
@@ -89,25 +87,20 @@
 
 .hero__intro-text__tagline {
   display: block;
-  filter: drop-shadow(0 4px 1px black);
 }
 
 .install {
-  position: absolute;
-  top: 1.25rem;
-  right: 35px;
-
-  @media screen and (max-width: 680px) {
-    position: static;
-    top: auto;
-    left: auto;
-    margin-bottom: 1rem;
-  }
 }
 
 
-.hero-carousel .carousel__item__content {
-  background: $color-off-black;
+.hero-carousel {
+  .carousel__items {
+    margin-bottom: 1rem;
+  }
+
+  .carousel__item__content {
+    background: $color-off-black;
+  }
 }
 
 .hero-carousel__image {

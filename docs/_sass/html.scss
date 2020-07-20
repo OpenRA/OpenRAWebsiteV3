@@ -71,7 +71,6 @@ h1, h2, h3, h4 {
   font-family: 'Jost', Futura, sans-serif;
   color: white;
   margin: 1.5rem 0 1rem 0;
-  filter: drop-shadow(0 4px 1px black);
   text-shadow: none;
 }
 
@@ -117,19 +116,19 @@ a:hover > h4 {
 }
 
 a {
-  position: relative;
   font-weight: bold;
   color: white;
   text-decoration: underline;
   text-decoration-color: rgb(255, 17, 17);
-  text-underline-offset: 3px;
+  text-underline-offset: 1px;
   -webkit-text-underline-position: under;
   -ms-text-underline-position: below;
   text-underline-position: under; 
-}
 
-a:hover {
-  text-decoration-color: rgb(255, 115, 115);
+  &:hover {
+    position: relative;
+    text-decoration-color: rgb(255, 115, 115);
+  }
 }
 
 strong, em {
