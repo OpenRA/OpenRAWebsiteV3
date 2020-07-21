@@ -9,11 +9,15 @@ $color-gamereplays: rgb(95, 93, 102);
 $color-openra-resource: rgb(44, 74, 169);
 $color-construction: rgb(255, 204, 0);
 
-$color-red-alert-red: rgb(255, 17, 17);
+$color-red-alert: rgb(255, 17, 17);
+$color-command-and-conquer: rgb(255, 199, 0);
+$color-dune-2000: rgb(255, 177, 85);
+$color-tiberian-sun: rgb(92, 255, 51);
 $color-off-black: rgb(27, 27, 27);
 $color-off-white: rgb(230, 230, 230);
 
 $gradient-scanlines: repeating-linear-gradient(0deg, rgba(255,255,255,0) 0, rgba(255,255,255,0.75) 3px);
+$gradient-construction: repeating-linear-gradient(135deg, $color-construction, $color-construction 20px, black 20px, black 50px);
 
 $ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
 

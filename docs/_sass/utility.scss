@@ -85,20 +85,7 @@
 }
 
 .u-dark-zone {
-  padding: 1px;
-  border-width: 2px;
-  border-style: solid;
-  border-top-color: rgb(115, 115, 129);
-  border-right-color: rgb(52, 52, 66);
-  border-bottom-color: rgb(41, 41, 54);
-  border-left-color: rgb(110, 110, 123);
-  border-radius: 7px;
-  background-color: rgba(0, 0, 0, 0.33);
-  background-size: 150px 150px;
-  background-image:
-    linear-gradient(to right, rgba(7, 3, 3, 0.35) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(7, 3, 3, 0.35) 1px, transparent 1px);
-  box-shadow: rgba(0, 0, 0, 0.75) 0 4px 2px 0, inset 0 1px 2px black;
+  @include metalPanel();
   
   @media screen and (max-width: 680px) {
     margin-left: -1rem;
@@ -176,6 +163,11 @@
   }
 }
 
+.u-two-column {
+  column-count: 2;
+  column-gap: 25px;
+}
+
 .list--no-style {
   list-style-type: none;
   margin-left: 0;
@@ -227,4 +219,20 @@
 
 .color--gold {
   @extend %gold;
+}
+
+.color--cnc {
+  color: $color-command-and-conquer;
+}
+
+.color--ra {
+  color: $color-red-alert;
+}
+
+.color--d2k {
+  color: $color-dune-2000;
+}
+
+.color--ts {
+  color: $color-tiberian-sun;
 }

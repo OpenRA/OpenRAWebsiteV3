@@ -72,19 +72,19 @@
 }
 
 .hero__intro-text__ra.carousel__item--current {
-  color: $color-red-alert-red;
+  color: $color-red-alert;
 }
 
 .hero__intro-text__cnc.carousel__item--current {
-  color: gold;
+  color: $color-command-and-conquer;
 }
 
 .hero__intro-text__ts.carousel__item--current {
-  color: orange;
+  color: $color-tiberian-sun;
 }
 
 .hero__intro-text__d2k.carousel__item--current {
-  color: sandybrown;
+  color: $color-dune-2000;
 }
 
 .hero__intro-text__tagline {
@@ -363,15 +363,4 @@
   width: 360px;
   max-width: 100%;
   flex-shrink: 0;
-}
-
-
-.about__video-embed {
-  float: right;
-  margin: 0 -75px 1rem 1.5rem;
-  width: 275px;
-
-  lite-youtube {
-    margin: 0;
-  }
 }

@@ -1,13 +1,24 @@
+.about__video-embed {
+  float: right;
+  margin: 0 -75px 1rem 1.5rem;
+  width: 275px;
+
+  lite-youtube {
+    margin: 0;
+  }
+}
+
 .about__mod-list {
   margin: 0;
   font-size: $font-size-small;
   line-height: $font-line-height;
 }
 
-.about__mod-list__mod {
-  padding: 1.25rem 1.5rem;
+li.about__mod-list__mod {
+  display: flex;
 
   &:nth-child(even) {
+    flex-direction: row-reverse;
     background-color: rgba(0, 0, 0, 0.5);
   }
 
@@ -20,13 +31,51 @@
   }
 }
 
-.about__mod-list__under-construction {
+.about__mod-list__mod__info {
+  padding: 1.25rem 1.5rem;
+}
+
+.about__mod-list__mod__icon {
+  width: 1.5rem;
+  vertical-align: -0.2rem;
+}
+
+.about__mod-list__mod__images {
+  position: relative;
+  width: 350px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.about__mod-list__mod__image {
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+li.about__mod-list__under-construction {
   padding: 1.25rem 1.5rem;
   color: $color-off-black;
-  background-color: $color-construction;
+  text-align: center;
   text-shadow: none;
+  background-color: $color-construction;
+  background-image: $gradient-construction, $gradient-construction;
+  background-position: top left, bottom left;
+  background-size: 100% 5px;
+  background-repeat: no-repeat;
+  box-shadow: inset rgba(255,255,255,0.4) 0 0 1px 1px;
 
   h1, h2, h3, h4, h5, h6 {
     color: black;
   }
+}
+
+.about__custom-mods__screenshot {
+  float: right;
+  margin: 0 -75px 1rem 1.5rem;
+  width: 275px;
 }

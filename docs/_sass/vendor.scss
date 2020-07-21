@@ -20,6 +20,8 @@
 #flotTip {
   background: white;
   color: black;
+  text-shadow: none;
+  font-size: $font-size-small;
   border-radius: 2px;
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.5rem;
 }
