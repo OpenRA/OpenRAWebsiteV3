@@ -1,0 +1,28 @@
+/* Developer Updates List Styles */
+
+.developer-updates__list {
+  margin: 0;
+}
+
+li.developer-updates__listing {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+}
+
+.developer-updates__listing:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.developer-updates__listing__header {
+}
+
+.developer-updates__listing__title {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.developer-updates__listing__comments {
+  flex-shrink: 0;
+}

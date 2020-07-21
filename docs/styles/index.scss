@@ -16,6 +16,8 @@
 @import 'vendor'; // Styles for third party js & elements
 @import 'site'; // Styles for 'site' elements. Creates general structure of the site
 @import 'carousel'; // Styles for the 'carousel' component
+
+@import 'pages/news';
 @import 'pages/about';
 
 .releases {
@@ -179,43 +181,9 @@
   max-width: 100%;
 }
 
-.developer-update__body figure {
-  text-align: center;
-}
-
 .developer-update__footer {
   margin-top: 3rem;
   min-height: 350px; // set a min height so the comments links are a little more reasonable
-}
-
-
-/* Developer Updates List Styles */
-
-.developer-updates__list {
-  margin: -1rem;
-}
-
-.developer-updates__listing {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 1rem;
-}
-
-.developer-updates__listing:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
-.developer-updates__listing__header {
-}
-
-.developer-updates__listing__title {
-  display: inline-block;
-  margin-bottom: 0.25rem;
-}
-
-.developer-updates__listing__comments {
-  flex-shrink: 0;
 }
 
 
