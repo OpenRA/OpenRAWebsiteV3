@@ -11,9 +11,10 @@
 }
 
 ::selection {
-  background: red;
-  color: white;
-  text-shadow: rgba(0,0,0,0.75) 0 1px 0;;
+  background: rgba(255, 235, 75, 0.8) !important;
+  color: black !important;
+  text-shadow: black 0 0 0 !important;
+  -webkit-text-fill-color: initial;
 }
 
 a:focus,
@@ -66,7 +67,7 @@ body {
   background-image: url('../images/bg-logos.png');
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   line-height: 125%;
   font-family: 'Jost', Futura, sans-serif;
   color: white;
@@ -97,6 +98,18 @@ h3 {
 
 h4 {
   font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h6 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 a > h1,
@@ -172,9 +185,10 @@ table {
 
 thead {
   th {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.65);
     background-image: $gradient-scanlines;
-    background-size: 1px 2px;
+    box-shadow: rgba(255,255,255,0.5) 0px 0px 3px;
+    background-size: 1px 3px;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
     color: $color-off-black;
     text-shadow: none;
@@ -261,6 +275,14 @@ dd {
 
 ul {
   padding-left: 2rem;
+
+  > li {
+    break-inside: avoid;
+
+    &::marker {
+      color: gold;
+    }
+  }
 }
 
 hr {

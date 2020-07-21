@@ -7,6 +7,8 @@
 
 @import 'fonts'; // Special fonts
 @import 'variables'; // Variable definitions
+@import 'extensions'; // SASS extensions for use in other files
+@import 'mixins'; // SASS mixins for use in other files
 @import 'html'; // Styles for generic html elements
 @import 'buttons'; // Styles just for button/button-adjacent elements
 @import 'utility'; // Special styles used to modify elements
@@ -14,7 +16,7 @@
 @import 'vendor'; // Styles for third party js & elements
 @import 'site'; // Styles for 'site' elements. Creates general structure of the site
 @import 'carousel'; // Styles for the 'carousel' component
-
+@import 'pages/about';
 
 .releases {
   margin-left: 3rem;

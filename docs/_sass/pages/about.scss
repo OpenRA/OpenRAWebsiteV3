@@ -1,0 +1,32 @@
+.about__mod-list {
+  margin: 0;
+  font-size: $font-size-small;
+  line-height: $font-line-height;
+}
+
+.about__mod-list__mod {
+  padding: 1.25rem 1.5rem;
+
+  &:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.about__mod-list__under-construction {
+  padding: 1.25rem 1.5rem;
+  color: $color-off-black;
+  background-color: $color-construction;
+  text-shadow: none;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: black;
+  }
+}
