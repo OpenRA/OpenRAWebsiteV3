@@ -88,8 +88,6 @@
   @include metalPanel();
   
   @media screen and (max-width: 680px) {
-    margin-left: -1rem;
-    margin-right: -1rem;
     border-right: none;
     border-left: none;
   }
@@ -97,20 +95,7 @@
 
 .u-light-zone {
   padding: 0.75rem 1.5rem;
-  background-color: rgba(255, 255, 255, 0.65);
-  background-image: $gradient-scanlines;
-  box-shadow: rgba(255,255,255,0.5) 0px 0px 3px;
-  background-size: 1px 2px;
-  color: $color-off-black;
-  text-shadow: none;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 4px;
-  border-top-color: white;
-  border-right-color: white;
-  border-left-color: white;
-  border-bottom-color: #ccc;
-  box-shadow: rgba(0, 0, 0, 0.75) 0 4px 2px 0, inset 0 1px 1px rgba(0, 0, 0, 0.25);
+  @extend %scanlines;
 
   @media screen and (max-width: 680px) {
     margin-left: -1rem;

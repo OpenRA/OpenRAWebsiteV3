@@ -39,53 +39,51 @@ js:
     </div>
   </div>
   <div class="u-mobile-full-width">
-    <div class="u-dark-zone">
-      <table class="servers__list text--small">
-        <thead class="servers__list__header">
-          <tr>
-            <th class="servers__list__header__name" colspan="2">
-              <a class="servers__list__header__sort-toggle servers__sort__name" href="#sort-by-name">
-                Name
-                <svg class="icon">
-                  <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
-                </svg>
-              </a>
-            </th>
-            <th class="servers__list__header__players">
-              <a class="servers__list__header__sort-toggle servers__sort__players" href="#sort-by-players">
-                Players
-                <svg class="icon">
-                  <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
-                </svg>
-              </a>
-            </th>
-            <th class="servers__list__header__status">
-              <a class="servers__list__header__sort-toggle servers__sort__status" href="#sort-by-status">
-                Status
-                <svg class="icon">
-                  <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
-                </svg>
-              </a>
-            </th>
-            <th class="servers__list__header__location">
-              <a class="servers__list__header__sort-toggle servers__sort__location" href="#sort-by-location">
-                Location
-                <svg class="icon">
-                  <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
-                </svg>
-              </a>
-            </th>
-          </tr>
-        </thead>
-        <tbody class="servers__list__body">
-          <tr>
-            <td>
-              <noscript>JavaScript must be enabled to use the Server Browser</noscript>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <table class="servers__list text--small">
+      <thead class="servers__list__header">
+        <tr>
+          <th class="servers__list__header__name" colspan="2">
+            <a class="servers__list__header__sort-toggle servers__sort__name" href="#sort-by-name">
+              Name
+              <svg class="icon">
+                <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
+              </svg>
+            </a>
+          </th>
+          <th class="servers__list__header__status">
+            <a class="servers__list__header__sort-toggle servers__sort__status" href="#sort-by-status">
+              Status
+              <svg class="icon">
+                <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
+              </svg>
+            </a>
+          </th>
+          <th class="servers__list__header__players">
+            <a class="servers__list__header__sort-toggle servers__sort__players" href="#sort-by-players">
+              Players
+              <svg class="icon">
+                <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
+              </svg>
+            </a>
+          </th>
+          <th class="servers__list__header__location">
+            <a class="servers__list__header__sort-toggle servers__sort__location" href="#sort-by-location">
+              Location
+              <svg class="icon">
+                <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
+              </svg>
+            </a>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="servers__list__body">
+        <tr>
+          <td>
+            <noscript>JavaScript must be enabled to use the Server Browser</noscript>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
@@ -107,21 +105,21 @@ js:
   <tr class="servers__listing">
     <td class="servers__listing__name"></td>
     <td class="servers__listing__join"></td>
-    <td class="servers__listing__players"></td>
     <td class="servers__listing__status"></td>
+    <td class="servers__listing__players"></td>
     <td class="servers__listing__location"></td>
   </tr>
 </template>
 
 <template id="server-group-header-template">
   <tr class="servers__list__group">
-    <td colspan="2">
+    <td colspan="3">
       <div class="servers__list__group__info">
         <a class="servers__list__group__mod-link"></a>
-        <span class="servers__list__group__version badge"></span>
+        <span class="servers__list__group__version"></span>
       </div>
     </td>
-    <td colspan="3">
+    <td colspan="2">
       <span class="servers__list__group__players"><var></var></span>
     </td>
   </tr>

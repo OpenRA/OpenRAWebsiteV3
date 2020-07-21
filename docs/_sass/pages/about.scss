@@ -1,7 +1,7 @@
 .about__video-embed {
   float: right;
   margin: 0 -75px 1rem 1.5rem;
-  width: 275px;
+  width: 350px;
 
   lite-youtube {
     margin: 0;
@@ -17,7 +17,7 @@
 li.about__mod-list__mod {
   display: flex;
 
-  &:nth-child(even) {
+  &:nth-of-type(even) {
     flex-direction: row-reverse;
     background-color: rgba(0, 0, 0, 0.5);
   }
@@ -58,7 +58,7 @@ li.about__mod-list__mod {
 }
 
 li.about__mod-list__under-construction {
-  padding: 1.25rem 1.5rem;
+  padding: 1.5rem;
   color: $color-off-black;
   text-align: center;
   text-shadow: none;
@@ -77,5 +77,5 @@ li.about__mod-list__under-construction {
 .about__custom-mods__screenshot {
   float: right;
   margin: 0 -75px 1rem 1.5rem;
-  width: 275px;
+  width: 350px;
 }

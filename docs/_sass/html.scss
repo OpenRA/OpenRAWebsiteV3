@@ -182,23 +182,17 @@ var {
 }
 
 table {
+  @include metalPanel();
   border-spacing: 0;
-  border-collapse: collapse;
+  border-collapse: separate;
   font-variant-numeric: slashed-zero tabular-nums;
 }
 
 thead {
   th {
-    background-color: rgba(255, 255, 255, 0.65);
-    background-image: $gradient-scanlines;
-    box-shadow: rgba(255,255,255,0.5) 0px 0px 3px;
-    background-size: 1px 3px;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
-    color: $color-off-black;
-    text-shadow: none;
+    @extend %scanlines;
     padding: 0.25rem 1rem;
     border-right: rgba(0, 0, 0, 0.25) 1px dotted;
-    border-radius: 2px;
 
     &:first-child {
       border-top-left-radius: 5px;
@@ -258,6 +252,7 @@ figure {
 figcaption {
   font-size: 0.9rem;
   line-height: 150%;
+  text-align: center;
 }
 
 pre, code {

@@ -11,3 +11,13 @@
   color: rgb(255, 221, 155);
   -webkit-text-fill-color: transparent;
 }
+
+%scanlines {
+  background-color: rgb(205, 205, 207);
+  background-image: $gradient-scanlines;
+  background-size: 1px 3px;
+  box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 10px, inset 0 1px 1px rgba(0, 0, 0, 0.25);
+  color: $color-off-black;
+  text-shadow: none;
+  border-radius: 3px;
+}
