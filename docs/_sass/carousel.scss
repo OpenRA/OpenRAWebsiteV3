@@ -36,17 +36,17 @@
 .carousel__next,
 .carousel__previous {
   position: absolute;
-  top: calc(50% - 37px);
+  top: calc(50% - 50px);
   z-index: 20;
   backface-visibility: hidden; // hack to create a new layer. Essential performance fix.
 }
 
 .carousel__previous {
-  left: -20px;
+  left: -1rem;
 }
 
 .carousel__next {
-  right: -20px;
+  right: -1rem;
 }
 
 .carousel__previous__button,

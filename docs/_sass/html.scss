@@ -50,10 +50,14 @@ button:hover:before,
 html, body {
   font-family: 'Inter', sans-serif;
   font-variant-numeric: slashed-zero;
-  font-size: 16px;
+  font-size: $font-size-base;
   line-height: $font-line-height;
   color: $color-off-white;
   text-shadow: black 0 2px 0;
+
+  @media screen and (max-width: 680px) {
+    font-size: $font-size-mobile;
+  }
 }
 
 html {

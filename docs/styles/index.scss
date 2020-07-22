@@ -110,6 +110,7 @@
 }
 
 .hero-carousel__image {
+  @include metalPanel();
   display: block;
   width: 100%;
   border-radius: 2px;

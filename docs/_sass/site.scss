@@ -16,6 +16,7 @@
 }
 
 .site-header {
+  position: relative;
   background: rgb(0, 0, 0);
   background-attachment: fixed;
   background-image: repeating-linear-gradient(114deg, rgba(13,13,16,1) 0%, rgba(27,27,33,1) 22%, rgba(13,13,16,1) 64%, rgba(17,17,21,1) 100%);
@@ -35,6 +36,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 2rem;
+
+  @media screen and (max-width: 680px) {
+    justify-content: start;
+    padding: 0.5rem 1.25rem;
+  }
 }
 
 .site-header__menu-toggle {
@@ -53,7 +59,7 @@
 
   @media screen and (max-width: 680px) {
     width: 125px;
-    margin-left: 0.25rem;
+    margin-left: 0.75rem;
   }
 }
 
@@ -70,21 +76,58 @@
   background-attachment: fixed;
 }
 
-.site-header__sub {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .site-header__menu-close {
   display: none;
+
+  @media screen and (max-width: 680px) {
+    display: inline-block;
+  }
 }
 
+.site-header__menu {
+  @media screen and (max-width: 680px) {
+    transform: translateX(-100%);
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: $ease-in-out-quint;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1.25rem 1.5rem;
+    background: black;
+  }
+}
+
+.site--menu-active {
+  .site-header__menu {
+    @media screen and (max-width: 680px) {
+      transform: translateX(0);
+    }
+  }
+}
+
+// This is positioned ~weirdly~ so we can reuse this element in mobile view
 .site-header__nav {
-  padding: 0.5rem 1rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  margin: 0 185px;
+  text-align: center;
+
+  @media screen and (max-width: 680px) {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transform: none;
+    text-align: left;
+    margin: 1rem 0 0 0;
+  }
 }
 
-.site-header__nav > a {
+.site-header__nav__link {
   display: inline-block;
   padding: 0.25rem 0.5rem;
 }
@@ -94,14 +137,19 @@
 
   .icon {
     @media screen and (max-width: 680px) {
-      width: 1.75rem;
-      height: 1.75rem;
+      margin-top: 1rem;
+      width: 1.5rem;
+      height: 1.5rem;
     }
   }
 }
 
 .site-header__social-nav__row:nth-child(odd) {
   margin-left: 1rem;
+
+  @media screen and (max-width: 680px) {
+    margin-left: 0;
+  }
 }
 
 .site-header__social-nav__link {
@@ -109,7 +157,7 @@
   padding: 0.25rem;
 
   @media screen and (max-width: 680px) {
-    padding: 1rem;
+    padding: 0.5rem;
   }
 }
 
