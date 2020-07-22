@@ -13,92 +13,98 @@ js:
 - /scripts/player-charts.js
 ---
 
-<section class="site-section u-centered-content">
-  <h1 class="site-section__heading">Server Browser</h1>
-  <p class="text--large">People from around the world use OpenRA to play <strong>Red Alert</strong>, <strong>Command & Conquer</strong>, <strong>Dune 2000</strong>, and a variety of <strong>community mods</strong>. Use the server browser below to join in on the multiplayer fun!</p>
-</section>
-
-<hr class="site-section__divider" />
-
-<section id="server-browser" class="servers site-section u-centered-content u-centered-content--large">
-  <div class="servers__controls">
-    <div class="servers__filters">
-      <label class="button">
-        <input class="servers__filters__waiting" type="checkbox" checked /> Waiting
-      </label>
-      <label class="button">
-        <input class="servers__filters__playing" type="checkbox" checked /> Playing
-      </label>
-      <label class="button">
-        <input class="servers__filters__empty" type="checkbox" /> Empty
-      </label>
-    </div>
-    <div class="servers__info text--small">
-      <span class="servers__counts">Showing <var class="servers__server-count">0</var> servers hosting <var class="servers__player-count">0</var> players.</span>
-      <button class="servers__refresh">Refresh</button>
-    </div>
-  </div>
-  <div class="u-mobile-full-width">
-    <table class="servers__list text--small">
-      <thead class="servers__list__header">
-        <tr>
-          <th class="servers__list__header__name" colspan="2">
-            <a class="servers__list__header__sort-toggle servers__sort__name" href="#sort-by-name">
-              Name
-              <svg class="icon">
-                <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
-              </svg>
-            </a>
-          </th>
-          <th class="servers__list__header__status">
-            <a class="servers__list__header__sort-toggle servers__sort__status" href="#sort-by-status">
-              Status
-              <svg class="icon">
-                <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
-              </svg>
-            </a>
-          </th>
-          <th class="servers__list__header__players">
-            <a class="servers__list__header__sort-toggle servers__sort__players" href="#sort-by-players">
-              Players
-              <svg class="icon">
-                <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
-              </svg>
-            </a>
-          </th>
-          <th class="servers__list__header__location">
-            <a class="servers__list__header__sort-toggle servers__sort__location" href="#sort-by-location">
-              Location
-              <svg class="icon">
-                <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
-              </svg>
-            </a>
-          </th>
-        </tr>
-      </thead>
-      <tbody class="servers__list__body">
-        <tr>
-          <td>
-            <noscript>JavaScript must be enabled to use the Server Browser</noscript>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+<section class="site-section">
+  <div class="site-section__content">
+    <h1 class="site-section__heading">Server Browser</h1>
+    <p class="text--large">People from around the world use OpenRA to play <strong>Red Alert</strong>, <strong>Command & Conquer</strong>, <strong>Dune 2000</strong>, and a variety of <strong>community mods</strong>. Use the server browser below to join in on the multiplayer fun!</p>
   </div>
 </section>
 
 <hr class="site-section__divider" />
 
-<section class="site-section u-centered-content">
-  <h2 class="site-section__heading">Player Activity</h2>
-  <p>View the numbers of people <strong class="color--playing">playing</strong> and <strong class="color--waiting">waiting</strong> over the last two weeks:</p>
-  <div
-    id="players"
-    class="flot-chart"
-    style="width: 100%; height: 300px;">
-    Loading...
+<section id="server-browser" class="servers site-section">
+  <div class="site-section__content site-section__content--large">
+    <div class="servers__controls">
+      <div class="servers__filters">
+        <label class="button">
+          <input class="servers__filters__waiting" type="checkbox" checked /> Waiting
+        </label>
+        <label class="button">
+          <input class="servers__filters__playing" type="checkbox" checked /> Playing
+        </label>
+        <label class="button">
+          <input class="servers__filters__empty" type="checkbox" /> Empty
+        </label>
+      </div>
+      <div class="servers__info text--small">
+        <span class="servers__counts">Showing <var class="servers__server-count">0</var> servers hosting <var class="servers__player-count">0</var> players.</span>
+        <button class="servers__refresh">Refresh</button>
+      </div>
+    </div>
+    <div class="u-mobile-full-width">
+      <table class="servers__list text--small">
+        <thead class="servers__list__header">
+          <tr>
+            <th class="servers__list__header__name" colspan="2">
+              <a class="servers__list__header__sort-toggle servers__sort__name" href="#sort-by-name">
+                Name
+                <svg class="icon">
+                  <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
+                </svg>
+              </a>
+            </th>
+            <th class="servers__list__header__status">
+              <a class="servers__list__header__sort-toggle servers__sort__status" href="#sort-by-status">
+                Status
+                <svg class="icon">
+                  <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
+                </svg>
+              </a>
+            </th>
+            <th class="servers__list__header__players">
+              <a class="servers__list__header__sort-toggle servers__sort__players" href="#sort-by-players">
+                Players
+                <svg class="icon">
+                  <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
+                </svg>
+              </a>
+            </th>
+            <th class="servers__list__header__location">
+              <a class="servers__list__header__sort-toggle servers__sort__location" href="#sort-by-location">
+                Location
+                <svg class="icon">
+                  <use xlink:href="/images/icons/icons.svg#icon-chevron-down"></use>
+                </svg>
+              </a>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="servers__list__body">
+          <tr>
+            <td>
+              <noscript>JavaScript must be enabled to use the Server Browser</noscript>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-  <p>More detailed graphs are available at the <a href="/players">player statistics</a> page.</p>
+</section>
+
+<hr class="site-section__divider" />
+
+<section class="site-section">
+  <div class="site-section__content">
+    <h2 class="site-section__heading">Player Activity</h2>
+    <p>View the numbers of people <strong class="color--playing">playing</strong> and <strong class="color--waiting">waiting</strong> over the last two weeks:</p>
+    <div
+      id="players"
+      class="flot-chart"
+      style="width: 100%; height: 300px;">
+      Loading...
+    </div>
+    <p>More detailed graphs are available at the <a href="/players">player statistics</a> page.</p>
+  </div>
 </section>
 
 <template id="server-row-template">

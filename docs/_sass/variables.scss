@@ -18,6 +18,7 @@ $color-off-white: rgb(230, 230, 230);
 
 $gradient-scanlines: repeating-linear-gradient(0deg, rgba(189,189,191,1) 0, rgba(225,225,227,1) 3px);
 $gradient-construction: repeating-linear-gradient(135deg, $color-construction, $color-construction 20px, black 20px, black 50px);
+$gradient-no-build-here: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0, rgba(0, 0, 0, 0.4) 3px, transparent 3px, transparent 9px);
 
 $ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
 

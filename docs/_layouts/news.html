@@ -7,18 +7,20 @@
       {% include header.html %}
 
       <div class="site-content">
-        <section class="developer-update-detail site-section u-centered-content">
-          <header class="developer-update-detail__header u-light-zone">
-            <a class="developer-update-detail__view-all" href="/news">
-              <svg class="icon">
-                <use xlink:href="/images/icons/icons.svg#icon-chevron-left"></use>
-              </svg>
-              View All Updates
-            </a>
-          </header>
+        <section class="developer-update-detail site-section">
+          <div class="site-section__content">
+            <header class="developer-update-detail__header u-light-zone">
+              <a class="developer-update-detail__view-all" href="/news">
+                <svg class="icon">
+                  <use xlink:href="/images/icons/icons.svg#icon-chevron-left"></use>
+                </svg>
+                View All Updates
+              </a>
+            </header>
 
-          {% include developer-update.html title=page.title author=page.author created_at=page.created_at body=content disqus_id=page.disqus_id %}
-
+            {% include developer-update.html title=page.title author=page.author created_at=page.created_at body=content disqus_id=page.disqus_id %}
+          
+          </div>
         </section>
       </div>
 
