@@ -1,0 +1,27 @@
+.download__os-selector {
+  text-align: center;
+
+  .radio-button {
+    min-width: 105px;
+  }
+}
+
+.download__content {
+}
+
+.instruction__content {
+  padding: $padding-medium;
+}
+
+.instruction__download-button {
+}
+
+.instruction__download-button--playtest {
+
+}
+
+.instruction__download-button__release {
+  display: block;
+  margin-top: 0.75rem;
+  background: rgba(0, 0, 0, 0.25);
+}

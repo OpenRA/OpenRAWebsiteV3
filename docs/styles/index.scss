@@ -19,6 +19,7 @@
 
 @import 'pages/news';
 @import 'pages/about';
+@import 'pages/download';
 @import 'pages/community';
 
 .releases {
@@ -279,32 +280,4 @@
 
 .servers__listing__status__badge--empty {
   color: gray;
-}
-
-
-.download__content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
-
-  > * {
-    min-width: 0px; // Safari Hack
-  }
-
-  @media screen and (max-width: 900px) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.instruction__download-button {
-}
-
-.instruction__download-button--playtest {
-  border: gold 1px dashed;
-}
-
-.instruction__download-button__release {
-  display: block;
-  margin-top: 0.75rem;
-  background: rgba(0, 0, 0, 0.25);
 }

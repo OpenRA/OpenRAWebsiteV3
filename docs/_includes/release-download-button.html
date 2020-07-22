@@ -4,6 +4,7 @@
     instruction__download-button
     {% if include.playtest %}
     instruction__download-button--playtest
+    button--construction
     {% else %}
     instruction__download-button--release
     {% endif %}
@@ -11,7 +12,11 @@
   {% if include.text %}
     {{ include.text }}
   {% else %}
-    Download OpenRA
+    {% if include.playtest %}
+      Download Playtest
+    {% else %}
+      Download Release
+    {% endif %}
   {% endif %}
   {% if include.icon %}
     {{ include.icon }}

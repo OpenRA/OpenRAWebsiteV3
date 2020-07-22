@@ -11,7 +11,7 @@
 }
 
 ::selection {
-  background: rgba(255, 235, 75, 0.8) !important;
+  background: rgba(225, 235, 245, 0.9) !important;
   color: black !important;
   text-shadow: black 0 0 0 !important;
   -webkit-text-fill-color: initial;
@@ -172,10 +172,6 @@ input[type="radio"] {
   cursor: pointer;
 }
 
-.radio-input {
-  margin-right: 0.5rem;
-}
-
 var {
   font-style: normal;
   font-weight: bold;
@@ -273,13 +269,15 @@ dd {
 }
 
 ul {
-  padding-left: 2rem;
+  padding-left: 1.5rem;
 
   > li {
     break-inside: avoid;
+    margin-bottom: 0.5rem;
+    padding-left: 0.25rem;
 
     &::marker {
-      color: gold;
+      color: $color-command-and-conquer;
     }
   }
 }
