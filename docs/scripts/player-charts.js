@@ -11,10 +11,10 @@ const graphOptions = {
     mode: null
   },
   grid: {
-    backgroundColor: 'rgba(0, 0, 0, 0.33)',
-    borderColor: 'rgba(255, 255, 255, 0.3)',
-    borderWidth: 1,
-    tickColor: 'rgba(0, 0, 0, 0.3)',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    borderColor: 'transparent',
+    borderWidth: 0,
+    tickColor: 'rgba(255, 255, 255, 0.05)',
     hoverable: true,
     margin: { left: 0, top: 0, right: 0, bottom: 0 }
   },

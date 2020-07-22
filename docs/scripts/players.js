@@ -8,10 +8,10 @@ const graphOptions = {
   },
   selection: { mode: null },
   grid: {
-    backgroundColor: 'rgba(0, 0, 0, 0.33)',
-    borderColor: 'rgba(255, 255, 255, 0.3)',
-    borderWidth: 1,
-    tickColor: 'rgba(0, 0, 0, 0.3)',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    borderColor: 'transparent',
+    borderWidth: 0,
+    tickColor: 'rgba(255, 255, 255, 0.05)',
     hoverable: true,
     margin: { left: 0, top: 0, right: 0, bottom: 0 }
   },
@@ -58,7 +58,7 @@ const rrdFlotThirtyseconds = {
 const firstplot = new rrdFlotAsync("thirtyseconds", rrdFile, null, fivemin_options, dsGraphOptions, rrdFlotThirtyseconds, null, null, afterFirstPlot);
 
 function afterFirstPlot (obj) {
-  const secondplot = new rrdFlot("fiveminutes", obj.rrd_data, graphOptions, dsGraphOptions, rrdFlotFiveMinutes);
-  const thirdplot = new rrdFlot("halfanhour", obj.rrd_data, graphOptions, dsGraphOptions, rrdFlotHalfAnHour);
-  const fourthplot = new rrdFlot("daily", obj.rrd_data, graphOptions, dsGraphOptions, rrdFlotDaily);
+  new rrdFlot("fiveminutes", obj.rrd_data, graphOptions, dsGraphOptions, rrdFlotFiveMinutes);
+  new rrdFlot("halfanhour", obj.rrd_data, graphOptions, dsGraphOptions, rrdFlotHalfAnHour);
+  new rrdFlot("daily", obj.rrd_data, graphOptions, dsGraphOptions, rrdFlotDaily);
 }
