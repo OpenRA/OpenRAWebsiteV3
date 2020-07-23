@@ -153,6 +153,10 @@
 .u-two-column {
   column-count: 2;
   column-gap: 25px;
+
+  @media screen and (max-width: 680px) {
+    column-count: 1;
+  }
 }
 
 .list--no-style {

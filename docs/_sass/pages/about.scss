@@ -6,6 +6,17 @@
   lite-youtube {
     margin: 0;
   }
+
+  @media screen and (max-width: 960px) {
+    margin-right: 0;
+    width: 275px;
+  }
+
+  @media screen and (max-width: 680px) {
+    float: none;
+    width: 100%;
+    margin: 1.5rem 0;
+  }
 }
 
 .about__mod-list {
@@ -16,6 +27,7 @@
 
 li.about__mod-list__mod {
   display: flex;
+  margin: 0;
 
   &:nth-of-type(even) {
     flex-direction: row-reverse;
@@ -28,6 +40,12 @@ li.about__mod-list__mod {
 
   > *:last-child {
     margin-bottom: 0;
+  }
+
+  &, &:nth-of-type(even) {
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+    }
   }
 }
 
@@ -45,6 +63,10 @@ li.about__mod-list__mod {
   width: 350px;
   flex-shrink: 0;
   overflow: hidden;
+
+  @media screen and (max-width: 800px) {
+    width: 275px;
+  }
 }
 
 .about__mod-list__mod__image {
@@ -78,4 +100,15 @@ li.about__mod-list__under-construction {
   float: right;
   margin: 0 -75px 1rem 1.5rem;
   width: 350px;
+
+  @media screen and (max-width: 960px) {
+    margin-right: 0;
+    width: 275px;
+  }
+
+  @media screen and (max-width: 680px) {
+    float: none;
+    width: 100%;
+    margin: 1.5rem 0;
+  }
 }
