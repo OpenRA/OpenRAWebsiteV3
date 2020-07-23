@@ -16,7 +16,6 @@
 }
 
 .site-header {
-  position: relative;
   background: rgb(0, 0, 0);
   background-attachment: fixed;
   background-image: repeating-linear-gradient(114deg, rgba(13,13,16,1) 0%, rgba(27,27,33,1) 22%, rgba(13,13,16,1) 64%, rgba(17,17,21,1) 100%);
@@ -32,10 +31,13 @@
 }
 
 .site-header__main {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 2rem;
+  max-width: 1075px;
+  margin: 0 auto;
+  padding: 0.5rem 25px;
 
   @media screen and (max-width: 680px) {
     justify-content: start;
