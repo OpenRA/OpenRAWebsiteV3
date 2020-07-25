@@ -21,5 +21,5 @@
   });
 
   setActiveInstruction(defaultInstruction);
-  document.querySelector('.download__os-' + defaultInstruction).checked = true;
+  document.querySelector('.download__os-' + defaultInstruction + ' input').checked = true;
 })();
