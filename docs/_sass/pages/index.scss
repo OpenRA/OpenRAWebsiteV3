@@ -1,6 +1,10 @@
 .hero {
 }
 
+.hero__header {
+  position: relative;
+}
+
 .hero__intro-text {
   filter: none;
 }
@@ -38,6 +42,17 @@
 }
 
 .install {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 25;
+  will-change: transform;
+
+  @media screen and (max-width: 720px) {
+    position: static;
+    top: auto;
+    right: auto;
+  }
 }
 
 
