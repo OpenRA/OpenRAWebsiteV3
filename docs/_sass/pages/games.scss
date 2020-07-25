@@ -1,0 +1,92 @@
+.servers__controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+
+  @media screen and (max-width: 680px) {
+    flex-direction: column;
+  }
+}
+
+.servers__filters,
+.servers__info {
+  margin-bottom: 0.5rem;
+}
+
+.servers__counts {
+  margin-right: 1rem;
+}
+
+.servers__list {
+  width: 100%;
+}
+
+.servers__list__header__sort-toggle {
+  white-space: nowrap;
+}
+
+.servers__list__header__sort-toggle .icon {
+  opacity: 0.25;
+  transition: all 300ms $ease-in-out-quint;
+}
+
+.servers__list__header__sort-toggle--descending .icon,
+.servers__list__header__sort-toggle--ascending .icon {
+  opacity: 1;
+}
+
+.servers__list__header__sort-toggle--descending .icon {
+  transform: rotateZ(-180deg);
+}
+
+.servers__list__group > td {
+  background: black;
+}
+
+.servers__list__group__info {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+}
+
+.servers__list__group__mod-icon {
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-right: 0.5rem;
+  width: 32px;
+  height: 32px;
+}
+
+.servers__list__group__version {
+  margin-right: 1rem;
+  text-transform: uppercase;
+  font-size: $font-size-tiny;
+}
+
+.servers__list__group__mod-link {
+  margin-right: 0.5rem;
+}
+
+.servers__listing__name .icon {
+  width: 1rem;
+  height: 1rem;
+  vertical-align: -0.1rem;
+  margin-right: 0.5rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.servers__listing__join {
+  margin-left: 1rem;
+}
+
+.servers__listing__status__badge--waiting {
+  color: orange;
+}
+
+.servers__listing__status__badge--playing {
+  color: green;
+}
+
+.servers__listing__status__badge--empty {
+  color: gray;
+}

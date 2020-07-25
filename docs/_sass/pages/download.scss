@@ -7,6 +7,22 @@
   }
 }
 
+.download__os-windows .icon {
+  color: $color-windows;
+}
+
+.download__os-osx .icon {
+  color: $color-osx;
+}
+
+.download__os-linux .icon {
+  color: $color-linux;
+}
+
+.download__os-free-bsd .icon {
+  color: $color-freebsd;
+}
+
 .download__content {
 }
 
