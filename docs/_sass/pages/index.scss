@@ -99,17 +99,20 @@
   }
 }
 
-.open-source .icon {
-  color: currentColor;
+.operating-system__windows .icon {
+  color: $color-windows;
 }
 
-.operating-system {
-  margin-right: 0.75rem;
+.operating-system__osx .icon {
+  color: $color-osx;
 }
 
-.operating-system .icon {
-  width: 3rem;
-  height: 3rem;
+.operating-system__linux .icon {
+  color: $color-linux;
+}
+
+.operating-system__free-bsd .icon {
+  color: $color-freebsd;
 }
 
 
