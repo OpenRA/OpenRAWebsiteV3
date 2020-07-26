@@ -88,8 +88,6 @@
   @include metalPanel();
   
   @media screen and (max-width: 680px) {
-    border-right: none;
-    border-left: none;
     margin-left: -1rem;
     margin-right: -1rem;
   }
@@ -127,8 +125,18 @@
   color: black;
 }
 
+.u-padding {
+  padding: 1.25rem 1.5rem;
+}
+
 .u--no-padding {
   padding: 0;
+}
+
+.u-float-right {
+  float: right;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
 }
 
 .u-placeholder {

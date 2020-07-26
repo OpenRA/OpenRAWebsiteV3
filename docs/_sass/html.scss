@@ -302,6 +302,11 @@ figcaption {
 
 pre, code {
   font-family: Menlo, Consolas, monospace;
+  font-size: 1rem;
+}
+
+pre {
+  overflow: auto;
 }
 
 dt {
