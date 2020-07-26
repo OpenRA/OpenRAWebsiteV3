@@ -1,3 +1,9 @@
+@keyframes glow {
+  0% { background-color: lighten($color-red-alert, 20%); }
+  50% { background-color: lighten($color-red-alert, 10%); }
+  100% { background-color: lighten($color-red-alert, 20%); }
+}
+
 button,
 .button {
   -webkit-appearance: none;
@@ -5,6 +11,7 @@ button,
   cursor: pointer;
   padding: 0.5rem 1rem;
   font-weight: bold;
+  font-family: $font-jost;
   line-height: 125%;
   text-decoration: none;
   color: rgb(240, 240, 247);
@@ -37,11 +44,7 @@ button,
 
   &:disabled,
   &.button--disabled {
-    color: rgba(240, 240, 247, 0.75);
-    background-image: linear-gradient(
-      rgba(200, 200, 200, 0.25), 
-      rgba(200, 200, 200, 0.25)
-    );
+    filter: saturate(20%) brightness(75%) contrast(90%);
     pointer-events: none;
 
     &:hover {
@@ -115,6 +118,7 @@ button,
 
   &:hover {
     background-color: lighten($color-construction, 7.5%);
+    background-size: 100% 5px;
   }
 }
 
@@ -244,7 +248,7 @@ button,
   border-radius: 4px;
   background: rgb(30, 30, 30);
   box-shadow: inset rgba(0, 0, 0, 0.5) 0 1px 0;
-  transition-property: background-color, box-shadow;
+  transition-property: border-color, background-color, box-shadow;
   transition-timing-function: $ease-in-out-quint;
   transition-duration: 200ms;
 
@@ -253,8 +257,19 @@ button,
   }
 
   &:checked {
-    background-color: lighten($color-red-alert, 10%);
+    background-color: lighten($color-red-alert, 20%);
     outline: none;
-    box-shadow: red 0 0 5px, inset rgba(0, 0, 0, 0.5) 0 1px 1px;
+    border-bottom-color: rgb(150, 75, 75);
+    border-right-color: rgb(180, 90, 90);
+    border-top-color: rgb(80, 40, 40);
+    border-left-color: rgb(110 ,55 ,55 );
+    box-shadow: 
+      red 0 0 25px,
+      rgba(255, 0, 0, 0.5) 0 0 2px,
+      inset rgba(0, 0, 0, 0.5) 0 1px 1px;
+    animation-name: glow;
+    animation-iteration-count: infinite;
+    animation-duration: 3000ms;
+    animation-timing-function: linear;
   }
 }

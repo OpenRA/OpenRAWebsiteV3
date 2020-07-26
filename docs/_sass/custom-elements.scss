@@ -4,9 +4,10 @@
   border-radius: 3px;
   padding: 0.125rem 0.5rem;
   text-transform: uppercase;
-  font-family: $font-jost;
+  font-family: $font-inter;
   font-size: $font-size-tiny;
-  font-weight: bold;
+  font-weight: normal;
+  text-align: center;
   line-height: 150%;
   letter-spacing: 0.5px;
 }
@@ -17,7 +18,7 @@
   width: 1.1rem;
   height: 1.1rem;
   fill: currentColor;
-  vertical-align: -0.25rem;
+  vertical-align: -0.1rem;
 }
 
 .terminal {

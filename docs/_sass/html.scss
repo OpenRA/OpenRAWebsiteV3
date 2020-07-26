@@ -288,7 +288,8 @@ ul {
 
 hr {
   border: none;
-  border-top: rgb(125, 50, 50) 1px solid;
+  border-top: rgba(255, 255, 255, 0.35) 1px dotted;
+  border-bottom: rgba(0, 0, 0, 0.95) 1px dotted;
   margin: 1.5rem 0;
 }
 

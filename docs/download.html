@@ -92,20 +92,17 @@ js:
               <strong class="text--caps">Windows Install Instructions</strong>
             </div>
             <div class="instruction__content u-dark-zone">
-              <h3>Windows</h3>
-              <p>OpenRA works on most computers running Windows 7 or later that support OpenGL rendering.</p>
+              OpenRA works on most computers running Windows 7 or later that support OpenGL rendering.
               <p>You may need to install additional drivers supplied by your GPU vendor to enable OpenGL support.</p>
               <p class="text--centered">
                 <span class="button-group">
                 {% include release-download-button.html
                   asset=release.assets.windows
                   tag=release.tag %}
-                {% if playtest %}
-                  {% include release-download-button.html
-                    asset=playtest.assets.windows
-                    tag=playtest.tag
-                    playtest=true %}
-                {% endif %}
+                {% include release-download-button.html
+                  asset=playtest.assets.windows
+                  tag=playtest.tag
+                  playtest=true %}
                 </span>
               </p>
             </div>
@@ -123,12 +120,10 @@ js:
                   {% include release-download-button.html
                     asset=release.assets.osx
                     tag=release.tag %}
-                  {% if playtest %}
-                    {% include release-download-button.html
-                      asset=playtest.assets.osx
-                      tag=playtest.tag
-                      playtest=true %}
-                  {% endif %}
+                  {% include release-download-button.html
+                    asset=playtest.assets.osx
+                    tag=playtest.tag
+                    playtest=true %}
                 </span>
               </p>
               <hr />
@@ -147,7 +142,7 @@ js:
             <div class="instruction__content u-dark-zone">
               <h4>Official AppImages</h4>
               <p>OpenRA is distributed as portable AppImages that run on most modern 64-bit Linux distributions.</p>
-              <p>Download the mods you want to play, make the AppImage files executable, then double click to play! Install the optional appimaged utility to integrate OpenRA with your system launcher and web browser.</p>
+              <p>Download the mods you want to play, make the AppImage files executable, then double click to play! Install the optional <a href="https://github.com/AppImage/appimaged/">appimaged</a> utility to integrate OpenRA with your system launcher and web browser.</p>
               <p class="text--centered">
                 <span class="button-group">
                 {% include release-download-button.html
@@ -155,14 +150,12 @@ js:
                   tag=release.tag
                   text="Download Red Alert"
                   icon='<img class="button__icon icon" src="/images/icons/ra_64x64.png" />' %}
-                {% if playtest %}
-                  {% include release-download-button.html
-                    asset=playtest.assets.linux_ra
-                    tag=playtest.tag
-                    text="Download Red Alert"
-                    icon='<img class="button__icon icon" src="/images/icons/ra_64x64.png" />'
-                    playtest=true %}
-                {% endif %}
+                {% include release-download-button.html
+                  asset=playtest.assets.linux_ra
+                  tag=playtest.tag
+                  text="Download Red Alert"
+                  icon='<img class="button__icon icon" src="/images/icons/ra_64x64.png" />'
+                  playtest=true %}
                 </span>
               </p>
               <p class="text--centered">
@@ -172,14 +165,12 @@ js:
                   tag=release.tag
                   text="Download Tiberian Dawn"
                   icon='<img class="button__icon icon" src="/images/icons/cnc_64x64.png" />' %}
-                {% if playtest %}
-                  {% include release-download-button.html
-                    asset=playtest.assets.linux_td
-                    tag=playtest.tag
-                    text="Download Tiberian Dawn"
-                    icon='<img class="button__icon icon" src="/images/icons/cnc_64x64.png" />'
-                    playtest=true %}
-                {% endif %}
+                {% include release-download-button.html
+                  asset=playtest.assets.linux_td
+                  tag=playtest.tag
+                  text="Download Tiberian Dawn"
+                  icon='<img class="button__icon icon" src="/images/icons/cnc_64x64.png" />'
+                  playtest=true %}
                 </span>
               </p>
               <p class="text--centered">
@@ -189,14 +180,12 @@ js:
                   tag=release.tag
                   text="Download Dune 2000"
                   icon='<img class="button__icon icon" src="/images/icons/d2k_64x64.png" />' %}
-                {% if playtest %}
-                  {% include release-download-button.html
-                    asset=playtest.assets.linux_d2k
-                    tag=playtest.tag
-                    text="Download Dune 2000"
-                    icon='<img class="button__icon icon" src="/images/icons/d2k_64x64.png" />'
-                    playtest=true %}
-                {% endif %}
+                {% include release-download-button.html
+                  asset=playtest.assets.linux_d2k
+                  tag=playtest.tag
+                  text="Download Dune 2000"
+                  icon='<img class="button__icon icon" src="/images/icons/d2k_64x64.png" />'
+                  playtest=true %}
                 </span>
               </p>
               <hr />
@@ -340,12 +329,10 @@ js:
                 {% include release-download-button.html
                   asset=release.assets.source
                   tag=release.tag %}
-                {% if playtest %}
-                  {% include release-download-button.html
-                    asset=playtest.assets.source
-                    tag=playtest.tag
-                    playtest=true %}
-                {% endif %}
+                {% include release-download-button.html
+                  asset=playtest.assets.source
+                  tag=playtest.tag
+                  playtest=true %}
                 </button>
               </p>
             </div>
@@ -367,11 +354,7 @@ js:
         <li><strong>Playtest</strong> provides a preview of the latest improvements for players who want to help test and shape the future releases of OpenRA.</li>
       </ul>
       <p>Older builds can be found in the <a href="https://github.com/OpenRA/OpenRA/releases">GitHub Releases archive</a>.</p>
-    </div>
-  </section>
-
-  <section class="site-section">
-    <div class="site-section__content">
+      <hr />
       <h3 class="site-section__heading">License and Game Assets</h3>
       <p>The OpenRA game engine is free software released under the <a href="/">GPL3 license</a>. The OpenRA mods require files from the original games, which you will be prompted to download or copy the first time you run a mod.
         These files are not covered by the OpenRA license, and remain the property of their original owners.</p>

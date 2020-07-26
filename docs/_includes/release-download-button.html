@@ -5,6 +5,9 @@
     {% if include.playtest %}
     instruction__download-button--playtest
     button--construction
+      {% unless include.tag %}
+      button--disabled
+      {% endunless %}
     {% else %}
     instruction__download-button--release
     {% endif %}
@@ -26,6 +29,10 @@
     </svg>
   {% endif %}
   <span class="instruction__download-button__release badge">
-    {{include.tag}} ({{ include.asset.size | divided_by: 1048576.0 | round: 2 }}MB)
+    {% if include.tag %}
+      {{include.tag}} ({{ include.asset.size | divided_by: 1048576.0 | round: 2 }}MB)
+    {% else %}
+      Playtest Out of Date
+    {% endif %}
     </span>
 </a>

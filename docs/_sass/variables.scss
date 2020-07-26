@@ -21,7 +21,7 @@ $color-off-black: rgb(27, 27, 27);
 $color-off-white: rgb(230, 230, 230);
 
 $gradient-scanlines: repeating-linear-gradient(0deg, rgba(189,189,191,1) 0, rgba(225,225,227,1) 3px);
-$gradient-construction: repeating-linear-gradient(135deg, $color-construction, $color-construction 20px, black 20px, black 50px);
+$gradient-construction: repeating-linear-gradient(135deg, transparent, transparent 20px, black 20px, black 50px);
 $gradient-no-build-here: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0, rgba(0, 0, 0, 0.4) 3px, transparent 3px, transparent 9px);
 $gradient-button-shine: radial-gradient(ellipse at 10% 10%, rgba(255, 255, 255, 0.15) 0, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.4) 100%);
 
@@ -38,5 +38,6 @@ $font-size-xlarge: 1.25rem;
 $font-line-height: 170%;
 
 $font-jost: 'Jost', 'Futura', sans-serif;
+$font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
 $padding-medium: 1.25rem 1.5rem;

@@ -13,6 +13,7 @@
   
 .site-content {
   min-height: calc(100vh - 300px);
+  padding-bottom: 1px;
 }
 
 .site-header {
@@ -37,7 +38,10 @@
   justify-content: space-between;
   max-width: 1075px;
   margin: 0 auto;
+  border-left: black 1px solid;
+  border-right: black 1px solid;
   padding: 0.5rem 25px;
+  box-shadow: rgba(255, 255, 255, 0.075) 0 0 0 1px;
 
   @media screen and (max-width: 680px) {
     justify-content: start;
@@ -256,7 +260,6 @@
 
 .site-footer {
   font-size: $font-size-small;
-  padding: 0 0 3rem 0;
   background-color: rgb(0, 0, 0);
   background-attachment: fixed;
   background-image: linear-gradient(114deg, rgba(13,13,16,1) 0%, rgba(27,27,33,1) 22%, rgba(13,13,16,1) 64%, rgba(17,17,21,1) 100%);
@@ -278,8 +281,11 @@
   grid-template-columns: repeat(8, 50px);
   grid-gap: 25px;
   align-items: center;
+  border-left: black 1px solid;
+  border-right: black 1px solid;
   padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 3rem;
+  box-shadow: rgba(255, 255, 255, 0.075) 0 0 0 1px;
 
   @media screen and (max-width: 680px) {
     display: block;
