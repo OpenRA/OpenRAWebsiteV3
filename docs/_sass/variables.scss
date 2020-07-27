@@ -20,6 +20,13 @@ $color-tiberian-sun: rgb(92, 255, 51);
 $color-off-black: rgb(27, 27, 27);
 $color-off-white: rgb(230, 230, 230);
 
+$color-win95-bg: rgb(192, 192, 192);
+$color-win95-header-bg: rgb(0, 0, 128);
+$color-win95-border-top: rgb(224, 224, 192);
+$color-win95-border-right: rgb(128, 128, 128);
+$color-win95-border-bottom: rgb(128, 128, 128);
+$color-win95-border-left: rgb(224, 224, 192);
+
 $gradient-scanlines: repeating-linear-gradient(0deg, rgba(189,189,191,1) 0, rgba(225,225,227,1) 3px);
 $gradient-construction: repeating-linear-gradient(135deg, transparent, transparent 20px, black 20px, black 50px);
 $gradient-no-build-here: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0, rgba(0, 0, 0, 0.4) 3px, transparent 3px, transparent 9px);

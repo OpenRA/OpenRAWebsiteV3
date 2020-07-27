@@ -22,3 +22,14 @@
     clear: both;
   }
 }
+
+@mixin win95Bevel($width: 2px) {
+  border-width: $width;
+  border-style: solid;
+  border-color:
+    $color-win95-border-top
+    $color-win95-border-right
+    $color-win95-border-bottom
+    $color-win95-border-left;
+  background-color: $color-win95-bg;
+}
