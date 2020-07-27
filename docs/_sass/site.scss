@@ -293,11 +293,12 @@
 }
 
 .site-footer__logo-link {
+  display: inline-block;
   grid-column: 1 / 3;
 }
 
 .site-footer__logo {
-  display: inline-block;
+  display: block;
   width: 125px;
 }
 
