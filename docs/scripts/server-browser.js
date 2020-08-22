@@ -1,3 +1,73 @@
+function generateGetBoundingClientRect (x, y) {
+  return function () {
+    return {
+      width: 0,
+      height: 0,
+      top: y || 0,
+      right: x || 0,
+      bottom: y || 0,
+      left: x || 0
+    };
+  }
+}
+
+function createPopper (element) {
+  const virtualElement = {
+    getBoundingClientRect: generateGetBoundingClientRect(),
+  };
+  
+  const popperInstance = Popper.createPopper(virtualElement, element, {
+    placement: 'bottom',
+    modifiers: [
+      {
+        name: 'offset',
+        options: {
+          offset: [0, 35],
+        },
+      },
+      {
+        name: 'flip',
+        options: {
+          fallbackPlacements: ['top'],
+        },
+      }
+    ]
+  });
+
+  $(document).on('mousemove', function (event) {
+    virtualElement.getBoundingClientRect = generateGetBoundingClientRect(event.clientX, event.clientY);
+    popperInstance.update();
+  });
+
+  return popperInstance;
+}
+
+function getSpawnPointsArray (spawnPointsString) {
+  const spawnPointsStrings = spawnPointsString.split(',');
+  const spawnPointsArray = [];
+
+  for (let i = 0; i < spawnPointsStrings.length; i += 2) {
+    const spawnPointX = parseInt(spawnPointsStrings[i]);
+    const spawnPointY = parseInt(spawnPointsStrings[i + 1]);
+    spawnPointsArray.push([spawnPointX, spawnPointY]);
+  }
+
+  return spawnPointsArray;
+}
+
+function getMapDimensionsFromBounds (boundsString) {
+  const boundsStrings = boundsString.split(',');
+  const x1 = parseInt(boundsStrings[0]);
+  const y1 = parseInt(boundsStrings[1]);
+  const x2 = parseInt(boundsStrings[2]);
+  const y2 = parseInt(boundsStrings[3]);
+
+  return {
+    width: x2 - x1,
+    height: y2 - y1 
+  };
+}
+
 function ServerBrowser (targetElement) {
   const _this = this;
 
@@ -13,6 +83,7 @@ function ServerBrowser (targetElement) {
   this.$serversList = $('.servers__list__body', this.$element);
   this.$serverCount = $('.servers__server-count', this.$element);
   this.$playerCount = $('.servers__player-count', this.$element);
+  this.$tooltipContainer = $('.servers__list__tooltip-container', this.$element);
 
   this.filterState = {
     playing: true,
@@ -24,6 +95,7 @@ function ServerBrowser (targetElement) {
     direction: 'ascending'
   };
   this.servers = [];
+  this.mapsById = {};
   this.requestServerListTimeoutId;
   this.requestingServerList;
   this.serverCount = 0;
@@ -79,6 +151,8 @@ function ServerBrowser (targetElement) {
     _this.renderServerList();
   });
 
+  this._popper = createPopper(this.$tooltipContainer.get(0));
+
   this.renderLoadingPlaceholder();
   this.requestServerList();
 
@@ -86,6 +160,7 @@ function ServerBrowser (targetElement) {
 }
 
 ServerBrowser.prototype.renderServerListing = function renderServerListing (serverResult) {
+  const _this = this;
   const $serverListing = ServerBrowser.$serverListingTemplate.contents().clone();
   const canJoin = (
     (serverResult.__status === 'waiting' && serverResult.players < serverResult.maxplayers)
@@ -94,6 +169,7 @@ ServerBrowser.prototype.renderServerListing = function renderServerListing (serv
   const statusClassString = 'badge servers__listing__status__badge servers__listing__status__badge--' + serverResult.__status;
   const $statusBadge = $('<span class="' + statusClassString + '">' + serverResult.__status + '</span>');
 
+  $serverListing.prop('data-id', serverResult.id);
   $('.servers__listing__name', $serverListing).text(serverResult.name);
   if (serverResult.protected) {
     $('.servers__listing__name', $serverListing).prepend('<svg class="icon"><use xlink:href="/images/icons/icons.svg#icon-lock"></use></svg>');
@@ -106,6 +182,48 @@ ServerBrowser.prototype.renderServerListing = function renderServerListing (serv
     $('.servers__listing__join', $serverListing).append($joinLink);
   }
   $('.servers__listing__location', $serverListing).text(serverResult.location);
+
+  $serverListing.hoverIntent(function () {
+    const $serverListingTooltip = ServerBrowser.$serverListingTooltipTemplate.contents().clone();
+    const clients = serverResult.clients.map(function (client) {
+      return '<li><strong style="color: #' + client.color + '">' + client.name + '</strong></li>';
+    });
+    $('.servers__list__tooltip__clients', $serverListingTooltip).html(clients.join(''));
+
+    _this.$tooltipContainer.html($serverListingTooltip);
+    _this._popper.forceUpdate();
+
+    _this.requestMapInfo(serverResult.map, function (mapInfo) {
+      console.log('mapInfo', mapInfo);
+      console.log('serverInfo', serverResult);
+      
+      const mapDimensions = getMapDimensionsFromBounds(mapInfo.bounds);
+      const spawnPoints = getSpawnPointsArray(mapInfo.spawnpoints);
+      const mapWidth = parseInt(mapInfo.width);
+      const mapHeight = parseInt(mapInfo.height);
+
+      const $spawnPoints = spawnPoints.map(function (spawnPoint, index) {
+        const $spawnPoint = $('<li class="minimap__spawnpoint">' + (index + 1) + '</li>');
+        $spawnPoint.css({
+          top: ((spawnPoint[1]) / mapHeight) * 100 + '%',
+          left: ((spawnPoint[0]) / mapWidth) * 100 + '%'
+        });
+        return $spawnPoint;
+      });
+
+      if (mapDimensions.width >= mapDimensions.height) {
+        $('.minimap__image', $serverListingTooltip).css({ width: 200 });
+      } else {
+        $('.minimap__image', $serverListingTooltip).css({ height: 200 });
+      }
+
+      $('.minimap__image', $serverListingTooltip).prop('src', 'data:image/png;base64,' + mapInfo.minimap);
+      $('.minimap__spawnpoints', $serverListingTooltip).append($spawnPoints);
+      $('.servers__list__tooltip__map__title', $serverListingTooltip).text(mapInfo.title);
+    });
+  }, function () {
+    _this.$tooltipContainer.empty();
+  });
 
   return $serverListing;
 }
@@ -126,7 +244,7 @@ ServerBrowser.prototype.renderServerGroups = function renderServerGroups (server
     $('.servers__list__group__players > var', $serverGroupHeader).text(serverGroup.players);
 
     $serverListings.push($serverGroupHeader);
-    $serverListings = $serverListings.concat(serverGroup.servers.map(this.renderServerListing));
+    $serverListings = $serverListings.concat(serverGroup.servers.map(this.renderServerListing, this));
   }
 
   return $serverListings;
@@ -184,6 +302,12 @@ ServerBrowser.prototype.requestServerList = function requestServerList () {
   }, 30 * 1000);
 }
 
+ServerBrowser.prototype.requestMapInfo = function requestMapInfo (hashId, callback) {
+  $.getJSON('https://resource.openra.net/map/hash/'+ hashId, function (mapResults) {
+    callback(mapResults[0]);
+  });
+}
+
 ServerBrowser.prototype.setSortState = function setSortState (by) {
   this.sortState.direction = (this.sortState.by === by && this.sortState.direction === 'ascending')
     ? 'descending'
@@ -205,6 +329,7 @@ ServerBrowser.prototype.countServersAndPlayers = function countServersAndPlayers
 
 ServerBrowser.$serverListingTemplate = $('#server-row-template');
 ServerBrowser.$serverGroupHeaderTemplate = $('#server-group-header-template');
+ServerBrowser.$serverListingTooltipTemplate = $('#server-listing-tooltip-template');
 
 ServerBrowser.stateSortOrder = {
   waiting: 1,

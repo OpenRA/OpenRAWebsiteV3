@@ -90,3 +90,15 @@
 .servers__listing__status__badge--empty {
   color: gray;
 }
+
+.servers__list__tooltip {
+  @include metalPanel(1px);
+  display: flex;
+  background: black;
+  padding: 1rem;
+  width: 400px;
+}
+
+.servers__list__tooltip__clients {
+
+}

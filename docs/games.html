@@ -1,5 +1,7 @@
 ---
 js:
+- /scripts/vendor/popper.js
+- /scripts/vendor/jquery.hoverintent.min.js
 - /scripts/server-browser.js
 - /scripts/vendor/flot.js
 - /scripts/vendor/flot-selection.js
@@ -42,7 +44,7 @@ js:
       </div>
     </div>
     <div class="u-mobile-full-width">
-      <table class="servers__list text--small">
+      <table class="servers__list text--small table--hover-rows">
         <thead class="servers__list__header">
           <tr>
             <th class="servers__list__header__name" colspan="2">
@@ -89,6 +91,8 @@ js:
       </table>
     </div>
   </div>
+
+  <div class="servers__list__tooltip-container" style="pointer-events: none;"></div>
 </section>
 
 <hr class="site-section__divider" />
@@ -129,4 +133,19 @@ js:
       <span class="servers__list__group__players"><var></var></span>
     </td>
   </tr>
+</template>
+
+<template id="server-listing-tooltip-template">
+  <div class="servers__list__tooltip">
+    <div class="server__list__tooltip__map">
+      <div class="minimap">
+        <div class="minimap__bounds">
+          <img class="minimap__image" />
+          <ul class="minimap__spawnpoints"></ul>
+        </div>
+      </div>
+      <strong class="servers__list__tooltip__map__title"></strong>
+    </div>
+    <ul class="servers__list__tooltip__clients"></ul>
+  </div>
 </template>
