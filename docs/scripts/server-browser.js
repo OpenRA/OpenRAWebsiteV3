@@ -29,6 +29,7 @@ function createPopper (element) {
         name: 'flip',
         options: {
           fallbackPlacements: ['top'],
+          padding: 10
         },
       }
     ]
@@ -183,46 +184,68 @@ ServerBrowser.prototype.renderServerListing = function renderServerListing (serv
   }
   $('.servers__listing__location', $serverListing).text(serverResult.location);
 
-  $serverListing.hoverIntent(function () {
-    const $serverListingTooltip = ServerBrowser.$serverListingTooltipTemplate.contents().clone();
-    const clients = serverResult.clients.map(function (client) {
-      return '<li><strong style="color: #' + client.color + '">' + client.name + '</strong></li>';
-    });
-    $('.servers__list__tooltip__clients', $serverListingTooltip).html(clients.join(''));
-
-    _this.$tooltipContainer.html($serverListingTooltip);
-    _this._popper.forceUpdate();
-
-    _this.requestMapInfo(serverResult.map, function (mapInfo) {
-      console.log('mapInfo', mapInfo);
-      console.log('serverInfo', serverResult);
-      
-      const mapDimensions = getMapDimensionsFromBounds(mapInfo.bounds);
-      const spawnPoints = getSpawnPointsArray(mapInfo.spawnpoints);
-      const mapWidth = parseInt(mapInfo.width);
-      const mapHeight = parseInt(mapInfo.height);
-
-      const $spawnPoints = spawnPoints.map(function (spawnPoint, index) {
-        const $spawnPoint = $('<li class="minimap__spawnpoint">' + (index + 1) + '</li>');
-        $spawnPoint.css({
-          top: ((spawnPoint[1]) / mapHeight) * 100 + '%',
-          left: ((spawnPoint[0]) / mapWidth) * 100 + '%'
-        });
-        return $spawnPoint;
-      });
-
-      if (mapDimensions.width >= mapDimensions.height) {
-        $('.minimap__image', $serverListingTooltip).css({ width: 200 });
-      } else {
-        $('.minimap__image', $serverListingTooltip).css({ height: 200 });
+  $serverListing.hoverIntent({
+    over: function () {
+      const $serverListingTooltip = ServerBrowser.$serverListingTooltipTemplate.contents().clone();
+      const $clients = [];
+      const spawnPointColors = {};
+      for (let slotIndex = 0; slotIndex <= serverResult.maxplayers; slotIndex++) {
+        const playerData = serverResult.clients[slotIndex];
+        if (playerData) {
+          // create spawnpoint html
+          const spawn = playerData.spawnpoint || '?';
+          $clients.push($('<tr>' +
+            '<td>' +
+              '<span class="servers__list__tooltip__clients__spawn" style="border-color: #' + playerData.color + '">' + spawn + '</span>' +
+              '<strong>' + playerData.name + '</strong>' +
+            '</td>' +
+            '<td>' + playerData.team + '</td>' +
+          '</tr>'));
+          // store spawnpoint color
+          spawnPointColors[playerData.spawnpoint - 1] = playerData.color;
+        } else {
+          $clients.push($('<tr><td class="servers__list__tooltip__clients__empty" colspan="2">Empty</td></tr>'));
+        }
       }
+      $('.servers__list__tooltip__clients > tbody', $serverListingTooltip).replaceWith($clients);
 
-      $('.minimap__image', $serverListingTooltip).prop('src', 'data:image/png;base64,' + mapInfo.minimap);
-      $('.minimap__spawnpoints', $serverListingTooltip).append($spawnPoints);
-      $('.servers__list__tooltip__map__title', $serverListingTooltip).text(mapInfo.title);
-    });
-  }, function () {
-    _this.$tooltipContainer.empty();
+      _this.$tooltipContainer.html($serverListingTooltip);
+      _this._popper.forceUpdate();
+
+      _this.requestMapInfo(serverResult.map, function (mapInfo) {
+        console.log('mapInfo', mapInfo);
+        console.log('serverInfo', serverResult);
+        
+        const mapDimensions = getMapDimensionsFromBounds(mapInfo.bounds);
+        const spawnPoints = getSpawnPointsArray(mapInfo.spawnpoints);
+        const mapWidth = parseInt(mapInfo.width);
+        const mapHeight = parseInt(mapInfo.height);
+
+        const $spawnPoints = spawnPoints.map(function (spawnPoint, index) {
+          const $spawnPoint = $('<li class="minimap__spawnpoint">' + (index + 1) + '</li>');
+          $spawnPoint.css({
+            top: ((spawnPoint[1]) / mapHeight) * 100 + '%',
+            left: ((spawnPoint[0]) / mapWidth) * 100 + '%',
+            'border-color': '#' + spawnPointColors[index]
+          });
+          return $spawnPoint;
+        });
+
+        if (mapDimensions.width >= mapDimensions.height) {
+          $('.minimap__image', $serverListingTooltip).css({ width: 200 });
+        } else {
+          $('.minimap__image', $serverListingTooltip).css({ height: 200 });
+        }
+
+        $('.minimap__image', $serverListingTooltip).prop('src', 'data:image/png;base64,' + mapInfo.minimap);
+        $('.minimap__spawnpoints', $serverListingTooltip).append($spawnPoints);
+        $('.servers__list__tooltip__map__title', $serverListingTooltip).text(mapInfo.title);
+      });
+    },
+    out: function () {
+      _this.$tooltipContainer.empty();
+    },
+    interval: 200
   });
 
   return $serverListing;

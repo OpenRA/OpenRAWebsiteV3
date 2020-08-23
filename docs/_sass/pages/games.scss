@@ -1,3 +1,14 @@
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .servers__controls {
   display: flex;
   justify-content: space-between;
@@ -94,11 +105,40 @@
 .servers__list__tooltip {
   @include metalPanel(1px);
   display: flex;
-  background: black;
-  padding: 1rem;
-  width: 400px;
+  background: rgba(6, 6, 6, 0.95);
+  font-size: $font-size-tiny;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+  animation-name: appear;
+  animation-duration: 250ms;
+  animation-timing-function: $ease-in-out-quint;
 }
 
-.servers__list__tooltip__clients {
+.servers__list__tooltip__map {
+  border-right: rgba(255, 255, 255, 0.25) 1px dotted;
+  align-self: stretch;
 
+  .minimap__image {
+    animation-name: appear;
+    animation-duration: 250ms;
+    animation-timing-function: $ease-in-out-quint;
+  }
+}
+
+.servers__list__tooltip__map__title {
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.servers__list__tooltip__clients__h-player {
+  min-width: 125px;
+}
+
+.servers__list__tooltip__clients__spawn {
+  @extend %spawnpoint;
+  margin-right: 0.5rem;
+}
+
+.servers__list__tooltip__clients__empty {
+  color: gray;
 }

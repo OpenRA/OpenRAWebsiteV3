@@ -227,35 +227,50 @@ var {
 }
 
 table {
-  @include metalPanel();
   border-spacing: 0;
   border-collapse: separate;
   font-variant-numeric: slashed-zero tabular-nums;
 }
 
+.table--metal-panel {
+  @include metalPanel();
+
+  thead {
+    th {
+      @extend %scanlines;
+      border-right: rgba(0, 0, 0, 0.25) 1px dotted;
+      border-radius: 2px;
+
+      &:first-child {
+        border-top-left-radius: 5px;
+      }
+  
+      &:last-child {
+        border-top-right-radius: 5px;
+        border-right: none;
+      }
+    }
+  }
+
+  td {
+   border-bottom: none; 
+  }
+}
+
 thead {
   th {
-    @extend %scanlines;
+    border-bottom: rgba(255, 255, 255, 0.5) 1px solid;
     padding: 0.25rem 1rem;
-    border-right: rgba(0, 0, 0, 0.25) 1px dotted;
-
-    &:first-child {
-      border-top-left-radius: 5px;
-    }
-
-    &:last-child {
-      border-top-right-radius: 5px;
-      border-right: none;
-    }
+    text-align: left;
+    font-size: 0.85em;
+    font-family: $font-jost;
+    text-transform: uppercase;
   }
 
   a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: $font-size-tiny;
-    font-family: $font-jost;
-    text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-left: -0.25rem;
     margin-right: -0.25rem;
@@ -273,12 +288,8 @@ tbody {
   padding: 0.5rem;
 }
 
-th {
-  padding: 0.75rem 1rem;
-  text-align: left;
-}
-
 td {
+  border-bottom: rgba(255, 255, 255, 0.25) 1px dotted;
   padding: 0.25rem 1rem;
 }
 
