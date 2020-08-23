@@ -119,6 +119,7 @@
 }
 
 .servers__list__tooltip__map {
+  width: 220px;
   border-top-left-radius: 5px;
   border-right: rgba(255, 255, 255, 0.25) 1px dotted;
   align-self: stretch;
@@ -126,15 +127,15 @@
 }
 
 .servers__list__tooltip__map__title {
-  width: 200px;
+  width: 100%;
   padding: 0.5rem;
   text-align: center;
   font-weight: bold;
   line-height: 1.25rem;
 }
 
-.servers__list__tooltip__clients__h-player {
-  min-width: 125px;
+.servers__list__tooltip__clients {
+  min-width: 220px;
 }
 
 .servers__list__tooltip__clients__spawn {
