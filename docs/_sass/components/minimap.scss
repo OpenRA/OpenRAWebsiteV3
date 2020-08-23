@@ -1,3 +1,15 @@
+@keyframes spawnpointAppear {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  25% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
 .minimap {
   display: flex;
   justify-content: center;
@@ -40,6 +52,7 @@
   image-rendering: -moz-crisp-edges;
   image-rendering: pixelated;
   opacity: 0;
+  transition-property: opacity;
   transition-timing-function: $ease-in-out-quint;
   transition-duration: 350ms;
 }
@@ -60,5 +73,13 @@
   @extend %spawnpoint;
   position: absolute;
   margin: 0;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.minimap--loaded {
+  .minimap__spawnpoint {
+    animation-timing-function: $ease-in-out-quint;
+    animation-duration: 750ms;
+    animation-name: spawnpointAppear;
+  }
 }
