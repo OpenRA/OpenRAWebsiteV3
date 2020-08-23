@@ -186,60 +186,7 @@ ServerBrowser.prototype.renderServerListing = function renderServerListing (serv
 
   $serverListing.hoverIntent({
     over: function () {
-      const $serverListingTooltip = ServerBrowser.$serverListingTooltipTemplate.contents().clone();
-      const $clients = [];
-      const spawnPointColors = {};
-      for (let slotIndex = 0; slotIndex <= serverResult.maxplayers; slotIndex++) {
-        const playerData = serverResult.clients[slotIndex];
-        if (playerData) {
-          // create spawnpoint html
-          const spawn = playerData.spawnpoint || '?';
-          $clients.push($('<tr>' +
-            '<td>' +
-              '<span class="servers__list__tooltip__clients__spawn" style="border-color: #' + playerData.color + '">' + spawn + '</span>' +
-              '<strong>' + playerData.name + '</strong>' +
-            '</td>' +
-            '<td>' + playerData.team + '</td>' +
-          '</tr>'));
-          // store spawnpoint color
-          spawnPointColors[playerData.spawnpoint - 1] = playerData.color;
-        } else {
-          $clients.push($('<tr><td class="servers__list__tooltip__clients__empty" colspan="2">Empty</td></tr>'));
-        }
-      }
-      $('.servers__list__tooltip__clients > tbody', $serverListingTooltip).replaceWith($clients);
-      $('.minimap__hash', $serverListingTooltip).text(serverResult.map.replace(/(.{10})/g,"$1\n"));
-
-      _this.$tooltipContainer.html($serverListingTooltip);
-      _this._popper.forceUpdate();
-
-      _this.requestMapInfo(serverResult.map, function (mapInfo) {
-        const mapDimensions = getMapDimensionsFromBounds(mapInfo.bounds);
-        const spawnPoints = getSpawnPointsArray(mapInfo.spawnpoints);
-        const mapWidth = parseInt(mapInfo.width);
-        const mapHeight = parseInt(mapInfo.height);
-
-        const $spawnPoints = spawnPoints.map(function (spawnPoint, index) {
-          const $spawnPoint = $('<li class="minimap__spawnpoint">' + (index + 1) + '</li>');
-          $spawnPoint.css({
-            top: ((spawnPoint[1]) / mapHeight) * 100 + '%',
-            left: ((spawnPoint[0]) / mapWidth) * 100 + '%',
-            'border-color': '#' + spawnPointColors[index]
-          });
-          return $spawnPoint;
-        });
-
-        if (mapDimensions.width >= mapDimensions.height) {
-          $('.minimap__image', $serverListingTooltip).css({ width: 200 });
-        } else {
-          $('.minimap__image', $serverListingTooltip).css({ height: 200 });
-        }
-
-        $('.minimap__image', $serverListingTooltip).prop('src', 'data:image/png;base64,' + mapInfo.minimap);
-        $('.minimap', $serverListingTooltip).addClass('minimap--loaded');
-        $('.minimap__spawnpoints', $serverListingTooltip).append($spawnPoints);
-        $('.servers__list__tooltip__map__title', $serverListingTooltip).text(mapInfo.title);
-      });
+      _this.renderServerListingTooltip(serverResult);
     },
     out: function () {
       _this.$tooltipContainer.empty();
@@ -249,6 +196,99 @@ ServerBrowser.prototype.renderServerListing = function renderServerListing (serv
 
   return $serverListing;
 }
+
+ServerBrowser.prototype.renderServerListingTooltip = function renderServerListingTooltip (serverInfo) {
+  const _this = this;
+  const $serverListingTooltip = ServerBrowser.$serverListingTooltipTemplate.contents().clone();
+
+  const playerClients = [];
+  const botClients = [];
+  const spectatorClients = [];
+  const spawnPointColors = {};
+
+  serverInfo.clients.forEach(function (client) {
+    if (client.isbot) {
+      botClients.push(client);
+    } else if (client.isspectator) {
+      spectatorClients.push(client);
+    } else {
+      playerClients.push(client);
+    }
+    // store spawnpoint color
+    spawnPointColors[client.spawnpoint - 1] = client.color;
+  });
+
+  if (playerClients.length < serverInfo.maxplayers) {
+    const emptySlotsCount = serverInfo.maxplayers - playerClients.length;
+    for (let i = 0; i < emptySlotsCount; i++) {
+      playerClients.push(null);
+    }
+  }
+
+  const clients = playerClients.concat(botClients).concat(spectatorClients);
+  const $clients = clients.map(_this.renderTooltipClient);
+
+  $('.servers__list__tooltip__clients > tbody', $serverListingTooltip).replaceWith($clients);
+  $('.minimap__hash', $serverListingTooltip).text(serverInfo.map.replace(/(.{10})/g,"$1\n"));
+
+  this.$tooltipContainer.html($serverListingTooltip);
+  this._popper.forceUpdate();
+
+  this.requestMapInfo(serverInfo.map, function (mapInfo) {
+    _this.renderTooltipMapInfo(mapInfo, spawnPointColors, $serverListingTooltip);
+  });
+},
+
+ServerBrowser.prototype.renderTooltipClient = function renderTooltipClient (client) {
+  let $client;
+  if (client) {
+    // create spawnpoint html
+    const spawn = client.spawnpoint || '?';
+    $client = $('<tr>' +
+      '<td>' +
+        '<strong class="servers__list__tooltip__clients__name"></strong>' +
+      '</td>' +
+      '<td>' + client.team + '</td>' +
+    '</tr>');
+    $('.servers__list__tooltip__clients__name', $client).text(client.name); // injection protection
+    if (!client.isspectator) {
+      const $spawnPoint = $('<span class="servers__list__tooltip__clients__spawn" style="border-color: #' + client.color + '">' + spawn + '</span>');
+      $('.servers__list__tooltip__clients__name', $client).before($spawnPoint);
+    }
+  } else {
+    $client = $('<tr><td class="servers__list__tooltip__clients__empty" colspan="2">Empty</td></tr>');
+  }
+
+  return $client;
+},
+
+ServerBrowser.prototype.renderTooltipMapInfo = function renderTooltipMapInfo (mapInfo, spawnPointColors, $serverListingTooltip) {
+  const mapDimensions = getMapDimensionsFromBounds(mapInfo.bounds);
+  const spawnPoints = getSpawnPointsArray(mapInfo.spawnpoints);
+  const mapWidth = parseInt(mapInfo.width);
+  const mapHeight = parseInt(mapInfo.height);
+
+  const $spawnPoints = spawnPoints.map(function (spawnPoint, index) {
+    const $spawnPoint = $('<li class="minimap__spawnpoint">' + (index + 1) + '</li>');
+    $spawnPoint.css({
+      top: ((spawnPoint[1]) / mapHeight) * 100 + '%',
+      left: ((spawnPoint[0]) / mapWidth) * 100 + '%',
+      'border-color': '#' + spawnPointColors[index]
+    });
+    return $spawnPoint;
+  });
+
+  if (mapDimensions.width >= mapDimensions.height) {
+    $('.minimap__image', $serverListingTooltip).css({ width: 200 });
+  } else {
+    $('.minimap__image', $serverListingTooltip).css({ height: 200 });
+  }
+
+  $('.minimap__image', $serverListingTooltip).prop('src', 'data:image/png;base64,' + mapInfo.minimap);
+  $('.minimap', $serverListingTooltip).addClass('minimap--loaded');
+  $('.minimap__spawnpoints', $serverListingTooltip).append($spawnPoints);
+  $('.servers__list__tooltip__map__title', $serverListingTooltip).text(mapInfo.title);
+},
 
 ServerBrowser.prototype.renderServerGroups = function renderServerGroups (serverGroupsArray) {
   let $serverListings = []
