@@ -258,15 +258,6 @@ table {
 }
 
 thead {
-  th {
-    border-bottom: rgba(255, 255, 255, 0.5) 1px solid;
-    padding: 0.25rem 1rem;
-    text-align: left;
-    font-size: 0.85em;
-    font-family: $font-jost;
-    text-transform: uppercase;
-  }
-
   a {
     display: flex;
     justify-content: space-between;
@@ -286,6 +277,15 @@ thead {
 
 tbody {
   padding: 0.5rem;
+}
+
+th {
+  border-bottom: rgba(255, 255, 255, 0.5) 1px solid;
+  padding: 0.25rem 1rem;
+  text-align: left;
+  font-size: 0.85em;
+  font-family: $font-jost;
+  text-transform: uppercase;
 }
 
 td {

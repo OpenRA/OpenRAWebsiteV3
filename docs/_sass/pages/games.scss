@@ -136,6 +136,14 @@
 
 .servers__list__tooltip__clients {
   min-width: 220px;
+
+  .icon {
+    vertical-align: -0.25rem;
+  }
+}
+
+.servers__list__tooltip__clients__spectator {
+  margin-left: 0.5rem;
 }
 
 .servers__list__tooltip__clients__spawn {

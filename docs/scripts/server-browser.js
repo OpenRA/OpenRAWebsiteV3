@@ -225,8 +225,21 @@ ServerBrowser.prototype.renderServerListingTooltip = function renderServerListin
     }
   }
 
-  const clients = playerClients.concat(botClients).concat(spectatorClients);
-  const $clients = clients.map(_this.renderTooltipClient);
+  const $playerClients = playerClients.map(_this.renderTooltipClient);
+  const $botClients = botClients.map(_this.renderTooltipClient);
+  const $spectatorClients = spectatorClients.map(_this.renderTooltipClient);
+  let $clients = $playerClients.concat($botClients);
+
+  if ($spectatorClients.length) {
+    const $spectatorSubHead = $('<tr><th colspan="2">' +
+      'Spectators' +
+      '<svg class="servers__list__tooltip__clients__spectator icon">' +
+        '<use xlink:href="/images/icons/icons.svg#icon-eye"></use>' +
+      '</svg>' +
+    '</th></tr>');
+    $clients.push($spectatorSubHead);
+    $clients = $clients.concat($spectatorClients);
+  }
 
   $('.servers__list__tooltip__clients > tbody', $serverListingTooltip).replaceWith($clients);
   $('.minimap__hash', $serverListingTooltip).text(serverInfo.map.replace(/(.{10})/g,"$1\n"));
