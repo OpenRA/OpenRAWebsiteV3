@@ -4,6 +4,30 @@
   align-items: center;
   width: 200px;
   height: 200px;
+  background: rgb(25, 25, 25);
+}
+
+.minimap__hash {
+  text-transform: uppercase;
+  display: block;
+  padding: 5px;
+  font-size: 9px;
+  font-weight: bold;
+  font-family: Menlo, monospace;
+  text-align: center;
+  white-space: pre;
+  line-height: 1.25;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.25);
+  border: rgba(255, 255, 255, 0.25) 1px solid;
+  text-shadow: none;
+  border-radius: 2px;
+}
+
+.minimap--loaded {
+  .minimap__hash {
+    display: none;
+  }
 }
 
 .minimap__bounds {
@@ -15,6 +39,15 @@
   display: block;
   image-rendering: -moz-crisp-edges;
   image-rendering: pixelated;
+  opacity: 0;
+  transition-timing-function: $ease-in-out-quint;
+  transition-duration: 350ms;
+}
+
+.minimap--loaded {
+  .minimap__image {
+    opacity: 1;
+  }
 }
 
 .minimap__spawnpoints {

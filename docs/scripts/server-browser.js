@@ -208,14 +208,12 @@ ServerBrowser.prototype.renderServerListing = function renderServerListing (serv
         }
       }
       $('.servers__list__tooltip__clients > tbody', $serverListingTooltip).replaceWith($clients);
+      $('.minimap__hash', $serverListingTooltip).text(serverResult.map.replace(/(.{10})/g,"$1\n"));
 
       _this.$tooltipContainer.html($serverListingTooltip);
       _this._popper.forceUpdate();
 
       _this.requestMapInfo(serverResult.map, function (mapInfo) {
-        console.log('mapInfo', mapInfo);
-        console.log('serverInfo', serverResult);
-        
         const mapDimensions = getMapDimensionsFromBounds(mapInfo.bounds);
         const spawnPoints = getSpawnPointsArray(mapInfo.spawnpoints);
         const mapWidth = parseInt(mapInfo.width);
@@ -238,6 +236,7 @@ ServerBrowser.prototype.renderServerListing = function renderServerListing (serv
         }
 
         $('.minimap__image', $serverListingTooltip).prop('src', 'data:image/png;base64,' + mapInfo.minimap);
+        $('.minimap', $serverListingTooltip).addClass('minimap--loaded');
         $('.minimap__spawnpoints', $serverListingTooltip).append($spawnPoints);
         $('.servers__list__tooltip__map__title', $serverListingTooltip).text(mapInfo.title);
       });

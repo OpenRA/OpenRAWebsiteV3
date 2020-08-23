@@ -116,12 +116,6 @@
 .servers__list__tooltip__map {
   border-right: rgba(255, 255, 255, 0.25) 1px dotted;
   align-self: stretch;
-
-  .minimap__image {
-    animation-name: appear;
-    animation-duration: 250ms;
-    animation-timing-function: $ease-in-out-quint;
-  }
 }
 
 .servers__list__tooltip__map__title {
