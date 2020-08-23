@@ -102,6 +102,11 @@
   color: gray;
 }
 
+.servers__list__tooltip-container {
+  position: relative;
+  z-index: 500;
+}
+
 .servers__list__tooltip {
   @include metalPanel(1px);
   display: flex;
@@ -121,9 +126,11 @@
 }
 
 .servers__list__tooltip__map__title {
+  width: 200px;
   padding: 0.5rem;
   text-align: center;
   font-weight: bold;
+  line-height: 1.25rem;
 }
 
 .servers__list__tooltip__clients__h-player {
