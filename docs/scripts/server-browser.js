@@ -43,6 +43,14 @@ function createPopper (element) {
   return popperInstance;
 }
 
+const isometricMods = ['ts', 'ra2', 'sp', 'rv'];
+function getGridType (mapInfo) {
+  const isIsometricMod = isometricMods.indexOf(mapInfo.game_mod) !== -1;
+  return isIsometricMod
+    ? 'RectangularIsometric'
+    : mapInfo.map_grid_type;
+}
+
 function getSpawnPointsArray (spawnPointsString) {
   const spawnPointsStrings = spawnPointsString.split(',');
   const spawnPointsArray = [];
@@ -56,17 +64,32 @@ function getSpawnPointsArray (spawnPointsString) {
   return spawnPointsArray;
 }
 
-function getMapDimensionsFromBounds (boundsString) {
+function getMapBounds (boundsString) {
   const boundsStrings = boundsString.split(',');
-  const x1 = parseInt(boundsStrings[0]);
-  const y1 = parseInt(boundsStrings[1]);
-  const x2 = parseInt(boundsStrings[2]);
-  const y2 = parseInt(boundsStrings[3]);
 
   return {
-    width: x2 - x1,
-    height: y2 - y1 
+    x: parseInt(boundsStrings[0]),
+    y: parseInt(boundsStrings[1]),
+    width: parseInt(boundsStrings[2]),
+    height: parseInt(boundsStrings[3]) 
   };
+}
+
+function getSpawnPointLocation (x, y, mapBounds, gridType) {
+  if (gridType === 'RectangularIsometric') {
+    const v = x + y - mapBounds.y;
+    const u = x - y + (2 * ((v % 2) - mapBounds.x));
+
+    return {
+      left: ((u / 2) - mapBounds.x) / mapBounds.width,
+      top: (v - mapBounds.y) / mapBounds.height
+    };
+  } else {
+    return {
+      left: (x - mapBounds.x) / mapBounds.width,
+      top: (y - mapBounds.y) / mapBounds.height
+    }
+  }
 }
 
 function ServerBrowser (targetElement) {
@@ -198,6 +221,7 @@ ServerBrowser.prototype.renderServerListing = function renderServerListing (serv
 }
 
 ServerBrowser.prototype.renderServerListingTooltip = function renderServerListingTooltip (serverInfo) {
+  console.log('serverInfo', serverInfo);
   const _this = this;
   const $serverListingTooltip = ServerBrowser.$serverListingTooltipTemplate.contents().clone();
 
@@ -248,6 +272,7 @@ ServerBrowser.prototype.renderServerListingTooltip = function renderServerListin
   this._popper.forceUpdate();
 
   this.requestMapInfo(serverInfo.map, function (mapInfo) {
+    console.log('mapInfo', mapInfo)
     _this.renderTooltipMapInfo(mapInfo, spawnPointColors, $serverListingTooltip);
   });
 },
@@ -276,22 +301,22 @@ ServerBrowser.prototype.renderTooltipClient = function renderTooltipClient (clie
 },
 
 ServerBrowser.prototype.renderTooltipMapInfo = function renderTooltipMapInfo (mapInfo, spawnPointColors, $serverListingTooltip) {
-  const mapDimensions = getMapDimensionsFromBounds(mapInfo.bounds);
+  const mapBounds = getMapBounds(mapInfo.bounds);
   const spawnPoints = getSpawnPointsArray(mapInfo.spawnpoints);
-  const mapWidth = parseInt(mapInfo.width);
-  const mapHeight = parseInt(mapInfo.height);
+  const gridType = getGridType(mapInfo);
 
   const $spawnPoints = spawnPoints.map(function (spawnPoint, index) {
     const $spawnPoint = $('<li class="minimap__spawnpoint">' + (index + 1) + '</li>');
+    const spawnLocation = getSpawnPointLocation(spawnPoint[0], spawnPoint[1], mapBounds, gridType);
     $spawnPoint.css({
-      top: ((spawnPoint[1]) / mapHeight) * 100 + '%',
-      left: ((spawnPoint[0]) / mapWidth) * 100 + '%',
+      top: spawnLocation.top * 100 + '%',
+      left: spawnLocation.left * 100 + '%',
       'border-color': '#' + spawnPointColors[index]
     });
     return $spawnPoint;
   });
 
-  if (mapDimensions.width >= mapDimensions.height) {
+  if (mapBounds.width >= mapBounds.height) {
     $('.minimap__image', $serverListingTooltip).css({ width: 200 });
   } else {
     $('.minimap__image', $serverListingTooltip).css({ height: 200 });
