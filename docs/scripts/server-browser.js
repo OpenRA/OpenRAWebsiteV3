@@ -249,7 +249,11 @@ ServerBrowser.prototype.renderServerListingTooltip = function renderServerListin
     if (playerClientA.spawnpoint < playerClientB.spawnpoint) return -1;
     if (playerClientA.spawnpoint > playerClientB.spawnpoint) return 1;
 
-    return playerClientA.name.localCompare(playerClientB.name);
+    // localeCompare was unreliable
+    if (playerClientA.name.toLowerCase() > playerClientB.name.toLowerCase()) return 1;
+    if (playerClientA.name.toLowerCase() < playerClientB.name.toLowerCase()) return -1;
+
+    return 0;
   });
 
   if (playerClients.length < serverInfo.maxplayers) {
