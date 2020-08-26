@@ -1,19 +1,8 @@
-@keyframes spawnpointAppear {
-  0% {
-    transform: translate(-50%, -50%) scale(0);
-  }
-  25% {
-    transform: translate(-50%, -50%) scale(0);
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-
 .minimap {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   width: 220px;
   height: 220px;
   padding: 10px;
@@ -21,6 +10,10 @@
 }
 
 .minimap__hash {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-transform: uppercase;
   display: block;
   padding: 5px;
@@ -31,16 +24,10 @@
   white-space: pre;
   line-height: 1.25;
   letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.25);
-  border: rgba(255, 255, 255, 0.25) 1px solid;
+  color: rgba(255, 255, 255, 0.15);
+  border: rgba(255, 255, 255, 0.15) 1px solid;
   text-shadow: none;
   border-radius: 2px;
-}
-
-.minimap--loaded {
-  .minimap__hash {
-    display: none;
-  }
 }
 
 .minimap__bounds {
@@ -48,10 +35,8 @@
   position: relative;
 }
 
-.minimap__image {
-  display: block;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: pixelated;
+.minimap__bounds {
+  /* fade in effect */
   opacity: 0;
   transition-property: opacity;
   transition-timing-function: $ease-in-out-quint;
@@ -59,9 +44,15 @@
 }
 
 .minimap--loaded {
-  .minimap__image {
+  .minimap__bounds {
     opacity: 1;
   }
+}
+
+.minimap__image {
+  display: block;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
 }
 
 .minimap__spawnpoints {
@@ -75,12 +66,4 @@
   position: absolute;
   margin: 0;
   transform: translate(-50%, -50%) scale(1);
-}
-
-.minimap--loaded {
-  .minimap__spawnpoint {
-    animation-timing-function: $ease-in-out-quint;
-    animation-duration: 750ms;
-    animation-name: spawnpointAppear;
-  }
 }
