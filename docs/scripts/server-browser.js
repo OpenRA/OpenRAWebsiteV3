@@ -75,6 +75,12 @@ function getMapBounds (boundsString) {
   };
 }
 
+function getMapImageWidth (mapWidth, gridType) {
+  return gridType === 'RectangularIsometric'
+    ? mapWidth * 2
+    : mapWidth;
+}
+
 function getSpawnPointLocation (x, y, mapBounds, gridType) {
   if (gridType === 'RectangularIsometric') {
     const v = x + y - mapBounds.y;
@@ -330,7 +336,7 @@ ServerBrowser.prototype.renderTooltipMapInfo = function renderTooltipMapInfo (ma
     return $spawnPoint;
   });
 
-  if (mapBounds.width >= mapBounds.height) {
+  if (getMapImageWidth(mapBounds.width, gridType) >= mapBounds.height) {
     $('.minimap__image', $serverListingTooltip).css({ width: 200 });
   } else {
     $('.minimap__image', $serverListingTooltip).css({ height: 200 });
