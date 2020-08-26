@@ -17,6 +17,8 @@
 }
 
 .site-header {
+  position: relative;
+  z-index: 1000;
   background: rgb(0, 0, 0);
   background-attachment: fixed;
   background-image: repeating-linear-gradient(114deg, rgba(13,13,16,1) 0%, rgba(27,27,33,1) 22%, rgba(13,13,16,1) 64%, rgba(17,17,21,1) 100%);
@@ -27,7 +29,6 @@
     top: 0;
     right: 0;
     left: 0;
-    z-index: 1000;
   }
 }
 
@@ -198,6 +199,7 @@
     display: block;
     flex-grow: 1;
     flex-shrink: 1;
+    z-index: 999;
     margin-top: -3rem;
     margin-bottom: -3rem;
     background-image: $gradient-no-build-here;
