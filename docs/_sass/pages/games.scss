@@ -32,6 +32,18 @@
   width: 100%;
 }
 
+.servers__list__header__status {
+  width: 105px;
+}
+
+.servers__list__header__players {
+  width: 105px;
+}
+
+.servers__list__header__location {
+  width: 145px;
+}
+
 .servers__list__header__sort-toggle {
   white-space: nowrap;
 }
@@ -87,6 +99,7 @@
 }
 
 .servers__listing__join {
+  width: 85px;
   margin-left: 1rem;
 }
 

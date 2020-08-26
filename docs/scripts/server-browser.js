@@ -393,8 +393,8 @@ ServerBrowser.prototype.renderServerList = function renderServerList () {
 ServerBrowser.prototype.renderLoadingPlaceholder = function renderLoadingPlaceholder () {
   for (let i = 0; i <= 15; i++) {
     const $serverListing = ServerBrowser.$serverListingTemplate.contents().clone();
-    const nameWidth = (1.2 - Math.random()) * 225;
-    const locationWidth = (1.5 - Math.random()) * 100;
+    const nameWidth = 125 + (Math.random() * 125);
+    const locationWidth = 40 + (Math.random() * 60);
     $('.servers__listing__name', $serverListing).html('<span class="u-placeholder" style="width: ' + nameWidth + 'px;" />');
     $('.servers__listing__status', $serverListing).html('<span class="u-placeholder" style="width: 70px;" />');
     $('.servers__listing__mod', $serverListing).html('<span class="u-placeholder" />');
