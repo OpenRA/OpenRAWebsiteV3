@@ -221,7 +221,6 @@ ServerBrowser.prototype.renderServerListing = function renderServerListing (serv
 }
 
 ServerBrowser.prototype.renderServerListingTooltip = function renderServerListingTooltip (serverInfo) {
-  console.log('serverInfo', serverInfo);
   const _this = this;
   const $serverListingTooltip = ServerBrowser.$serverListingTooltipTemplate.contents().clone();
 
@@ -240,6 +239,17 @@ ServerBrowser.prototype.renderServerListingTooltip = function renderServerListin
     }
     // store spawnpoint color
     spawnPointColors[client.spawnpoint - 1] = client.color;
+  });
+
+  // sort playerClients for maximum effort
+  playerClients.sort(function (playerClientA, playerClientB) {
+    if (playerClientA.team < playerClientB.team) return -1;
+    if (playerClientA.team > playerClientB.team) return 1;
+
+    if (playerClientA.spawnpoint < playerClientB.spawnpoint) return -1;
+    if (playerClientA.spawnpoint > playerClientB.spawnpoint) return 1;
+
+    return playerClientA.name.localCompare(playerClientB.name);
   });
 
   if (playerClients.length < serverInfo.maxplayers) {
@@ -286,7 +296,7 @@ ServerBrowser.prototype.renderTooltipClient = function renderTooltipClient (clie
       '<td>' +
         '<strong class="servers__list__tooltip__clients__name"></strong>' +
       '</td>' +
-      '<td>' + client.team + '</td>' +
+      '<td>' + (client.team || '-') + '</td>' +
     '</tr>');
     $('.servers__list__tooltip__clients__name', $client).text(client.name); // injection protection
     if (!client.isspectator) {
