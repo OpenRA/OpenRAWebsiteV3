@@ -45,7 +45,7 @@
   position: absolute;
   top: 50%;
   right: 0;
-  z-index: 25;
+  z-index: $z-install;
   will-change: transform;
 
   @media screen and (max-width: 720px) {
@@ -57,7 +57,7 @@
 
 
 .hero-carousel {
-  z-index: 25; // performance. Prevents paint issue when combined with "no build" patterns on the sides
+  z-index: $z-hero-carousel; // performance. Prevents paint issue when combined with "no build" patterns on the sides
   margin-top: 1.5rem;
 
   .carousel__items {

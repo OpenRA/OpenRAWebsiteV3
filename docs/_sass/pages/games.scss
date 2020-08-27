@@ -117,7 +117,7 @@
 
 .servers__list__tooltip-container {
   position: relative;
-  z-index: 500;
+  z-index: $z-servers-list-tooltip;
 }
 
 .servers__list__tooltip {

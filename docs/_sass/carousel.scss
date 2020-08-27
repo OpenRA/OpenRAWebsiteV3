@@ -33,7 +33,7 @@
 .carousel__previous {
   position: absolute;
   top: calc(50% - 50px);
-  z-index: 20;
+  z-index: $z-carousel-buttons;
   backface-visibility: hidden; // hack to create a new layer. Essential performance fix.
 }
 

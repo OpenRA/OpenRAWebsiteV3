@@ -285,7 +285,7 @@ ServerBrowser.prototype.renderServerListingTooltip = function renderServerListin
     $clients = $clients.concat($spectatorClients);
   }
 
-  $('.servers__list__tooltip__clients > tbody', $serverListingTooltip).replaceWith($clients);
+  $('.servers__list__tooltip__clients tbody', $serverListingTooltip).replaceWith($clients);
   $('.minimap__hash', $serverListingTooltip).text(serverInfo.map.replace(/(.{10})/g,"$1\n"));
 
   this.$tooltipContainer.html($serverListingTooltip);
