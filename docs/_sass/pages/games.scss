@@ -152,10 +152,21 @@
 }
 
 .servers__list__tooltip__clients {
+  max-height: 330px;
   min-width: 220px;
+  overflow: hidden;
 
   .icon {
     vertical-align: -0.25rem;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  th {
+    position: sticky;
+    top: 0;
   }
 }
 

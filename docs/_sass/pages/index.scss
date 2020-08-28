@@ -116,38 +116,20 @@
 }
 
 
-.developer-updates__header {
+.home__developer-updates__posts__header {
+  @extend %scanlines;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.5rem 1.5rem;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+
+  strong, a {
+    color: black;
+  }
 }
 
-.developer-updates__header h4 {
-  margin: 0;
-}
-
-.developer-update {
-  padding: 1.5rem;
-}
-
-.developer-update__header {
-  margin-bottom: 1.5rem;
-}
-
-.developer-update__heading {
-  margin: 0;
-}
-
-.developer-update__subheading {
-  opacity: 0.55;
-}
-
-.developer-update__body img,
-.developer-update__body video {
-  max-width: 100%;
-}
-
-.developer-update__footer {
-  margin-top: 3rem;
-  min-height: 350px; // set a min height so the comments links are a little more reasonable
+.home__developer-updates__posts {
+  @include metalPanel();
 }

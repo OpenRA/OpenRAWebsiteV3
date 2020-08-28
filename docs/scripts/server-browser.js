@@ -43,6 +43,26 @@ function createPopper (element) {
   return popperInstance;
 }
 
+function marqueeScroll ($element, _position) {
+  const position = _position || 'bottom';
+  const scrollTop = position === 'bottom'
+    ? ($element[0].scrollHeight - $element.height())
+    : 0;
+  
+  $element.delay(1000)
+  .animate({
+    scrollTop: scrollTop,
+  }, 3500)
+  .delay(1500)
+  .queue(function (next) {
+    const newPosition = position === 'bottom'
+      ? 'top'
+      : 'bottom';
+    marqueeScroll($element, newPosition);
+    next();
+  });
+}
+
 const isometricMods = ['ts', 'ra2', 'sp', 'rv'];
 function getGridType (mapInfo) {
   const isIsometricMod = isometricMods.indexOf(mapInfo.game_mod) !== -1;
@@ -289,10 +309,11 @@ ServerBrowser.prototype.renderServerListingTooltip = function renderServerListin
   $('.minimap__hash', $serverListingTooltip).text(serverInfo.map.replace(/(.{10})/g,"$1\n"));
 
   this.$tooltipContainer.html($serverListingTooltip);
+  // fake marquee auto scroll
+  marqueeScroll($('.servers__list__tooltip__clients', $serverListingTooltip));
   this._popper.forceUpdate();
 
   this.requestMapInfo(serverInfo.map, function (mapInfo) {
-    console.log('mapInfo', mapInfo)
     _this.renderTooltipMapInfo(mapInfo, spawnPointColors, $serverListingTooltip);
   });
 },

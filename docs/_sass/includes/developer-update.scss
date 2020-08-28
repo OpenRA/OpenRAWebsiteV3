@@ -1,0 +1,25 @@
+.developer-update {
+  padding: 1.5rem;
+}
+
+.developer-update__header {
+  margin-bottom: 1.5rem;
+}
+
+.developer-update__heading {
+  margin: 0;
+}
+
+.developer-update__subheading {
+  opacity: 0.55;
+}
+
+.developer-update__body img,
+.developer-update__body video {
+  max-width: 100%;
+}
+
+.developer-update__footer {
+  margin-top: 3rem;
+  min-height: 350px; // set a min height so the comments links are a little more reasonable
+}
