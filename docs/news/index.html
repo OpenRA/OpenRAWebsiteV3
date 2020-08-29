@@ -14,10 +14,8 @@ layout: "default"
   <hr class="site-section__divider" />
   <section class="site-section">
     <div class="site-section__content">
-      <div class="u-light-zone">
-        <strong>{{ year.name }}</strong>
-      </div>
-      <div class="u-dark-zone">
+      <div class="dark-panel">
+        <div class="dark-panel__header"><strong>{{ year.name }}</strong></div>
         <ul class="developer-updates__list list--no-style">
           {% for post in year.items %}
             <li class="developer-updates__listing">
