@@ -1,4 +1,9 @@
-.community__sections {
+.community__section {
+  margin-bottom: 3rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .community__section__content {
