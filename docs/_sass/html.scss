@@ -22,7 +22,11 @@ button:hover {
 
 a:focus,
 button:focus,
-.button:focus {
+.button:focus,
+button:focus-within,
+.button:focus-within {
+  position: relative;
+
   @extend %selectionBox;
 }
 
@@ -173,6 +177,11 @@ input[type="radio"] {
   transition-property: border-color, background-color, box-shadow;
   transition-timing-function: $ease-in-out-quint;
   transition-duration: 200ms;
+
+  &:focus {
+    outline: none;
+    background: rgb(220, 220, 220);
+  }
 
   &:active {
     outline: none;
