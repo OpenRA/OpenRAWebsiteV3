@@ -37,7 +37,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1075px;
+  max-width: 1025px;
   margin: 0 auto;
   border-left: black 1px solid;
   border-right: black 1px solid;
@@ -229,7 +229,21 @@
     }
 
     .site-section__content {
-      max-width: 925px;
+      max-width: 875px;
+    }
+  }
+
+  &--xlarge {
+    &:before {
+      transform: translateX(-75px);
+    }
+  
+    &:after {
+      transform: translateX(75px);
+    }
+
+    .site-section__content {
+      max-width: 1025px;
     }
   }
 
@@ -242,7 +256,7 @@
 .site-section__content {
   @include clearfix();
   width: 100%;
-  max-width: 775px;
+  max-width: 725px;
   padding: 0 25px;
 }
 

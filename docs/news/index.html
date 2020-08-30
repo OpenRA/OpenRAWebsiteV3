@@ -12,7 +12,7 @@ layout: "default"
 {% assign postsByYear = site.posts | group_by_exp:"post", "post.created_at | date: '%Y'" %}
 {% for year in postsByYear %}
   <hr class="site-section__divider" />
-  <section class="site-section">
+  <section class="site-section site-section--large">
     <div class="site-section__content">
       <div class="dark-panel">
         <div class="dark-panel__header"><strong>{{ year.name }}</strong></div>
