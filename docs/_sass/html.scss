@@ -152,6 +152,10 @@ fieldset {
 
 label {
   cursor: pointer;
+
+  input {
+    margin-right: 0.5rem;
+  }
 }
 
 input[type="checkbox"],

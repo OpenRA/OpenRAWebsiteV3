@@ -23,3 +23,14 @@
   max-width: 100%;
   flex-shrink: 0;
 }
+
+.community__section__links {
+  padding: 0.5rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+
+  .button {
+    margin: 0.25rem;
+    min-width: 150px;
+  }
+}
