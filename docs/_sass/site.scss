@@ -16,6 +16,17 @@
   padding-bottom: 1px;
 }
 
+.site-header,
+.site-footer {
+  a {
+    text-decoration: none;
+
+    &:hover {
+      @extend %selectionBox;
+    }
+  }
+}
+
 .site-header {
   position: relative;
   z-index: $z-header;
@@ -175,15 +186,6 @@
 .site-header__social-nav .social-link__text {
   text-indent: -3000px;
   color: transparent;
-}
-
-.site-header a {
-  color: white;
-  text-decoration: none;
-}
-
-.site-header a:hover {
-  text-decoration: underline;
 }
 
 .site-section {

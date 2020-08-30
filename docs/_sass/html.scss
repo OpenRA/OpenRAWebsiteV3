@@ -1,11 +1,6 @@
 /* General Styles
    Styles of base elements */
 
-@keyframes focusSelectionBox {
-  0% { top: -5px; right: -5px; bottom: -5px; left: -5px; }
-  100% { top: -2px; right: -2px; bottom: -2px; left: -2px; }
-}
-
 * {
   box-sizing: border-box;
 }
@@ -25,26 +20,10 @@ button:hover {
   position: relative;
 }
 
-a:focus:before,
-a:hover:before,
-button:focus:before,
-button:hover:before,
-.button:focus:before,
-.button:hover:before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  bottom: -2px;
-  left: -2px;
-  border: rgba(255, 255, 255, 0.01) 8px solid;
-  border-image: url('/images/selection-box.svg') 8 8 8 8;
-  border-image-width: 8px;
-  animation: focusSelectionBox 0.75s infinite;
-
-  @media (prefers-reduced-motion) {
-    animation: none;
-  }
+a:focus,
+button:focus,
+.button:focus {
+  @extend %selectionBox;
 }
 
 html, body {
