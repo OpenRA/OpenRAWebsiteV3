@@ -18,7 +18,7 @@ release:
       filename: OpenRA-release-20200503-x64.exe
       download_url: https://github.com/OpenRA/OpenRA/releases/download/release-20200503/OpenRA-release-20200503-x64.exe
       size: 24440134
-    osx:
+    macos:
       filename: OpenRA-release-20200503.dmg
       download_url: https://github.com/OpenRA/OpenRA/releases/download/release-20200503/OpenRA-release-20200503.dmg
       size: 63154339

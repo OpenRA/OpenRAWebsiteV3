@@ -15,7 +15,7 @@ def get_release_key(name, tag)
     when 'OpenRA-Tiberian-Dawn-x86_64.AppImage', 'OpenRA-Tiberian-Dawn-playtest-x86_64.AppImage'
       'linux_td'
     when 'OpenRA-' + tag + '.dmg'
-      'osx'
+      'macos'
     when 'OpenRA-' + tag + '-x64.exe'
       'windows'
     when 'OpenRA-' + tag + '-source.tar.bz2'

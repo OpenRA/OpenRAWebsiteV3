@@ -10,7 +10,7 @@ js:
   <section class="site-section">
     <div class="site-section__content">
       <h1 class="site-section__heading">Download</h1>
-      <p class="text--large">The OpenRA engine supports <strong>Windows</strong>, <strong>OSX</strong>, <strong>Linux</strong>, and <strong>FreeBSD</strong>. If your platform of choice isn't available, the source code is also available for compilation.</p>
+      <p class="text--large">The OpenRA engine supports <strong>Windows</strong>, <strong>macOS</strong>, <strong>Linux</strong>, and <strong>FreeBSD</strong>. If your platform of choice isn't available, the source code is also available for compilation.</p>
       <fieldset class="button-group download__os-selector">
         <label class="radio-button radio-button--icon button download__os download__os-windows">
           <svg class="button__icon icon">
@@ -25,17 +25,17 @@ js:
             value="windows"
             type="radio" />
         </label>
-        <label class="radio-button radio-button--icon button download__os download__os-osx">
+        <label class="radio-button radio-button--icon button download__os download__os-macos">
           <svg class="button__icon icon">
             <use xlink:href="/images/icons/icons.svg#icon-apple"></use>
           </svg>
           <div>
-            OSX
+            macOS
           </div>
           <input
             class="radio-button__input"
             name="operating-system"
-            value="osx"
+            value="macos"
             type="radio" />
         </label>
         <label class="radio-button radio-button--icon button download__os download__os-linux">
@@ -108,9 +108,9 @@ js:
             </div>
           </div>
       
-          <div id="osx-instructions" class="instruction dark-panel">
+          <div id="macos-instructions" class="instruction dark-panel">
             <div class="dark-panel__header">
-              <strong class="text--caps">OSX Install Instructions</strong>
+              <strong class="text--caps">macOS Install Instructions</strong>
             </div>
             <div class="instruction__content">
               OpenRA works on all macs running macOS 10.9 or later.
@@ -118,10 +118,10 @@ js:
               <p class="text--centered">
                 <span class="button-group">
                   {% include release-download-button.html
-                    asset=release.assets.osx
+                    asset=release.assets.macos
                     tag=release.tag %}
                   {% include release-download-button.html
-                    asset=playtest.assets.osx
+                    asset=playtest.assets.macos
                     tag=playtest.tag
                     playtest=true %}
                 </span>
