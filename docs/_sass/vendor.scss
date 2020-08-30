@@ -7,6 +7,7 @@
 }
 
 .flot-chart {
+  @include metalPanel();
   margin-top: 1rem;
   height: auto !important;
 }
