@@ -60,17 +60,18 @@
   z-index: $z-hero-carousel; // performance. Prevents paint issue when combined with "no build" patterns on the sides
   margin-top: 1.5rem;
 
-  .carousel__items {
-    margin-bottom: 1rem;
-  }
-
   .carousel__item__content {
     background: $color-off-black;
   }
 }
 
-.hero-carousel__image {
+.hero-carousel__items {
   @include metalPanel();
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.hero-carousel__image {
   display: block;
   width: 100%;
   border-radius: 2px;

@@ -16,7 +16,6 @@
 }
 
 .carousel__item__content {
-  transform: scale(0.95);
   transition: transform 500ms cubic-bezier(0.83, 0, 0.17, 1);
 
   @media (prefers-reduced-motion) {
@@ -35,6 +34,7 @@
   top: calc(50% - 50px);
   z-index: $z-carousel-buttons;
   backface-visibility: hidden; // hack to create a new layer. Essential performance fix.
+  z-index: 99;
 }
 
 .carousel__previous {

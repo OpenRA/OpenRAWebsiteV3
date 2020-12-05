@@ -356,7 +356,13 @@ hr {
 }
 
 figure {
-  @include metalPanel();
+  background-color: rgba(255, 255, 255, 0.075);
+  border-style: dashed;
+  box-shadow: rgba(0, 0, 0, 0.33) 1px 1px 0 0;
+  border-color: rgba(255, 255, 255, 0.25);
+  border-width: 1px;
+  border-radius: 3px;
+  padding: 3px;
 
   img, video {
     display: block;
@@ -365,7 +371,6 @@ figure {
 }
 
 figcaption {
-  border-top: #444 1px solid;
   padding: 0.5rem;
   font-size: $font-size-small;
 }

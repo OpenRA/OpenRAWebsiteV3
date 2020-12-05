@@ -6,8 +6,10 @@
   overflow-x: hidden;
   height: 100%;
 
+  margin-top: 75px;
+
   @media screen and (max-width: 680px) {
-    margin-top: 70px;
+    margin-top: 64px;
   }
 }
   
@@ -28,12 +30,16 @@
 }
 
 .site-header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   z-index: $z-header;
   background: rgb(0, 0, 0);
   background-attachment: fixed;
   background-image: repeating-linear-gradient(114deg, rgba(13,13,16,1) 0%, rgba(27,27,33,1) 22%, rgba(13,13,16,1) 64%, rgba(17,17,21,1) 100%);
-  box-shadow: rgba(0, 0, 0, 0.75) 0 4px 2px 0, rgba(0, 0, 0, 0.35) 0 5px 35px;
+  box-shadow: rgba(0, 0, 0, 0.75) 0 4px 2px 0, rgba(0, 0, 0, 0.55) 0 10px 25px;
+  line-height: 125%;
 
   @media screen and (max-width: 680px) {
     position: fixed;
@@ -48,7 +54,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1025px;
+  max-width: 1175px;
   margin: 0 auto;
   border-left: black 1px solid;
   border-right: black 1px solid;
@@ -89,9 +95,7 @@
   border-bottom: none;
   border-left: none;
   height: 1px;
-  background-color: rgb(60,60,74);
-  background-image: repeating-linear-gradient(135deg, rgba(60,60,74,1) 00px, rgba(113,113,139,1) 110px, rgba(74,74,92,1) 220px, rgba(70,70,88,1) 330px, rgba(105,105,130,1) 350px, rgba(72,72,89,1) 380px, rgba(41,41,54,1) 420px, rgba(70,70,88,1) 510px, rgba(68,68,84,1) 640px, rgba(97,97,124,1) 680px, rgba(62,62,77,1) 780px, rgba(63,63,79,1) 850px, rgba(52,52,66,1) 880px, rgba(59,59,73,1) 930px, rgba(60,60,74,1) 1000px);
-  background-attachment: fixed;
+  background-color: rgb(40,40,45);
 }
 
 .site-header__menu-close {
@@ -210,11 +214,11 @@
   }
 
   &:before {
-    transform: translateX(-150px);
+    transform: translateX(-225px);
   }
 
   &:after {
-    transform: translateX(150px);
+    transform: translateX(225px);
   }
 
   &--small {
@@ -225,11 +229,11 @@
 
   &--large {
     &:before {
-      transform: translateX(-75px);
+      transform: translateX(-150px);
     }
   
     &:after {
-      transform: translateX(75px);
+      transform: translateX(150px);
     }
 
     .site-section__content {
