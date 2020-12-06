@@ -49,11 +49,14 @@ function Carousel (carouselReference, options) {
     // early exit to prevent loops when linked
     if (currentIndex === index) { return; }
 
+    // store the previous index value
+    const previousIndex = currentIndex;
+
     // set the index store
     currentIndex = index;
 
     // call the change handler
-    options.onChange(index);
+    options.onChange(index, previousIndex);
   }
 
   function goToNextIndexOrWrap () {
