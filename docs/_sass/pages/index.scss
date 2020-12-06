@@ -59,6 +59,7 @@
 .hero-carousel {
   z-index: $z-hero-carousel; // performance. Prevents paint issue when combined with "no build" patterns on the sides
   margin-top: 1.5rem;
+  margin-bottom: 2rem;
 
   .carousel__item__content {
     background: $color-off-black;
