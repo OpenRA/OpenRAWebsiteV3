@@ -115,6 +115,16 @@
   color: gray;
 }
 
+.servers__listing__spectators {
+  margin-left: 0.25rem;
+  color: rgba(255, 255, 255, 0.5);
+
+  .icon {
+    margin-left: 0.15rem;
+    vertical-align: -0.2rem;
+  }
+}
+
 .servers__list__tooltip-container {
   position: relative;
   z-index: $z-servers-list-tooltip;

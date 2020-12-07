@@ -218,6 +218,13 @@ ServerBrowser.prototype.renderServerListing = function renderServerListing (serv
   );
   const statusClassString = 'badge servers__listing__status__badge servers__listing__status__badge--' + serverResult.__status;
   const $statusBadge = $('<span class="' + statusClassString + '">' + serverResult.__status + '</span>');
+  const $players = $('<span>' + serverResult.players + '/' + serverResult.maxplayers + '</span>');
+  if (serverResult.spectators) {
+    $players.append('<span class="servers__listing__spectators">+'
+      + serverResult.spectators
+      + '<svg class="icon"><use xlink:href="/images/icons/icons.svg#icon-eye"></use></svg>'
+      + '</span>');
+  }
 
   $serverListing.prop('data-id', serverResult.id);
   $('.servers__listing__name', $serverListing).text(serverResult.name);
@@ -225,7 +232,7 @@ ServerBrowser.prototype.renderServerListing = function renderServerListing (serv
     $('.servers__listing__name', $serverListing).prepend('<svg class="icon"><use xlink:href="/images/icons/icons.svg#icon-lock"></use></svg>');
   }
   $('.servers__listing__status', $serverListing).append($statusBadge);
-  $('.servers__listing__players', $serverListing).text(serverResult.players + ' / ' + serverResult.maxplayers);
+  $('.servers__listing__players', $serverListing).prepend($players);
   if (canJoin) {
     const $joinLink = $('<a class="servers__listing__join">Join</a>');
     $joinLink.prop('href', ServerBrowser.getJoinUrl(serverResult));
