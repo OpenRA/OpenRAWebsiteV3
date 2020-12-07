@@ -29,3 +29,7 @@ const heroCarousel = new Carousel('#hero-carousel', {
   autoAdvance: 5 * 1000,
   onChange: handleHeroCarouselChange
 });
+
+// sometimes mobile devices don't acknowledge "autoplay", so...
+const firstVideoElement = document.querySelectorAll('#hero-carousel video')[0];
+firstVideoElement.play();

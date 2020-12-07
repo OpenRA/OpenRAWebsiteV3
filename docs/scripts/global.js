@@ -105,8 +105,7 @@ function Carousel (carouselReference, options) {
     const pageIndex = $(this).index();
     goToIndex(pageIndex);
   });
-console.log('go to index')
-console.log($carouselPreviousButton)
+
   goToIndex(0);
 }
 
