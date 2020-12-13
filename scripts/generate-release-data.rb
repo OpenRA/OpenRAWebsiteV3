@@ -1,10 +1,20 @@
 require 'octokit'
 require 'yaml'
 
-# Github release IDs: obtain from https://api.github.com/repos/OpenRA/OpenRA/releases
-# If playtest is older than the current release, leave it as an empty string ''
-GITHUB_PLAYTEST_ID = ''
-GITHUB_RELEASE_ID = '26118058'
+def get_releases_data()
+  releases = Octokit.releases('OpenRA/OpenRA');
+  latest_release = releases.find { |release| release.prerelease == false }
+  latest_playtest = releases.find { |release| release.prerelease == true }
+
+  latest_release_id = latest_release[:id]
+
+  latest_playtest_id = nil;
+  if latest_playtest[:published_at] > latest_release[:published_at] then
+    latest_playtest_id = latest_playtest[:id]
+  end
+
+  [latest_release_id, latest_playtest_id]
+end
 
 def get_release_key(name, tag)
   case name
@@ -27,7 +37,7 @@ end
 
 def get_release_data(release_id)
   release_data = Hash.new
-  release = Octokit.release('https://api.github.com/repos/OpenRA/OpenRA/releases/' + release_id)
+  release = Octokit.release('https://api.github.com/repos/OpenRA/OpenRA/releases/' + release_id.to_s)
 
   release_data['tag'] = release[:tag_name]
   release_data['assets'] = Hash.new
@@ -45,10 +55,14 @@ def get_release_data(release_id)
   release_data
 end
 
+releases_data = get_releases_data()
+current_release_id = releases_data[0]
+current_playtest_id = releases_data[1]
+
 releases = Hash.new
-releases['release'] = get_release_data(GITHUB_RELEASE_ID)
-if GITHUB_PLAYTEST_ID != '' then
-  releases['playtest'] = get_release_data(GITHUB_PLAYTEST_ID)
+releases['release'] = get_release_data(current_release_id)
+if current_playtest_id != nil then
+  releases['playtest'] = get_release_data(current_playtest_id)
 end
 
 File.open('./docs/_data/releases.yaml', 'w') {
