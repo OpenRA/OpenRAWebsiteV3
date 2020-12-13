@@ -247,7 +247,7 @@ ServerBrowser.prototype.renderServerListing = function renderServerListing (serv
     $joinLink.prop('href', ServerBrowser.getJoinUrl(serverResult));
     $('.servers__listing__join', $serverListing).append($joinLink);
   }
-  $('.servers__listing__location', $serverListing).text(serverResult.location);
+  $('.servers__listing__location', $serverListing).text(serverResult.location || '—');
 
   $serverListing.hoverIntent({
     over: function () {
@@ -501,8 +501,8 @@ ServerBrowser.stateSortOrder = {
 };
 
 ServerBrowser.compareText = function compareText (textA, textB) {
-  textA = textA.toUpperCase();
-  textB = textB.toUpperCase();
+  textA = (textA || '').toUpperCase();
+  textB = (textB || '').toUpperCase();
   let sortValue = 0;
   if (textA > textB) {
     sortValue = -1;
