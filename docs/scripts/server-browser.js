@@ -84,6 +84,12 @@ function getSpawnPointsArray (spawnPointsString) {
   return spawnPointsArray;
 }
 
+function getDisabledSpawnPointsArray (disabledSpawnPointsString) {
+  return (disabledSpawnPointsString || '').split(',').map(function (spawnPointString) {
+    return parseInt(spawnPointString.trim());
+  });
+}
+
 function getMapBounds (boundsString) {
   const boundsStrings = boundsString.split(',');
 
@@ -231,6 +237,9 @@ ServerBrowser.prototype.renderServerListing = function renderServerListing (serv
   if (serverResult.protected) {
     $('.servers__listing__name', $serverListing).prepend('<svg class="icon"><use xlink:href="/images/icons/icons.svg#icon-lock"></use></svg>');
   }
+  if (serverResult.authentication) {
+    $('.servers__listing__name', $serverListing).prepend('<svg class="icon"><use xlink:href="/images/icons/icons.svg#icon-account"></use></svg>');
+  }
   $('.servers__listing__status', $serverListing).append($statusBadge);
   $('.servers__listing__players', $serverListing).prepend($players);
   if (canJoin) {
@@ -261,6 +270,7 @@ ServerBrowser.prototype.renderServerListingTooltip = function renderServerListin
   const botClients = [];
   const spectatorClients = [];
   const spawnPointColors = {};
+  const disabledSpawnPoints = getDisabledSpawnPointsArray(serverInfo.disabled_spawn_points);
 
   serverInfo.clients.forEach(function (client) {
     if (client.isbot) {
@@ -321,7 +331,7 @@ ServerBrowser.prototype.renderServerListingTooltip = function renderServerListin
   this._popper.forceUpdate();
 
   this.requestMapInfo(serverInfo.map, function (mapInfo) {
-    _this.renderTooltipMapInfo(mapInfo, spawnPointColors, $serverListingTooltip);
+    _this.renderTooltipMapInfo(mapInfo, spawnPointColors, disabledSpawnPoints, $serverListingTooltip);
   });
 },
 
@@ -348,7 +358,9 @@ ServerBrowser.prototype.renderTooltipClient = function renderTooltipClient (clie
   return $client;
 },
 
-ServerBrowser.prototype.renderTooltipMapInfo = function renderTooltipMapInfo (mapInfo, spawnPointColors, $serverListingTooltip) {
+ServerBrowser.prototype.renderTooltipMapInfo = function renderTooltipMapInfo (
+  mapInfo, spawnPointColors, disabledSpawnPoints, $serverListingTooltip
+) {
   const mapBounds = getMapBounds(mapInfo.bounds);
   const spawnPoints = getSpawnPointsArray(mapInfo.spawnpoints);
   const gridType = getGridType(mapInfo);
@@ -361,6 +373,9 @@ ServerBrowser.prototype.renderTooltipMapInfo = function renderTooltipMapInfo (ma
       left: spawnLocation.left * 100 + '%',
       'border-color': '#' + spawnPointColors[index]
     });
+    if (disabledSpawnPoints.indexOf(index + 1) >= 0) {
+      $spawnPoint.addClass('minimap__spawnpoint--disabled');
+    }
     return $spawnPoint;
   });
 
@@ -469,7 +484,7 @@ ServerBrowser.prototype.countServersAndPlayers = function countServersAndPlayers
 
   for (server of servers) {
     this.serverCount++;
-    this.playerCount += server.players;
+    this.playerCount += (server.players + server.spectators);
   }
 }
 
@@ -628,7 +643,7 @@ ServerBrowser.groupServersByModAndRelease = function groupServersByModAndRelease
       };
     }
 
-    serverGroups[key].players += server.players;
+    serverGroups[key].players += (server.players + server.spectators);
     serverGroups[key].servers.push(server);
   }
 

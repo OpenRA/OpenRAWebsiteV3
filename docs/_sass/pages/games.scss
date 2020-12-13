@@ -78,6 +78,8 @@
   margin-right: 0.5rem;
   width: 32px;
   height: 32px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 .servers__list__group__version {
