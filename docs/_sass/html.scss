@@ -62,15 +62,6 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: none;
 }
 
-h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child,
-h6:first-child {
-  margin-top: 0;
-}
-
 h1 {
   font-size: 2.5rem;
 }
@@ -100,7 +91,6 @@ h6 {
 }
 
 p {
-  margin-bottom: 0;
 }
 
 a > h1,
@@ -350,8 +340,7 @@ ul {
 
 hr {
   border: none;
-  border-top: rgba(255, 255, 255, 0.35) 1px dotted;
-  border-bottom: rgba(0, 0, 0, 0.95) 1px dotted;
+  border-top: rgba(255, 255, 255, 0.5) 2px dotted;
   margin: 1.5rem 0;
 }
 
@@ -364,7 +353,7 @@ figure {
   border-radius: 3px;
   padding: 3px;
 
-  img, video {
+  img, video, iframe {
     display: block;
     width: 100%
   }

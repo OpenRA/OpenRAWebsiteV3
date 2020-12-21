@@ -1,5 +1,15 @@
+.download-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+
+  @media screen and (max-width: 680px) {
+    grid-template-columns: 1fr;
+    grid-gap: 1.5rem;
+  }
+}
+
 .download__os-selector {
-  margin-bottom: 0;
   text-align: center;
 
   .radio-button {
@@ -31,6 +41,8 @@
 }
 
 .instruction__download-button {
+  width: 100%;
+  max-width: 320px;
 }
 
 .instruction__download-button--playtest {

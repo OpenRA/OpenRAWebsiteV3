@@ -33,3 +33,9 @@
     $color-win95-border-left;
   background-color: $color-win95-bg;
 }
+
+@mixin ellipsisOverflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
