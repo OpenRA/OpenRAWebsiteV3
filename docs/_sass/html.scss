@@ -292,16 +292,6 @@ tr:nth-child(even) {
   }
 }
 
-figure {
-  margin: 1.5rem 0;
-}
-
-figcaption {
-  font-size: 0.9rem;
-  line-height: 150%;
-  text-align: center;
-}
-
 pre, code {
   font-family: Menlo, Consolas, monospace;
   font-size: 1rem;
@@ -351,6 +341,7 @@ figure {
   border-color: rgba(255, 255, 255, 0.25);
   border-width: 1px;
   border-radius: 3px;
+  margin: 1.5rem 0;
   padding: 3px;
 
   img, video, iframe {
@@ -362,4 +353,6 @@ figure {
 figcaption {
   padding: 0.5rem;
   font-size: $font-size-small;
+  line-height: 150%;
+  text-align: center;
 }

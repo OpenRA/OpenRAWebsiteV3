@@ -43,6 +43,22 @@
   text-align: center;
 }
 
+.text--info {
+  color: $color-info;
+
+  &:before {
+    content: 'ℹ️';
+  }
+}
+
+.text--warning {
+  color: $color-warn;
+
+  &:before {
+    content: '⚠️ ';
+  }
+}
+
 .aspect-16-9 {
   padding-bottom: 56.25%;
   position: relative;
