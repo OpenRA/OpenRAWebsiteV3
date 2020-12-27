@@ -210,7 +210,8 @@
     z-index: $z-no-build-bg;
     margin-top: -3rem;
     margin-bottom: -3rem;
-    background-image: $gradient-no-build-here;
+    // background-image: $gradient-no-build-here;
+    background-image: url('/images/bg-disallowed.png');
   }
 
   &:before {

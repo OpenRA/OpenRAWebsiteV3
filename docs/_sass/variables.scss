@@ -29,7 +29,6 @@ $color-win95-border-left: rgb(224, 224, 192);
 
 $gradient-scanlines: repeating-linear-gradient(0deg, rgba(189,189,191,1) 0, rgba(225,225,227,1) 3px);
 $gradient-construction: repeating-linear-gradient(135deg, transparent, transparent 20px, black 20px, black 50px);
-$gradient-no-build-here: repeating-linear-gradient(135deg, $color-off-black 0, $color-off-black 3px, transparent 3px, transparent 9px);
 $gradient-button-shine: radial-gradient(ellipse at 10% 10%, rgba(255, 255, 255, 0.15) 0, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.4) 100%);
 
 $ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
