@@ -31,7 +31,7 @@ li.about__mod-list__mod {
 
   &:nth-of-type(even) {
     flex-direction: row-reverse;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.25);
   }
 
   > *:first-child {
@@ -81,18 +81,17 @@ li.about__mod-list__mod {
 
 li.about__mod-list__under-construction {
   margin: 0;
-  padding: 1.5rem;
+  padding: 0.5rem 1.5rem;
   color: $color-off-black;
-  text-align: center;
   text-shadow: none;
   background-color: $color-construction;
   background-image: $gradient-construction, $gradient-construction;
   background-position: top left, bottom left;
-  background-size: 100% 5px;
+  background-size: 100% 3px;
   background-repeat: no-repeat;
   box-shadow: inset rgba(255,255,255,0.4) 0 0 1px 1px;
 
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6, strong, em {
     color: black;
   }
 }
