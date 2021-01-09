@@ -295,6 +295,10 @@ tr:nth-child(even) {
 pre, code {
   font-family: Menlo, Consolas, monospace;
   font-size: 1rem;
+  background: rgba(10, 10, 10, 0.5);
+  color: rgba(200, 125, 125, 1);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
 }
 
 pre {

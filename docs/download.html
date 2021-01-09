@@ -10,7 +10,13 @@ js:
   <section class="site-section">
     <div class="site-section__content">
       <h1 class="site-section__heading">Download</h1>
-      <p class="text--large">The OpenRA engine supports <strong>Windows</strong>, <strong>macOS</strong>, <strong>Linux</strong>, and <strong>FreeBSD</strong>. If your platform of choice isn't available, the source code is also available for compilation.</p>
+      <p class="text--large">OpenRA is available for many modern operating systems. The latest stable release is <code>{{ release.tag }}</code>,
+        {% if playtest %}
+          and the latest playtest is <code>{{ playtest.tag }}</code>.
+        {% else %}
+          and there is no active playtest.
+        {% endif %}
+      </p>
   
       <div class="download-info">
         <div class="download-info__build">
@@ -110,8 +116,7 @@ js:
         <div id="instructions" class="instructions">
           <div id="windows-instructions" class="instruction dark-panel">
             <div class="instruction__content">
-              OpenRA works on most computers running Windows 7 or later that support OpenGL rendering.
-              <p>You may need to install additional drivers supplied by your GPU vendor to enable OpenGL support.</p>
+              OpenRA works on most computers running Windows 7 or later that support DirectX 11 or OpenGL 3+.
               <p class="text--centered">
                 <span class="button-group">
                 {% include release-download-button.html
@@ -123,7 +128,13 @@ js:
                   playtest=true %}
                 </span>
               </p>
-              <p>Installers for 32-bit Windows can be found in the <a href="https://github.com/OpenRA/OpenRA/releases">GitHub Releases</a> archive.</p>
+              <p class="text--info text--small">
+                {% if playtest %}
+                  32-bit installers and portable releases can be downloaded from the <a href="https://github.com/OpenRA/OpenRA/releases/tag/{{ release.tag }}">{{ release.tag }}</a> and <a href="https://github.com/OpenRA/OpenRA/releases/tag/{{ playtest.tag }}">{{ playtest.tag }}</a> archives.
+                {% else %}
+                  32-bit installers and portable releases can be downloaded from the <a href="https://github.com/OpenRA/OpenRA/releases/tag/{{ release.tag }}">{{ release.tag }}</a> archive.
+                {% endif %}
+              </p>
             </div>
           </div>
       
@@ -141,13 +152,19 @@ js:
                     playtest=true %}
                 </span>
               </p>
-              <p class="text--info">A separate "compat" release for OS X 10.9 – 10.12 can be found in the <a href="https://github.com/OpenRA/OpenRA/releases">GitHub Releases</a> archive.</p>
+              <p class="text--info text--small">
+                {% if playtest %}
+                  A "compat" version supporting OS X 10.9 – 10.12 can be downloaded from the <a href="https://github.com/OpenRA/OpenRA/releases/tag/{{ release.tag }}">{{ release.tag }}</a> and <a href="https://github.com/OpenRA/OpenRA/releases/tag/{{ playtest.tag }}">{{ playtest.tag }}</a> archives.
+                {% else %}
+                  A "compat" version supporting OS X 10.9 – 10.12 can be downloaded from the <a href="https://github.com/OpenRA/OpenRA/releases/tag/{{ release.tag }}">{{ release.tag }}</a> archive.
+                {% endif %}
+              </p>
               <hr />
               <h4>Stable releases are also available from <a href="https://brew.sh/">Homebrew Cask</a>:</h4>
               <p>
                 <code class="terminal"><span class="terminal__prompt">$</span> brew cask install openra</code>
               </p>
-              <p class="text--warning">We do not maintain this external package source, so there may be delays when a new version is released. Please contact the downstream repository maintainers about any packaging issues.</p>
+              <p class="text--warning text--small">We do not maintain this external package source, so there may be delays when a new version is released. Please contact the downstream repository maintainers about any packaging issues.</p>
             </div>
           </div>
       
@@ -204,6 +221,7 @@ js:
               <hr />
               <h4>Community Maintained Packages</h4>
               <p>OpenRA may also be installed using packages provided by your Linux distribution or other third parties. These packages will provide better integration with your system, but may not always offer the latest release. Please contact the downstream repository maintainers about any packaging issues.</p>
+              <p class="text--warning text--small">We do not maintain these external package sources, so there may be delays when a new version is released. Please contact the downstream repository maintainers about any packaging issues.</p>
               <dl>
                 <dt>
                   <img class="icon" src="/images/icons/linux-mirrors/flatpak.png" alt="" />
@@ -267,20 +285,17 @@ js:
       
           <div id="free-bsd-instructions" class="instruction dark-panel">
             <div class="instruction__content">
-              Stable releases are available in the FreeBSD Ports Collection:
+              Stable releases are available in the <a href="https://www.freshports.org/games/openra/">FreeBSD Ports Collection</a>:
               <p>
 <code class="terminal"><span class="terminal__prompt">#</span> cd /usr/ports/games/openra
 <span class="terminal__prompt">#</span> make install</code>
               </p>
-              <p class="text--warning">We do not maintain this external package source, so there may be delays when a new version is released. Please contact the downstream repository maintainers about any packaging issues.
+              <p class="text--warning text--small">We do not maintain this external package source, so there may be delays when a new version is released. Please contact the downstream repository maintainers about any packaging issues.
               </p>
             </div>
           </div>
       
           <div id="source-instructions" class="instruction dark-panel">
-            <div class="dark-panel__header">
-              <strong class="text--caps">Source Code</strong>
-            </div>
             <div class="instruction__content">
               OpenRA can be compiled from source on all platforms.
               <p>Refer to the <a href="https://github.com/OpenRA/OpenRA/wiki/Compiling">OpenRA Wiki</a> for detailed compilation instructions.</p>
