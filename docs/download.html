@@ -135,6 +135,11 @@ js:
                   32-bit installers and portable releases can be downloaded from the <a href="https://github.com/OpenRA/OpenRA/releases/tag/{{ release.tag }}">{{ release.tag }}</a> archive.
                 {% endif %}
               </p>
+              <p>Stable releases are also available from <a href="https://winstall.app/apps/OpenRA.OpenRA">WinGet</a>:</p>
+              <p>
+                <code class="terminal"><span class="terminal__prompt">></span> winget install openra</code>
+              </p>
+              <p class="text--warning text--small">We do not maintain this external package source, so there may be delays when a new version is released. Please contact the downstream repository maintainers about any packaging issues.</p>
             </div>
           </div>
       
@@ -222,7 +227,7 @@ js:
               <h4>Community Maintained Packages</h4>
               <p>OpenRA may also be installed using packages provided by your Linux distribution or other third parties. These packages will provide better integration with your system, but may not always offer the latest release. Please contact the downstream repository maintainers about any packaging issues.</p>
               <p class="text--warning text--small">We do not maintain these external package sources, so there may be delays when a new version is released. Please contact the downstream repository maintainers about any packaging issues.</p>
-              <dl>
+              <dl class="download__community-packages">
                 <dt>
                   <img class="icon" src="/images/icons/linux-mirrors/flatpak.png" alt="" />
                   Flatpak
@@ -252,9 +257,20 @@ js:
                   Arch Linux
                 </dt>
                 <dd>
-                  <p>Stable releases are available in the official Arch repository:</p>
+                  <p>Stable releases are available in the official <a href="https://www.archlinux.org/packages/community/any/openra/">Arch repository</a>:</p>
                   <p>
                     <code class="terminal"><span class="terminal__prompt">$</span> pacman -S openra</code>
+                  </p>
+                </dd>
+
+                <dt>
+                  <img src="/images/icons/linux-mirrors/opensuse.svg" class="icon" />
+                  openSUSE Linux
+                </dt>
+                <dd>
+                  Stable releases and playtests are available via the <a href="http://software.opensuse.org/download.html?project=games:openra&amp;package=openra">openSUSE Build Service repository</a>.
+                  <p>
+                    <code class="terminal"><span class="terminal__prompt">$</span> zypper install openra</code>
                   </p>
                 </dd>
         
@@ -274,7 +290,7 @@ js:
                   Void Linux
                 </dt>
                 <dd>
-                  <p>Stable releases are available from the official Void Linux repository:</p>
+                  <p>Stable releases are available from the official <a href="https://github.com/void-linux/void-packages/tree/master/srcpkgs/openra">Void Linux repository</a>:</p>
                   <p>
                     <code class="terminal"><span class="terminal__prompt">$</span> xbps-install openra</code>
                   </p>
@@ -298,6 +314,14 @@ js:
           <div id="source-instructions" class="instruction dark-panel">
             <div class="instruction__content">
               OpenRA can be compiled from source on all platforms.
+              <p>
+              {% if playtest %}
+                Compilation instructions are available for <a href="https://github.com/OpenRA/OpenRA/blob/{{ release.tag }}/INSTALL.md">{{ release.tag }}</a> and <a href="https://github.com/OpenRA/OpenRA/blob/{{ playtest.tag }}/INSTALL.md">{{ playtest.tag }}</a>.
+              {% else %}
+                Compilation instructions are available for <a href="https://github.com/OpenRA/OpenRA/blob/{{ release.tag }}/INSTALL.md">{{ release.tag }}</a>.
+              {% endif %}
+              </p>
+              <p</p>
               <p>Refer to the <a href="https://github.com/OpenRA/OpenRA/wiki/Compiling">OpenRA Wiki</a> for detailed compilation instructions.</p>
               <p class="text--centered">
                 <span class="button-group">

@@ -309,12 +309,23 @@ dt {
   margin-top: 1.5rem;
   margin-bottom: 1rem;
   font-weight: bold;
+  color: white;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    margin: 0 1rem 0 -4px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: rgba(255, 255, 255, 0.3) 2px solid;
+  }
 }
 
 dd {
   margin-left: 0;
-  border-left: rgba(255, 255, 255, 0.5) 2px dotted;
-  margin-bottom: 0.5rem;
+  border-left: rgba(255, 255, 255, 0.3) 2px dotted;
+  margin-bottom: 1.5rem;
   padding-left: 1rem;
 }
 
@@ -334,7 +345,7 @@ ul {
 
 hr {
   border: none;
-  border-top: rgba(255, 255, 255, 0.5) 2px dotted;
+  border-top: rgba(255, 255, 255, 0.3) 2px dotted;
   margin: 1.5rem 0;
 }
 
