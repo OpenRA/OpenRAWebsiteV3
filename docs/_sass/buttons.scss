@@ -246,7 +246,12 @@ button,
 input.radio-button__input {
   margin-top: 0.75rem;
   margin-right: 0;
-  width: 3rem;
+  margin-bottom: -1rem;
+  width: 85%;
   height: 8px;
-  border-radius: 4px;
+  border-radius: 5px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom: none;
+  pointer-events: none; /* prevent weird focus issue in firefox */
 }
