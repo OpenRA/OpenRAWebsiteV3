@@ -15,7 +15,13 @@
 }
 
 .hero__intro-text__game {
+  cursor: pointer;
   transition: color 500ms $ease-in-out-quint;
+
+  &:hover {
+    color: darken($color-off-black, 5%);
+    transition: color 100ms linear;
+  }
 }
 
 .hero__intro-text__game.carousel__item--current {
