@@ -34,7 +34,12 @@
   }
 
   $('input[name="operating-system"]').on('change', function (event) {
-    setActiveInstruction(event.target.value);
+    window.location.hash = event.target.value;
+  });
+
+  $(window).on('hashchange', function () {
+    const os = getOperatingSystemFromHash(window.location.hash) || 'source';
+    setActiveInstruction(os);
   });
 
   setActiveInstruction(defaultInstruction);
