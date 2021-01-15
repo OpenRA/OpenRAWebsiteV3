@@ -104,8 +104,8 @@
   @include metalPanel();
   
   @media screen and (max-width: 680px) {
-    margin-left: -1rem;
-    margin-right: -1rem;
+    margin-left: -25px;
+    margin-right: -25px;
   }
 }
 
@@ -114,8 +114,8 @@
   @extend %scanlines;
 
   @media screen and (max-width: 680px) {
-    margin-left: -1rem;
-    margin-right: -1rem;
+    margin-left: -25px;
+    margin-right: -25px;
   }
 
   strong {
@@ -168,8 +168,8 @@
   @media screen and (max-width: 680px) {
     width: 100vw;
     max-width: 100vw;
-    margin-left: -1rem;
-    margin-right: -1rem;
+    margin-left: -25px;
+    margin-right: -25px;
     overflow-x: auto;
   }
 }
