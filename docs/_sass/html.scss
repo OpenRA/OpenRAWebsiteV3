@@ -146,6 +146,11 @@ label {
   input {
     margin-right: 0.5rem;
   }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    pointer-events: none;
+  }
 }
 
 input[type="checkbox"],

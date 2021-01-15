@@ -38,7 +38,9 @@
   background: rgb(0, 0, 0);
   background-attachment: fixed;
   background-image: repeating-linear-gradient(114deg, rgba(13,13,16,1) 0%, rgba(27,27,33,1) 22%, rgba(13,13,16,1) 64%, rgba(17,17,21,1) 100%);
-  box-shadow: rgba(0, 0, 0, 0.75) 0 4px 2px 0, rgba(0, 0, 0, 0.55) 0 10px 25px;
+  box-shadow:
+    rgba(0, 0, 0, 0.75) 0 2px 2px 0,
+    rgba(0, 0, 0, 0.55) 0 10px 7px;
   line-height: 125%;
 
   @media screen and (max-width: 680px) {
