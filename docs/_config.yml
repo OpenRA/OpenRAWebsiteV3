@@ -1,4 +1,4 @@
-title: Open Source Red Alert, Command & Conquer, and more
+title: OpenRA - News Feed # jekyll-feed uses this, so I hardcoded the site title
 description: >- # this means to ignore newlines until "baseurl:"
   Open Source reimplementation of Westwood Studios' 2D Command and Conquer games. Play modern versions of Red Alert, Command & Conquer, Dune 2000, and more for free!
 baseurl: "/" # the subpath of your site, e.g. /blog
