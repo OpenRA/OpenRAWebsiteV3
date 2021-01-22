@@ -7,6 +7,9 @@ twitter_username: openRA
 github_username:  openra
 permalink: /:categories/:title/index.html
 
+feed:
+  path: /news/atom.html # /news/atom.html -> /news/atom
+
 defaults:
   -
     scope:
