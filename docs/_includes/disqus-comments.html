@@ -1,21 +1,21 @@
 <div id="disqus_thread"></div>
 <script>
-var disqus_config = function () {
-  // Replace PAGE_URL with your page's canonical URL variable
-  this.page.url = "{{ include.pageUrl }}" || window.location.href;  
-  
-  // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-  this.page.identifier = "{{ include.pageId }}"; 
-};
+  var disqus_config = function () {
+    // Replace PAGE_URL with your page's canonical URL variable
+    this.page.url = "{{ include.pageUrl }}" || window.location.href;  
+    
+    // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    this.page.identifier = "{{ include.pageId }}"; 
+  };
 
-(function() {
+  (function() {
     var d = document, s = d.createElement('script');
     s.src = '//openra.disqus.com/embed.js';
     s.async = true;
 
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
-})();
+  })();
 </script>
 <noscript>
   Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments—powered by Disqus.</a>
