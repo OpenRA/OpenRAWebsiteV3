@@ -5,8 +5,13 @@
   position: relative;
   overflow-x: hidden;
   height: 100%;
-
   margin-top: 75px;
+
+  /* subtle "highlight" effect on composite background */
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0));
+  background-size: 1px 50vh;
+  background-repeat: repeat-x;
+  background-attachment: fixed;
 }
   
 .site-content {
