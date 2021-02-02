@@ -38,10 +38,6 @@ function Carousel (carouselReference, options) {
     $carouselItem.removeClass('carousel__item--current');
     $carouselItem.eq(index).addClass('carousel__item--current');
 
-    // disable / enable prev/next buttons
-    $carouselPreviousButton.prop('disabled', currentIndex === 0);
-    $carouselNextButton.prop('disabled', currentIndex >= carouselItemsCount - 1);
-
     // set current page
     $carouselPage.removeClass('carousel__page--current');
     $carouselPage.eq(index).addClass('carousel__page--current');
@@ -89,11 +85,17 @@ function Carousel (carouselReference, options) {
   this.goToIndex = goToIndex;
 
   $carouselPreviousButton.on('click', function clickPrevious () {
-    goToIndex(currentIndex - 1);
+    const newIndex = currentIndex === 0
+      ? carouselItemsCount - 1
+      : currentIndex - 1;
+    goToIndex(newIndex);
   });
 
   $carouselNextButton.on('click', function clickNext () {
-    goToIndex(currentIndex + 1);
+    const newIndex = currentIndex === (carouselItemsCount - 1)
+      ? 0
+      : currentIndex + 1;
+    goToIndex(newIndex);
   });
 
   $carouselItem.on('click', function clickItem () {
