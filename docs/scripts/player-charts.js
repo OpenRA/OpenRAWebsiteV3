@@ -1,4 +1,3 @@
-
 const rrdFile = 'https://activity.openra.net/db/openra-players.rrd';
 const graphOptions = {
   tooltip: true,

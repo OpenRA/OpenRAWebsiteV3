@@ -62,8 +62,12 @@
   transform: rotateZ(-180deg);
 }
 
-.servers__list__group > td {
-  background: black;
+.servers__list__group {
+  cursor: pointer;
+
+  & > td {
+    background: black;
+  }
 }
 
 .servers__list__group__info {

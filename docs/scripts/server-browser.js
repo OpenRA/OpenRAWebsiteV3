@@ -144,7 +144,8 @@ function ServerBrowser (targetElement) {
   this.filterState = {
     playing: true,
     waiting: true,
-    empty: false
+    empty: false,
+    hiddenGroups: {}
   };
   this.sortState = {
     by: 'status',
@@ -204,6 +205,19 @@ function ServerBrowser (targetElement) {
   $sortByLocation.on('click', function (event) {
     event.preventDefault();
     _this.setSortState('location');
+    _this.renderServerList();
+  });
+
+  // toggling display of mod-version groups
+  this.$serversList.on('click', '.servers__list__group', function () {
+    const groupKey = $(this).data('group-key');
+
+    if (!_this.filterState.hiddenGroups[groupKey]) {
+      _this.filterState.hiddenGroups[groupKey] = true;
+    } else {
+      delete _this.filterState.hiddenGroups[groupKey];
+    }
+
     _this.renderServerList();
   });
 
@@ -405,9 +419,13 @@ ServerBrowser.prototype.renderServerGroups = function renderServerGroups (server
     $('.servers__list__group__mod-link', $serverGroupHeader).text(serverGroup.modMetadata.title);
     $('.servers__list__group__version', $serverGroupHeader).text('[' + serverGroup.version + ']');
     $('.servers__list__group__players > var', $serverGroupHeader).text(serverGroup.players);
+    const groupKey = serverGroup.modMetadata.title + '-' + serverGroup.version;
+    $serverGroupHeader.data('group-key', groupKey);
 
     $serverListings.push($serverGroupHeader);
-    $serverListings = $serverListings.concat(serverGroup.servers.map(this.renderServerListing, this));
+    if (!this.filterState.hiddenGroups[groupKey]) {
+      $serverListings = $serverListings.concat(serverGroup.servers.map(this.renderServerListing, this));
+    }
   }
 
   return $serverListings;
