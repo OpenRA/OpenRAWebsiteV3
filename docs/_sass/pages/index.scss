@@ -17,30 +17,28 @@
   margin: 0 -1rem;
   padding: 0 1rem;
 
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    border-top: rgb(75, 75, 75) 2px solid;
-    border-left: rgba(255, 255, 255, 0.1) 1px solid;
-    border-right: black 2px solid;
-    border-radius: 3px;
-  }
-
+  &:before,
   &:after {
     content: '';
     display: block;
     position: absolute;
     top: 0;
-    right: 0;
     bottom: 0;
     border-top: rgb(75, 75, 75) 2px solid;
+    border-radius: 3px;
+    z-index: 20;
+  }
+
+  &:before {
+    left: 0;
+    border-left: rgba(255, 255, 255, 0.1) 1px solid;
+    border-right: black 2px solid;
+  }
+
+  &:after {
+    right: 0;
     border-right: rgba(255, 255, 255, 0.1) 1px solid;
     border-left: black 2px solid;
-    border-radius: 3px;
   }
 }
 
