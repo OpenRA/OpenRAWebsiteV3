@@ -48,6 +48,10 @@ button,
     black 0 4px 1px 0,
       inset 0 1px 2px rgba(0, 0, 0, 0.5);
     background-size: 125%;
+
+    @media (prefers-reduced-motion) {
+      transform: none;
+    }
   }
 
   &:disabled,
@@ -56,7 +60,7 @@ button,
     pointer-events: none;
 
     &:hover {
-      transform: translateY(0);
+      transform: none;
     }
   }
 

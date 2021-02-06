@@ -145,6 +145,10 @@
   animation-name: appear;
   animation-duration: 250ms;
   animation-timing-function: $ease-in-out-quint;
+
+  @media (prefers-reduced-motion) {
+    animation: none;
+  }
 }
 
 .servers__list__tooltip__map {
