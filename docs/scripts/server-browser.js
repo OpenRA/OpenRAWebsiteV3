@@ -39,7 +39,7 @@ function createPopper (element) {
     virtualElement.getBoundingClientRect = generateGetBoundingClientRect(event.clientX, event.clientY);
     popperInstance.update();
   });
-
+console.log(popperInstance);
   return popperInstance;
 }
 
@@ -471,6 +471,7 @@ ServerBrowser.prototype.requestServerList = function requestServerList () {
   this.requestingServerList = true;
   this.$refresh.prop('disabled', true);
   $.getJSON('https://master.openra.net/games?protocol=2&type=json', function (gameResults) {
+    _this.$tooltipContainer.empty(); // just in case, to prevent unwanted popups
     _this.requestingServerList = false;
     _this.$refresh.prop('disabled', false);
     _this.servers = ServerBrowser.processGameResults(gameResults);
