@@ -16,6 +16,26 @@ This repo contains the source for the OpenRA website at [openra.net](https://ope
 - [Icomoon](https://icomoon.io/), To create and curate icon set
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/), To ensure excellent site performance
 
+# Running the Site Locally
+
+To run this site, you'll first need to have Ruby installed. This is usually already installed on most systems (like Windows or MacOS), but it can be acquired from [ruby-lang.org](https://www.ruby-lang.org/en/) if it is not.
+
+After that, you simply need to install the dependencies in `/docs` like so:
+
+```
+$ bundle install
+```
+
+Finally, get the webserver running with:
+
+```
+$ bundle exec jekyll serve
+```
+
+If you have any problems running this, or need further detail, check out the [GitHub pages documentation](https://docs.github.com/en/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll#building-your-site-locally).
+
+
+
 # Updating the Site
 
 Since this website was built to be hosted on GitHub pages, you'll want to familiarize yourself with Jekyll. Use the [Jekyll docs](https://jekyllrb.com/docs/) for general things, and the [GitHub pages docs](https://docs.github.com/en/github-ae@latest/github/working-with-github-pages/getting-started-with-github-pages) to see platform specific things like ["which jekyll plugins are available?"](https://pages.github.com/versions/).
