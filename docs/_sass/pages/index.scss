@@ -93,7 +93,7 @@
 .hero-carousel {
   z-index: $z-hero-carousel; // performance. Prevents paint issue when combined with "no build" patterns on the sides
   margin-top: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 
   .carousel__item__content {
     background: $color-off-black;
@@ -133,28 +133,6 @@
     grid-template-columns: 1fr;
     grid-gap: 1.5rem;
   }
-}
-
-.open-source {
-  .button {
-    width: 300px;
-  }
-}
-
-.operating-system__windows .icon {
-  color: $color-windows;
-}
-
-.operating-system__macos .icon {
-  color: $color-macos;
-}
-
-.operating-system__linux .icon {
-  color: $color-linux;
-}
-
-.operating-system__free-bsd .icon {
-  color: $color-freebsd;
 }
 
 
