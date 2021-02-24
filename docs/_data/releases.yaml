@@ -27,25 +27,29 @@ release:
       download_url: https://github.com/OpenRA/OpenRA/releases/download/release-20200503/OpenRA-Tiberian-Dawn-x86_64.AppImage
       size: 21102632
 playtest:
-  tag: playtest-20201213
+  tag: playtest-20210131
   assets:
     linux_d2k:
       filename: OpenRA-Dune-2000-playtest-x86_64.AppImage
-      download_url: https://github.com/OpenRA/OpenRA/releases/download/playtest-20201213/OpenRA-Dune-2000-playtest-x86_64.AppImage
-      size: 27426856
+      download_url: https://github.com/OpenRA/OpenRA/releases/download/playtest-20210131/OpenRA-Dune-2000-playtest-x86_64.AppImage
+      size: 27432128
+    source:
+      filename: OpenRA-playtest-20210131-source.tar.bz2
+      download_url: https://github.com/OpenRA/OpenRA/releases/download/playtest-20210131/OpenRA-playtest-20210131-source.tar.bz2
+      size: 27544273
     windows:
-      filename: OpenRA-playtest-20201213-x64.exe
-      download_url: https://github.com/OpenRA/OpenRA/releases/download/playtest-20201213/OpenRA-playtest-20201213-x64.exe
-      size: 27696047
+      filename: OpenRA-playtest-20210131-x64.exe
+      download_url: https://github.com/OpenRA/OpenRA/releases/download/playtest-20210131/OpenRA-playtest-20210131-x64.exe
+      size: 27724459
     macos:
-      filename: OpenRA-playtest-20201213.dmg
-      download_url: https://github.com/OpenRA/OpenRA/releases/download/playtest-20201213/OpenRA-playtest-20201213.dmg
-      size: 63699474
+      filename: OpenRA-playtest-20210131.dmg
+      download_url: https://github.com/OpenRA/OpenRA/releases/download/playtest-20210131/OpenRA-playtest-20210131.dmg
+      size: 63744496
     linux_ra:
       filename: OpenRA-Red-Alert-playtest-x86_64.AppImage
-      download_url: https://github.com/OpenRA/OpenRA/releases/download/playtest-20201213/OpenRA-Red-Alert-playtest-x86_64.AppImage
-      size: 20451368
+      download_url: https://github.com/OpenRA/OpenRA/releases/download/playtest-20210131/OpenRA-Red-Alert-playtest-x86_64.AppImage
+      size: 20489408
     linux_td:
       filename: OpenRA-Tiberian-Dawn-playtest-x86_64.AppImage
-      download_url: https://github.com/OpenRA/OpenRA/releases/download/playtest-20201213/OpenRA-Tiberian-Dawn-playtest-x86_64.AppImage
-      size: 22138920
+      download_url: https://github.com/OpenRA/OpenRA/releases/download/playtest-20210131/OpenRA-Tiberian-Dawn-playtest-x86_64.AppImage
+      size: 22140096
