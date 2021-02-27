@@ -47,7 +47,7 @@ js:
       <fieldset class="button-group download__os-selector">
         <label class="radio-button radio-button--icon button download__os download__os-windows">
           <svg class="button__icon icon">
-            <use xlink:href="/images/icons/icons.svg#icon-windows"></use>
+            <use xlink:href="{{ '/images/icons/icons.svg#icon-windows' | relative_url }}"></use>
           </svg>
           <div>
             Windows
@@ -60,7 +60,7 @@ js:
         </label>
         <label class="radio-button radio-button--icon button download__os download__os-macos">
           <svg class="button__icon icon">
-            <use xlink:href="/images/icons/icons.svg#icon-apple"></use>
+            <use xlink:href="{{ '/images/icons/icons.svg#icon-apple' | relative_url }}"></use>
           </svg>
           <div>
             macOS
@@ -73,7 +73,7 @@ js:
         </label>
         <label class="radio-button radio-button--icon button download__os download__os-linux">
           <svg class="button__icon icon">
-            <use xlink:href="/images/icons/icons.svg#icon-linux"></use>
+            <use xlink:href="{{ '/images/icons/icons.svg#icon-linux' | relative_url }}"></use>
           </svg>
           <div>
             Linux
@@ -86,7 +86,7 @@ js:
         </label>
         <label class="radio-button radio-button--icon button download__os download__os-free-bsd">
           <svg class="button__icon icon">
-            <use xlink:href="/images/icons/icons.svg#icon-freebsd"></use>
+            <use xlink:href="{{ '/images/icons/icons.svg#icon-freebsd' | relative_url }}"></use>
           </svg>
           <div>
             FreeBSD
@@ -99,7 +99,7 @@ js:
         </label>
         <label class="radio-button radio-button--icon download__os-source button">
           <svg class="button__icon icon">
-            <use xlink:href="/images/icons/icons.svg#icon-github"></use>
+            <use xlink:href="{{ '/images/icons/icons.svg#icon-github' | relative_url }}"></use>
           </svg>
           <div>
             Source
@@ -184,12 +184,12 @@ js:
                   asset=release.assets.linux_ra
                   tag=release.tag
                   text="Download Red Alert"
-                  icon='<img class="button__icon icon" src="/images/icons/ra_64x64.png" />' %}
+                  icon='/images/icons/ra_64x64.png' %}
                 {% include release-download-button.html
                   asset=playtest.assets.linux_ra
                   tag=playtest.tag
                   text="Download Red Alert"
-                  icon='<img class="button__icon icon" src="/images/icons/ra_64x64.png" />'
+                  icon='/images/icons/ra_64x64.png'
                   playtest=true %}
                 </span>
               </p>
@@ -199,12 +199,12 @@ js:
                   asset=release.assets.linux_td
                   tag=release.tag
                   text="Download Tiberian Dawn"
-                  icon='<img class="button__icon icon" src="/images/icons/cnc_64x64.png" />' %}
+                  icon='/images/icons/cnc_64x64.png' %}
                 {% include release-download-button.html
                   asset=playtest.assets.linux_td
                   tag=playtest.tag
                   text="Download Tiberian Dawn"
-                  icon='<img class="button__icon icon" src="/images/icons/cnc_64x64.png" />'
+                  icon='/images/icons/cnc_64x64.png'
                   playtest=true %}
                 </span>
               </p>
@@ -214,12 +214,12 @@ js:
                   asset=release.assets.linux_d2k
                   tag=release.tag
                   text="Download Dune 2000"
-                  icon='<img class="button__icon icon" src="/images/icons/d2k_64x64.png" />' %}
+                  icon='/images/icons/d2k_64x64.png' %}
                 {% include release-download-button.html
                   asset=playtest.assets.linux_d2k
                   tag=playtest.tag
                   text="Download Dune 2000"
-                  icon='<img class="button__icon icon" src="/images/icons/d2k_64x64.png" />'
+                  icon='/images/icons/d2k_64x64.png'
                   playtest=true %}
                 </span>
               </p>
@@ -229,7 +229,7 @@ js:
               <p class="text--warning text--small">We do not maintain these external package sources, so there may be delays when a new version is released. Please contact the downstream repository maintainers about any packaging issues.</p>
               <dl class="download__community-packages">
                 <dt>
-                  <img class="icon" src="/images/icons/linux-mirrors/flatpak.png" alt="" />
+                  <img class="icon" src="{{ '/images/icons/linux-mirrors/flatpak.png' | relative_url }}" alt="" />
                   Flatpak
                 </dt>
                 <dd>
@@ -242,7 +242,7 @@ js:
                 </dd>
                 
                 <dt>
-                  <img class="icon" src="/images/icons/linux-mirrors/snapcraft.svg" alt="" />
+                  <img class="icon" src="{{ '/images/icons/linux-mirrors/snapcraft.svg' | relative_url }}" alt="" />
                   Snap
                 </dt>
                 <dd>
@@ -253,7 +253,7 @@ js:
                 </dd>
         
                 <dt>
-                  <img class="icon" src="/images/icons/linux-mirrors/arch.svg" alt="" />
+                  <img class="icon" src="{{ '/images/icons/linux-mirrors/arch.svg' | relative_url }}" alt="" />
                   Arch Linux
                 </dt>
                 <dd>
@@ -264,7 +264,7 @@ js:
                 </dd>
 
                 <dt>
-                  <img src="/images/icons/linux-mirrors/opensuse.svg" class="icon" />
+                  <img src="{{ '/images/icons/linux-mirrors/opensuse.svg' | relative_url }}" class="icon" />
                   openSUSE Linux
                 </dt>
                 <dd>
@@ -275,7 +275,7 @@ js:
                 </dd>
         
                 <dt>
-                  <img class="icon" src="/images/icons/linux-mirrors/solus.svg" />
+                  <img class="icon" src="{{ '/images/icons/linux-mirrors/solus.svg' | relative_url }}" />
                   Solus
                 </dt>
                 <dd>
@@ -286,7 +286,7 @@ js:
                 </dd>
                 
                 <dt>
-                  <img class="icon" src="/images/icons/linux-mirrors/void.svg" />
+                  <img class="icon" src="{{ '/images/icons/linux-mirrors/void.svg' | relative_url }}" />
                   Void Linux
                 </dt>
                 <dd>

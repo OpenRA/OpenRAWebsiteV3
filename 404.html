@@ -11,7 +11,7 @@ permalink: /404.html
         <span class="win95-dialog__close win95-dialog__button">✕</span>
       </header>
       <div class="win95-dialog__body">
-        <img class="win95-dialog__body__icon" src="/images/x-icon.svg" />
+        <img class="win95-dialog__body__icon" src="{{ '/images/x-icon.svg' | relative_url }}" />
         <div class="win95-dialog__body__content">
           404 Not Found Error.
           <p>The page you are looking for has gone missing in action. Please check the spelling of the URL and try again.</p>
@@ -19,7 +19,7 @@ permalink: /404.html
         </div>
       </div>
       <footer class="win95-dialog__footer">
-        <a class="win95-dialog__button" href="/">OK</a>
+        <a class="win95-dialog__button" href="{{ '/' | relative_url }}">OK</a>
         <a class="win95-dialog__button" href="https://github.com/OpenRA/OpenRAWeb/issues">Report a Bug</a>
       </footer>
     </div>

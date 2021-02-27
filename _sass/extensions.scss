@@ -58,7 +58,7 @@
     bottom: -2px;
     left: -2px;
     border: rgba(255, 255, 255, 0.01) 8px solid;
-    border-image: url('/images/selection-box.svg') 8 8 8 8;
+    border-image: url($baseurl + '/images/selection-box.svg') 8 8 8 8;
     border-image-width: 8px;
     animation: selectionBox 0.75s infinite;
 

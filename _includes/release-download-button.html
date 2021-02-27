@@ -22,10 +22,10 @@
     {% endif %}
   {% endif %}
   {% if include.icon %}
-    {{ include.icon }}
+    <img class="button__icon icon" src="{{ include.icon | relative_url }}" />
   {% else %}
     <svg class="button__icon icon">
-      <use xlink:href="/images/icons/icons.svg#icon-download"></use>
+      <use xlink:href="{{ '/images/icons/icons.svg#icon-download' | relative_url }}"></use>
     </svg>
   {% endif %}
   <span class="instruction__download-button__release badge">

@@ -30,6 +30,6 @@ permalink: "/news/videos-galore/"
 
 <p>The response to this new-found attention has be phenomenal, and feedback has been overwhelmingly positive.</p>
 <div style="text-align:center">
-<img src="/images/news/20140207-players.png" width="640" alt="Player count" /></p>
+<img src="{{ '/images/news/20140207-players.png' | relative_url }}" width="640" alt="Player count" /></p>
 </div>
 <p>The surge of new players can be best seen in our <a href="http://openra.ipdx.ru/graphs.html">live player graphs</a>. We're keeping an eye on the community and Youtube response, and will keep this article updated. Time to Rock'n'roll!</p>

@@ -1,30 +1,30 @@
 <footer class="site-footer">
   <hr class="site-footer__hr" />
   <div class="site-footer__main u-centered-content u-centered-content--small">
-    <a class="site-footer__logo-link" href="/">
-      <img class="site-footer__logo" src="/images/openra-logo-with-text.svg" alt="OpenRA" />
+    <a class="site-footer__logo-link" href="{{ '/' | relative_url }}">
+      <img class="site-footer__logo" src="{{ '/images/openra-logo-with-text.svg' | relative_url }}" alt="OpenRA" />
     </a>
-    <div class="site-footer__legal">©2007-{{ site.time | date: '%Y' }} The OpenRA Developers (<a href="/legal">Legal notices</a>)</div>
+    <div class="site-footer__legal">©2007-{{ site.time | date: '%Y' }} The OpenRA Developers (<a href="{{ '/legal' | relative_url }}">Legal notices</a>)</div>
     <nav class="site-footer__nav">
       <div>
-        <a href="/news" tabindex="0">News</a>
+        <a href="{{ '/news' | relative_url }}" tabindex="0">News</a>
       </div>
       <div>
-        <a href="/about" tabindex="0">About</a>
+        <a href="{{ '/about' | relative_url }}" tabindex="0">About</a>
       </div>
       <div>
-        <a href="/download" tabindex="0">Download</a>
+        <a href="{{ '/download' | relative_url }}" tabindex="0">Download</a>
       </div>
       <div>
-        <a href="/games" tabindex="0">Games</a>
+        <a href="{{ '/games' | relative_url }}" tabindex="0">Games</a>
       </div>
       <div>
-        <a href="/community" tabindex="0">Community</a>
+        <a href="{{ '/community' | relative_url }}" tabindex="0">Community</a>
       </div>
       <div>
         <a href="https://forum.openra.net" tabindex="0">
           <svg class="icon">
-            <use xlink:href="/images/icons/icons.svg#icon-conversation"></use>
+            <use xlink:href="{{ '/images/icons/icons.svg#icon-conversation' | relative_url }}"></use>
           </svg>
           Forum
         </a>
@@ -32,7 +32,7 @@
       <div>
         <a href="https://resource.openra.net" tabindex="0">
           <svg class="icon">
-            <use xlink:href="/images/icons/icons.svg#icon-wrench"></use>
+            <use xlink:href="{{ '/images/icons/icons.svg#icon-wrench' | relative_url }}"></use>
           </svg>
           Resources
         </a>
@@ -42,7 +42,7 @@
       <div>
         <a href="https://github.com/OpenRA/OpenRA" class="color--github" tabindex="0">
           <svg class="icon">
-            <use xlink:href="/images/icons/icons.svg#icon-github"></use>
+            <use xlink:href="{{ '/images/icons/icons.svg#icon-github' | relative_url }}"></use>
           </svg>
           GitHub
         </a>
@@ -50,7 +50,7 @@
       <div>
         <a href="https://discord.openra.net/" class="color--discord" tabindex="0">
           <svg class="icon">
-            <use xlink:href="/images/icons/icons.svg#icon-discord"></use>
+            <use xlink:href="{{ '/images/icons/icons.svg#icon-discord' | relative_url }}"></use>
           </svg>
           Discord
         </a>
@@ -58,7 +58,7 @@
       <div>
         <a href="https://openra.itch.io/openra" class="color--itch" tabindex="0">
           <svg class="icon">
-            <use xlink:href="/images/icons/icons.svg#icon-itch"></use>
+            <use xlink:href="{{ '/images/icons/icons.svg#icon-itch' | relative_url }}"></use>
           </svg>
           Itch
         </a>
@@ -66,7 +66,7 @@
       <div>
         <a href="https://www.facebook.com/openra" class="color--facebook" tabindex="0">
           <svg class="icon">
-            <use xlink:href="/images/icons/icons.svg#icon-facebook"></use>
+            <use xlink:href="{{ '/images/icons/icons.svg#icon-facebook' | relative_url }}"></use>
           </svg>
           Facebook
         </a>
@@ -74,7 +74,7 @@
       <div>
         <a href="https://twitter.com/openRA" class="color--twitter" tabindex="0">
           <svg class="icon">
-            <use xlink:href="/images/icons/icons.svg#icon-twitter"></use>
+            <use xlink:href="{{ '/images/icons/icons.svg#icon-twitter' | relative_url }}"></use>
           </svg>
           Twitter
         </a>
@@ -82,7 +82,7 @@
       <div>
         <a href="https://www.reddit.com/r/openra" class="color--reddit" tabindex="0">
           <svg class="icon">
-            <use xlink:href="/images/icons/icons.svg#icon-reddit"></use>
+            <use xlink:href="{{ '/images/icons/icons.svg#icon-reddit' | relative_url }}"></use>
           </svg>
           Reddit
         </a>
@@ -90,7 +90,7 @@
       <div>
         <a href="https://www.youtube.com/channel/UCRoiPL1J4K1-EhQeNazrYig" class="color--youtube" tabindex="0">
           <svg class="icon">
-            <use xlink:href="/images/icons/icons.svg#icon-youtube"></use>
+            <use xlink:href="{{ '/images/icons/icons.svg#icon-youtube' | relative_url }}"></use>
           </svg>
           YouTube
         </a>
@@ -98,7 +98,7 @@
       <div>
         <a href="https://steamcommunity.com/groups/openra/" class="color--steam" tabindex="0">
           <svg class="icon">
-            <use xlink:href="/images/icons/icons.svg#icon-steam"></use>
+            <use xlink:href="{{ '/images/icons/icons.svg#icon-steam' | relative_url }}"></use>
           </svg>
           Steam
         </a>

@@ -1,8 +1,8 @@
 # General configuration
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://www.openra.net" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: openRA
-github_username:  openRA
+twitter_username: OpenRA
+github_username:  OpenRA
 permalink: /:categories/:title/index.html
 
 defaults:
@@ -25,7 +25,7 @@ plugins:
 # jekyll-feed configuration
 title: OpenRA - News Feed 
 description: >- # this means to ignore newlines until "baseurl:"
-  Open Source reimplementation of Westwood Studios' 2D Command and Conquer games. Play modern versions of Red Alert, Command & Conquer, Dune 2000, and more for free!
+  Classic staregy games rebuilt for the modern era
 
 feed:
   path: /news/atom.html # /news/atom.html -> /news/atom

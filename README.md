@@ -71,7 +71,7 @@ You can also just use HTML in the post body. In fact, you can mix it in with the
 You can write markdown, then just put html on the next line.
 
 <figure>
-  <img src="/images/news/20200629-civilians.png" width="600" loading="lazy" alt="Red Alert civilians" />
+  <img src="{{ '/images/news/20200629-civilians.png' | relative_url }}" width="600" loading="lazy" alt="Red Alert civilians" />
   <figcaption>The full range of Red Alert civilians will be available in the next OpenRA release thanks to details learned from the C&C Remastered Collection source code release.</figcaption>
 </figure>
 
@@ -102,7 +102,7 @@ This site uses an SVG "sprite" for icons (like the social media icons in the hea
 
 ```html
 <svg class="icon">
-  <use xlink:href="/images/icons/icons.svg#icon-external-link"></use>
+  <use xlink:href="{{ '/images/icons/icons.svg#icon-external-link' | relative_url }}"></use>
 </svg>
 ```
 

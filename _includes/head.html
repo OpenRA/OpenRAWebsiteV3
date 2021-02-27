@@ -9,7 +9,7 @@
   <meta property="og:description" content="{{ site.description }}" />
   <meta property="og:url" content="{{ site.url }}" />
   <!-- query param at the end is for cache busting if/when more dynamic social images are added -->
-  <meta property="og:image" content="{{ site.url }}/images/social.jpg?t={{ site.time | date: "%Y-%m-%d-%H-%M" }}" />
+  <meta property="og:image" content="{{ '/images/social.jpg' | relative_url }}/images/social.jpg?t={{ site.time | date: "%Y-%m-%d-%H-%M" }}" />
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@openRA">
@@ -17,13 +17,13 @@
   <meta name="twitter:title" content="OpenRA">
   <meta name="twitter:description" content="{{ site.description }}">
   <!-- query param at the end is for cache busting if/when more dynamic social images are added -->
-  <meta name="twitter:image" content="{{ site.url }}/images/social.jpg?t={{ site.time | date: "%Y-%m-%d-%H-%M" }}">
+  <meta name="twitter:image" content="{{ '/images/social.jpg' | relative_url }}?t={{ site.time | date: "%Y-%m-%d-%H-%M" }}">
 
   <title>OpenRA - Classic strategy games rebuilt for the modern era</title>
-  <link rel="stylesheet" href="/styles/normalize.css" />
-  <link rel="stylesheet" href="/styles/index.css" />
-  <link rel="stylesheet" href="/styles/lite-youtube-embed.css" />
-
+  <link rel="stylesheet" href="{{ '/styles/normalize.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/styles/index.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/styles/lite-youtube-embed.css' | relative_url }}" />
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon" />
   <!-- hack to prevent Firefox from doing a "FOUC" -->
   <!-- the contents of the <script> aren't important, just that it is here -->
   <script>var PREVENT_FOUC = true;</script>

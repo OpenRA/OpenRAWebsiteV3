@@ -24,5 +24,5 @@ Concrete, sand worms, the starport, and other iconic features will be added in u
 
 <hr />
 
-<p><img src="/images/news/20140204-players.png" width="100%" alt="Player count" /></p>
+<p><img src="{{ '/images/news/20140204-players.png' | relative_url }}" width="100%" alt="Player count" /></p>
 <p>Our online player count is currently at an all time high, which makes this an excellent time to find a match online. Keep 'em coming!</p>

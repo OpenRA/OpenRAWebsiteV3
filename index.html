@@ -29,10 +29,10 @@ carousel_items:
         <span class="hero__intro-text__tagline color--gold">Rebuilt for the Modern Era.</span>
       </h1>
       <div class="install">
-        <a class="button button--large button--primary" href="/download">
+        <a class="button button--large button--primary" href="{{ '/download' | relative_url }}">
           Install Now
           <svg class="button__icon icon">
-            <use xlink:href="/images/icons/icons.svg#icon-download"></use>
+            <use xlink:href="{{ '/images/icons/icons.svg#icon-download' | relative_url }}"></use>
           </svg>
         </a>
       </div>
@@ -49,8 +49,8 @@ carousel_items:
                   muted="true"
                   playsinline="true"
                   preload="auto">
-                  <source src="/videos/{{carousel_item.video_base_name}}.webm" type="video/webm" />
-                  <source src="/videos/{{carousel_item.video_base_name}}.mp4" type="video/mp4" />
+                  <source src="{{ '/videos/' | relative_url }}{{carousel_item.video_base_name}}.webm" type="video/webm" />
+                  <source src="{{ '/videos/' | relative_url }}{{carousel_item.video_base_name}}.mp4" type="video/mp4" />
                 </video>
               </div>
             </div>
@@ -60,14 +60,14 @@ carousel_items:
       <span class="carousel__previous">
         <button class="carousel__previous__button" aria-label="Previous Item">
           <svg class="icon">
-            <use xlink:href="/images/icons/icons.svg#icon-chevron-left"></use>
+            <use xlink:href="{{ '/images/icons/icons.svg#icon-chevron-left' | relative_url }}"></use>
           </svg>
         </button>
       </span>
       <span class="carousel__next">
         <button class="carousel__next__button" aria-label="Next Item">
           <svg class="icon">
-            <use xlink:href="/images/icons/icons.svg#icon-chevron-right"></use>
+            <use xlink:href="{{ '/images/icons/icons.svg#icon-chevron-right' | relative_url }}"></use>
           </svg>
         </button>
       </span>
