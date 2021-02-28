@@ -24,7 +24,7 @@ permalink: "/news/dns-issues/"
 <hr />
 <h3>Manually finding games</h3>
 <p>If the server list is empty or gives an error, you can still direct connect to games manually.</p>
-<p>Players are using our <a href="http://webchat.freenode.net/?channels=openra" alt="#openra on freenode">IRC channel</a> to organize games via direct connect.</p>
+<p>Players are using our <a href="https://webchat.freenode.net/?channels=openra" alt="#openra on freenode">IRC channel</a> to organize games via direct connect.</p>
 <hr />
 <h3>Manually installing maps</h3>
 <p>The automatic map downloads are not functioning, so the game will produce an exception and close if you attempt to connect to a server running a custom map that you do not have installed.<br />You can manually install missing maps to the <span style="font-family: monospace; border: 1px solid #999; padding: 0 5px; background-color: #666">OpenRA/maps/&lt;MOD&gt;</span> directory indicated above.</p>
