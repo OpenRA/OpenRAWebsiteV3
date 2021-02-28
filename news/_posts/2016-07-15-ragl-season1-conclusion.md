@@ -56,6 +56,6 @@ Cheers,<br/>
 SoScared
 </div>
 
-For the final standings, check out the [league tables thread](http://www.sleipnirstuff.com/forum/viewtopic.php?f=82&t=19531) on our forums. Replays of all league matches are available [from a dedicated file server](http://64hdb.mine.nu:5534/mIRROR/ora_replays/RAGL_Season_One/).
+For the final standings, check out the [league tables thread](https://forum.openra.net/viewtopic.php?t=19531) on our forums. Replays of all league matches are available [from a dedicated file server](http://64hdb.mine.nu:5534/mIRROR/ora_replays/RAGL_Season_One/).
 
 The OpenRA team congratulates all winners and thanks all the participants of this first season. We hope that the next season will be even more successful, so be sure to enlist as soon as registrations open in four weeks!

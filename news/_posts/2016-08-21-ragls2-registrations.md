@@ -15,7 +15,7 @@ Greetings commanders!
 
 After [its very successful first season]({{ '/news/ragl-season1-conclusion/' | relative_url }}), Season 2 of the Red Alert Global League is about to kick off on September 5th. Ahead of its official start, the registrations have been opened to the general public. So if you have not yet participated in the league, but wish to do so, now would be the time to act, as registrations will close on August 31st.
 
-The league's rules are laid out in [this forum thread](http://www.sleipnirstuff.com/forum/viewtopic.php?f=82&t=19750), while information how to get your name registered is found [in this thread](http://www.sleipnirstuff.com/forum/viewtopic.php?f=82&t=19734).
+The league's rules are laid out in [this forum thread](https://forum.openra.net/viewtopic.php?t=19750), while information how to get your name registered is found [in this thread](https://forum.openra.net/viewtopic.php?t=19734).
 
 The prize pool this time around is already at over $500, which I personally find quite astonishing. It will be well worth everyone's time to try and get your share of the cake!
 
