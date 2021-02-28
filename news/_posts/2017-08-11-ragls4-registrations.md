@@ -8,7 +8,7 @@ permalink: "/news/ragls4-registrations/"
 ---
 
 <div style="text-align:center" markdown="1">
-![Red Alert Global League Season 4](/images/news/20170812-ragl-IV.png)
+![Red Alert Global League Season 4]({{ '/images/news/20170812-ragl-IV.png' | relative_url }})
 </div>
 
 Greetings, commanders!

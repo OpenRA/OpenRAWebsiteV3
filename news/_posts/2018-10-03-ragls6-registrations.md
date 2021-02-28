@@ -8,7 +8,7 @@ permalink: "/news/ragls6-registrations/"
 ---
 
 <div style="text-align:center" markdown="1">
-![Red Alert Global League Season 6](/images/news/20181003-ragl-vi.png)
+![Red Alert Global League Season 6]({{ '/images/news/20181003-ragl-vi.png' | relative_url }})
 </div>
 
 Attention, players!

@@ -8,7 +8,7 @@ permalink: "/news/ragls5-and-team-tournament/"
 ---
 
 <div style="text-align:center" markdown="1">
-![Red Alert Global League Season 5](/images/news/20180317-ragl-V.png)
+![Red Alert Global League Season 5]({{ '/images/news/20180317-ragl-V.png' | relative_url }})
 </div>
 
 Greetings, commanders!

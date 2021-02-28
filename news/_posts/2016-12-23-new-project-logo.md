@@ -10,7 +10,7 @@ permalink: "/news/new-project-logo/"
 Today we're pleased to show off the results of a long-overdue project: a new logo for OpenRA!
 
 <div style="text-align:center" markdown="1">
-![](/images/news/20161223-new-logo.png)
+![]({{ '/images/news/20161223-new-logo.png' | relative_url }})
 </div>
 
 This logo will be used to represent the OpenRA project as a whole, with the Soviet star logo being kept for the Red Alert mod.
@@ -35,17 +35,17 @@ After a brainstorming session in our IRC channel there was one stand-out winner,
 We have developed mockups of how the logo will look in different contexts:
 
 <div style="text-align:center; margin: 0 -60px" markdown="1">
-![](/images/news/20161223-new-logo-modchooser.png)<br />
+![]({{ '/images/news/20161223-new-logo-modchooser.png' | relative_url }})<br />
 A preview of the ingame mod chooser with the new project logo.
 </div>
 
 <div style="text-align:center" markdown="1">
-![](/images/news/20161223-new-logo-launchers.png)<br />
+![]({{ '/images/news/20161223-new-logo-launchers.png' | relative_url }})<br />
 OpenRA icons in your operating system of choice.
 </div>
 
 <div style="text-align:center" markdown="1">
-![](/images/news/20161223-new-logo-facebook.png)<br />
+![]({{ '/images/news/20161223-new-logo-facebook.png' | relative_url }})<br />
 The new project logo on Facebook.
 </div>
 

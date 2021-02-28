@@ -29,7 +29,7 @@ layout: "default"
               </div>
               <a
                 class="developer-updates__listing__comments"
-                href="{{ post.url }}#disqus_thread"
+                href="{{ post.url | relative_url }}#disqus_thread"
                 data-disqus-identifier="{{post.disqus_id}}">
                 Comments
               </a>

@@ -17,6 +17,6 @@ A new release will be out within the next week or so that fixes the installer an
 
 We are also preparing a brand new website, which will be deployed with the new release.
 
-![Website promo](/images/news/website-promo-2.png)
+![Website promo]({{ '/images/news/website-promo-2.png' | relative_url }})
 
 This new website will be much easier to for us to update and maintain, so we will begin posting playtest news (which was previously only posted on our [ModDB page](http://www.moddb.com/games/openra/news/)) to add a bit of life to our oft-neglected website.

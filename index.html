@@ -112,7 +112,7 @@ carousel_items:
     <div class="dark-panel">
       <div class="dark-panel__header">
         <strong class="text--caps text--medium">Updates from the Developers</strong>
-        <a class="home__developer-updates__view-all" href="/news">[View All Updates]</a>
+        <a class="home__developer-updates__view-all" href="{{ '/news' | relative_url }}">[View All Updates]</a>
       </div>
       {% for post in site.posts limit:1 %}
         {% include developer-update.html title=post.title author=post.author created_at=post.created_at body=post.content disqus_id=post.disqus_id %}
