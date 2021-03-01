@@ -3,7 +3,7 @@
 
   figure {
     margin: 0 auto;
-    max-width: 706px;
+    width: min-content;
   }
 }
 
@@ -21,7 +21,14 @@
 
 .developer-update__body img,
 .developer-update__body video {
-  max-width: 100%;
+  max-width: 706px;
+  width: auto;
+}
+
+.developer-update__body lite-youtube,
+.developer-update__body iframe {
+  margin: 0 auto;
+  width: 706px;
 }
 
 .developer-update__footer {
