@@ -104,6 +104,7 @@ function Carousel (carouselReference, options) {
   });
 
   $carouselPage.on('click', function clickPage (event) {
+    event.preventDefault();
     const pageIndex = $(this).index();
     goToIndex(pageIndex);
   });
