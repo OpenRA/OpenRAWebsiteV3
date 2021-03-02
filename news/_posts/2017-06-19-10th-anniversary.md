@@ -11,11 +11,9 @@ We are proud to celebrate the 10th anniversary of OpenRA today!
 
 Community member SoScared put together a new fantastic promotional trailer:
 
-<div style="text-align:center" markdown="1">
-
-<lite-youtube videoid="93b7TKooj-M" />
-
-</div>
+<figure>
+  <lite-youtube videoid="93b7TKooj-M" />
+</figure>
 
 ---
 
