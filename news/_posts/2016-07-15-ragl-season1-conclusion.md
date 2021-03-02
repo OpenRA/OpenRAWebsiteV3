@@ -7,9 +7,9 @@ disqus_id: "ragl-season1-conclusion"
 permalink: "/news/ragl-season1-conclusion/"
 ---
 
-<div style="text-align:center" markdown="1">
-![Global chat lobby]({{ '/images/news/20160329-ragl-announcement.png' | relative_url }})
-</div>
+<figure>
+  <img src="{{ '/images/news/20160329-ragl-announcement.png' | relative_url }}" alt="RAGL Announcement" />
+</figure>
 
 After more than three months, the very successful Season 1 of the Red Alert Global League, hosted by our community member SoScared, is officially over! Here is what he has to say in his own words:
 

@@ -7,9 +7,9 @@ disqus_id: "ragl-announcement"
 permalink: "/news/ragl-announcement/"
 ---
 
-<div style="text-align:center" markdown="1">
-![Global chat lobby]({{ '/images/news/20160329-ragl-announcement.png' | relative_url }})
-</div>
+<figure>
+  <img src="{{ '/images/news/20160329-ragl-announcement.png' | relative_url }}" alt="RAGL Announcement" />
+</figure>
 
 Greetings commanders!
 
@@ -17,7 +17,7 @@ Our well-known community member and caster SoScared is hosting the Red Alert: Gl
 
 Monday, April 4th 2016 will see the launch of the new Red Alert: Global League. The Global League will attempt to combine the best elements of a tough scheduled format with a flexible meet-up to circumvent most, if not all, time-zone related issues. RA:GL aims to become a long-term, easy and reliable format for anyone that wishes to participate.
 
-The League will be running for two months twice a year, hosting several divisions. As with the recent [Tag Team Tournament]({{ '/news/march-2016-tournament-announcement/' | relative_url }}), there will again be a pool of prize money to be distributed among the top contenders of the two highest divisions. If you're interested, [read the rules](http://forum.openra.net/82/19488) and [sign up](http://forum.openra.net/82/19512) on our forums. It is expected that many of the games will be casted on Twitch or Youtube, so keep an eye out for those streams if you want to follow along.
+The League will be running for two months twice a year, hosting several divisions. As with the recent [Tag Team Tournament]({{ '/news/march-2016-tournament-announcement/' | relative_url }}), there will again be a pool of prize money to be distributed among the top contenders of the two highest divisions. If you're interested, [read the rules](https://forum.openra.net/viewtopic.php?f=82&t=19488) and [sign up](https://forum.openra.net/viewtopic.php?f=82&t=19512) on our forums. It is expected that many of the games will be casted on Twitch or Youtube, so keep an eye out for those streams if you want to follow along.
 
 We wish all participants the best of luck and a lot of fun!
 

@@ -7,7 +7,9 @@ disqus_id: "hdTourney"
 permalink: "/news/doomhammer-tournament-announcement/"
 ---
 
-<lite-youtube videoid="o9XJ-vqoh98"></lite-youtube>
+<figure>
+  <lite-youtube videoid="o9XJ-vqoh98"></lite-youtube>
+</figure>
 
 Greetings ladies and gentlemen,
 
@@ -19,9 +21,9 @@ Starting July 2nd at 10:00am GMT/12:00pm CEST a field of 16 challengers will be 
 
 The prize pool currently consists of a whopping &euro;160 and will be scaled according to the number of signups. In the case of only eight to twelve contestants signing up it will be decreased to &euro;100, should there be seven or less to &euro;60.
 
-The complete tournament will be hosted and livestreamed from [Hecthor Doomhammer's Twitch channel](http://www.twitch.tv/pauljongejans). Joining him will be his fellow casters SoScared and FiveAces as well as well-known community figures Jazz_KCS and Ripsn as tournament officials.
+The complete tournament will be hosted and livestreamed from [Hecthor Doomhammer's Twitch channel](https://www.twitch.tv/pauljongejans). Joining him will be his fellow casters SoScared and FiveAces as well as well-known community figures Jazz_KCS and Ripsn as tournament officials.
 
-To register visit the [Tournament thread on Sleipnir's Forum](https://forum.openra.net/viewtopic.php?t=19594). You will also find all about the specific tournament rules in that thread. Registrations will close on June 26th, so hurry hup!
+To register visit the [tournament thread on the forum](https://forum.openra.net/viewtopic.php?t=19594). You will also find all about the specific tournament rules in that thread. Registrations will close on June 26th, so hurry hup!
 
-[The clock is ticking... ](http://goo.gl/oxRGP3)
+[The clock is ticking... ](https://goo.gl/oxRGP3)
 
