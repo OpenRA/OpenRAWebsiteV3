@@ -11,7 +11,7 @@ Many of you will already have noticed that we are having some server issues at t
 
 We would like to inform you of the impacted services and their current status.
 
-* [OpenRA Resource Center](http://resource.openra.net)
+* [OpenRA Resource Center](https://resource.openra.net)
 
 <p style="padding-left:2em">
 This was probably among the two most visible effects of the outage. It is currently being restored from a backup and will hopefully be available again in the next few days.
