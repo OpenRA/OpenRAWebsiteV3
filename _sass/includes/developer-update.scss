@@ -1,9 +1,16 @@
+$figure-width: 706px;
+$responsive-figure-width: $figure-width + 136px; // content + paddings around it
+
 .developer-update {
   padding: 2.5rem;
 
   figure {
     margin: 0 auto;
-    width: min-content;
+    width: 100%;
+    
+    @media screen and (min-width: $responsive-figure-width) {
+      width: min-content;
+    }
   }
 }
 
@@ -21,14 +28,23 @@
 
 .developer-update__body img,
 .developer-update__body video {
-  max-width: 706px;
+  max-width: $figure-width;
   width: auto;
+  
+  @media screen and (max-width: $responsive-figure-width - 1px) {
+    width: 100% !important; // override inline style
+    max-width: 100%;
+  }
 }
 
 .developer-update__body lite-youtube,
 .developer-update__body iframe {
   margin: 0 auto;
-  width: 706px;
+  
+  @media screen and (min-width: $responsive-figure-width) {
+    max-width: 100%;
+    width: $figure-width;
+  }
 }
 
 .developer-update__footer {
