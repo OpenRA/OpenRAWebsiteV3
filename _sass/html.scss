@@ -221,6 +221,7 @@ table {
 
 .table--metal-panel {
   @include metalPanel();
+  background-image: none;
 
   thead {
     th {
