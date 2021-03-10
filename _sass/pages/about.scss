@@ -29,7 +29,7 @@ li.about__mod-list__mod {
   display: flex;
   margin: 0;
 
-  &:nth-of-type(even) {
+  &--alt {
     flex-direction: row-reverse;
     background-color: rgba(0, 0, 0, 0.25);
   }
