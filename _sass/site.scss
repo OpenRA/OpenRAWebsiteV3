@@ -153,11 +153,15 @@
 .site-header__nav__link {
   display: inline-block;
   padding: 0.25rem 0.5rem;
-
+  
   @media screen and (max-width: 680px) {
     margin: 0.25rem 0;
     padding: 0.5rem;
     border-bottom: rgba(255, 255, 255, 0.25) 1px dotted;
+  }
+
+  &.is-active {
+    color: $color-command-and-conquer;
   }
 }
 
