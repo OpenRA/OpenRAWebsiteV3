@@ -66,6 +66,16 @@ li.about__mod-list__mod {
 
   @media screen and (max-width: 800px) {
     width: 275px;
+    padding-top: 0;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: auto;
+    padding-top: calc(9 / 16 * 100%);
+  }
+
+  @media screen and (max-width: 480px) {
+    padding-top: calc(3 / 4 * 100%);
   }
 }
 
