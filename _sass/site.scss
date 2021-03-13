@@ -13,6 +13,8 @@
 }
   
 .site-content {
+  display: flex;
+  flex-direction: column;
   min-height: calc(100vh - 300px);
   padding-bottom: 1px;
 }
@@ -200,6 +202,7 @@
 }
 
 .site-section {
+  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -254,6 +257,7 @@
 }
 
 .site-section__divider {
+  margin: 0;
   background: black;
   height: 2px;
   border-top: rgb(58, 56, 64) 1px solid;
