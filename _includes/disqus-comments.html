@@ -1,21 +1,28 @@
 <div id="disqus_thread"></div>
 <script>
-  var disqus_config = function () {
-    // Replace PAGE_URL with your page's canonical URL variable
-    this.page.url = "{{ include.pageUrl }}" || window.location.href;  
-    
-    // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    this.page.identifier = "{{ include.pageId }}"; 
-  };
+  if (document.domain == 'www.openra.net') {
+    var disqus_config = function () {
+      this.page.url = "{{ include.pageUrl }}" || window.location.href;
+      this.page.identifier = "{{ include.pageId }}";
+    };
 
-  (function() {
-    var d = document, s = d.createElement('script');
-    s.src = '//openra.disqus.com/embed.js';
-    s.async = true;
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = '//openra.disqus.com/embed.js';
+      s.async = true;
 
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+  else
+  {
+    var warn = document.createElement("p");
+    warn.appendChild(document.createTextNode("Comments are disabled for this domain."));
+    warn.classList.add("text--warning");
+    warn.classList.add("text--small");
+    document.getElementById("disqus_thread").appendChild(warn);
+  }
 </script>
 <noscript>
   Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments—powered by Disqus.</a>
