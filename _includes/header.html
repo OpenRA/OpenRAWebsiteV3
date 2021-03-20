@@ -1,3 +1,5 @@
+{% assign prefix = page.url | slice: 0, 6 %}
+
 <header class="site-header">
   <div class="site-header__main">
     <button class="site-header__menu-toggle" aria-label="Open Site Menu">
@@ -21,7 +23,7 @@
       </button>
 
       <nav class="site-header__nav">
-        <a class="site-header__nav__link{% if page.url == '/news/' %} is-active{% endif %}" href="{{ '/news' | relative_url }}" tabindex="0">News</a>
+        <a class="site-header__nav__link{% if prefix == '/news/' %} is-active{% endif %}" href="{{ '/news' | relative_url }}" tabindex="0">News</a>
         <a class="site-header__nav__link{% if page.url == '/about' %} is-active{% endif %}" href="{{ '/about' | relative_url }}" tabindex="0">About</a>
         <a class="site-header__nav__link{% if page.url == '/download' %} is-active{% endif %}" href="{{ '/download' | relative_url }}" tabindex="0">Download</a>
         <a class="site-header__nav__link{% if page.url == '/games' %} is-active{% endif %}" href="{{ '/games' | relative_url }}" tabindex="0">Games</a>
