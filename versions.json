@@ -1,0 +1,9 @@
+---
+layout: null
+---
+{% assign known_versions = site.github.releases | map: 'tag_name' | sort | reverse | join: '", "' %}
+{
+  "release": "{{ site.download_page_tags.release }}",
+  "playtest": "{{ site.download_page_tags.playtest }}",
+  "known_versions": ["{{ known_versions }}"]
+}

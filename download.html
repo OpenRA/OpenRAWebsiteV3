@@ -3,16 +3,18 @@ js:
 - /scripts/download.js
 ---
 
-{% assign release = site.data.releases.release %}
-{% assign playtest = site.data.releases.playtest %}
+{% assign release = site.github.releases | where: "tag_name", site.download_page_tags.release | first %}
+{% if site.download_page_tags.playtest %}
+  {% assign playtest = site.github.releases | where: "tag_name", site.download_page_tags.playtest | first %}
+{% endif %}
 
 <div class="download">
   <section class="site-section">
     <div class="site-section__content">
       <h1 class="site-section__heading">Download</h1>
-      <p class="text--large">OpenRA is available for many modern operating systems. The latest stable release is <code>{{ release.tag }}</code>,
+      <p class="text--large">OpenRA is available for many modern operating systems. The latest stable release is <code>{{ release.tag_name }}</code>,
         {% if playtest %}
-          and the latest playtest is <code>{{ playtest.tag }}</code>.
+          and the latest playtest is <code>{{ playtest.tag_name }}</code>.
         {% else %}
           and there is no active playtest.
         {% endif %}
@@ -120,19 +122,19 @@ js:
               <p class="text--centered">
                 <span class="button-group">
                 {% include release-download-button.html
-                  asset=release.assets.windows
-                  tag=release.tag %}
+                  release=release
+                  type="windows" %}
                 {% include release-download-button.html
-                  asset=playtest.assets.windows
-                  tag=playtest.tag
+                  release=playtest
+                  type="windows"
                   playtest=true %}
                 </span>
               </p>
               <p class="text--info text--small">
                 {% if playtest %}
-                  32-bit installers and portable releases can be downloaded from the <a href="https://github.com/OpenRA/OpenRA/releases/tag/{{ release.tag }}">{{ release.tag }}</a> and <a href="https://github.com/OpenRA/OpenRA/releases/tag/{{ playtest.tag }}">{{ playtest.tag }}</a> archives.
+                  32-bit installers and portable releases can be downloaded from the <a href="{{ release.html_url }}">{{ release.tag_name }}</a> and <a href="{{ playtest.html_url }}">{{ playtest.tag_name }}</a> archives.
                 {% else %}
-                  32-bit installers and portable releases can be downloaded from the <a href="https://github.com/OpenRA/OpenRA/releases/tag/{{ release.tag }}">{{ release.tag }}</a> archive.
+                  32-bit installers and portable releases can be downloaded from the <a href="{{ release.html_url }}">{{ release.tag_name }}</a> archive.
                 {% endif %}
               </p>
               <p>Stable releases are also available from <a href="https://winstall.app/apps/OpenRA.OpenRA">WinGet</a>:</p>
@@ -149,19 +151,19 @@ js:
               <p class="text--centered">
                 <span class="button-group">
                   {% include release-download-button.html
-                    asset=release.assets.macos
-                    tag=release.tag %}
+                    release=release
+                    type="macos" %}
                   {% include release-download-button.html
-                    asset=playtest.assets.macos
-                    tag=playtest.tag
+                    release=playtest
+                    type="macos"
                     playtest=true %}
                 </span>
               </p>
               <p class="text--info text--small">
                 {% if playtest %}
-                  A "compat" version supporting OS X 10.9 – 10.12 can be downloaded from the <a href="https://github.com/OpenRA/OpenRA/releases/tag/{{ release.tag }}">{{ release.tag }}</a> and <a href="https://github.com/OpenRA/OpenRA/releases/tag/{{ playtest.tag }}">{{ playtest.tag }}</a> archives.
+                  A "compat" version supporting OS X 10.9 – 10.12 can be downloaded from the <a href="{{ release.html_url }}">{{ release.tag_name }}</a> and <a href="{{ playtest.html_url }}">{{ playtest.tag_name }}</a> archives.
                 {% else %}
-                  A "compat" version supporting OS X 10.9 – 10.12 can be downloaded from the <a href="https://github.com/OpenRA/OpenRA/releases/tag/{{ release.tag }}">{{ release.tag }}</a> archive.
+                  A "compat" version supporting OS X 10.9 – 10.12 can be downloaded from the <a href="{{ release.html_url }}">{{ release.tag_name }}</a> archive.
                 {% endif %}
               </p>
               <hr />
@@ -181,13 +183,15 @@ js:
               <p class="text--centered">
                 <span class="button-group">
                 {% include release-download-button.html
-                  asset=release.assets.linux_ra
-                  tag=release.tag
+                  release=release
+                  type="appimage"
+                  appimagename="Red-Alert"
                   text="Download Red Alert"
                   icon='/images/icons/ra_64x64.png' %}
                 {% include release-download-button.html
-                  asset=playtest.assets.linux_ra
-                  tag=playtest.tag
+                  release=playtest
+                  type="appimage"
+                  appimagename="Red-Alert-playtest"
                   text="Download Red Alert"
                   icon='/images/icons/ra_64x64.png'
                   playtest=true %}
@@ -196,13 +200,15 @@ js:
               <p class="text--centered">
                 <span class="button-group">
                 {% include release-download-button.html
-                  asset=release.assets.linux_td
-                  tag=release.tag
+                  release=release
+                  type="appimage"
+                  appimagename="Tiberian-Dawn"
                   text="Download Tiberian Dawn"
                   icon='/images/icons/cnc_64x64.png' %}
                 {% include release-download-button.html
-                  asset=playtest.assets.linux_td
-                  tag=playtest.tag
+                  release=playtest
+                  type="appimage"
+                  appimagename="Tiberian-Dawn-playtest"
                   text="Download Tiberian Dawn"
                   icon='/images/icons/cnc_64x64.png'
                   playtest=true %}
@@ -211,13 +217,15 @@ js:
               <p class="text--centered">
                 <span class="button-group">
                 {% include release-download-button.html
-                  asset=release.assets.linux_d2k
-                  tag=release.tag
+                  release=release
+                  type="appimage"
+                  appimagename="Dune-2000"
                   text="Download Dune 2000"
                   icon='/images/icons/d2k_64x64.png' %}
                 {% include release-download-button.html
-                  asset=playtest.assets.linux_d2k
-                  tag=playtest.tag
+                  release=playtest
+                  type="appimage"
+                  appimagename="Dune-2000-playtest"
                   text="Download Dune 2000"
                   icon='/images/icons/d2k_64x64.png'
                   playtest=true %}
@@ -316,9 +324,9 @@ js:
               OpenRA can be compiled from source on all platforms.
               <p>
               {% if playtest %}
-                Compilation instructions are available for <a href="https://github.com/OpenRA/OpenRA/blob/{{ release.tag }}/INSTALL.md">{{ release.tag }}</a> and <a href="https://github.com/OpenRA/OpenRA/blob/{{ playtest.tag }}/INSTALL.md">{{ playtest.tag }}</a>.
+                Compilation instructions are available for <a href="https://github.com/OpenRA/OpenRA/blob/{{ release.tag_name }}/INSTALL.md">{{ release.tag_name }}</a> and <a href="https://github.com/OpenRA/OpenRA/blob/{{ playtest.tag_name }}/INSTALL.md">{{ playtest.tag_name }}</a>.
               {% else %}
-                Compilation instructions are available for <a href="https://github.com/OpenRA/OpenRA/blob/{{ release.tag }}/INSTALL.md">{{ release.tag }}</a>.
+                Compilation instructions are available for <a href="https://github.com/OpenRA/OpenRA/blob/{{ release.tag_name }}/INSTALL.md">{{ release.tag_name }}</a>.
               {% endif %}
               </p>
               <p</p>
@@ -326,17 +334,18 @@ js:
               <p class="text--centered">
                 <span class="button-group">
                 {% include release-download-button.html
-                  asset=release.assets.source
-                  tag=release.tag %}
+                  release=release
+                  type="source"
+                  tag=release.tag_name %}
                 {% include release-download-button.html
-                  asset=playtest.assets.source
-                  tag=playtest.tag
+                  release=playtest
+                  type="source"
+                  tag=playtest.tag_name
                   playtest=true %}
                 </button>
               </p>
             </div>
           </div>
-          
         </div>
       </div>
     </div>

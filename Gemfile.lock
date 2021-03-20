@@ -271,6 +271,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll-feed (~> 0.15.1)
+  jekyll-github-metadata
   jekyll-redirect-from
   tzinfo (~> 1.2)
   tzinfo-data

@@ -7,6 +7,7 @@ This repo contains the source for the OpenRA website at [openra.net](https://ope
 - [Jekyll](https://jekyllrb.com/) ([GitHub Pages](https://pages.github.com/)), Webserver, site generation
   - [jekyll-feed](https://github.com/jekyll/jekyll-feed), Atom/rss feed
   - [jekyll-redirect-from](https://github.com/jekyll/jekyll-redirect-from), A couple redirects
+  - jekyll-github-metadata](https://github.com/jekyll/github-metadata), GitHub API queries for the download page and version metadata
 - [jQuery](https://jquery.com/), JS utility
   - [jquery.hoverintent](https://briancherne.github.io/jquery-hoverIntent/), Hover behavior in Server Browser
   - [popper](https://popper.js.org/), Popup behavior in Server Browser
@@ -38,7 +39,7 @@ If you have any problems running this, or need further detail, check out the [Gi
 
 # Updating the Site
 
-Since this website was built to be hosted on GitHub pages, you'll want to familiarize yourself with Jekyll. Use the [Jekyll docs](https://jekyllrb.com/docs/) for general things, and the [GitHub pages docs](https://docs.github.com/en/github-ae@latest/github/working-with-github-pages/getting-started-with-github-pages) to see platform specific things like ["which jekyll plugins are available?"](https://pages.github.com/versions/).
+Use the [Jekyll docs](https://jekyllrb.com/docs/) for general things.
 
 Here are some workflows specific to this site:
 - [Adding a News Post](#adding-a-news-post)
@@ -88,13 +89,8 @@ If you have a YouTube video to show, use this.
 
 ## Updating Release Data
 
-Release data is stored in docs/_data/releases.yaml, but don't edit that file. When a new release is added, simply run:
-
-```
-$ ruby scripts/generate-release-data.rb
-```
-
-You'll still need to add the modified file in a new commit, and push. Ideally we can figure out how to automate this with [GitHub Actions](https://docs.github.com/en/actions/reference/events-that-trigger-workflows).
+The release and playtest versions shown on the download page are controlled by the `download_page_tags` defined in `_config.yml`.
+Leave `playtest` undefined to disable the playtest downloads when the release is newer.
 
 ## SVG Icons
 
@@ -121,4 +117,4 @@ The server browser is a very intense [JavaScript "class"](https://developer.mozi
 
 ## Deploying Updates
 
-The website is automatically regenerated and published when new commits are pushed to the `master` branch, via GitHub Pages. Website generation might not always be immediate, but it won't take forever either.
+The website is automatically regenerated and published when new commits are pushed to the `master` branch using a GitHub action. View the Actions tab to monitor build progress.

@@ -1,0 +1,22 @@
+---
+layout: null
+---
+{% assign release_tag = site.download_page_tags.release %}
+{% if site.download_page_tags.playtest %}
+  {% assign playtest_tag = site.download_page_tags.playtest %}
+{% else %}
+	{% assign playtest_tag = release_tag %}
+{% endif %}
+
+{
+  "release": {
+    "ra": "https://github.com/OpenRA/OpenRA/releases/download/{{ release_tag }}/OpenRA-Red-Alert-x86_64.AppImage.zsync",
+    "cnc": "https://github.com/OpenRA/OpenRA/releases/download/{{ release_tag }}/OpenRA-Tiberian-Dawn-x86_64.AppImage.zsync",
+    "d2k": "https://github.com/OpenRA/OpenRA/releases/download/{{ release_tag }}/OpenRA-Dune-2000-x86_64.AppImage.zsync"
+  },
+  "playtest": {
+    "ra": "https://github.com/OpenRA/OpenRA/releases/download/{{ playtest_tag }}/OpenRA-Red-Alert-playtest-x86_64.AppImage.zsync",
+    "cnc": "https://github.com/OpenRA/OpenRA/releases/download/{{ playtest_tag }}/OpenRA-Tiberian-Dawn-playtest-x86_64.AppImage.zsync",
+    "d2k": "https://github.com/OpenRA/OpenRA/releases/download/{{ playtest_tag }}/OpenRA-Dune-2000-playtest-x86_64.AppImage.zsync"
+  }
+}

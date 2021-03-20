@@ -1,9 +1,13 @@
 # General configuration
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://www.openra.net" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.openra.net"
+baseurl: ""
 twitter_username: OpenRA
-github_username:  OpenRA
+github_username: OpenRA
 permalink: /:categories/:title/index.html
+
+download_page_tags:
+  release: "release-20200503"
+  playtest: "playtest-20210131"
 
 defaults:
   -
@@ -21,6 +25,7 @@ defaults:
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
+  - jekyll-github-metadata
 
 # jekyll-feed configuration
 title: OpenRA - News Feed 
@@ -29,3 +34,6 @@ description: >- # this means to ignore newlines until "baseurl:"
 
 feed:
   path: /news/atom.html # /news/atom.html -> /news/atom
+
+# jekyll-github-metadata
+repository: OpenRA/OpenRA

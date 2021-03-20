@@ -1,11 +1,23 @@
+{% case include.type %}
+  {% when "windows" %}
+  {% assign name = "OpenRA-" | append: include.release.tag_name | append: "-x64.exe" %}
+  {% when "macos" %}
+  {% assign name = "OpenRA-" | append: include.release.tag_name | append: ".dmg" %}
+  {% when "appimage" %}
+  {% assign name = "OpenRA-" | append: include.appimagename | append: "-x86_64.AppImage" %}
+  {% when "source" %}
+  {% assign name = "OpenRA-" | append: include.release.tag_name | append: "-source.tar.bz2" %}
+{% endcase %}
+{% assign asset = include.release.assets | where: "name", name | first %}
+
 <a
-  href="{{ include.asset.download_url }}"
+  href="{{ asset.browser_download_url }}"
   class="
     instruction__download-button
     {% if include.playtest %}
     instruction__download-button--playtest
     button--construction
-      {% unless include.tag %}
+      {% unless include.release.tag_name %}
       button--disabled
       {% endunless %}
     {% else %}
@@ -29,8 +41,8 @@
     </svg>
   {% endif %}
   <span class="instruction__download-button__release badge">
-    {% if include.tag %}
-      {{include.tag}} ({{ include.asset.size | divided_by: 1048576.0 | round: 2 }}MB)
+    {% if include.release.tag_name %}
+      {{include.release.tag_name}} ({{ asset.size | divided_by: 1048576.0 | round: 2 }}MB)
     {% else %}
       Playtest Out of Date
     {% endif %}
