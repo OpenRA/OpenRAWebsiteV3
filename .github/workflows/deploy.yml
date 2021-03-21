@@ -1,0 +1,37 @@
+name: Deploy Website
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  linux:
+    name: Deploy Website
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v2
+
+      - name: Clone Deploy Repository
+        uses: actions/checkout@v2
+        with:
+          repository: openra/openra.github.io
+          token: ${{ secrets.DEPLOY_TOKEN }}
+          path: _site
+
+      - name: Build Website
+        env:
+          JEKYLL_GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        run: |
+          bundle install
+          bundle exec jekyll build
+
+      - name: Push Website
+        run: |
+          cd _site
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add --all
+          git commit -m "Deploy website to GitHub pages"
+          git push origin master
