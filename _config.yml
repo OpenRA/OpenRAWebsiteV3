@@ -30,7 +30,7 @@ plugins:
 # jekyll-feed configuration
 title: OpenRA - News Feed 
 description: >- # this means to ignore newlines until "baseurl:"
-  Classic staregy games rebuilt for the modern era
+  Classic strategy games rebuilt for the modern era
 
 feed:
   path: /news/atom.html # /news/atom.html -> /news/atom
