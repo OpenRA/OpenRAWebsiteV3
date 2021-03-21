@@ -12,11 +12,11 @@ js:
   <section class="site-section">
     <div class="site-section__content">
       <h1 class="site-section__heading">Download</h1>
-      <p class="text--large">OpenRA is available for many modern operating systems. The latest stable release is <code>{{ release.tag_name }}</code>,
+      <p class="text--large">OpenRA is available for many modern operating systems.
         {% if playtest %}
-          and the latest playtest is <code>{{ playtest.tag_name }}</code>.
+          The latest stable release is <code>{{ release.tag_name }}</code> and the latest playtest is <code>{{ playtest.tag_name }}</code>.
         {% else %}
-          and there is no active playtest.
+          The latest stable release is <code>{{ release.tag_name }}</code>.
         {% endif %}
       </p>
   
@@ -245,7 +245,9 @@ js:
 <code class="terminal"><span class="terminal__prompt">$</span> flatpak install --from https://flathub.org/repo/appstream/net.openra.OpenRA.flatpakref
 <span class="terminal__prompt">$</span> flatpak install --from https://flathub.org/beta-repo/appstream/net.openra.OpenRA.flatpakref</code>
                   </p>
-                  <p>The Flatpak sandbox is known to interfere with the mod switching feature between official and community mods. We recommend that players who would like to use this feature run the AppImage releases.</p>
+                  <p class="text--info text--small">
+                    The Flatpak sandbox is known to interfere with the mod switching feature between official and community mods. We recommend that players who would like to use this feature run the AppImage releases.
+                  </p>
                 </dd>
                 
                 <dt>
@@ -321,15 +323,6 @@ js:
           <div id="source-instructions" class="instruction dark-panel">
             <div class="instruction__content">
               OpenRA can be compiled from source on all platforms.
-              <p>
-              {% if playtest %}
-                Compilation instructions are available for <a href="https://github.com/OpenRA/OpenRA/blob/{{ release.tag_name }}/INSTALL.md">{{ release.tag_name }}</a> and <a href="https://github.com/OpenRA/OpenRA/blob/{{ playtest.tag_name }}/INSTALL.md">{{ playtest.tag_name }}</a>.
-              {% else %}
-                Compilation instructions are available for <a href="https://github.com/OpenRA/OpenRA/blob/{{ release.tag_name }}/INSTALL.md">{{ release.tag_name }}</a>.
-              {% endif %}
-              </p>
-              <p</p>
-              <p>Refer to the <a href="https://github.com/OpenRA/OpenRA/wiki/Compiling">OpenRA Wiki</a> for detailed compilation instructions.</p>
               <p class="text--centered">
                 <span class="button-group">
                 {% include release-download-button.html
@@ -342,6 +335,13 @@ js:
                   tag=playtest.tag_name
                   playtest=true %}
                 </button>
+              </p>
+              <p class="text--info text--small">
+              {% if playtest %}
+                Compilation instructions are available for <a href="https://github.com/OpenRA/OpenRA/blob/{{ release.tag_name }}/INSTALL.md">{{ release.tag_name }}</a> and <a href="https://github.com/OpenRA/OpenRA/blob/{{ playtest.tag_name }}/INSTALL.md">{{ playtest.tag_name }}</a>.
+              {% else %}
+                Compilation instructions are available for <a href="https://github.com/OpenRA/OpenRA/blob/{{ release.tag_name }}/INSTALL.md">{{ release.tag_name }}</a>.
+              {% endif %}
               </p>
             </div>
           </div>

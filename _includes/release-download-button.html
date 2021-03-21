@@ -44,7 +44,7 @@
     {% if include.release.tag_name %}
       {{include.release.tag_name}} ({{ asset.size | divided_by: 1048576.0 | round: 2 }}MB)
     {% else %}
-      Playtest Out of Date
+      No Playtest Available
     {% endif %}
     </span>
 </a>
