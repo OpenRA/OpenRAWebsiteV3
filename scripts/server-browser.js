@@ -242,17 +242,17 @@ ServerBrowser.prototype.renderServerListing = function renderServerListing (serv
   if (serverResult.spectators) {
     $players.append('<span class="servers__listing__spectators">+'
       + serverResult.spectators
-      + '<svg class="icon"><use xlink:href="./images/icons/icons.svg#icon-eye"></use></svg>'
+      + '<svg class="icon"><use xlink:href="/images/icons/icons.svg#icon-eye"></use></svg>'
       + '</span>');
   }
 
   $serverListing.prop('data-id', serverResult.id);
   $('.servers__listing__name', $serverListing).text(serverResult.name);
   if (serverResult.protected) {
-    $('.servers__listing__name', $serverListing).prepend('<svg class="icon"><use xlink:href="./images/icons/icons.svg#icon-lock"></use></svg>');
+    $('.servers__listing__name', $serverListing).prepend('<svg class="icon"><use xlink:href="/images/icons/icons.svg#icon-lock"></use></svg>');
   }
   if (serverResult.authentication) {
-    $('.servers__listing__name', $serverListing).prepend('<svg class="icon"><use xlink:href="./images/icons/icons.svg#icon-account"></use></svg>');
+    $('.servers__listing__name', $serverListing).prepend('<svg class="icon"><use xlink:href="/images/icons/icons.svg#icon-account"></use></svg>');
   }
   $('.servers__listing__status', $serverListing).append($statusBadge);
   $('.servers__listing__players', $serverListing).prepend($players);
@@ -329,7 +329,7 @@ ServerBrowser.prototype.renderServerListingTooltip = function renderServerListin
     const $spectatorSubHead = $('<tr><th colspan="2">' +
       'Spectators' +
       '<svg class="servers__list__tooltip__clients__spectator icon">' +
-        '<use xlink:href="./images/icons/icons.svg#icon-eye"></use>' +
+        '<use xlink:href="/images/icons/icons.svg#icon-eye"></use>' +
       '</svg>' +
     '</th></tr>');
     $clients.push($spectatorSubHead);
