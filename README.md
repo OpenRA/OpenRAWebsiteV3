@@ -20,7 +20,7 @@ This repo contains the source for the OpenRA website at [openra.net](https://ope
 
 To run this site, you'll first need to have Ruby installed. This is usually already installed on most systems (like Windows or MacOS), but it can be acquired from [ruby-lang.org](https://www.ruby-lang.org/en/) if it is not.
 
-After that, you simply need to install the dependencies in `/docs` like so:
+After that, you simply need to install the dependencies like so:
 
 ```
 $ bundle install
