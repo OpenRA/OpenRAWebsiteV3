@@ -39,7 +39,7 @@ function createPopper (element) {
     virtualElement.getBoundingClientRect = generateGetBoundingClientRect(event.clientX, event.clientY);
     popperInstance.update();
   });
-console.log(popperInstance);
+
   return popperInstance;
 }
 
