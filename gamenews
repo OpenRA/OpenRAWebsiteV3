@@ -1,4 +1,4 @@
-2021-01-31 16-00-00:
-	Title: Playtest 20210131
+2021-03-21 16-00-00:
+	Title: Release 20210321
 	Author: Paul Chote
-	Content: Following a great run of testing over the holiday period, we have a new playtest build ready for your feedback.\n\nPlaytest-20210131 includes:\n  • A new player Handicap Skirmish/MP lobby option\n  • A new "Pause Menu Background" display setting\n  • The "Shock Therapy" Aftermath mission for Red Alert\n  • A new "Oil Spill" minigame for Red Alert\n  • Further balance refinements for Tiberian Dawn\n  • Further refinements to audio and visual effects\n  • Fixes for a collection of bugs and crashes\n\nSee the full news post at www.openra.net for more information and to download the new playtest.
+	Content: Today is the day that many have been waiting for: the new stable OpenRA release is finally available!\n\n  • New integrations for Discord and community ladders\n  • Lobby features for handicaps and disabling spawns\n  • Community balance updates and a refreshed map\n     selection for Red Alert and Tiberian Dawn\n  • Dune 2000 fixes to better match the original game\n  • More fluid infantry combat and other targeting fixes\n  • Nine more converted Red Alert campaign missions\n  • Improved AI behaviour and performance\n\nSee the full news post at www.openra.net for more information and to download the new release.
