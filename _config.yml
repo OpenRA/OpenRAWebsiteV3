@@ -33,7 +33,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Classic strategy games rebuilt for the modern era
 
 feed:
-  path: /news/atom.html # /news/atom.html -> /news/atom
+  path: /news/atom/index.xml
 
 # jekyll-github-metadata
 repository: OpenRA/OpenRA
