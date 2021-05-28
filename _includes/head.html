@@ -3,10 +3,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
   <meta name="description" content="{{ site.description }}" />
 
+  {% capture social_title %}
+    {% if page.title %}
+      {{ page.title }} | {{ site.title }}
+    {% else %}
+      {{ site.title }}
+    {% endif %}
+  {% endcapture %}
   <!-- OpenGraph -->
-  <meta property="og:title" content="OpenRA" />
+  <meta property="og:title" content="{{ social_title | strip }}" />
   <meta property="og:type" content="website" />
-  <meta property="og:description" content="{{ site.description }}" />
+  <meta property="og:description" content="{{ site.tagline }}" />
   <meta property="og:url" content="{{ page.url | absolute_url }}" />
   <!-- query param at the end is for cache busting if/when more dynamic social images are added -->
   <meta property="og:image" content="{{ '/images/social.jpg' | absolute_url }}?t={{ site.time | date: "%Y-%m-%d-%H-%M" }}" />
@@ -14,8 +21,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@{{ site.twitter_username }}">
   <meta name="twitter:creator" content="@{{ site.twitter_username }}">
-  <meta name="twitter:title" content="OpenRA">
-  <meta name="twitter:description" content="{{ site.description }}">
+  <meta name="twitter:title" content="{{ social_title | strip }}">
+  <meta name="twitter:description" content="{{ site.tagline }}">
   <!-- query param at the end is for cache busting if/when more dynamic social images are added -->
   <meta name="twitter:image" content="{{ '/images/social.jpg' | absolute_url }}?t={{ site.time | date: "%Y-%m-%d-%H-%M" }}">
 
