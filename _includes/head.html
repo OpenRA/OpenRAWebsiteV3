@@ -34,6 +34,9 @@
     {% endif %}
   {% endcapture %}
   <title>{{ page_title | strip }}</title>
+
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
+
   <link rel="stylesheet" href="{{ '/styles/normalize.css' | relative_url }}" />
   <link rel="stylesheet" href="{{ '/styles/index.css' | relative_url }}" />
   <link rel="stylesheet" href="{{ '/styles/lite-youtube-embed.css' | relative_url }}" />
