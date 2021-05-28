@@ -9,7 +9,7 @@
   <meta property="og:description" content="{{ site.description }}" />
   <meta property="og:url" content="{{ site.url }}" />
   <!-- query param at the end is for cache busting if/when more dynamic social images are added -->
-  <meta property="og:image" content="{{ '/images/social.jpg' | relative_url }}?t={{ site.time | date: "%Y-%m-%d-%H-%M" }}" />
+  <meta property="og:image" content="{{ '/images/social.jpg' | absolute_url }}?t={{ site.time | date: "%Y-%m-%d-%H-%M" }}" />
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@openRA">
@@ -17,7 +17,7 @@
   <meta name="twitter:title" content="OpenRA">
   <meta name="twitter:description" content="{{ site.description }}">
   <!-- query param at the end is for cache busting if/when more dynamic social images are added -->
-  <meta name="twitter:image" content="{{ '/images/social.jpg' | relative_url }}?t={{ site.time | date: "%Y-%m-%d-%H-%M" }}">
+  <meta name="twitter:image" content="{{ '/images/social.jpg' | absolute_url }}?t={{ site.time | date: "%Y-%m-%d-%H-%M" }}">
 
   {% capture page_title %}
     {% if page.title %}
