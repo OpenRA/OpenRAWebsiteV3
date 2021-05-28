@@ -7,7 +7,7 @@
   <meta property="og:title" content="OpenRA" />
   <meta property="og:type" content="website" />
   <meta property="og:description" content="{{ site.description }}" />
-  <meta property="og:url" content="{{ site.url }}" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
   <!-- query param at the end is for cache busting if/when more dynamic social images are added -->
   <meta property="og:image" content="{{ '/images/social.jpg' | absolute_url }}?t={{ site.time | date: "%Y-%m-%d-%H-%M" }}" />
   <!-- Twitter -->
