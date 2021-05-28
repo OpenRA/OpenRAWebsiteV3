@@ -21,10 +21,6 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@{{ site.twitter_username }}">
   <meta name="twitter:creator" content="@{{ site.twitter_username }}">
-  <meta name="twitter:title" content="{{ social_title | strip }}">
-  <meta name="twitter:description" content="{{ site.tagline }}">
-  <!-- query param at the end is for cache busting if/when more dynamic social images are added -->
-  <meta name="twitter:image" content="{{ '/images/social.jpg' | absolute_url }}?t={{ site.time | date: "%Y-%m-%d-%H-%M" }}">
 
   {% capture page_title %}
     {% if page.title %}
