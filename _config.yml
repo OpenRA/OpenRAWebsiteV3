@@ -6,7 +6,7 @@ description: >-
   OpenRA is an open source project that recreates and modernizes classic real time strategy games, like Red Alert, Command & Conquer, and Dune 2000.
 tagline: >-
   Classic strategy games rebuilt for the modern era
-twitter_username: OpenRA
+twitter_username: openRA
 github_username: OpenRA
 permalink: /:categories/:title/index.html
 
