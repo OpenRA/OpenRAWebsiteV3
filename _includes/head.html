@@ -19,7 +19,14 @@
   <!-- query param at the end is for cache busting if/when more dynamic social images are added -->
   <meta name="twitter:image" content="{{ '/images/social.jpg' | relative_url }}?t={{ site.time | date: "%Y-%m-%d-%H-%M" }}">
 
-  <title>OpenRA - Classic strategy games rebuilt for the modern era</title>
+  {% capture page_title %}
+    {% if page.title %}
+      {{ page.title }} | {{ site.title }}
+    {% else %}
+      {{ site.title }} - {{ site.tagline }}
+    {% endif %}
+  {% endcapture %}
+  <title>{{ page_title | strip }}</title>
   <link rel="stylesheet" href="{{ '/styles/normalize.css' | relative_url }}" />
   <link rel="stylesheet" href="{{ '/styles/index.css' | relative_url }}" />
   <link rel="stylesheet" href="{{ '/styles/lite-youtube-embed.css' | relative_url }}" />
