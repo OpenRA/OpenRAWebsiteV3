@@ -24,6 +24,7 @@ jobs:
         env:
           JEKYLL_GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         run: |
+          sudo gem install bundler
           bundle install
           bundle exec jekyll build
 
