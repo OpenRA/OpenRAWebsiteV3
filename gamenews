@@ -1,4 +1,4 @@
-2021-03-21 16-00-00:
-	Title: Release 20210321
-	Author: Paul Chote
-	Content: Today is the day that many have been waiting for: the new stable OpenRA release is finally available!\n\n  • New integrations for Discord and community ladders\n  • Lobby features for handicaps and disabling spawns\n  • Community balance updates and a refreshed map\n     selection for Red Alert and Tiberian Dawn\n  • Dune 2000 fixes to better match the original game\n  • More fluid infantry combat and other targeting fixes\n  • Nine more converted Red Alert campaign missions\n  • Improved AI behaviour and performance\n\nSee the full news post at www.openra.net for more information and to download the new release.
+2022-12-03 13-00-00:
+	Title: Playtest 20221203
+	Author: Lukas Franke
+	Content: It has been a long wait, but we are proud to announce our newest playtest today! Playtest 20221203 brings many new features and adjustments like:\n\n  • A new and faster pathfinder model\n  • Improved networking code for online games\n  • Measures against spamming and flooding in the chat\n  • The ability to mute players\n  • Community balance updates for all mods\n  • Text notifications for ingame speech announcements\n  • Automatic map reloading in the background\n\nSee the full news post at www.openra.net for more information and to download the new release.
