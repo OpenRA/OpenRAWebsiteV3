@@ -115,7 +115,7 @@ carousel_items:
         <a class="home__developer-updates__view-all" href="{{ '/news/' | relative_url }}">[View All Updates]</a>
       </div>
       {% for post in site.posts limit:1 %}
-        {% include developer-update.html title=post.title author=post.author created_at=post.created_at body=post.content disqus_id=post.disqus_id %}
+        {% include developer-update.html title=post.title author=post.author created_at=post.created_at body=post.content disqus_id=post.disqus_id disqus_link=post.permalink %}
       {% endfor %}
     </div>
   </div>
