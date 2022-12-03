@@ -2,7 +2,7 @@
 <script>
   if (document.domain == 'www.openra.net') {
     var disqus_config = function () {
-      this.page.url = "{{ include.permalink }}" || window.location.href;
+      this.page.url = window.location.origin + "{{ include.permalink }}";
       this.page.identifier = "{{ include.pageId }}";
     };
 
