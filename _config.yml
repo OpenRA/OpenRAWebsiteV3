@@ -12,7 +12,7 @@ permalink: /:categories/:title/index.html
 
 download_page_tags:
   release: "release-20210321"
-  playtest: "playtest-20221223"
+  playtest: "playtest-20221224"
 
 defaults:
   -
