@@ -1,9 +1,9 @@
+2023-02-18 00-00-00:
+	Title: Playtest 20230218
+	Author: PunkPun
+	Content: After a month of testing a new playtest has been released! We highly encourage everybody to play some games and missions and let us know if you find any issues! A recap of what is new on the playtests:\n\n  • A new and faster pathfinder model\n  • Improved networking code for online games\n  • Measures against spamming and flooding in the chat\n  • The ability to mute players\n  • Community balance updates for all mods\n  • Text notifications for ingame speech announcements\n  • Automatic map reloading in the background\n\nSee the full news post at www.openra.net for more information and to download the new playtest release.
+
 2023-01-16 20-00-00:
 	Title: OpenRA 1v1 Multiplayer Ladder Update
 	Author: milkman
 	Content: The community-led OpenRA 1v1 Ladder ranking system has recently seen its first major upgrade since almost two years. Most notably, the stale all-time ranking system has been archived and the shorter, more dynamic 2-months rankings have taken center stage. The Ladder currently supports the Red Alert and Tiberian Dawn mods with dedicated game servers that contribute outcomes to the ranking algorithms. Check out https://oraladder.net for current leaderboards, latest game results, and instructions on how to join the competition.
-
-2023-01-10 21-00-00:
-	Title: Playtest 20230110
-	Author: PunkPun
-	Content: We are kicking off New Year with a new playtest! We are nearing a full release, and to make sure it is as stable as it can be we highly encourage everybody to play some games and report any issues! A recap of what is new on the playtests:\n\n  • A new and faster pathfinder model\n  • Improved networking code for online games\n  • Measures against spamming and flooding in the chat\n  • The ability to mute players\n  • Community balance updates for all mods\n  • Text notifications for ingame speech announcements\n  • Automatic map reloading in the background\n\nSee the full news post at www.openra.net for more information and to download the new playtest release.
