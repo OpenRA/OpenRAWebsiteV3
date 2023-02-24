@@ -1,7 +1,7 @@
-2023-02-18 00-00-00:
-	Title: Playtest 20230218
+2023-02-25 18-00-00:
+	Title: Release 20230225
 	Author: PunkPun
-	Content: After a month of testing a new playtest has been released! We highly encourage everybody to play some games and missions and let us know if you find any issues! A recap of what is new on the playtests:\n\n  • A new and faster pathfinder model\n  • Improved networking code for online games\n  • Measures against spamming and flooding in the chat\n  • The ability to mute players\n  • Community balance updates for all mods\n  • Text notifications for ingame speech announcements\n  • Automatic map reloading in the background\n\nSee the full news post at www.openra.net for more information and to download the new playtest release.
+	Content: Today we have a special occasion on our hands. We have been waiting for this moment for almost two years: A new stable OpenRA Release is out now, containing several major new features and many small-scale polish improvements. Head to www.openra.net for the full news post and to download the new release.
 
 2023-01-16 20-00-00:
 	Title: OpenRA 1v1 Multiplayer Ladder Update

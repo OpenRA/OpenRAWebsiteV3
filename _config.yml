@@ -11,8 +11,8 @@ github_username: OpenRA
 permalink: /:categories/:title/index.html
 
 download_page_tags:
-  release: "release-20210321"
-  playtest: "playtest-20230218"
+  release: "release-20230225"
+  playtest: ""
 
 defaults:
   -
