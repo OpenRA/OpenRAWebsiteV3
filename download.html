@@ -153,7 +153,7 @@ js:
       
           <div id="macos-instructions" class="instruction dark-panel">
             <div class="instruction__content">
-              OpenRA works best on a mac running <strong>macOS 10.13</strong> or later.
+              OpenRA works best on a mac running <strong>macOS 10.11</strong> or later.
               <p class="text--centered">
                 <span class="button-group">
                   {% include release-download-button.html
@@ -164,13 +164,6 @@ js:
                     type="macos"
                     playtest=true %}
                 </span>
-              </p>
-              <p class="text--info text--small">
-                {% if playtest %}
-                  A "compat" version supporting OS X 10.9 – 10.12 can be downloaded from the <a href="{{ release.html_url }}">{{ release.tag_name }}</a> and <a href="{{ playtest.html_url }}">{{ playtest.tag_name }}</a> archives.
-                {% else %}
-                  A "compat" version supporting OS X 10.9 – 10.12 can be downloaded from the <a href="{{ release.html_url }}">{{ release.tag_name }}</a> archive.
-                {% endif %}
               </p>
               <p>Stable releases are also available from <a href="https://formulae.brew.sh/cask/openra">Homebrew Cask</a>:</p>
               <p>
