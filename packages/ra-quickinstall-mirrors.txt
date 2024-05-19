@@ -1,3 +1,4 @@
 http://openra.baxxster.no/openra/ra-quickinstall.zip
 http://openra.ppmsite.com/ra-quickinstall.zip
 https://republic.community/hosted/files/command-and-conquer/openra/ra-quickinstall.zip
+http://cdn.mailaender.name/openra/ra-quickinstall.zip
