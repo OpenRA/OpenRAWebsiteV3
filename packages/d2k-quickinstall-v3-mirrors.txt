@@ -1,2 +1,3 @@
 http://openra.baxxster.no/openra/d2k-v3/d2k-quickinstall-v3.zip
 http://cdn.mailaender.name/openra/d2k-quickinstall-v3.zip
+http://openra.ppmsite.com/d2k-quickinstall-v3.zip
