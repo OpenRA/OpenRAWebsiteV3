@@ -1,6 +1,6 @@
-http://openra.ppmsite.com/ts-packages.zip
-http://srvdonate.ut.mephi.ru/openra/ts-packages.zip
-http://openra.baxxster.no/openra/ts-packages.zip
-http://openra.0x47.net/ts-packages.zip
+https://openra.ppmsite.com/ts-packages.zip
+https://srvdonate.ut.mephi.ru/openra/ts-packages.zip
+https://openra.baxxster.no/openra/ts-packages.zip
+https://openra.0x47.net/ts-packages.zip
 https://republic.community/hosted/files/command-and-conquer/openra/ts-packages.zip
-http://cdn.mailaender.name/openra/ts-packages.zip
+https://cdn.mailaender.name/openra/ts-packages.zip
