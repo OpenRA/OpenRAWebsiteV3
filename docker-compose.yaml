@@ -1,0 +1,30 @@
+services:
+  nginx-proxy:
+    image: nginxproxy/nginx-proxy
+    container_name: openra-nginx-proxy
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    networks:
+      - openra
+    ports:
+      - 80:80
+
+  jekyll:
+    image: jekyll/jekyll:3.8
+    command: jekyll serve
+    container_name: openra-jekyll
+    depends_on:
+      - nginx-proxy
+    volumes:
+      - .:/srv/jekyll
+    networks:
+      - openra
+    expose:
+      - 4000
+    environment:
+      VIRTUAL_PORT: 4000
+      VIRTUAL_HOST: localhost
+
+networks:
+  openra:
+    driver: bridge
