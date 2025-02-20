@@ -14,6 +14,10 @@ download_page_tags:
   release: "release-20231010"
   playtest: "playtest-20250220"
 
+exclude:
+  - docker-compose.yml
+  - README.md
+
 defaults:
   -
     scope:
