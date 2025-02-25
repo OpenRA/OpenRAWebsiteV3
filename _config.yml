@@ -17,6 +17,8 @@ download_page_tags:
 exclude:
   - docker-compose.yaml
   - README.md
+include:
+  - .well-known
 
 defaults:
   -
