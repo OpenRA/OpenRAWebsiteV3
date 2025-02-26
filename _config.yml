@@ -15,7 +15,7 @@ download_page_tags:
   playtest: "playtest-20250220"
 
 exclude:
-  - docker-compose.yml
+  - docker-compose.yaml
   - README.md
 
 defaults:
