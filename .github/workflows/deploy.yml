@@ -8,7 +8,7 @@ on:
 jobs:
   linux:
     name: Deploy Website
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Clone Repository
         uses: actions/checkout@v4
@@ -19,6 +19,10 @@ jobs:
           repository: openra/openra.github.io
           token: ${{ secrets.DEPLOY_TOKEN }}
           path: _site
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.7.0'
 
       - name: Build Website
         env:
