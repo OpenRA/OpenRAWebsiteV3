@@ -11,8 +11,8 @@ github_username: OpenRA
 permalink: /:categories/:title/index.html
 
 download_page_tags:
-  release: "release-20231010"
-  playtest: "playtest-20250220"
+  release: "release-20250303"
+  playtest: ""
 
 exclude:
   - docker-compose.yaml
