@@ -35,17 +35,17 @@ After a brainstorming session in our IRC channel there was one stand-out winner,
 We have developed mockups of how the logo will look in different contexts:
 
 <figure>
-  <img src="{{ '/images/news/20161223-new-logo-modchooser.png' | relative_url }}" alt="New logo in the mod chooser" />
+  <img src="{{ '/images/news/20161223-new-logo-modchooser.webp' | relative_url }}" alt="New logo in the mod chooser" />
   <figcaption>A preview of the ingame mod chooser with the new project logo.</figcaption>
 </figure>
 <br />
 <figure>
-  <img src="{{ '/images/news/20161223-new-logo-launchers.png' | relative_url }}" alt="New logo in OS launchers" />
+  <img src="{{ '/images/news/20161223-new-logo-launchers.webp' | relative_url }}" alt="New logo in OS launchers" />
   <figcaption>OpenRA icons in your operating system of choice.</figcaption>
 </figure>
 <br />
 <figure>
-  <img src="{{ '/images/news/20161223-new-logo-facebook.png' | relative_url }}" alt="New logo on Facebook" />
+  <img src="{{ '/images/news/20161223-new-logo-facebook.webp' | relative_url }}" alt="New logo on Facebook" />
   <figcaption>The new project logo on Facebook.</figcaption>
 </figure>
 

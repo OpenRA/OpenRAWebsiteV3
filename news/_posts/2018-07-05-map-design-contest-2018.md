@@ -8,7 +8,7 @@ permalink: "/news/map-design-contest-2018/"
 ---
 
 <div style="text-align:center" markdown="1">
-<img src="{{ '/images/news/20180703-mdc2018.jpg' | relative_url }}" width="600" alt="Map Design Contest 2018">
+<img src="{{ '/images/news/20180703-mdc2018.webp' | relative_url }}" width="600" alt="Map Design Contest 2018">
 </div>
 
 Attention, all map designers and modders! 

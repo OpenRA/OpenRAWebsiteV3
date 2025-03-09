@@ -8,7 +8,7 @@ permalink: "/news/ragl-announcement/"
 ---
 
 <figure>
-  <img src="{{ '/images/news/20160329-ragl-announcement.png' | relative_url }}" alt="RAGL Announcement" />
+  <img src="{{ '/images/news/20160329-ragl-announcement.webp' | relative_url }}" alt="RAGL Announcement" />
 </figure>
 
 Greetings commanders!

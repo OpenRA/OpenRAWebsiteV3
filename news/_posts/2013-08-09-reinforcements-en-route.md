@@ -18,7 +18,7 @@ A new release will be out within the next week or so that fixes the installer an
 We are also preparing a brand new website, which will be deployed with the new release.
 
 <figure>
-  <img src="{{ '/images/news/20130809-website-promo-2.png' | relative_url }}" loading="lazy" alt="Website promo" />
+  <img src="{{ '/images/news/20130809-website-promo-2.webp' | relative_url }}" loading="lazy" alt="Website promo" />
   <figcaption>A preview of the new OpenRA website.</figcaption>
 </figure>
 
