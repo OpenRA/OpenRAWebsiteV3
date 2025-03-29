@@ -88,19 +88,6 @@ js:
             value="linux"
             type="radio" />
         </label>
-        <label class="radio-button radio-button--icon button download__os download__os-free-bsd">
-          <svg class="button__icon icon">
-            <use xlink:href="{{ '/images/icons/icons.svg#icon-freebsd' | relative_url }}"></use>
-          </svg>
-          <div>
-            FreeBSD
-          </div>
-          <input
-            class="radio-button__input"
-            name="operating-system"
-            value="free-bsd"
-            type="radio" />
-        </label>
         <label class="radio-button radio-button--icon download__os-source button">
           <svg class="button__icon icon">
             <use xlink:href="{{ '/images/icons/icons.svg#icon-github' | relative_url }}"></use>
@@ -317,19 +304,7 @@ js:
               </dl>
             </div>
           </div>
-      
-          <div id="free-bsd-instructions" class="instruction dark-panel">
-            <div class="instruction__content">
-              Stable releases are available in the <a href="https://www.freshports.org/games/openra/">FreeBSD Ports Collection</a>:
-              <p>
-<code class="terminal"><span class="terminal__prompt">#</span> cd /usr/ports/games/openra
-<span class="terminal__prompt">#</span> make install</code>
-              </p>
-              <p class="text--warning text--small">We do not maintain this external package source, so there may be delays when a new version is released. Please contact the downstream repository maintainers about any packaging issues.
-              </p>
-            </div>
-          </div>
-      
+
           <div id="source-instructions" class="instruction dark-panel">
             <div class="instruction__content">
               OpenRA can be compiled from source on all platforms.

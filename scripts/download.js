@@ -20,7 +20,6 @@
     let os;
     if (navigator.appVersion.indexOf('Win') !== -1) os = 'windows'; 
     if (navigator.appVersion.indexOf('Mac') !== -1) os = 'macos'; 
-    if (navigator.appVersion.indexOf('FreeBSD') !== -1) os = 'free-bsd'; 
     if (navigator.appVersion.indexOf('Linux') !== -1) os = 'linux'; 
 
     return os;
