@@ -360,7 +360,7 @@ ServerBrowser.prototype.renderTooltipClient = function renderTooltipClient (clie
       '</td>' +
       '<td>' + (client.team || '-') + '</td>' +
     '</tr>');
-    $('.servers__list__tooltip__clients__name', $client).text(client.name); // injection protection
+    $('.servers__list__tooltip__clients__name', $client).text(client.isbot ? "AI Player" : client.name); // injection protection
     if (!client.isspectator) {
       const $spawnPoint = $('<span class="servers__list__tooltip__clients__spawn" style="border-color: #' + client.color + '">' + spawn + '</span>');
       $('.servers__list__tooltip__clients__name', $client).before($spawnPoint);
