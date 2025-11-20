@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clone Repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Clone Deploy Repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: openra/openra.github.io
           token: ${{ secrets.DEPLOY_TOKEN }}
