@@ -2,3 +2,4 @@
 ._*
 .jekyll-cache
 _site
+.bundle/
