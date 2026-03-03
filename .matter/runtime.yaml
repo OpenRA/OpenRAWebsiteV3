@@ -1,0 +1,55 @@
+before-command: |
+  #!/bin/bash
+  set -e
+
+  # Install bundler version compatible with Gemfile.lock
+  sudo gem install bundler -v 2.2.11
+
+  # Install Jekyll and all dependencies
+  sudo bundle _2.2.11_ install
+
+  # Create a Ruby compatibility shim for Ruby 3.2+
+  # The github-pages gem pins old versions of liquid and pathutil that are incompatible with Ruby 3.2
+  cat > /tmp/ruby32_compat.rb << 'EORUBY'
+  if RUBY_VERSION >= "3.2"
+    # liquid 4.0.3 uses tainted?/untaint which were removed in Ruby 3.2
+    class Object
+      def tainted?
+        false
+      end
+
+      def untaint
+        self
+      end
+    end
+
+    # pathutil 0.16.2 passes **kwd to File.read which fails in Ruby 3.2
+    require "pathutil"
+    class Pathutil
+      def read(*args, **kwd)
+        kwd[:encoding] ||= encoding
+        if normalize[:read]
+          File.read(self.to_s, encoding: kwd[:encoding]).encode(universal_newline: true)
+        else
+          File.read(self.to_s, encoding: kwd[:encoding])
+        end
+      end
+    end
+  end
+  EORUBY
+service-previews:
+  - id: jekyll-serve
+    title: Jekyll Server
+    description: Starts the Jekyll development server
+    command: |
+      #!/bin/bash
+      set -e
+
+      export JEKYLL_ENV=development
+
+      # Load Ruby 3.2 compatibility shim (restores tainted?/untaint removed in Ruby 3.2)
+      export RUBYOPT="-r/tmp/ruby32_compat.rb"
+
+      # Run Jekyll serve bound to all interfaces on port 4000
+      bundle exec jekyll serve --host 0.0.0.0 --port 4000
+    preview-port: 4000
