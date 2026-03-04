@@ -12,7 +12,7 @@ This repo contains the source for the OpenRA website at [openra.net](https://ope
   - [jquery.hoverintent](https://briancherne.github.io/jquery-hoverIntent/), Hover behavior in Server Browser
   - [popper](https://popper.js.org/), Popup behavior in Server Browser
   - [svgxuse](https://github.com/Keyamoon/svgxuse), Polyfill to allow use of `<svg><use xlink:href="...` without fear
-  - [flot](https://www.flotcharts.org/), Only chart system capable of ingesting rrd data (at time of writing)
+  - [Chart.js](https://www.chartjs.org/), Modern charting library for player activity graphs
   - [lite-youtube-embed](https://github.com/paulirish/lite-youtube-embed), Loads a lighter version YouTube's embed. Necessary for pageload optimization.
 - [Icomoon](https://icomoon.io/), To create and curate icon set
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/), To ensure excellent site performance
