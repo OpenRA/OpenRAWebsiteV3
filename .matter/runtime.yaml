@@ -1,12 +1,11 @@
 before-command: |
   #!/bin/bash
   set -e
-
-  # Install bundler version compatible with Gemfile.lock
-  sudo gem install bundler -v 2.2.11
+  # Install bundler version 2.3.26 aligned with version in deploy.yml
+  sudo gem install bundler -v 2.3.26
 
   # Install Jekyll and all dependencies
-  sudo bundle _2.2.11_ install
+  sudo bundle _2.3.26_ install
 
   # Create a Ruby compatibility shim for Ruby 3.2+
   # The github-pages gem pins old versions of liquid and pathutil that are incompatible with Ruby 3.2
