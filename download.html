@@ -126,10 +126,13 @@ js:
                   32-bit installers and portable releases can be downloaded from the <a href="{{ release.html_url }}">{{ release.tag_name }}</a> archive.
                 {% endif %}
               </p>
-              <p>Stable releases are also available from <a href="https://winstall.app/apps/OpenRA.OpenRA">WinGet</a>:</p>
+              <p>Release and Playtest versions are also available from <a https://github.com/microsoft/winget-cli">WinGet</a>:</p>
               <p>
-                <code class="terminal"><span class="terminal__prompt">></span> winget install openra</code>
+                <code class="terminal"><span class="terminal__prompt">></span> winget install -e --id OpenRA.OpenRA.Release</code>
               </p>
+              <p>
+                <code class="terminal"><span class="terminal__prompt">></span> winget install -e --id OpenRA.OpenRA.Playtest</code>
+              </p>              
               <p>Packages are also available from <a href="https://community.chocolatey.org/packages/openra">Chocolatey</a>:</p>
               <p>
                 <code class="terminal"><span class="terminal__prompt">></span> choco install openra</code>
