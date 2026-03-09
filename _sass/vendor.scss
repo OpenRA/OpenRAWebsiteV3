@@ -1,36 +1,12 @@
-/* Flot */
-/* If you don't like this fresh mess of CSS, we need to move away from Flot
-   In order to move away from Flot, we need data in JSON format */
+/* Chart.js player activity charts */
 
-.flot-tick-label {
-  color: white;
-}
-
-.flot-chart {
+.player-chart {
   @include metalPanel();
   margin-top: 1rem;
-  height: auto !important;
+  height: 350px !important;
+  position: relative;
 }
 
-.flot-chart,
-.flot-chart > table {
-  width: 100%;
-}
-
-.flot-chart table td {
-  padding: 0;
-}
-
-.flot-chart table td:first-child {
-  width: 100%;
-  padding: 1rem 1rem;
-}
-
-#flotTip {
-  background: white;
-  color: black;
-  text-shadow: none;
-  font-size: $font-size-small;
-  border-radius: 2px;
-  padding: 0.25rem 0.5rem;
+.player-chart canvas {
+  max-height: 100%;
 }
