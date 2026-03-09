@@ -1,12 +1,12 @@
 /* Chart.js player activity charts */
 
-.flot-chart {
+.player-chart {
   @include metalPanel();
   margin-top: 1rem;
   height: 350px !important;
   position: relative;
 }
 
-.flot-chart canvas {
+.player-chart canvas {
   max-height: 100%;
 }
