@@ -22,14 +22,13 @@ jobs:
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.7.0'
+          ruby-version: '3.3'
+          bundler-cache: true
 
       - name: Build Website
         env:
           JEKYLL_GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         run: |
-          sudo gem install bundler -v 2.3.26
-          bundle install
           bundle exec jekyll build
 
       - name: Push Website

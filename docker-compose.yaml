@@ -10,20 +10,24 @@ services:
       - 80:80
 
   jekyll:
-    image: jekyll/jekyll:3.8
-    command: jekyll serve
+    build: .
     container_name: openra-jekyll
     depends_on:
       - nginx-proxy
     volumes:
       - .:/srv/jekyll
+      - /srv/jekyll/.bundle
+      - /srv/jekyll/vendor
     networks:
       - openra
     expose:
       - 4000
+    ports:
+      - "35729:35729"
     environment:
       VIRTUAL_PORT: 4000
       VIRTUAL_HOST: localhost
+    command: bundle exec jekyll serve --host 0.0.0.0 --livereload
 
 networks:
   openra:
