@@ -16,7 +16,14 @@ download_page_tags:
 
 exclude:
   - docker-compose.yaml
+  - Dockerfile
+  - .github/
   - README.md
+  - vendor/
+  - .bundle/
+  - .jekyll-cache/
+  - Gemfile
+  - Gemfile.lock
 include:
   - .well-known
 
