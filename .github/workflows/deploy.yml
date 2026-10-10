@@ -13,13 +13,6 @@ jobs:
       - name: Clone Repository
         uses: actions/checkout@v7
 
-      - name: Clone Deploy Repository
-        uses: actions/checkout@v7
-        with:
-          repository: openra/openra.github.io
-          token: ${{ secrets.DEPLOY_TOKEN }}
-          path: _site
-
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
@@ -32,11 +25,13 @@ jobs:
           bundle exec jekyll build
 
       - name: Push Website
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         run: |
           cd _site
-          echo www.openra.net > CNAME
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          git add --all
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
           git commit -m "Deploy website to GitHub pages"
-          git push origin master
+          git push --force "https://x-access-token:${DEPLOY_TOKEN}@github.com/openra/openra.github.io.git" master
