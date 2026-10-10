@@ -12,7 +12,7 @@ permalink: /:categories/:title/index.html
 
 download_page_tags:
   release: "release-20250330"
-  playtest: "playtest-20260222"
+  playtest: "playtest-20261010"
 
 exclude:
   - docker-compose.yaml
