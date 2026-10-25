@@ -1,9 +1,4 @@
-2026-10-13 10-00-00:
-	Title: Red Alert Global League
-	Author: tttppp
-	Content: Red Alert Global League is celebrating its tenth anniversary. If you'd like to join in then registrations are open in the "Competitions and Events" section of the forum until the 22nd of October. Players will be placed into divisions with others of a similar standard. All ability levels are welcome! For more information then visit the forum or Discord server.
-
-2026-10-11 17-00-00:
-	Title: Playtest 20261011
+2026-10-15 21-00-00:
+	Title: Playtest 20261026
 	Author: Gustas
-	Content: Welcome back, Commanders! We’ve rolled out Playtest 20261011, featuring the fully completed Dune 2000 campaign, a game save/load UI overhaul, Red Alert campaign polish, smarter AI, and engine upgrades to .NET 10. Read more at www.openra.net and grab the latest build for OpenRA. Found an issue? Don’t forget to share your feedback on our forum, community Discord, or GitHub. Good luck on the battlefield!
+	Content: Release candidate Playtest 20261026 is out now! Featuring:\n- Random Map Generator\n- auto-save and game save/load UI overhaul\n- completed Dune 2000 campaign\n- Red Alert campaign polish\n- smarter bots that expand\n- engine update to .NET 10\n\nRead more at www.openra.net and grab the latest build for OpenRA. Found an issue? Don’t forget to share your feedback on our forum, community Discord, or GitHub. Good luck on the battlefield!
